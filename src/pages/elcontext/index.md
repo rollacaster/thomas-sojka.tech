@@ -2,7 +2,7 @@
 title: Introducing elcontext
 date: "2018-02-04T12:00:00.000Z"
 ---
-I have just finished my fist elisp package [elcontext](https://github.com/rollacaster/elcontext). It introduces context based actions for Emacs.
+I have just finished my first elisp package [elcontext](https://github.com/rollacaster/elcontext). It introduces context based actions for Emacs.
 
 ![img](./title.png)
 
@@ -14,8 +14,7 @@ A context-based action is an Emacs command called under certain conditions. Thes
 ## My use case
 
 The original reason to create `elcontext` was to setup my development
-environment depending on my current location. I start different applications
-depending on my locations (workplace, home). I use
+environment depending on my current location (e.g. workplace, home). I use
 [prodigy](https://github.com/rejeep/prodigy.el) to define services I need and
 `elcontext` starts them.
 
@@ -37,6 +36,6 @@ All context data is stored in hash tables which can be created or accessed conve
 
 ## Conclusion
 
-I am proud I finished my fist Emacs package and would be happy if it's useful to
-someone else. If you consider `elcontext` helpful, I would be pleased to [hear
-about your use cases](https://github.com/rollacaster/elcontext/issues).
+I am proud I finished my first Emacs package and happy to share it with you. If
+you consider `elcontext` helpful I would be pleased to [hear about your use
+cases](https://github.com/rollacaster/elcontext/issues).
