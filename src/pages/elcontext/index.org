@@ -1,0 +1,33 @@
+[[./title.png]]
+I have just finished my fist elisp package [[https://github.com/rollacaster/elcontext][elcontext]]. It introduces context
+based actions for Emacs.
+** Context based actions
+A context-based action is an Emacs command called under certain conditions.
+These conditions can include the current time (similar to a [[https://de.wikipedia.org/wiki/Cron][cron job]]), the
+current folder and the current GPS location (available only for macOS).
+** My use case
+The original reason to create =elcontext= was to setup my development
+environment depending on my current location. When I'm at work, I start other
+applications than when I'm at home. I use [[https://github.com/rejeep/prodigy.el][prodigy]] to define services I need and
+=elcontext= starts them.
+** Technical details
+A new context is created interactively by using abo-abo's fantastic [[https://github.com/abo-abo/hydra][hydra]]
+package: 
+
+[[./hydra.png]]
+
+If a part of a context is omitted this part is always valid e.g. no location
+means anywhere, no time means anytime. Each command is triggered once a day.
+
+I used Emacs' [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Tabulated-List-Mode.html][Tabulated List mode]] to get an overview of all created
+contexts. Triggered contexts are highlighted in green:
+
+#+DOWNLOADED: /tmp/screenshot.png @ 2018-02-02 07:31:04
+[[./list.png]]
+
+All context data is stored in hash tables which can be created/accessed
+conveniently with [[https://github.com/Wilfred/ht.el][ht]] and the GPS coordinated are retrieved via [[https://github.com/purcell/osx-location][osx-location]].
+** Conclusion
+I am proud I finished my fist Emacs package and would be happy if it's useful to
+someone else. If =elcontext= is helpful to you I would be pleased to here about your
+use cases.
