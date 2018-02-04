@@ -14,7 +14,7 @@ A context-based action is an Emacs command called under certain conditions. Thes
 ## My use case
 
 The original reason to create `elcontext` was to setup my development
-environment depending on my current location. I start differen applications
+environment depending on my current location. I start different applications
 depending on my locations (workplace, home). I use
 [prodigy](https://github.com/rejeep/prodigy.el) to define services I need and
 `elcontext` starts them.
