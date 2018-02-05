@@ -40,9 +40,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
+      options: { trackingId: 'UA-113623140-1' },
     },
     `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
