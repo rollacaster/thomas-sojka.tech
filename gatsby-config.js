@@ -5,7 +5,7 @@ module.exports = {
     description: 'Personal website of Thomas Sojka',
     siteUrl: 'https://www.sojka.tech',
   },
-  pathPrefix: '/gatsby-starter-blog',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
