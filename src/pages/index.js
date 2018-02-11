@@ -5,16 +5,15 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
+import TalkIndex from '../talks'
 
 class BlogIndex extends React.Component {
   render() {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const { posts } = this.props
 
     return (
       <div>
         <h1>Posts</h1>
-        <Helmet title={siteTitle} />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
@@ -38,7 +37,21 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+const Home = ({
+  data: { site: { siteMetadata: { title } }, allMarkdownRemark: { edges } },
+}) => (
+  <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+    <Helmet title={title} />
+    <div style={{ padding: `${rhythm(1.5)} ${rhythm(3 / 4)}` }}>
+      <BlogIndex posts={edges} />
+    </div>
+    <div style={{ padding: `${rhythm(1.5)} ${rhythm(3 / 4)}` }}>
+      <TalkIndex />
+    </div>
+  </div>
+)
+
+export default Home
 
 export const pageQuery = graphql`
   query IndexQuery {

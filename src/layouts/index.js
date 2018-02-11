@@ -12,14 +12,7 @@ class Template extends React.Component {
       <div>
         <Navigation />
 
-        <Container
-          style={{
-            maxWidth: rhythm(24),
-            padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-          }}
-        >
-          {children()}
-        </Container>
+        <Container style={{ maxWidth: rhythm(32) }}>{children()}</Container>
       </div>
     )
   }
