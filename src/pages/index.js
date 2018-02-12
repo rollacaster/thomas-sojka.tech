@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
 import TalkIndex from '../talks'
+import Projects from '../projects'
 
 class BlogIndex extends React.Component {
   render() {
@@ -42,10 +43,13 @@ const Home = ({
 }) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
     <Helmet title={title} />
-    <div style={{ padding: `${rhythm(1.5)} ${rhythm(3 / 4)}` }}>
+    <div style={{ padding: `${rhythm(1)} ${rhythm(3 / 4)} 0` }}>
       <BlogIndex posts={edges} />
     </div>
-    <div style={{ padding: `${rhythm(1.5)} ${rhythm(3 / 4)}` }}>
+    <div style={{ padding: `${rhythm(1)} ${rhythm(3 / 4)} 0` }}>
+      <Projects />
+    </div>
+    <div style={{ padding: `${rhythm(1)} ${rhythm(3 / 4)} 0` }}>
       <TalkIndex />
     </div>
   </div>

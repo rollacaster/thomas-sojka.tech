@@ -20,8 +20,9 @@ const TalkIndex = ({ talks }) => (
     </h3>
     <small>26 October, 2017</small>
     <p>
-      Lighting Talks about scraping the ReactiveConf Lightning Talk Proposals
-      with Functors, Monads and Traversables.
+      Lighting Talk about scraping the{' '}
+      <a href="https://reactiveconf.com">ReactiveConf</a> Lightning Talk
+      Proposals with Functors, Monads and Traversables.
     </p>
   </div>
 )
