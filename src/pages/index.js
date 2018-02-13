@@ -43,13 +43,13 @@ const Home = ({
 }) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
     <Helmet title={title} />
-    <div style={{ padding: `${rhythm(1)} ${rhythm(3 / 4)} 0` }}>
+    <div style={{ paddingTop: rhythm(1) }}>
       <BlogIndex posts={edges} />
     </div>
-    <div style={{ padding: `${rhythm(1)} ${rhythm(3 / 4)} 0` }}>
+    <div style={{ paddingTop: rhythm(1) }}>
       <Projects />
     </div>
-    <div style={{ padding: `${rhythm(1)} ${rhythm(3 / 4)} 0` }}>
+    <div style={{ paddingTop: rhythm(1) }}>
       <TalkIndex />
     </div>
   </div>
