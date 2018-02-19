@@ -5,8 +5,8 @@ import Helmet from 'react-helmet'
 
 import Bio from '../components/Bio'
 import { rhythm } from '../utils/typography'
-import TalkIndex from '../talks'
-import Projects from '../projects'
+import TalkIndex from '../components/talks'
+import Projects from '../components/projects'
 
 class BlogIndex extends React.Component {
   render() {
