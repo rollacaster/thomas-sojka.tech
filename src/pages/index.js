@@ -43,15 +43,9 @@ const Home = ({
 }) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
     <Helmet title={title} />
-    <div style={{ paddingTop: rhythm(1) }}>
-      <BlogIndex posts={edges} />
-    </div>
-    <div style={{ paddingTop: rhythm(1) }}>
-      <Projects />
-    </div>
-    <div style={{ paddingTop: rhythm(1) }}>
-      <TalkIndex />
-    </div>
+    <BlogIndex posts={edges} />
+    <Projects />
+    <TalkIndex />
   </div>
 )
 
