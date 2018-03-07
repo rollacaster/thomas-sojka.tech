@@ -1,4 +1,6 @@
 import React from 'react'
+import FontAwesome from 'react-fontawesome'
+import { Helmet } from 'react-helmet'
 
 // Import typefaces
 import 'typeface-montserrat'
@@ -7,33 +9,75 @@ import 'typeface-merriweather'
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
 
+const styles = {
+  contactButton: backgroundColor => ({
+    display: 'flex',
+    marginBottom: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 70,
+    height: 70,
+    backgroundColor,
+  }),
+}
+
 class Bio extends React.Component {
   render() {
     return (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginBottom: rhythm(2.5),
-        }}
-      >
-        <img
-          src={profilePic}
-          alt={`Thomas Sojka`}
+      <div style={{ width: '100%' }}>
+        <Helmet>
+          <link
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            rel="stylesheet"
+          />
+        </Helmet>
+        <ul
           style={{
-            marginRight: rhythm(1 / 2),
-            marginBottom: 0,
-            width: rhythm(2),
-            height: rhythm(2),
-            borderRadius: 100,
+            listStyle: 'none',
+            display: 'flex',
+            justifyContent: 'space-around',
           }}
-        />
-        <p style={{ marginBottom: 0 }}>
-          Written by{' '}
-          <a href="https://twitter.com/rollacaster">
-            <strong>Thomas Sojka</strong>
-          </a>
-        </p>
+        >
+          <li style={styles.contactButton('#33CCFF')}>
+            <a
+              href="http://www.twitter.com/rollacaster"
+              style={{ boxShadow: 'none' }}
+            >
+              <FontAwesome
+                name="twitter"
+                size="3x"
+                style={{
+                  color: 'white',
+                }}
+              />
+            </a>
+          </li>
+          <li style={styles.contactButton('#171515')}>
+            <a
+              href="http://www.github.com/rollacaster"
+              style={{ boxShadow: 'none' }}
+            >
+              <FontAwesome
+                name="github"
+                size="3x"
+                style={{
+                  color: 'white',
+                }}
+              />
+            </a>
+          </li>
+          <li style={styles.contactButton('#888')}>
+            <a href="mailto:thomas.sojka@tech.de" style={{ boxShadow: 'none' }}>
+              <FontAwesome
+                name="envelope"
+                size="3x"
+                style={{
+                  color: 'white',
+                }}
+              />
+            </a>
+          </li>
+        </ul>
       </div>
     )
   }

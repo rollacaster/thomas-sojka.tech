@@ -6,6 +6,8 @@ import Talks from '../components/talks'
 import Projects from '../components/projects'
 import Blogs from '../components/blogs'
 
+import { rhythm } from '../utils/typography'
+
 const Home = ({
   data: { site: { siteMetadata: { title } }, allMarkdownRemark: { edges } },
 }) => (
@@ -14,6 +16,8 @@ const Home = ({
     <Blogs posts={edges} />
     <Projects />
     <Talks />
+    <hr style={{ marginBottom: rhythm(1), width: '100%' }} />
+    <Bio />
   </div>
 )
 
