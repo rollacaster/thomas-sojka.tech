@@ -8,9 +8,11 @@ import 'typeface-merriweather'
 
 import profilePic from './profile-pic.jpg'
 import { rhythm } from '../utils/typography'
+import './grow.css'
 
 const styles = {
   contactButton: backgroundColor => ({
+    boxShadow: 'none',
     display: 'flex',
     marginBottom: 0,
     justifyContent: 'center',
@@ -38,10 +40,10 @@ class Bio extends React.Component {
             justifyContent: 'space-around',
           }}
         >
-          <li style={styles.contactButton('#33CCFF')}>
+          <li className="grow">
             <a
+              style={styles.contactButton('#33CCFF')}
               href="http://www.twitter.com/rollacaster"
-              style={{ boxShadow: 'none' }}
             >
               <FontAwesome
                 name="twitter"
@@ -52,10 +54,10 @@ class Bio extends React.Component {
               />
             </a>
           </li>
-          <li style={styles.contactButton('#171515')}>
+          <li className="grow">
             <a
               href="http://www.github.com/rollacaster"
-              style={{ boxShadow: 'none' }}
+              style={styles.contactButton('#171515')}
             >
               <FontAwesome
                 name="github"
@@ -66,8 +68,11 @@ class Bio extends React.Component {
               />
             </a>
           </li>
-          <li style={styles.contactButton('#888')}>
-            <a href="mailto:thomas.sojka@tech.de" style={{ boxShadow: 'none' }}>
+          <li className="grow">
+            <a
+              href="mailto:thomas.sojka@tech.de"
+              style={styles.contactButton('#888')}
+            >
               <FontAwesome
                 name="envelope"
                 size="3x"
