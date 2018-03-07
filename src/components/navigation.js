@@ -9,7 +9,7 @@ const styles = {
     boxShadow: 'none',
     textDecoration: 'none',
     color: 'inherit',
-    paddingRight: rhythm(0.5),
+    paddingRight: rhythm(2),
   },
 }
 
@@ -24,6 +24,9 @@ const Navigation = props => (
     >
       <Link style={styles.link} to={'/'}>
         Thomas Sojka
+      </Link>
+      <Link style={styles.link} to={'/about'}>
+        About
       </Link>
     </nav>
   </header>
