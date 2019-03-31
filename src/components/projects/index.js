@@ -2,6 +2,11 @@ import React from 'react'
 
 const projects = [
   {
+    title: 'sketches',
+    link: 'https://rollacaster.github.io/sketches/',
+    description: 'Exploring creative visual programming.',
+  },
+  {
     title: 'elcontext',
     link: 'https://github.com/rollacaster/elcontext',
     description:
@@ -16,15 +21,16 @@ const projects = [
   {
     title: 'react-animated-donut',
     link: 'https://www.npmjs.com/package/react-animated-donut',
-    description:
-      'Animated donut chart. React component written with d3-shape. ',
+    description: 'Animated donut chart. React component written with d3-shape.',
   },
 ]
 
 const Projects = props => (
   <div>
     <h1>Projects</h1>
-    {projects.map(project => <Project {...project} />)}
+    {projects.map(project => (
+      <Project {...project} />
+    ))}
   </div>
 )
 
