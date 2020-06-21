@@ -1,0 +1,4 @@
+* thomas-sojka.tech
+Source code of my personal website.
+
+The website is built by using [[https://orgmode.org/manual/Publishing.html][Org Publish]]
