@@ -2,87 +2,93 @@
 #+DATE: <2020-06-20 Sat>
 #+AUTHOR: Thomas Sojka
 #+EMAIL: contact@thomas-sojka.tech
-* My Blog
-** Talks
-*** [[https://youtu.be/Zj-L2bGAGS8?t=1256][The Discovery of Fire in ClojureScript]]
-    :PROPERTIES:
-    :language: en
-    :source:   youtube
-    :END:
-*** [[https://www.youtube.com/watch?v=juMLwOTxnvw][Compose All the Things]]
-    :PROPERTIES:
-    :language: en
-    :source:   youtube
-    :END:
-*** [[https://www.youtube.com/watch?v=ae_3svi5Eg0][Webscraping with algebraic structures in JS]]
-    :PROPERTIES:
-    :language: en
-    :source:   youtube
-    :END:
-** Blogs
-*** [[https://medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613][Visualizing Supply Chains with the Vizards]]
-    :PROPERTIES:
-    :language: en
-    :source:   medium
-    :END:
-*** [[https://medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5][Bullet journaling my 2019]]
-    :PROPERTIES:
-    :language: en
-    :source:   medium
-    :END:
-*** [[https://comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet][Unsere Türen sind jetzt dauerhaft geöffnet]]
-    :PROPERTIES:
-    :language: de
-    :source:   comsysto
-    :END:
-*** [[file:learning-clojure.org][Learning Clojure]]
-    :PROPERTIES:
-    :language: en
-    :END:
-*** [[file:creating-elisp-packages.org][Creating elisp packages]]
-    :PROPERTIES:
-    :language: en
-    :END:
-*** [[file:elcontext.org][Introducing elcontext]]
-    :PROPERTIES:
-    :language: en
-    :END:
-*** [[https://comsystoreply.de/blog-post/putting-in-overtime-with-elm][Putting in overtime with Elm]]
-    :PROPERTIES:
-    :language: en
-    :source:   comsysto
-    :END:
-*** [[Https://comsystoreply.de/blog-post/cross-stack-javascript-with-react][Cross Stack JavaScript with React]]
-    :PROPERTIES:
-    :language: en
-    :source:   comsysto
-    :END:
-** Courses
-*** [[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa][Morphing Visualizations in React & D3.js]]
-    :PROPERTIES:
-    :language: en
-    :source:   youtube
-    :END:
-** Pet Projects
-*** [[https://rollacaster.github.io/sketches/][Sketches]]
-    :PROPERTIES:
-    :language: en
-    :END:
-*** [[https://github.com/rollacaster/elcontext][elcontext: Context-based actions for Emacs]]
-    :PROPERTIES:
-    :language: en
-    :source:   github
-    :END:
-*** [[https://fire-hands.now.sh/][🔥 Fire Hands 🔥]]
-    :PROPERTIES:
-    :language: en
-    :END:
-*** [[Https://www.npmjs.com/package/react-animated-donut][react-animated-donut]]
-    :PROPERTIES:
-    :language: en
-    :source:   npm
-    :END:
-** Social
-*** [[https://mobile.twitter.com/rollacaster][Twitter]]
-*** [[https://github.com/rollacaster][GitHub]]
-*** [[https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber][YouTube]]
+
+#+OPTIONS: ':nil *:t -:t ::t <:t H:1 \n:nil ^:t arch:headline author:nil
+#+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:nil e:t
+#+OPTIONS: email:nil f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:nil title:t toc:nil todo:t |:t
+
+
+* Talks
+** [[https://youtu.be/Zj-L2bGAGS8?t=1256][The Discovery of Fire in ClojureScript]]
+   :PROPERTIES:
+   :language: en
+   :source:   youtube
+   :END:
+** [[https://www.youtube.com/watch?v=juMLwOTxnvw][Compose All the Things]]
+   :PROPERTIES:
+   :language: en
+   :source:   youtube
+   :END:
+** [[https://www.youtube.com/watch?v=ae_3svi5Eg0][Webscraping with algebraic structures in JS]]
+   :PROPERTIES:
+   :language: en
+   :source:   youtube
+   :END:
+* Blogs
+** [[https://medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613][Visualizing Supply Chains with the Vizards]]
+   :PROPERTIES:
+   :language: en
+   :source:   medium
+   :END:
+** [[https://medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5][Bullet journaling my 2019]]
+   :PROPERTIES:
+   :language: en
+   :source:   medium
+   :END:
+** [[https://comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet][Unsere Türen sind jetzt dauerhaft geöffnet]]
+   :PROPERTIES:
+   :language: de
+   :source:   comsysto
+   :END:
+** [[file:learning-clojure.org][Learning Clojure]]
+   :PROPERTIES:
+   :language: en
+   :END:
+** [[file:creating-elisp-packages.org][Creating elisp packages]]
+   :PROPERTIES:
+   :language: en
+   :END:
+** [[file:elcontext.org][Introducing elcontext]]
+   :PROPERTIES:
+   :language: en
+   :END:
+** [[https://comsystoreply.de/blog-post/putting-in-overtime-with-elm][Putting in overtime with Elm]]
+   :PROPERTIES:
+   :language: en
+   :source:   comsysto
+   :END:
+** [[Https://comsystoreply.de/blog-post/cross-stack-javascript-with-react][Cross Stack JavaScript with React]]
+   :PROPERTIES:
+   :language: en
+   :source:   comsysto
+   :END:
+* Courses
+** [[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa][Morphing Visualizations in React & D3.js]]
+   :PROPERTIES:
+   :language: en
+   :source:   youtube
+   :END:
+* Pet Projects
+** [[https://rollacaster.github.io/sketches/][Sketches]]
+   :PROPERTIES:
+   :language: en
+   :END:
+** [[https://github.com/rollacaster/elcontext][elcontext: Context-based actions for Emacs]]
+   :PROPERTIES:
+   :language: en
+   :source:   github
+   :END:
+** [[https://fire-hands.now.sh/][🔥 Fire Hands 🔥]]
+   :PROPERTIES:
+   :language: en
+   :END:
+** [[Https://www.npmjs.com/package/react-animated-donut][react-animated-donut]]
+   :PROPERTIES:
+   :language: en
+   :source:   npm
+   :END:
+* Social
+** [[https://mobile.twitter.com/rollacaster][Twitter]]
+** [[https://github.com/rollacaster][GitHub]]
+** [[https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber][YouTube]]
