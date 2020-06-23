@@ -1,4 +1,51 @@
 #content {
-    max-width: 42rem;
-    margin: auto;
+  max-width: 42rem;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+}
+
+.title {
+  color: #111;
+  margin-bottom: 4rem;
+}
+
+.outline-2 {
+  margin-bottom: 4rem;
+  color: #111;
+}
+
+.outline-2 > h2 {
+  margin-bottom: 1rem;
+}
+
+.org-ul {
+  list-style-type: none;
+  padding-left: 0rem;
+  margin-top: .5rem
+}
+
+.org-ul > li {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.15s ease-in;
+  color: #111;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+a:link,
+.link:visited {
+  transition: color 0.15s ease-in;
+}
+a:hover {
+  transition: color 0.15s ease-in;
+}
+a:active {
+  transition: color 0.15s ease-in;
+}
+a:focus {
+  transition: color 0.15s ease-in;
+  outline: 1px dotted currentColor;
 }
