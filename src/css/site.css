@@ -1,12 +1,54 @@
+/* normalize */
+blockquote,
+body,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre {
+  margin: 0;
+}
+
+p {
+    line-height: 1.625
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 #content {
-  max-width: 42rem;
-  margin: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+    'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
+    sans-serif;
+  background-color: #f7fafc;
+  height: 100%;
 }
 
 .title {
-  color: #111;
-  margin-bottom: 4rem;
+  color: white;
+  margin-bottom: 3rem;
+  padding: 1rem 0rem;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+header {
+  background-color: #4a5568;
+}
+
+section {
+  max-width: 42rem;
+  margin: auto;
 }
 
 .outline-2 {
@@ -21,7 +63,7 @@
 .org-ul {
   list-style-type: none;
   padding-left: 0rem;
-  margin-top: .5rem
+  margin-top: 0.5rem;
 }
 
 .org-ul > li {

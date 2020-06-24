@@ -1,7 +1,23 @@
-#+TITLE: Introducing elcontext
+#+TITLE: Thomas Sojka
 #+DATE: <2018-02-04>
 #+AUTHOR: Thomas Sojka
 #+EMAIL: contact@thomas-sojka.tech
+
+#+OPTIONS: ':nil *:t -:t ::t <:t H:2 \n:nil ^:t arch:headline author:nil
+#+OPTIONS: broken-links:nil c:nil creator:nil d:(not "LOGBOOK") date:nil e:t
+#+OPTIONS: email:nil f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:nil title:t toc:nil todo:t |:t
+
+#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-scripts:t html-style:t html5-fancy:t tex:t
+#+HTML_DOCTYPE: html5
+#+HTML_CONTAINER: section
+#+DESCRIPTION: The personal website of Thomas Sojka
+#+KEYWORDS: programming emacs clojure javascript blog tech
+#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/>
+#+HTML_HEAD_EXTRA:
+#+CREATOR: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)
+* Introducing elcontext
 I have just finished my first elisp package [[https://github.com/rollacaster/elcontext][elcontext]]. It introduces context based actions for Emacs.
 
 [[file:title.png][file:~/projects/thomas-sojka-tech/src/title.png]]
