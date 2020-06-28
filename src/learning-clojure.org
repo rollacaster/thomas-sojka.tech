@@ -8,17 +8,22 @@
 #+OPTIONS: email:nil f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
 #+OPTIONS: tasks:t tex:t timestamp:nil title:t toc:nil todo:t |:t
 
-#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-link-use-abs-url:nil html-preamble:t
+#+OPTIONS: html-postamble:t
 #+OPTIONS: html-scripts:t html-style:t html5-fancy:t tex:t
 #+HTML_DOCTYPE: html5
 #+HTML_CONTAINER: section
-#+DESCRIPTION: The personal website of Thomas Sojka
+#+DESCRIPTION: data visualizations | frontend development | functional programming
 #+KEYWORDS: programming emacs clojure javascript blog tech
 #+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/>
 #+HTML_HEAD_EXTRA:
 #+CREATOR: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)
 
 * Learning Clojure
+  :PROPERTIES:
+  :ID:       39BDAD6D-7E06-4FED-86F8-6F07A971E763
+  :PUBDATE:  <2020-06-26 Fri 07:51>
+  :END:
 One of my good intentions this year is to learn a new programming language. Choosing between the various options proved to be a difficult task. I tried to choose between PureScript, Clojure and Reason ML. In the end the article about the [[http://blog.cognitect.com/blog/2017/1/31/clojure-2018-results][State of Clojure in 2018]] was the decisive factor. 50% of all respondents were Emacs users and since my latest [[https://github.com/rollacaster/elcontext][shenanigans with Emacs Lisp]] I was sold with lisp anyway.
 
 If you search for Clojure learning resources most roads lead to [[https://www.braveclojure.com/][BRAVE CLOJURE]], an excellent book introducing Clojure. Thanks to this book I will skip the Clojure basics in this post (just read the book 😉) and start with my Clojure journey right after finishing the book.

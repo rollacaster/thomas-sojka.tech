@@ -13,8 +13,12 @@ pre {
   margin: 0;
 }
 
+figure {
+  margin: 0 0 2rem 0;
+}
+
 p {
-    line-height: 1.625
+  line-height: 1.625;
 }
 
 html {
@@ -30,7 +34,7 @@ body {
     'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
     sans-serif;
   background-color: #f7fafc;
-  height: 100%;
+  min-height: 100%;
 }
 
 .title {
@@ -47,12 +51,13 @@ header {
 }
 
 section {
+  padding: 0rem 2rem;
   max-width: 42rem;
   margin: auto;
 }
 
 .outline-2 {
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
   color: #111;
 }
 
@@ -70,12 +75,13 @@ section {
   margin-bottom: 1rem;
 }
 
-a {
+:not(figure) > a {
   text-decoration: none;
   transition: color 0.15s ease-in;
   color: #111;
   border-bottom-style: solid;
   border-bottom-width: 1px;
+  line-height: 1.5;
 }
 a:link,
 .link:visited {
@@ -90,4 +96,26 @@ a:active {
 a:focus {
   transition: color 0.15s ease-in;
   outline: 1px dotted currentColor;
+}
+
+img {
+  max-width: 100%;
+  margin: auto;
+}
+
+footer {
+  background-color: #4a5568;
+  color: white;
+}
+
+footer div {
+  padding: 1rem 2rem;
+  max-width: 42rem;
+  margin: auto;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+  margin: 0 0.5rem;
 }

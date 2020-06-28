@@ -8,100 +8,127 @@
 #+OPTIONS: email:nil f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
 #+OPTIONS: tasks:t tex:t timestamp:nil title:t toc:nil todo:t |:t
 
-#+OPTIONS: html-link-use-abs-url:nil html-postamble:nil html-preamble:t
+#+OPTIONS: html-link-use-abs-url:nil html-preamble:t
+#+OPTIONS: html-postamble:t
 #+OPTIONS: html-scripts:t html-style:t html5-fancy:t tex:t
 #+HTML_DOCTYPE: html5
 #+HTML_CONTAINER: section
-#+DESCRIPTION: The personal website of Thomas Sojka
+#+DESCRIPTION: data visualizations | frontend development | functional programming
 #+KEYWORDS: programming emacs clojure javascript blog tech
 #+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/>
-#+HTML_HEAD_EXTRA:
-#+CREATOR: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)
-
 
 * Talks
+  :PROPERTIES:
+  :ID:       26319B86-5062-436E-B0C8-C5E62C4F3473
+  :PUBDATE:  <2020-06-26 Fri 07:51>
+  :END:
 ** [[https://youtu.be/Zj-L2bGAGS8?t=1256][The Discovery of Fire in ClojureScript]]
    :PROPERTIES:
    :language: en
    :source:   youtube
+   :ID:       D5537DA0-F07C-468B-80B3-637838DA2B7A
    :END:
 ** [[https://www.youtube.com/watch?v=juMLwOTxnvw][Compose All the Things]]
    :PROPERTIES:
    :language: en
    :source:   youtube
+   :ID:       C3F4EB81-0768-48F4-ABAB-E18A53501746
    :END:
 ** [[https://www.youtube.com/watch?v=ae_3svi5Eg0][Webscraping with algebraic structures in JS]]
    :PROPERTIES:
    :language: en
    :source:   youtube
+   :ID:       BE4C309A-AA09-4FBD-93F9-07ADA0332B2E
    :END:
 * Blogs
+  :PROPERTIES:
+  :ID:       17D6E3D3-BA98-4D55-AD49-90133FF1F357
+  :PUBDATE:  <2020-06-26 Fri 07:51>
+  :END:
 ** [[https://medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613][Visualizing Supply Chains with the Vizards]]
    :PROPERTIES:
    :language: en
    :source:   medium
+   :ID:       579D9890-4E3C-4797-B643-88F121E0D37C
    :END:
 ** [[https://medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5][Bullet journaling my 2019]]
    :PROPERTIES:
    :language: en
    :source:   medium
+   :ID:       43F39C6C-3076-49C1-AFEB-143F0D47D68A
    :END:
 ** [[https://comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet][Unsere Türen sind jetzt dauerhaft geöffnet]]
    :PROPERTIES:
    :language: de
    :source:   comsysto
+   :ID:       728E38E8-D0D9-423C-B2F7-A2AA8490D500
    :END:
 ** [[file:learning-clojure.org][Learning Clojure]]
    :PROPERTIES:
    :language: en
+   :ID:       5B428D55-D061-475D-8660-6674F3906D90
    :END:
 ** [[file:creating-elisp-packages.org][Creating elisp packages]]
    :PROPERTIES:
    :language: en
+   :ID:       604F6D42-21AB-442B-B9B6-A49F38862CF4
    :END:
 ** [[file:elcontext.org][Introducing elcontext]]
    :PROPERTIES:
    :language: en
+   :ID:       94228DA8-45E4-4F84-82A3-5BBD40F691A4
    :END:
 ** [[https://comsystoreply.de/blog-post/putting-in-overtime-with-elm][Putting in overtime with Elm]]
    :PROPERTIES:
    :language: en
    :source:   comsysto
+   :ID:       BFD7DEA2-E7CF-4D01-8EFC-A83E6FA86D3E
    :END:
 ** [[Https://comsystoreply.de/blog-post/cross-stack-javascript-with-react][Cross Stack JavaScript with React]]
    :PROPERTIES:
    :language: en
    :source:   comsysto
+   :ID:       B84DF3EB-9669-40D0-B8A4-88373377FAC1
    :END:
 * Courses
+  :PROPERTIES:
+  :ID:       522C6E4E-E69E-48E8-BCA8-311F5CA6C92E
+  :PUBDATE:  <2020-06-26 Fri 07:51>
+  :END:
 ** [[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa][Morphing Visualizations in React & D3.js]]
    :PROPERTIES:
    :language: en
    :source:   youtube
+   :ID:       45479FCB-2F37-429B-B151-D49E14C41345
    :END:
 * Pet Projects
+  :PROPERTIES:
+  :ID:       41CC6E30-ED02-47AC-8CA6-62D820B3B9ED
+  :PUBDATE:  <2020-06-26 Fri 07:51>
+  :END:
 ** [[https://rollacaster.github.io/sketches/][Sketches]]
    :PROPERTIES:
    :language: en
+   :ID:       693F658A-6DB4-4F26-8A5B-05D722851D1D
    :END:
 ** [[https://github.com/rollacaster/elcontext][elcontext: Context-based actions for Emacs]]
    :PROPERTIES:
    :language: en
    :source:   github
+   :ID:       8A8F1DF8-791D-412D-A73B-6EDA057E190A
    :END:
 ** [[https://fire-hands.now.sh/][🔥 Fire Hands 🔥]]
    :PROPERTIES:
    :language: en
+   :ID:       CFC1C754-F1FC-407B-98C6-44B62322BF0F
    :END:
 ** [[Https://www.npmjs.com/package/react-animated-donut][react-animated-donut]]
    :PROPERTIES:
    :language: en
    :source:   npm
+   :ID:       2D098D90-35FB-4E5B-ABFD-A131F4FF7B9D
    :END:
-* Social
-** [[https://mobile.twitter.com/rollacaster][Twitter]]
-** [[https://github.com/rollacaster][GitHub]]
-** [[https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber][YouTube]]
+
 
 
 
