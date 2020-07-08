@@ -15,7 +15,7 @@
 #+HTML_CONTAINER: section
 #+DESCRIPTION: data visualizations | frontend development | functional programming
 #+KEYWORDS: programming emacs clojure javascript blog tech
-#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/>
+#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/><link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
 
 * Talks
   :PROPERTIES:
@@ -45,6 +45,10 @@
   :ID:       17D6E3D3-BA98-4D55-AD49-90133FF1F357
   :PUBDATE:  <2020-06-26 Fri 07:51>
   :END:
+** [[file:how-to-finish-your-side-project.org][How to finish your pet project]]
+   :PROPERTIES:
+   :language: en
+   :END:
 ** [[https://medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613][Visualizing Supply Chains with the Vizards]]
    :PROPERTIES:
    :language: en

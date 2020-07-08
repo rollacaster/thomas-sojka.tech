@@ -1,0 +1,1155 @@
+{
+"$$data_type": "org-document",
+"properties": {
+"title": [],
+"filetags": [],
+"author": [
+"Thomas Sojka (web"
+],
+"creator": "Emacs 26.3 (Org mode 9.3.7)",
+"date": [],
+"description": [],
+"email": "thsojka@web.de",
+"language": "en"
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orge73be4b",
+"drawer": {
+
+},
+"properties": {
+"tags-all": [],
+"raw-value": "Content",
+"pre-blank": 0,
+"level": 3,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 909,
+"title": [
+"Content"
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org5fcefc1",
+"drawer": {
+
+},
+"properties": {
+"tags-all": [],
+"raw-value": "Talks",
+"pre-blank": 0,
+"level": 4,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 921,
+"title": [
+"Talks"
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org809448c",
+"drawer": {
+"CREATED-AT": "[2019-06-13]",
+"SOURCE": "youtube",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://youtu.be/Zj-L2bGAGS8?t=1256][The Discovery of Fire in ClojureScript]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 932,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org760fe59",
+"properties": {
+"type": "https",
+"path": "//youtu.be/Zj-L2bGAGS8?t=1256",
+"format": "bracket",
+"raw-link": "https://youtu.be/Zj-L2bGAGS8?t=1256",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"The Discovery of Fire in ClojureScript"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "orgf732398",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 1018
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org821e8a8",
+"drawer": {
+"CREATED-AT": "[2018-10-29]",
+"SOURCE": "youtube",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://www.youtube.com/watch?v=juMLwOTxnvw][Compose All the Things]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 1126,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org654f56b",
+"properties": {
+"type": "https",
+"path": "//www.youtube.com/watch?v=juMLwOTxnvw",
+"format": "bracket",
+"raw-link": "https://www.youtube.com/watch?v=juMLwOTxnvw",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Compose All the Things"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org22c5240",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 1204
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org15e1028",
+"drawer": {
+"CREATED-AT": "[2017-10-26]",
+"SOURCE": "youtube",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://www.youtube.com/watch?v=ae_3svi5Eg0][Webscraping with algebraic structures in JS]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 1312,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org8d5b7f1",
+"properties": {
+"type": "https",
+"path": "//www.youtube.com/watch?v=ae_3svi5Eg0",
+"format": "bracket",
+"raw-link": "https://www.youtube.com/watch?v=ae_3svi5Eg0",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Webscraping with algebraic structures in JS"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org737c95b",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 1411
+},
+"contents": []
+}
+]
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org0798bc3",
+"drawer": {
+
+},
+"properties": {
+"tags-all": [],
+"raw-value": "Blogs",
+"pre-blank": 0,
+"level": 4,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 1519,
+"title": [
+"Blogs"
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org3202e8e",
+"drawer": {
+"CREATED-AT": "[2020-07-03]",
+"SOURCE": "medium",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0][Steal Like a Data Visualiser]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 1530,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orga8b8ee0",
+"properties": {
+"type": "https",
+"path": "//medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0",
+"format": "bracket",
+"raw-link": "https://medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Steal Like a Data Visualiser"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org3cbc186",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 1699
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org47dd909",
+"drawer": {
+"CREATED-AT": "[2020-05-12]",
+"SOURCE": "medium",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[Https://medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613][Visualizing Supply Chains with the Vizards]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 1806,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orgaa47eca",
+"properties": {
+"type": "Https",
+"path": "//medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613",
+"format": "bracket",
+"raw-link": "Https://medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Visualizing Supply Chains with the Vizards"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org4e779ed",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 1949
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orgb6dfe57",
+"drawer": {
+"CREATED-AT": "[2020-01-24]",
+"SOURCE": "medium",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5][Bullet journaling my 2019]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 2056,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org87086dc",
+"properties": {
+"type": "https",
+"path": "//medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5",
+"format": "bracket",
+"raw-link": "https://medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Bullet journaling my 2019"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "orgee63773",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 2164
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org036f85b",
+"drawer": {
+"CREATED-AT": "[2019-01-07]",
+"SOURCE": "comsysto",
+"LANGUAGE": "de"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet][Unsere Türen sind jetzt dauerhaft geöffnet]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 2277,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orgd65c853",
+"properties": {
+"type": "https",
+"path": "//comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet",
+"format": "bracket",
+"raw-link": "https://comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Unsere Türen sind jetzt dauerhaft geöffnet"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org77f79a1",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 2409
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org461431a",
+"drawer": {
+"CREATED-AT": "[2018-08-13]",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://thomas-sojka.tech/learning-clojure.html][Learning clojure]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 2518,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orga48083a",
+"properties": {
+"type": "https",
+"path": "//thomas-sojka.tech/learning-clojure/",
+"format": "bracket",
+"raw-link": "https://thomas-sojka.tech/learning-clojure.html",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Learning clojure"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "orgf135e6d",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 2590
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orgc1a8b29",
+"drawer": {
+"CREATED-AT": "[2018-02-11]",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://thomas-sojka.tech/creating-elisp-packages.html][Creating elisp packages]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 2679,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orga246190",
+"properties": {
+"type": "https",
+"path": "//thomas-sojka.tech/creating-elisp-packages/",
+"format": "bracket",
+"raw-link": "https://thomas-sojka.tech/creating-elisp-packages.html",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Creating elisp packages"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "orga1d9ac9",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 2765
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orgebdeed3",
+"drawer": {
+"CREATED-AT": "[2018-02-04]",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://thomas-sojka.tech/elcontext.html][Introducing elcontext]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 2848,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org754e41d",
+"properties": {
+"type": "https",
+"path": "//thomas-sojka.tech/elcontext/",
+"format": "bracket",
+"raw-link": "https://thomas-sojka.tech/elcontext.html",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Introducing elcontext"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org09601bc",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 2918
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org0789a45",
+"drawer": {
+"CREATED-AT": "[2017-04-11]",
+"SOURCE": "comsysto",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://comsystoreply.de/blog-post/putting-in-overtime-with-elm][Putting in overtime with Elm]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 3001,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org6c50c6a",
+"properties": {
+"type": "https",
+"path": "//comsystoreply.de/blog-post/putting-in-overtime-with-elm",
+"format": "bracket",
+"raw-link": "https://comsystoreply.de/blog-post/putting-in-overtime-with-elm",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Putting in overtime with Elm"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "orgfb97b88",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 3105
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orge65c426",
+"drawer": {
+"CREATED-AT": "[2016-06-29]",
+"SOURCE": "comsysto",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://comsystoreply.de/blog-post/cross-stack-javascript-with-react][Cross Stack JavaScript with React]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 3214,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org7e1557a",
+"properties": {
+"type": "https",
+"path": "//comsystoreply.de/blog-post/cross-stack-javascript-with-react",
+"format": "bracket",
+"raw-link": "https://comsystoreply.de/blog-post/cross-stack-javascript-with-react",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Cross Stack JavaScript with React"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "orgd464350",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 3328
+},
+"contents": []
+}
+]
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org328743c",
+"drawer": {
+
+},
+"properties": {
+"tags-all": [],
+"raw-value": "Courses",
+"pre-blank": 0,
+"level": 4,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 3437,
+"title": [
+"Courses"
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orgf15c3ba",
+"drawer": {
+"CREATED-AT": "[2020-05-01]",
+"SOURCE": "youtube",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa][Morphing Visualizations in React & D3.js]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 3450,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orgded68df",
+"properties": {
+"type": "https",
+"path": "//www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa",
+"format": "bracket",
+"raw-link": "https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Morphing Visualizations in React & D3.js"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org3b592cd",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 3575
+},
+"contents": []
+}
+]
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org7dbad29",
+"drawer": {
+
+},
+"properties": {
+"tags-all": [],
+"raw-value": "Projects",
+"pre-blank": 0,
+"level": 4,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 3683,
+"title": [
+"Projects"
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org360f5b0",
+"drawer": {
+"CREATED-AT": "[2020-03-03]",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://rollacaster.github.io/sketches/][Sketches]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 3697,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org6be7e1f",
+"properties": {
+"type": "https",
+"path": "//rollacaster.github.io/sketches/",
+"format": "bracket",
+"raw-link": "https://rollacaster.github.io/sketches/",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Sketches"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org9fd0bb9",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 3757
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org8e9ef62",
+"drawer": {
+"CREATED-AT": "[2018-02-04]",
+"SOURCE": "github",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://github.com/rollacaster/elcontext][elcontext: Context-based actions for Emacs]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 3840,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orgccecb29",
+"properties": {
+"type": "https",
+"path": "//github.com/rollacaster/elcontext",
+"format": "bracket",
+"raw-link": "https://github.com/rollacaster/elcontext",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"elcontext: Context-based actions for Emacs"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org6731c0b",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 3935
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orgf048ac4",
+"drawer": {
+"CREATED-AT": "[2019-07-01]",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://fire-hands.now.sh/][🔥 Fire Hands 🔥]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 4042,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orga289101",
+"properties": {
+"type": "https",
+"path": "//fire-hands.now.sh/",
+"format": "bracket",
+"raw-link": "https://fire-hands.now.sh/",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"Fire Hands"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org55740e9",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 4095
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "org1f9d8b4",
+"drawer": {
+"CREATED-AT": "[2017-06-18]",
+"SOURCE": "npm",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[https://www.npmjs.com/package/react-animated-donut][react-animated-donut]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 4178,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "orgc9cc5aa",
+"properties": {
+"type": "https",
+"path": "//www.npmjs.com/package/react-animated-donut",
+"format": "bracket",
+"raw-link": "https://www.npmjs.com/package/react-animated-donut",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"react-animated-donut"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "org2659d46",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 4261
+},
+"contents": []
+}
+]
+}
+]
+}
+]
+}
+]
+}

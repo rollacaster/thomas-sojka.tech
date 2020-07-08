@@ -1,2 +1,4 @@
 .vercel
 /public/
+/.cpcache/
+/.nrepl-port
