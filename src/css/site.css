@@ -23,31 +23,41 @@ p {
 
 html {
   height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
 body {
   height: 100%;
+  background-color: #f7fafc;
 }
 
 #content {
   font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
     'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
     sans-serif;
-  background-color: #f7fafc;
   min-height: 100%;
 }
 
-.title {
+h3 {
+  margin-bottom: 0.5rem;
+}
+
+.head a {
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-weight: 400;
+}
+
+.head {
   color: white;
   margin-bottom: 3rem;
   padding: 1rem 0rem;
   font-size: 1.125rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-}
-
-header {
-  background-color: #4a5568;
 }
 
 section {
@@ -118,4 +128,20 @@ footer div {
 footer a {
   color: white;
   margin: 0 0.5rem;
+}
+
+header {
+  max-width: 42rem;
+  padding: 0rem 2rem;
+  margin: auto;
+}
+
+.title {
+  font-size: 1.5em;
+  text-align: left;
+}
+
+#preamble {
+  background-color: #4a5568;
+  text-align: center;
 }

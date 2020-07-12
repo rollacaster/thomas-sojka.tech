@@ -1,4 +1,4 @@
-#+TITLE: Thomas Sojka
+#+TITLE: Learning Clojure
 #+DATE: <2018-08-13>
 #+AUTHOR: Thomas Sojka
 #+EMAIL: contact@thomas-sojka.tech
@@ -19,7 +19,7 @@
 #+HTML_HEAD_EXTRA:
 #+CREATOR: <a href="https://www.gnu.org/software/emacs/">Emacs</a> 26.3 (<a href="https://orgmode.org">Org</a> mode 9.1.9)
 
-* Learning Clojure
+* 
   :PROPERTIES:
   :ID:       39BDAD6D-7E06-4FED-86F8-6F07A971E763
   :PUBDATE:  <2020-06-26 Fri 07:51>

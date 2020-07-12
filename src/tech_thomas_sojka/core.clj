@@ -54,7 +54,6 @@
 
 (def new-content
   [:div#content
-   [:header [:h1.title "Thomas Sojka"]]
    [:section.max-w-4xl
     [:ul.flex.flex-wrap.justify-between
      (map content-item content)]]])
@@ -71,8 +70,10 @@
       (zip/next)
       (zip/right)
       (zip/right)
-      (zip/next)
-      (zip/next)
+      (zip/down)
+      (zip/right)
+      (zip/right)
+      (zip/right)
       (zip/replace new-content)
       (zip/root))))
 
