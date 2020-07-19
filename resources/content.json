@@ -16,7 +16,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orge73be4b",
+"ref": "org0134e0f",
 "drawer": {
 
 },
@@ -33,7 +33,7 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 909,
+"post-affiliated": 1817,
 "title": [
 "Content"
 ]
@@ -42,7 +42,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org5fcefc1",
+"ref": "org0fe54d1",
 "drawer": {
 
 },
@@ -59,7 +59,7 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 921,
+"post-affiliated": 1829,
 "title": [
 "Talks"
 ]
@@ -68,7 +68,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org809448c",
+"ref": "orgdab7592",
 "drawer": {
 "CREATED-AT": "[2019-06-13]",
 "SOURCE": "youtube",
@@ -87,12 +87,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 932,
+"post-affiliated": 1840,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org760fe59",
+"ref": "orgcc2712a",
 "properties": {
 "type": "https",
 "path": "//youtu.be/Zj-L2bGAGS8?t=1256",
@@ -115,10 +115,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgf732398",
+"ref": "org8bbd43e",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 1018
+"post-affiliated": 1926
 },
 "contents": []
 }
@@ -127,7 +127,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org821e8a8",
+"ref": "orgf10090c",
 "drawer": {
 "CREATED-AT": "[2018-10-29]",
 "SOURCE": "youtube",
@@ -146,12 +146,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 1126,
+"post-affiliated": 2034,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org654f56b",
+"ref": "org073ee67",
 "properties": {
 "type": "https",
 "path": "//www.youtube.com/watch?v=juMLwOTxnvw",
@@ -174,10 +174,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org22c5240",
+"ref": "orgb165b0b",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 1204
+"post-affiliated": 2112
 },
 "contents": []
 }
@@ -186,7 +186,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org15e1028",
+"ref": "orgda387e6",
 "drawer": {
 "CREATED-AT": "[2017-10-26]",
 "SOURCE": "youtube",
@@ -205,12 +205,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 1312,
+"post-affiliated": 2220,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org8d5b7f1",
+"ref": "orgdb4bc7b",
 "properties": {
 "type": "https",
 "path": "//www.youtube.com/watch?v=ae_3svi5Eg0",
@@ -233,10 +233,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org737c95b",
+"ref": "org828842c",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 1411
+"post-affiliated": 2319
 },
 "contents": []
 }
@@ -247,7 +247,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org0798bc3",
+"ref": "org5b374e2",
 "drawer": {
 
 },
@@ -264,7 +264,7 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 1519,
+"post-affiliated": 2427,
 "title": [
 "Blogs"
 ]
@@ -273,7 +273,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org3202e8e",
+"ref": "orgb929955",
 "drawer": {
 "CREATED-AT": "[2020-07-03]",
 "SOURCE": "medium",
@@ -292,12 +292,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 1530,
+"post-affiliated": 2438,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orga8b8ee0",
+"ref": "org41ffaf2",
 "properties": {
 "type": "https",
 "path": "//medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0",
@@ -320,10 +320,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org3cbc186",
+"ref": "orgad627a8",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 1699
+"post-affiliated": 2607
 },
 "contents": []
 }
@@ -332,7 +332,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org47dd909",
+"ref": "orgdcdbe7f",
 "drawer": {
 "CREATED-AT": "[2020-05-12]",
 "SOURCE": "medium",
@@ -351,12 +351,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 1806,
+"post-affiliated": 2714,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgaa47eca",
+"ref": "orgc13faa1",
 "properties": {
 "type": "Https",
 "path": "//medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613",
@@ -379,10 +379,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org4e779ed",
+"ref": "org2a9c0a0",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 1949
+"post-affiliated": 2857
 },
 "contents": []
 }
@@ -391,7 +391,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgb6dfe57",
+"ref": "orgc6e697a",
 "drawer": {
 "CREATED-AT": "[2020-01-24]",
 "SOURCE": "medium",
@@ -410,12 +410,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2056,
+"post-affiliated": 2964,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org87086dc",
+"ref": "orga845ed2",
 "properties": {
 "type": "https",
 "path": "//medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5",
@@ -438,10 +438,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgee63773",
+"ref": "orga85848d",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 2164
+"post-affiliated": 3072
 },
 "contents": []
 }
@@ -450,7 +450,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org036f85b",
+"ref": "org52e6af3",
 "drawer": {
 "CREATED-AT": "[2019-01-07]",
 "SOURCE": "comsysto",
@@ -469,12 +469,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2277,
+"post-affiliated": 3179,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgd65c853",
+"ref": "org6da7396",
 "properties": {
 "type": "https",
 "path": "//comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet",
@@ -497,10 +497,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org77f79a1",
+"ref": "org7ccb2ba",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 2409
+"post-affiliated": 3311
 },
 "contents": []
 }
@@ -509,14 +509,14 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org461431a",
+"ref": "org3895601",
 "drawer": {
 "CREATED-AT": "[2018-08-13]",
 "LANGUAGE": "en"
 },
 "properties": {
 "tags-all": [],
-"raw-value": "[[https://thomas-sojka.tech/learning-clojure.html][Learning clojure]]",
+"raw-value": "[[/learning-clojure.html][Learning clojure]]",
 "pre-blank": 0,
 "level": 5,
 "priority": null,
@@ -527,17 +527,17 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2518,
+"post-affiliated": 3420,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orga48083a",
+"ref": "org1b164ea",
 "properties": {
-"type": "https",
-"path": "//thomas-sojka.tech/learning-clojure/",
+"type": "file",
+"path": "/learning-clojure.html",
 "format": "bracket",
-"raw-link": "https://thomas-sojka.tech/learning-clojure.html",
+"raw-link": "/learning-clojure.html",
 "application": null,
 "search-option": null,
 "post-blank": 0,
@@ -555,10 +555,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgf135e6d",
+"ref": "orga8e03c5",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 2590
+"post-affiliated": 3471
 },
 "contents": []
 }
@@ -567,14 +567,14 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgc1a8b29",
+"ref": "org78f4185",
 "drawer": {
 "CREATED-AT": "[2018-02-11]",
 "LANGUAGE": "en"
 },
 "properties": {
 "tags-all": [],
-"raw-value": "[[https://thomas-sojka.tech/creating-elisp-packages.html][Creating elisp packages]]",
+"raw-value": "[[/creating-elisp-packages.html][Creating elisp packages]]",
 "pre-blank": 0,
 "level": 5,
 "priority": null,
@@ -585,17 +585,17 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2679,
+"post-affiliated": 3554,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orga246190",
+"ref": "orgbbb8c10",
 "properties": {
-"type": "https",
-"path": "//thomas-sojka.tech/creating-elisp-packages/",
+"type": "file",
+"path": "/creating-elisp-packages.html",
 "format": "bracket",
-"raw-link": "https://thomas-sojka.tech/creating-elisp-packages.html",
+"raw-link": "/creating-elisp-packages.html",
 "application": null,
 "search-option": null,
 "post-blank": 0,
@@ -613,10 +613,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orga1d9ac9",
+"ref": "org834545d",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 2765
+"post-affiliated": 3619
 },
 "contents": []
 }
@@ -625,14 +625,14 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgebdeed3",
+"ref": "orgd9854cb",
 "drawer": {
 "CREATED-AT": "[2018-02-04]",
 "LANGUAGE": "en"
 },
 "properties": {
 "tags-all": [],
-"raw-value": "[[https://thomas-sojka.tech/elcontext.html][Introducing elcontext]]",
+"raw-value": "[[elcontext.html][Introducing elcontext]]",
 "pre-blank": 0,
 "level": 5,
 "priority": null,
@@ -643,21 +643,21 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2848,
+"post-affiliated": 3702,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org754e41d",
+"ref": "orga0794f4",
 "properties": {
-"type": "https",
-"path": "//thomas-sojka.tech/elcontext/",
+"type": "fuzzy",
+"path": "elcontext.html",
 "format": "bracket",
-"raw-link": "https://thomas-sojka.tech/elcontext.html",
+"raw-link": "elcontext.html",
 "application": null,
 "search-option": null,
 "post-blank": 0,
-"is-internal": false,
+"is-internal": true,
 "target-ref": null,
 "is-inline-image": false
 },
@@ -671,10 +671,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org09601bc",
+"ref": "org33a08bc",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 2918
+"post-affiliated": 3750
 },
 "contents": []
 }
@@ -683,7 +683,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org0789a45",
+"ref": "org5081bb5",
 "drawer": {
 "CREATED-AT": "[2017-04-11]",
 "SOURCE": "comsysto",
@@ -702,12 +702,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3001,
+"post-affiliated": 3833,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org6c50c6a",
+"ref": "orgfe89923",
 "properties": {
 "type": "https",
 "path": "//comsystoreply.de/blog-post/putting-in-overtime-with-elm",
@@ -730,10 +730,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgfb97b88",
+"ref": "org7b729c3",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3105
+"post-affiliated": 3937
 },
 "contents": []
 }
@@ -742,7 +742,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orge65c426",
+"ref": "org5e147cd",
 "drawer": {
 "CREATED-AT": "[2016-06-29]",
 "SOURCE": "comsysto",
@@ -761,12 +761,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3214,
+"post-affiliated": 4046,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org7e1557a",
+"ref": "org17bff70",
 "properties": {
 "type": "https",
 "path": "//comsystoreply.de/blog-post/cross-stack-javascript-with-react",
@@ -789,10 +789,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgd464350",
+"ref": "org0e9f0ad",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3328
+"post-affiliated": 4160
 },
 "contents": []
 }
@@ -803,7 +803,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org328743c",
+"ref": "orgf16c1c3",
 "drawer": {
 
 },
@@ -820,7 +820,7 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3437,
+"post-affiliated": 4269,
 "title": [
 "Courses"
 ]
@@ -829,7 +829,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgf15c3ba",
+"ref": "orgccdd3a2",
 "drawer": {
 "CREATED-AT": "[2020-05-01]",
 "SOURCE": "youtube",
@@ -848,12 +848,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3450,
+"post-affiliated": 4282,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgded68df",
+"ref": "org62ec669",
 "properties": {
 "type": "https",
 "path": "//www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa",
@@ -876,10 +876,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org3b592cd",
+"ref": "org0998de8",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3575
+"post-affiliated": 4407
 },
 "contents": []
 }
@@ -890,7 +890,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org7dbad29",
+"ref": "org184e28c",
 "drawer": {
 
 },
@@ -907,7 +907,7 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3683,
+"post-affiliated": 4515,
 "title": [
 "Projects"
 ]
@@ -916,7 +916,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org360f5b0",
+"ref": "org47802af",
 "drawer": {
 "CREATED-AT": "[2020-03-03]",
 "LANGUAGE": "en"
@@ -934,12 +934,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3697,
+"post-affiliated": 4529,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org6be7e1f",
+"ref": "orge366c8f",
 "properties": {
 "type": "https",
 "path": "//rollacaster.github.io/sketches/",
@@ -962,10 +962,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org9fd0bb9",
+"ref": "org6284ca2",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3757
+"post-affiliated": 4589
 },
 "contents": []
 }
@@ -974,7 +974,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org8e9ef62",
+"ref": "org3fd378a",
 "drawer": {
 "CREATED-AT": "[2018-02-04]",
 "SOURCE": "github",
@@ -993,12 +993,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3840,
+"post-affiliated": 4672,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgccecb29",
+"ref": "org64421db",
 "properties": {
 "type": "https",
 "path": "//github.com/rollacaster/elcontext",
@@ -1021,10 +1021,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org6731c0b",
+"ref": "org02d25e8",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3935
+"post-affiliated": 4767
 },
 "contents": []
 }
@@ -1033,14 +1033,14 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgf048ac4",
+"ref": "orgc92be02",
 "drawer": {
 "CREATED-AT": "[2019-07-01]",
 "LANGUAGE": "en"
 },
 "properties": {
 "tags-all": [],
-"raw-value": "[[https://fire-hands.now.sh/][🔥 Fire Hands 🔥]]",
+"raw-value": "[[https://fire-hands.now.sh/][Fire Hands]]",
 "pre-blank": 0,
 "level": 5,
 "priority": null,
@@ -1051,12 +1051,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4042,
+"post-affiliated": 4874,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orga289101",
+"ref": "org3c57ae5",
 "properties": {
 "type": "https",
 "path": "//fire-hands.now.sh/",
@@ -1079,10 +1079,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org55740e9",
+"ref": "orgc93e4e9",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 4095
+"post-affiliated": 4923
 },
 "contents": []
 }
@@ -1091,7 +1091,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org1f9d8b4",
+"ref": "org5f9316c",
 "drawer": {
 "CREATED-AT": "[2017-06-18]",
 "SOURCE": "npm",
@@ -1110,12 +1110,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4178,
+"post-affiliated": 5006,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgc9cc5aa",
+"ref": "org0bcdad4",
 "properties": {
 "type": "https",
 "path": "//www.npmjs.com/package/react-animated-donut",
@@ -1138,10 +1138,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org2659d46",
+"ref": "orgbe85dfd",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 4261
+"post-affiliated": 5089
 },
 "contents": []
 }

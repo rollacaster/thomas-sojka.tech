@@ -11,16 +11,19 @@
 (defn get-title [section]
   ((comp first :title :properties) section))
 
+(defn parse-content [element]
+  {:title ((comp first :contents first :title :properties) element)
+   :link ((comp :raw-link :properties first :title :properties) element)
+   :language ((comp :LANGUAGE :drawer) element)
+   :created-at (when (comp :CREATED-AT :drawer) (str/replace
+                                                 (str/replace ((comp :CREATED-AT :drawer) element) #"\[" "")
+                                                 #"\]" ""))
+   :source ((comp :SOURCE :drawer) element)})
+
 (defn get-contents [section]
   (mapv (fn [element]
-          {:title ((comp first :contents first :title :properties) element)
-           :type ((comp first :title :properties) section)
-           :link ((comp :raw-link :properties first :title :properties) element)
-           :language ((comp :LANGUAGE :drawer) element)
-           :created-at (when (comp :CREATED-AT :drawer) (str/replace
-                                                         (str/replace ((comp :CREATED-AT :drawer) element) #"\[" "")
-                                                         #"\]" ""))
-           :source ((comp :SOURCE :drawer) element)}) (:contents section)))
+          (assoc (parse-content element) :type ((comp first :title :properties) section)))
+        (:contents section)))
 
 (def content
   (->> content-json
