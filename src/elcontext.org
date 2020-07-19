@@ -3,11 +3,6 @@
 
 #+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
 
-* 
-  :PROPERTIES:
-  :ID:       6F43E7EA-2406-4F3E-A862-FF0AE80AADEA
-  :PUBDATE:  <2020-06-26 Fri 07:51>
-  :END:
 I have just finished my first elisp package [[https://github.com/rollacaster/elcontext][elcontext]]. It introduces context based actions for Emacs.
 
 #+ATTR_HTML: :alt The elcontext logo

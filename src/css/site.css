@@ -38,9 +38,12 @@ body {
     'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
     sans-serif;
   min-height: 100%;
+  max-width: 42rem;
+  margin: auto;
 }
 
 h3 {
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
@@ -60,23 +63,13 @@ h3 {
   letter-spacing: 0.1em;
 }
 
-section {
-  padding: 0rem 2rem;
-  max-width: 42rem;
-  margin: auto;
-}
-
-.outline-2 {
-  padding-bottom: 4rem;
-  color: #111;
-}
-
-.outline-2 > h2 {
+h2 {
+  font-size: 1.25rem;
   margin-bottom: 1rem;
 }
 
-.org-ul {
-  margin-top: 0.5rem;
+ul {
+  padding-left: 1rem;
 }
 
 .org-ul > li {
@@ -128,14 +121,9 @@ footer a {
   margin: 0 0.5rem;
 }
 
-header {
-  max-width: 42rem;
-  padding: 0rem 2rem;
-  margin: auto;
-}
-
 .title {
-  font-size: 1.5em;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
   text-align: left;
 }
 

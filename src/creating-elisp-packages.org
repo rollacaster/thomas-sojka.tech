@@ -3,11 +3,7 @@
 
 #+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
 #+OPTIONS: html-style:t html-scripts:t
-* 
-  :PROPERTIES:
-  :ID:       8A16E3E1-5982-475E-9809-B00788641DFB
-  :PUBDATE:  <2020-06-26 Fri 07:51>
-  :END:
+
 #+ATTR_HTML: :alt An addition of the Emacs Logo and the Melpa Logo results in a package
 [[file:intro.png]]
 
