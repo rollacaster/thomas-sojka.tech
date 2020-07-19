@@ -1,16 +1,8 @@
 #+TITLE: Learning Clojure
 #+DATE: <2018-08-13>
-#+AUTHOR: Thomas Sojka
-#+EMAIL: contact@thomas-sojka.tech
 
-#+OPTIONS: author:nil date:nil num:nil timestamp:nil
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
 
-#+OPTIONS: html-postamble:t html-scripts:nil html-style:nil html5-fancy:t
-#+HTML_DOCTYPE: html5
-#+HTML_CONTAINER: section
-#+DESCRIPTION: data visualizations | frontend development | functional programming
-#+KEYWORDS: programming emacs clojure javascript blog tech
-#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/>
 * 
   :PROPERTIES:
   :ID:       39BDAD6D-7E06-4FED-86F8-6F07A971E763
