@@ -1,0 +1,46 @@
+#+TITLE: 6 Tips to finish your Side Project
+#+DATE: <2018-08-13>
+
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+
+I fail to finish about 60% of my side projects but recently I finished six projects in a row. This article explains how I did this.
+
+In the last five years I started 41 side projects and only finished 17. To me, finishing a side project means that I successfully executed my idea and after that I published it  by writing a blog about it or if I built something for another person and I send it to this person.
+
+As you can see in the chart below lately my success rate peaked, so I reflected about recent changes how I approached my side projects.
+
+#+BEGIN_EXPORT html
+<picture>
+  <source media="(max-width: 799px)" srcset="images/side-projects.svg">
+  <source media="(min-width: 800px)" srcset="images/side-projects-lg.svg">
+  <img src="images/side-projects.png" alt="Chart displaying all my succeeded/failed side projects">
+</picture>
+#+END_EXPORT
+
+I identified 6 tips which could help you too. Of course, these tips are representing my journey and not all of them will work you. Try to pick one or two and test for yourself whether they can help you.
+** Tips
+*** Stop when it's fun
+Here's something that happens regularly to me: I finish a challenging task and I am so excited about it that I tackle the next one immediately. I avoid this now because what usually happens is that I fail to finish the next task. I guess it happens because I didn't notice being exhausted after finishing the challenging task. Then, after I failed the next task I have to stop working being frustrated which makes it harder to get back to it.
+
+Instead, now I stop working after successfully finishing a task. This way I stop with a good feeling and I am curious to start the next task which makes it easy to continue with the project.
+*** Prototype early & often
+After you finished your first task you should immediately think about publishing it, even if it's just a 'Hello World'. Start to build a minimal Deployment Pipeline which allows you to share the current state of your project. Even if your project looks boring in the beginning take some screenshots so that you continuously see your progress.
+
+If your side project is an application hosted on the web, https://vercel.com is a great way to setup your deployment pipeline within a few  minutes.
+*** Plan 2-4 steps ahead
+Deciding completely independent what to do next is my greatest joy when working on a side project. But with great power comes great responsibility. It happened quite often that I lost focus of my overall goal. I spend too much time with details without any major progress. This usually results in an unfinished side project.
+
+To avoid this I always maintain a list with 2-4 next steps. Each step is so small that it takes about half an hour. Planning not too far ahead helps to balance between spontaneously adjusting your project to new ideas while focusing on your main goal.
+*** Track your time
+I started to track the time of each task I do. This helps me to notice when I am stuck and allows me to change my plan. For instance, if I notice I tried to solve a task for more than 30 minutes without any progress, it's worth thinking about other approaches. In addition, it's really interesting to know how much time you spent with your side project and you continuously get better at estimating how much time you need to realize new ideas. For instance writing this blog including the creation of the data visualisation above took me about 7 hours.
+
+I am using [[https://orgmode.org/manual/Clocking-Work-Time.html][Org Mode's Clocking Feature]] to track my time but I am sure there are plenty of tools which can help you to track your time which are not dependent on a certain editor. Unfortunately I do not know any other tools.
+*** Do multiple side projects at once
+I am sure this tip does not work for everyone but it helped me a lot. I usually have 2-4 side projects at once and I work on 1-2 of them each day for about half an hour. I am sure there are people who need to focus on one topic to be productive. For me, if I try to work on the same thing each day it gets boring. It's probably best to find your own way by trying different approaches.
+*** Take your time
+Even if you follow all of the tips and read through many other great resources about this topic there is nothing more valuable than gathering your own experiences. It took me five years and 41 projects until I found a workflow which seems to work for me. Hopefully my tips can help you reach this goal quicker than I did.
+
+If you have any other tips which help to finish a side project please reach out: https://mobile.twitter.com/rollacaster
+
+
+

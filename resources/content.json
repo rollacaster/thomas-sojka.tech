@@ -16,7 +16,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org0134e0f",
+"ref": "org918c0b7",
 "drawer": {
 
 },
@@ -42,7 +42,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org0fe54d1",
+"ref": "org3299d71",
 "drawer": {
 
 },
@@ -68,7 +68,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgdab7592",
+"ref": "orga42d93a",
 "drawer": {
 "CREATED-AT": "[2019-06-13]",
 "SOURCE": "youtube",
@@ -92,7 +92,7 @@
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgcc2712a",
+"ref": "orgdf695b4",
 "properties": {
 "type": "https",
 "path": "//youtu.be/Zj-L2bGAGS8?t=1256",
@@ -115,7 +115,7 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org8bbd43e",
+"ref": "org6186423",
 "properties": {
 "post-blank": 0,
 "post-affiliated": 1926
@@ -127,7 +127,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgf10090c",
+"ref": "orgbf09120",
 "drawer": {
 "CREATED-AT": "[2018-10-29]",
 "SOURCE": "youtube",
@@ -151,7 +151,7 @@
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org073ee67",
+"ref": "org8dbc22b",
 "properties": {
 "type": "https",
 "path": "//www.youtube.com/watch?v=juMLwOTxnvw",
@@ -174,7 +174,7 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgb165b0b",
+"ref": "org210f2fd",
 "properties": {
 "post-blank": 0,
 "post-affiliated": 2112
@@ -186,7 +186,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgda387e6",
+"ref": "org2938691",
 "drawer": {
 "CREATED-AT": "[2017-10-26]",
 "SOURCE": "youtube",
@@ -210,7 +210,7 @@
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgdb4bc7b",
+"ref": "orge3365c3",
 "properties": {
 "type": "https",
 "path": "//www.youtube.com/watch?v=ae_3svi5Eg0",
@@ -233,7 +233,7 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org828842c",
+"ref": "org5de7a81",
 "properties": {
 "post-blank": 0,
 "post-affiliated": 2319
@@ -247,7 +247,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org5b374e2",
+"ref": "org4f3eeed",
 "drawer": {
 
 },
@@ -273,7 +273,65 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgb929955",
+"ref": "orgdb46068",
+"drawer": {
+"CREATED-AT": "[2020-07-20]",
+"LANGUAGE": "en"
+},
+"properties": {
+"tags-all": [],
+"raw-value": "[[/6-tips-to-finish-your-side-project.html][6 Tips to finish your Side Project]]",
+"pre-blank": 0,
+"level": 5,
+"priority": null,
+"tags": [],
+"todo-keyword": null,
+"todo-type": null,
+"post-blank": 0,
+"footnote-section-p": false,
+"archivedp": false,
+"commentedp": false,
+"post-affiliated": 2438,
+"title": [
+{
+"$$data_type": "org-node",
+"type": "link",
+"ref": "org3dbde89",
+"properties": {
+"type": "file",
+"path": "/6-tips-to-finish-your-side-project.html",
+"format": "bracket",
+"raw-link": "/6-tips-to-finish-your-side-project.html",
+"application": null,
+"search-option": null,
+"post-blank": 0,
+"is-internal": false,
+"target-ref": null,
+"is-inline-image": false
+},
+"contents": [
+"6 Tips to finish your Side Project"
+]
+}
+]
+},
+"contents": [
+{
+"$$data_type": "org-node",
+"type": "section",
+"ref": "orgff1631a",
+"properties": {
+"post-blank": 0,
+"post-affiliated": 2525
+},
+"contents": []
+}
+]
+},
+{
+"$$data_type": "org-node",
+"type": "headline",
+"ref": "orgdb7c3c4",
 "drawer": {
 "CREATED-AT": "[2020-07-03]",
 "SOURCE": "medium",
@@ -292,12 +350,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2438,
+"post-affiliated": 2608,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org41ffaf2",
+"ref": "org8e14283",
 "properties": {
 "type": "https",
 "path": "//medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0",
@@ -320,10 +378,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgad627a8",
+"ref": "org8e12cd2",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 2607
+"post-affiliated": 2777
 },
 "contents": []
 }
@@ -332,7 +390,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgdcdbe7f",
+"ref": "org27c44ad",
 "drawer": {
 "CREATED-AT": "[2020-05-12]",
 "SOURCE": "medium",
@@ -351,12 +409,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2714,
+"post-affiliated": 2884,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgc13faa1",
+"ref": "org2bbff0f",
 "properties": {
 "type": "Https",
 "path": "//medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613",
@@ -379,10 +437,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org2a9c0a0",
+"ref": "orgf005bb0",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 2857
+"post-affiliated": 3027
 },
 "contents": []
 }
@@ -391,7 +449,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgc6e697a",
+"ref": "org59187d2",
 "drawer": {
 "CREATED-AT": "[2020-01-24]",
 "SOURCE": "medium",
@@ -410,12 +468,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 2964,
+"post-affiliated": 3134,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orga845ed2",
+"ref": "orga22919c",
 "properties": {
 "type": "https",
 "path": "//medium.com/@rollacaster/bullet-journaling-my-2019-9ef1e67b95a5",
@@ -438,10 +496,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orga85848d",
+"ref": "orgec5c654",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3072
+"post-affiliated": 3242
 },
 "contents": []
 }
@@ -450,7 +508,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org52e6af3",
+"ref": "org3b901e3",
 "drawer": {
 "CREATED-AT": "[2019-01-07]",
 "SOURCE": "comsysto",
@@ -469,12 +527,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3179,
+"post-affiliated": 3349,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org6da7396",
+"ref": "org40f07a0",
 "properties": {
 "type": "https",
 "path": "//comsystoreply.de/blog-post/unsere-turen-sind-jetzt-dauerhaft-geoffnet",
@@ -497,10 +555,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org7ccb2ba",
+"ref": "org47d65aa",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3311
+"post-affiliated": 3481
 },
 "contents": []
 }
@@ -509,7 +567,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org3895601",
+"ref": "orgbbe61a7",
 "drawer": {
 "CREATED-AT": "[2018-08-13]",
 "LANGUAGE": "en"
@@ -527,12 +585,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3420,
+"post-affiliated": 3590,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org1b164ea",
+"ref": "org187e4dd",
 "properties": {
 "type": "file",
 "path": "/learning-clojure.html",
@@ -555,10 +613,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orga8e03c5",
+"ref": "org4ffd431",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3471
+"post-affiliated": 3641
 },
 "contents": []
 }
@@ -567,7 +625,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org78f4185",
+"ref": "org053dd16",
 "drawer": {
 "CREATED-AT": "[2018-02-11]",
 "LANGUAGE": "en"
@@ -585,12 +643,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3554,
+"post-affiliated": 3724,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgbbb8c10",
+"ref": "orgbd59ad1",
 "properties": {
 "type": "file",
 "path": "/creating-elisp-packages.html",
@@ -613,10 +671,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org834545d",
+"ref": "org86175ea",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3619
+"post-affiliated": 3789
 },
 "contents": []
 }
@@ -625,7 +683,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgd9854cb",
+"ref": "org990338b",
 "drawer": {
 "CREATED-AT": "[2018-02-04]",
 "LANGUAGE": "en"
@@ -643,12 +701,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3702,
+"post-affiliated": 3872,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orga0794f4",
+"ref": "org24fb8ed",
 "properties": {
 "type": "fuzzy",
 "path": "elcontext.html",
@@ -671,10 +729,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org33a08bc",
+"ref": "orge267cd7",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3750
+"post-affiliated": 3920
 },
 "contents": []
 }
@@ -683,7 +741,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org5081bb5",
+"ref": "orgb885145",
 "drawer": {
 "CREATED-AT": "[2017-04-11]",
 "SOURCE": "comsysto",
@@ -702,12 +760,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 3833,
+"post-affiliated": 4003,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orgfe89923",
+"ref": "orge53af7b",
 "properties": {
 "type": "https",
 "path": "//comsystoreply.de/blog-post/putting-in-overtime-with-elm",
@@ -730,10 +788,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org7b729c3",
+"ref": "org78478b7",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 3937
+"post-affiliated": 4107
 },
 "contents": []
 }
@@ -742,7 +800,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org5e147cd",
+"ref": "org074b4aa",
 "drawer": {
 "CREATED-AT": "[2016-06-29]",
 "SOURCE": "comsysto",
@@ -761,12 +819,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4046,
+"post-affiliated": 4216,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org17bff70",
+"ref": "orgb05b9cb",
 "properties": {
 "type": "https",
 "path": "//comsystoreply.de/blog-post/cross-stack-javascript-with-react",
@@ -789,10 +847,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org0e9f0ad",
+"ref": "org6bf22b5",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 4160
+"post-affiliated": 4330
 },
 "contents": []
 }
@@ -803,7 +861,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgf16c1c3",
+"ref": "orgfd0c352",
 "drawer": {
 
 },
@@ -820,7 +878,7 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4269,
+"post-affiliated": 4439,
 "title": [
 "Courses"
 ]
@@ -829,7 +887,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgccdd3a2",
+"ref": "org0ef5b3a",
 "drawer": {
 "CREATED-AT": "[2020-05-01]",
 "SOURCE": "youtube",
@@ -848,12 +906,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4282,
+"post-affiliated": 4452,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org62ec669",
+"ref": "org98eea87",
 "properties": {
 "type": "https",
 "path": "//www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa",
@@ -876,10 +934,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org0998de8",
+"ref": "org3879972",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 4407
+"post-affiliated": 4577
 },
 "contents": []
 }
@@ -890,7 +948,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org184e28c",
+"ref": "orgf9b0372",
 "drawer": {
 
 },
@@ -907,7 +965,7 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4515,
+"post-affiliated": 4685,
 "title": [
 "Projects"
 ]
@@ -916,7 +974,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org47802af",
+"ref": "orge7d72fd",
 "drawer": {
 "CREATED-AT": "[2019-03-03]",
 "LANGUAGE": "en"
@@ -934,12 +992,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4529,
+"post-affiliated": 4699,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "orge366c8f",
+"ref": "orgada4858",
 "properties": {
 "type": "https",
 "path": "//rollacaster.github.io/sketches/",
@@ -962,10 +1020,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org6284ca2",
+"ref": "org1b83b72",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 4589
+"post-affiliated": 4759
 },
 "contents": []
 }
@@ -974,7 +1032,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org3fd378a",
+"ref": "orgc694a92",
 "drawer": {
 "CREATED-AT": "[2018-02-04]",
 "SOURCE": "github",
@@ -993,12 +1051,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4672,
+"post-affiliated": 4842,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org64421db",
+"ref": "org8085cff",
 "properties": {
 "type": "https",
 "path": "//github.com/rollacaster/elcontext",
@@ -1021,10 +1079,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "org02d25e8",
+"ref": "org94dbd23",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 4767
+"post-affiliated": 4937
 },
 "contents": []
 }
@@ -1033,7 +1091,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "orgc92be02",
+"ref": "org9fd8d74",
 "drawer": {
 "CREATED-AT": "[2019-07-01]",
 "LANGUAGE": "en"
@@ -1051,12 +1109,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 4874,
+"post-affiliated": 5044,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org3c57ae5",
+"ref": "org3e80bca",
 "properties": {
 "type": "https",
 "path": "//fire-hands.now.sh/",
@@ -1079,10 +1137,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgc93e4e9",
+"ref": "orgdd42955",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 4923
+"post-affiliated": 5093
 },
 "contents": []
 }
@@ -1091,7 +1149,7 @@
 {
 "$$data_type": "org-node",
 "type": "headline",
-"ref": "org5f9316c",
+"ref": "orgdeb377a",
 "drawer": {
 "CREATED-AT": "[2017-06-18]",
 "SOURCE": "npm",
@@ -1110,12 +1168,12 @@
 "footnote-section-p": false,
 "archivedp": false,
 "commentedp": false,
-"post-affiliated": 5006,
+"post-affiliated": 5176,
 "title": [
 {
 "$$data_type": "org-node",
 "type": "link",
-"ref": "org0bcdad4",
+"ref": "org5a81526",
 "properties": {
 "type": "https",
 "path": "//www.npmjs.com/package/react-animated-donut",
@@ -1138,10 +1196,10 @@
 {
 "$$data_type": "org-node",
 "type": "section",
-"ref": "orgbe85dfd",
+"ref": "orgb5cea74",
 "properties": {
 "post-blank": 0,
-"post-affiliated": 5089
+"post-affiliated": 5259
 },
 "contents": []
 }

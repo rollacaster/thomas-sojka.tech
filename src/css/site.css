@@ -40,6 +40,7 @@ body {
   min-height: 100%;
   max-width: 42rem;
   margin: auto;
+  padding: 0 2rem;
 }
 
 h3 {
