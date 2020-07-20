@@ -46,12 +46,12 @@
 
 
 (defn content-item [{:keys [title type link created-at]}]
-  [:li.mb-6.w-full {:class "lg:w-2/5"}
+  [:li.px-4.mb-6.w-full {:class "md:w-1/2 lg:w-2/5 lg:px-0"}
    [:a.text-white.cursor-pointer {:href link}
     [:div.shadow-2xl.rounded-lg
      [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none
       [:h3.text-xl.text-gray-100 title]]
-     [:div.flex.justify-between.py-2.px-6.bg-gray-200
+     [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
       [:span.text-gray-600 created-at]
       (icon type)]]]])
 
