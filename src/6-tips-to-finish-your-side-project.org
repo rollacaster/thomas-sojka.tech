@@ -1,5 +1,5 @@
 #+TITLE: 6 Tips to finish your Side Project
-#+DATE: <2018-08-13>
+#+DATE: <2020-07-20>
 
 #+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
 
