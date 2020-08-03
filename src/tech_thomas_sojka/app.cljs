@@ -24,8 +24,8 @@
 
 (defn boxes []
   (r/as-element
-   (for [x (range (- 30) 33 3)
-         y (range 14 -18 -3)]
+   (for [x (range (- 30) 33 2.5)
+         y (range 13.5 -18 -2.5)]
      [:> box {:key (str x y) :position #js [x y 0]}])))
 
 (defn app []

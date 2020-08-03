@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rollacaster/thomas-sojka.tech#readme",
   "devDependencies": {
+    "shadow-cljs": "^2.10.19",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },

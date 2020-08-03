@@ -78,8 +78,8 @@
       (zip/right)
       (zip/right)
       (zip/replace new-content)
+      (zip/insert-left [:div#app {:style "width:100vw;height:100vh;position:fixed;left:0;top:0;z-index:-1;"}])
+      (zip/right)
+      (zip/right)
+      (zip/insert-right [:script {:src "js/main.js" :async true}])
       (zip/root))))
-
-
-
-
