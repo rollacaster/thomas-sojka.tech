@@ -27,7 +27,7 @@
          :publishing-function org-html-publish-to-html)
         ("org-static"
          :base-directory "~/projects/thomas-sojka-tech/src"
-          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|svg\\|swf"
           :publishing-directory "~/projects/thomas-sojka-tech/public/"
           :recursive t
           :publishing-function org-publish-attachment)
