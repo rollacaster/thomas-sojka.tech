@@ -6,21 +6,22 @@
             ["react-three-fiber" :as raf]))
 
 (defn box [props]
-  (let [mesh (react/useRef)
-        [hovered set-hover] (react/useState false)
-        [active set-active] (react/useState false)]
-    (raf/useFrame (fn []
+  (let [mesh (react/useRef)]
+    (raf/useFrame (fn [state]
+                    (set! mesh.current.material.opacity (.mapLinear (.-MathUtils three)
+                                                                    (.getElapsedTime (.-clock state))
+                                                                    0 2 0
+                                                                    1))
                     (set! mesh.current.rotation.x (+ mesh.current.rotation.x 0.007))
                     (set! mesh.current.rotation.y (+ mesh.current.rotation.y 0.007))))
     (r/as-element
      [:mesh
-      {:ref mesh :on-click (fn [] (set-active (not active)))
-       :scale (if active [1.5 1.5 1.5] [1 1 1])
-       :position (.-position props)
-       :on-pointer-over (fn [] (set-hover true))
-       :on-pointer-out (fn [] (set-hover false))}
+      {:ref mesh
+       :scale [1 1 1]
+       :position (.-position props)}
       [:boxBufferGeometry {:attach "geometry" :args [1 1 1]}]
-      [:meshStandardMaterial {:attach "material" :color (if hovered "hotpink" "#4a5568")}]])))
+      [:meshStandardMaterial {:attach "material" :color "#4a5568" :opacity 0
+                              :transparent true}]])))
 
 (defn boxes []
   (r/as-element
