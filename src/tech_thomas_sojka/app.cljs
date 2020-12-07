@@ -27,7 +27,8 @@
   (r/as-element
    (for [x (range (- 30) 33 2.5)
          y (range 13.5 -18 -2.5)]
-     [:> box {:key (str x y) :position #js [x y 0]}])))
+     [:<> {:key (str x y)}
+      [:> box {:position #js [x y 0]}]])))
 
 (defn app []
   [:div {:style {:width "100vw" :height "100vh"}}

@@ -50,9 +50,9 @@
    [:a.text-white.cursor-pointer {:href link}
     [:div.shadow-2xl.rounded-lg
      [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none
-      [:h3.text-xl.text-gray-100 title]]
+      [:h2.text-xl.text-gray-100 title]]
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
-      [:span.text-gray-600 created-at]
+      [:span.text-gray-700 created-at]
       (icon type)]]]])
 
 (def new-content
