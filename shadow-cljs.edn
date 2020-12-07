@@ -11,4 +11,8 @@
  {:app {:target :browser
         :output-dir "public/js"
         :asset-path "/js"
-        :modules {:main {:entries [tech-thomas-sojka.app]}}}}}
+        :modules {:main {:entries [tech-thomas-sojka.app]}}
+        :build-hooks
+        [(tech-thomas-sojka.shadow-tailwind.dev-hook/build-dev-css
+          "resources/styles.css"
+          "public/css/styles.css")]}}}

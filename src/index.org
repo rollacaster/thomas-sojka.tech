@@ -3,7 +3,7 @@
 
 #+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
 
-#+HTML_HEAD: <link rel='stylesheet' href='css/site.css' type='text/css'/><link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+#+HTML_HEAD: <link rel='stylesheet' href='css/styles.css' type='text/css'/>
 
 * Talks
   :PROPERTIES:
