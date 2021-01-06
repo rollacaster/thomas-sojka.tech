@@ -1,35 +1,48 @@
 (ns tech-thomas-sojka.core
-  (:require [cheshire.core :as json]
+  (:require [clojure.string :as str]
             [clojure.zip :as zip]
             [hiccup.core :as hiccup]
             [hickory.core :as html]
             [hickory.zip :as hzip]
-            [clojure.string :as str]))
+            [tech.thomas-sojka.org-parser-tree.core :refer [parse-tree]]
+            [tech.thomas-sojka.org-parser-tree.transform :refer [post-transform]]))
 
-(def content-json (:contents (first (:contents (json/parse-string (slurp "resources/content.json") true)))))
+(defn transform-link [{:keys [title] :as headline}]
+    (let [re-org-link #"\[\[(.*)\]\[(.*)\]\]"]
+        (if (str/includes? title "[[")
+          (let [[link description]
+                (drop 1 (re-find (re-matcher re-org-link title)))]
+            (-> headline
+                (assoc :link link)
+                (assoc :title (str/replace title re-org-link description))))
+          headline)))
 
-(defn get-title [section]
-  ((comp first :title :properties) section))
+(defmethod post-transform :head-line [head-line]
+  (transform-link head-line))
 
-(defn parse-content [element]
-  {:title ((comp first :contents first :title :properties) element)
-   :link ((comp :raw-link :properties first :title :properties) element)
-   :language ((comp :LANGUAGE :drawer) element)
-   :created-at (when (comp :CREATED-AT :drawer) (str/replace
-                                                 (str/replace ((comp :CREATED-AT :drawer) element) #"\[" "")
-                                                 #"\]" ""))
-   :source ((comp :SOURCE :drawer) element)})
+(defn date [date-str]
+  (.parse
+   (java.text.SimpleDateFormat. "yyyy-MM-dd")
+   date-str))
 
-(defn get-contents [section]
-  (mapv (fn [element]
-          (assoc (parse-content element) :type ((comp first :title :properties) section)))
-        (:contents section)))
-
+(defn format-date [date]
+  (.format
+   (java.text.SimpleDateFormat. "yyyy-MM-dd")
+   date))
 (def content
-  (->> content-json
-       (map get-contents)
+  (->> (parse-tree (slurp "resources/content.org"))
+       :children
+       first
+       :children
+       reverse
+       (drop 1)
+       (map (fn [type-parent] (map #(assoc % :type (:title type-parent)) (:children type-parent))))
        flatten
-       (sort-by :created-at)
+       (map
+        #(update-in % [:properties :created-at]
+                    (fn [created-at]
+                      (date (str/replace (str/replace created-at  #"\[" "") #"\]" "")))))
+       (sort-by (comp :created-at :properties))
        reverse))
 
 (defn icon [name]
@@ -45,14 +58,15 @@
                 "M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12z")}]])
 
 
-(defn content-item [{:keys [title type link created-at]}]
+(defn content-item [{:keys [title link type]
+                     {:keys [created-at]}:properties}]
   [:li.px-4.mb-6.w-full {:class "md:w-1/2 lg:w-2/5 lg:px-0"}
    [:a.text-white.cursor-pointer {:href link}
     [:div.shadow-2xl.rounded-lg
      [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none
       [:h2.text-xl.text-gray-100 title]]
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
-      [:span.text-gray-700 created-at]
+      [:span.text-gray-700 (format-date created-at)]
       (icon type)]]]])
 
 (def new-content
