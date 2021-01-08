@@ -1,9 +1,11 @@
 (package-initialize)
 (require 'org)
 (require 'ox)
+(require 'ox-html)
 (require 'ox-publish)
+(require 'htmlize)
 
-
+(setq org-export-allow-bind-keywords t)
 (setq org-html-preamble-format
       '(("en"
          "<header>

@@ -74,7 +74,9 @@ h2 {
 }
 
 .org-src-container {
+  background-color: #edf2f7;
   margin-bottom: 2rem;
+  padding: 0.5rem;
 }
 
 ul {
@@ -141,10 +143,6 @@ footer a {
   text-align: center;
 }
 
-code {
-  background-color: #e2e8f0;
-}
-
 blockquote {
   background-color: #edf2f7;
   border-left-width: 3px;
@@ -153,7 +151,7 @@ blockquote {
   padding-left: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 blockquote p {
