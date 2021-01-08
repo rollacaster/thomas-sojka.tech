@@ -45,6 +45,10 @@ body {
 
 h3 {
   font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
   margin-bottom: 0.5rem;
 }
 
@@ -67,6 +71,10 @@ h3 {
 h2 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
+}
+
+.org-src-container {
+  margin-bottom: 2rem;
 }
 
 ul {
@@ -131,4 +139,24 @@ footer a {
 #preamble {
   background-color: #4a5568;
   text-align: center;
+}
+
+code {
+  background-color: #e2e8f0;
+}
+
+blockquote {
+  background-color: #edf2f7;
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: #4a5568;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+blockquote p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
