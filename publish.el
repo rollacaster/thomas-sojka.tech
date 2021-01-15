@@ -33,5 +33,17 @@
           :publishing-directory "~/projects/thomas-sojka-tech/public/"
           :recursive t
           :publishing-function org-publish-attachment)
-         ("website" :components ("org-notes"  "org-static"))))
+        ("rss"
+         :base-directory "~/projects/thomas-sojka-tech/src"
+         :base-extension "org"
+         :html-link-home "https://thomas-sojka.tech/"
+         :html-link-use-abs-url nil
+         :rss-extension "xml"
+         :publishing-directory "~/projects/thomas-sojka-tech/public/"
+         :publishing-function (org-rss-publish-to-rss)
+         :section-numbers nil
+         :exclude ".*"            ;; To exclude all files...
+         :include ("index.org")   ;; ... except index.org.
+         :table-of-contents nil)
+         ("website" :components ("org-notes"  "org-static" "rss"))))
 (org-publish-all t)
