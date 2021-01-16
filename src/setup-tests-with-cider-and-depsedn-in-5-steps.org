@@ -60,7 +60,7 @@
 
 *** .dir-locals.el file
 #+BEGIN_SRC clojurescript
-((clojure-mode . ((cider-clojure-cli-global-options . "-A:test"))))
+((clojure-mode . ((cider-clojure-cli-global-options . "-M:test"))))
 #+END_SRC
 ** 5. Run tests
 =C-c C-t l= or =M-x cider-test-run-loaded-tests=
@@ -135,7 +135,7 @@ During development we want to make sure that our tests are available so we want 
 This file will set the =cider-clojure-cli-global-options= variable whenever =clojure-mode= is active:
 *** .dir-locals.el file
 #+BEGIN_SRC emacs-lisp
-((clojure-mode . ((cider-clojure-cli-global-options . "-A:test"))))
+((clojure-mode . ((cider-clojure-cli-global-options . "-M:test"))))
 #+END_SRC
 
 #+BEGIN_QUOTE
