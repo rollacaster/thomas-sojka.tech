@@ -6,33 +6,31 @@
 ** 1. Setup  project structure
 *** File structure
  #+BEGIN_SRC sh
- .
- ├── deps.edn
- └── src
-     └── main
-         └── your_group
-             └── your_project
-                 └── core.clj
+   .
+   ├── deps.edn
+   └── src
+       └── your_group
+           └── your_project
+               └── core.clj
  #+END_SRC
 *** deps.edn file
 #+BEGIN_SRC clojurescript
  {:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
-  :paths ["src/main" "resources"]}
+  :paths ["src" "resources"]}
  #+END_SRC
 ** 2. Write test
 *** File structure
 #+BEGIN_SRC sh
-.
-├── deps.edn
-└── src
-    ├── main
-    │   └── your_group
-    │       └── your_project
-    │           └── core.clj
-    └── test
-        └── your_group
-            └── your_project
-                └── core_test.clj <-- added
+  .
+  ├── deps.edn
+  ├── src
+  │   └── your_group
+  │       └── your_project
+  │           └── core.clj
+  └── test
+      └── your_group
+          └── your_project
+              └── core_test.clj
 #+END_SRC
 *** Test file
 #+BEGIN_SRC clojure
@@ -46,8 +44,8 @@
 *** deps.end file
 #+BEGIN_SRC clojurescript
   {:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
-   :paths ["src/main" "resources"]
-   :aliases {:test {:extra-paths ["src/test"]}}} ;; <- test alias
+   :paths ["src" "resources"]
+   :aliases {:test {:extra-paths ["test"]}}} ;; <- test alias
 #+END_SRC
 ** 4. Add dir local variable for jack-in
 *** File structure
@@ -75,34 +73,32 @@ One thing I like about [[https://clojure.org/guides/deps_and_cli][deps.edn]] is 
 #+END_QUOTE
 *** File structure
 #+BEGIN_SRC sh
-.
-├── deps.edn
-└── src
-    └── main
-        └── your_group
-            └── your_project
-                └── core.clj
+  .
+  ├── deps.edn
+  └── src
+      └── your_group
+          └── your_project
+              └── core.clj
 #+END_SRC
 *** deps.edn file
 #+BEGIN_SRC clojurescript
 {:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
- :paths ["src/main" "resources"]}
+ :paths ["src" "resources"]}
 #+END_SRC
 ** 2. Write tests
 To add a new test, create your test folders and test file according to this structure:
 *** File structure
 #+BEGIN_SRC sh
-.
-├── deps.edn
-└── src
-    ├── main
-    │   └── your_group
-    │       └── your_project
-    │           └── core.clj
-    └── test
-        └── your_group
-            └── your_project
-                └── core_test.clj <-- added
+  .
+  ├── deps.edn
+  ├── src
+  │   └── your_group
+  │       └── your_project
+  │           └── core.clj
+  └── test
+      └── your_group
+          └── your_project
+              └── core_test.clj
 #+END_SRC
 This follows the advice from [[https://guide.clojure.style/#testing][The Clojure Style Guide - Testing]] to have a separate =test= directory.
 *** Test file
@@ -118,12 +114,12 @@ This follows the advice from [[https://guide.clojure.style/#testing][The Clojure
 *** deps.edn file
 #+BEGIN_SRC clojurescript
     {:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
-     :paths ["src/main" "resources"]
-     :aliases {:test {:extra-paths ["src/test"]}}} ;; <- test alias
+     :paths ["src" "resources"]
+     :aliases {:test {:extra-paths ["test"]}}} ;; <- test alias
 #+END_SRC
-This adds an alias to your project. An alias is a shortcut to adjust your [[https://clojure.org/guides/deps_and_cli][deps.edn]] file. In this example we add =extra-paths= to our =classpath=. Since we add =extra-paths= for our tests we can exclude them from deployments. There is nothing special about the added path =src/test=, it is just a folder we want to be able to condtionally add or remove from our =classpath=.
+This adds an alias to your project. An alias is a shortcut to adjust your [[https://clojure.org/guides/deps_and_cli][deps.edn]] file. In this example we add =extra-paths= to our =classpath=. Since we add =extra-paths= for our tests we can exclude them from deployments. There is nothing special about the added path =test=, it is just a folder we want to be able to condtionally add or remove from our =classpath=.
 ** 4. Add dir local variable for jack-in
-During development we want to make sure that our tests are available so we want to use our alias to include the =src/test= directory. When using [[https://cider.mx][Cider]] you typically run a project with =cider-jack-in=. It is possible to add a default alias for all calls to =cider-jack-in= by setting =cider-clojure-cli-global-options=. You probably want to have different settings per project and you can use [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html][Directory Local Variables]] to achieve that. You create a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html][Directory Local Variable]] by creating a =.dir-locals.el= file in your project root.
+During development we want to make sure that our tests are available so we want to use our alias to include the =test= directory. When using [[https://cider.mx][Cider]] you typically run a project with =cider-jack-in=. It is possible to add a default alias for all calls to =cider-jack-in= by setting =cider-clojure-cli-global-options=. You probably want to have different settings per project and you can use [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html][Directory Local Variables]] to achieve that. You create a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html][Directory Local Variable]] by creating a =.dir-locals.el= file in your project root.
 *** File structure
 #+BEGIN_SRC sh
 .
