@@ -54,7 +54,7 @@
 
 (defn content-item [{:keys [title]
                      {:keys [PUBDATE TYPE RSS_PERMALINK]}:properties}]
-  [:li.px-4.mb-6.w-full {:class "md:w-1/2 lg:w-2/5 lg:px-0"}
+  [:li.px-4.mb-6.w-full.shadow-lg.rounded-lg.h-full {:class "md:w-1/2 lg:w-2/5 lg:px-0"}
    [:a.text-white.cursor-pointer {:href RSS_PERMALINK}
     [:div.shadow-2xl.rounded-lg
      [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none
