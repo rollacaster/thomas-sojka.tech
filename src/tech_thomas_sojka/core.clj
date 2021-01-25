@@ -69,6 +69,18 @@
     [:ul.flex.flex-wrap.justify-between
      (map content-item content)]]])
 
+(defn replace-content [loc]
+  (let[[_ {:keys [id]}](zip/node loc)]
+    (if (= id "app")
+      (-> loc
+          zip/right
+          (zip/replace new-content))
+      (-> loc
+          (zip/replace new-content)
+          (zip/insert-left [:div#app {:style "width:100vw;height:100vh;position:fixed;left:0;top:0;z-index:-1;"}])
+          (zip/right)
+          (zip/right)
+          (zip/insert-right [:script {:src "js/main.js" :async true}])))))
 (spit
  "public/index.html"
  (hiccup/html
@@ -85,9 +97,6 @@
       (zip/right)
       (zip/right)
       (zip/right)
-      (zip/replace new-content)
-      (zip/insert-left [:div#app {:style "width:100vw;height:100vh;position:fixed;left:0;top:0;z-index:-1;"}])
-      (zip/right)
-      (zip/right)
-      (zip/insert-right [:script {:src "js/main.js" :async true}])
+      replace-content
       (zip/root))))
+
