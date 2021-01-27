@@ -8,14 +8,14 @@
             [tech.thomas-sojka.org-parser-tree.transform :refer [post-transform]]))
 
 (defn transform-link [{:keys [title] :as headline}]
-    (let [re-org-link #"\[\[(.*)\]\[(.*)\]\]"]
-        (if (str/includes? title "[[")
-          (let [[link description]
-                (drop 1 (re-find (re-matcher re-org-link title)))]
-            (-> headline
-                (assoc :link link)
-                (assoc :title (str/replace title re-org-link description))))
-          headline)))
+  (let [re-org-link #"\[\[(.*)\]\[(.*)\]\]"]
+    (if (str/includes? title "[[")
+      (let [[link description]
+            (drop 1 (re-find (re-matcher re-org-link title)))]
+        (-> headline
+            (assoc :link link)
+            (assoc :title (str/replace title re-org-link description))))
+      headline)))
 
 (defmethod post-transform :head-line [head-line]
   (transform-link head-line))
@@ -81,13 +81,19 @@
           (zip/right)
           (zip/right)
           (zip/insert-right [:script {:src "js/main.js" :async true}])))))
-(spit
- "public/index.html"
- (hiccup/html
-  (-> (hzip/hiccup-zip
-       (html/as-hiccup
-        (html/parse
-         (slurp "public/index.html"))))
+
+(defn header [active]
+  [:header
+   [:h1.head [:a {:href "/"} "Thomas Sojka"]]
+   [:nav
+    [:ul
+     [:li {:class (when (= active "Home") "bg-gray-700")}
+      [:a {:href "/"} "Home"]]
+     [:li {:class (when (= active "About") "bg-gray-700")}
+      [:a.text-white.border-0 {:href "/about.html"} "About"]]]]])
+
+(defn hiccup-content [loc]
+  (-> loc
       (zip/next)
       (zip/next)
       (zip/next)
@@ -97,6 +103,34 @@
       (zip/right)
       (zip/right)
       (zip/right)
-      replace-content
-      (zip/root))))
+      replace-content))
 
+(defn overwrite-html [file replacement]
+  (spit
+   file
+   (hiccup/html
+    (let [zipper (-> file
+                     slurp
+                     html/parse
+                     html/as-hiccup
+                     hzip/hiccup-zip)]
+      (-> zipper
+          replacement
+          (zip/root))))))
+
+(defn hiccup-header [active loc]
+  (-> loc
+      (zip/next)
+      (zip/next)
+      (zip/next)
+      (zip/right)
+      (zip/right)
+      (zip/down)
+      (zip/right)
+      zip/down
+      zip/right
+      (zip/replace (header active))))
+
+(overwrite-html "public/index.html" hiccup-content)
+(overwrite-html "public/index.html" (partial hiccup-header "Home"))
+(overwrite-html "public/about.html" (partial hiccup-header "About"))

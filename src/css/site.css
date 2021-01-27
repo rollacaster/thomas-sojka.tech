@@ -29,7 +29,9 @@ html {
 }
 
 body {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #f7fafc;
 }
 
@@ -37,10 +39,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
     'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
     sans-serif;
-  min-height: 100%;
   max-width: 42rem;
   margin: auto;
-  padding: 0 2rem;
+  padding: 3rem 2rem;
+  flex: 1;
 }
 
 h3 {
@@ -52,6 +54,36 @@ h4 {
   margin-bottom: 0.5rem;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 56rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+nav > ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+nav > ul > li {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+nav > ul > li > a {
+  color: white;
+  border-width: 0;
+}
+
 .head a {
   color: white;
   text-decoration: none;
@@ -61,7 +93,6 @@ h4 {
 
 .head {
   color: white;
-  margin-bottom: 3rem;
   padding: 1rem 0rem;
   font-size: 1.125rem;
   text-transform: uppercase;
@@ -157,4 +188,22 @@ blockquote {
 blockquote p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .md\:block {
+    display: block;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+}
+
+.bg-gray-700 {
+  background-color: rgba(55, 65, 81, 1);
 }
