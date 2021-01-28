@@ -1,6 +1,6 @@
 #+TITLE: Thomas Sojka
 #+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
-
+#+OPTIONS: title:nil
 
 #+BEGIN_EXPORT html
 <figure id="org32f227f" style="margin-top:1em;margin-bottom:0;">
