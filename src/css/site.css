@@ -61,8 +61,6 @@ header {
   max-width: 56rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 nav > ul {
@@ -169,9 +167,16 @@ footer a {
   text-align: left;
 }
 
+pre {
+  overflow-x: auto;
+  max-width: 77vw;
+}
+
 #preamble {
   background-color: #4a5568;
   text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 blockquote {
