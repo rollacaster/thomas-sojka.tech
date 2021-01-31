@@ -58,7 +58,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 56rem;
+  max-width: 42rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -67,6 +67,7 @@ nav > ul {
   display: flex;
   list-style: none;
   margin: 0;
+  transform: translateX(1.25rem);
 }
 
 nav > ul > li {

@@ -9,7 +9,19 @@
 (setq org-html-preamble-format
       '(("en"
          "<header>
-            <h1 class=\"head\"><a href=\"/\">Thomas Sojka</a></h1>
+            <h1 class=\"head\">
+              <a href=\"/\">Thomas Sojka</a>
+            </h1>
+            <nav>
+              <ul>
+                <li>
+                  <a href=\"/\">Home</a>
+               </li>
+               <li>
+                  <a class=\"text-white border-0\" href=\"/about.html\">About</a>
+               </li>
+              </ul>
+            </nav>
           </header>")))
 (setq org-html-postamble-format
       '(("en"
