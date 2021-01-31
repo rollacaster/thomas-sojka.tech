@@ -5,6 +5,15 @@
 
 #+HTML_HEAD: <link rel='stylesheet' href='css/styles.css' type='text/css'/>
 
+* How to grow a tree with clojure.zip :CLOJURE:
+:PROPERTIES:
+:TYPE: Blog
+:RSS_PERMALINK: how-to-grow-a-tree.html
+:language: en
+:PUBDATE: [2021-02-01]
+:ID:       46F2C253-8027-4F02-AD5F-9ACE38087CF8
+:END:
+Need to build a Clojure tree data structure from an org file by using the clojure.zip API? This post explains how.
 * Setup tests with Cider & deps.edn in 5 steps :CLOJURE:
 :PROPERTIES:
 :TYPE: Blog
