@@ -20,6 +20,6 @@ You can find me on [[https://twitter.com/rollacaster][Twitter]], [[https://githu
 
 #+BEGIN_EXPORT html
 <figure id="org32f227f">
-  <a href="images/me.png" class="md:hidden" alt="Picture of Thomas Sojka"><img src="images/me.png" alt="Picture of Thomas Sojka" style="margin-top:3rem"></a>
+  <a href="images/me.png" class="md:hidden" alt="Picture of Thomas Sojka"><img src="images/me.png" alt="Picture of Thomas Sojka" style="margin-top:3rem;border-radius: 0.25rem;"></a>
 </figure>
 #+END_EXPORT
