@@ -117,7 +117,7 @@ So setup a feedback loop and iterate, eventually you will come up with something
      :level (count stars)})
 #+END_SRC
 *** Place the parsed line in the tree
-As already mentioned, I won't explain the [[https://clojure.github.io/clojure/clojure.zip-api.html][clojure.zip]] API in detail, since [[file:20201221191522-the_art_of_tree_shaping_with_clojure_zippers.org][The Art of Tree Shaping]] is already a really great introduction.
+As already mentioned, I won't explain the [[https://clojure.github.io/clojure/clojure.zip-api.html][clojure.zip]] API in detail, since [[https://lambdaisland.com/blog/2018-11-26-art-tree-shaping-clojure-zip][The Art of Tree Shaping]] is already a really great introduction.
 
 So let's place one parsed line in the zipper. I bet you know what's happening next... source data structures:
 
