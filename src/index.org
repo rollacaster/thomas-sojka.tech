@@ -5,6 +5,15 @@
 
 #+HTML_HEAD: <link rel='stylesheet' href='css/styles.css' type='text/css'/>
 
+* 100 Days of Spaced Repetition
+:PROPERTIES:
+:TYPE: Blog
+:RSS_PERMALINK: 100-days-of-spaced-repetition.html
+:language: en
+:PUBDATE: [2021-02-22]
+:ID:       F42708B6-BDBD-4957-82C4-B76A2F64F027
+:END:
+100 days ago I was introduced to Spaced Repetition, a learning method scientifically proven to work. The basic idea is to learn facts and repeat them at increasing intervals. After several iterations, you remember the fact forever.
 * How to grow a tree with clojure.zip :CLOJURE:
 :PROPERTIES:
 :TYPE: Blog
