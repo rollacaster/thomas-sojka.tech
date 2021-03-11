@@ -3,30 +3,31 @@
             [react]
             [reagent.core :as r]
             [reagent.dom :as dom]
-            ["react-three-fiber" :as raf]))
-
+            ["react-three-fiber" :as raf]
+            ["three/examples/jsm/loaders/GLTFLoader" :as gltf-loader]))
+(defonce donut (r/atom nil))
+(.load (new (.-GLTFLoader gltf-loader))
+       "/models/donut.glb"
+       (fn [donut-gltf] (reset! donut donut-gltf))
+       nil
+       prn)
 (defn box [props]
   (let [mesh (react/useRef)]
-    (raf/useFrame (fn [state]
-                    (set! mesh.current.material.opacity (.mapLinear (.-MathUtils three)
-                                                                    (.getElapsedTime (.-clock state))
-                                                                    0 2 0
-                                                                    1))
+    (raf/useFrame (fn []
                     (set! mesh.current.rotation.x (+ mesh.current.rotation.x 0.007))
                     (set! mesh.current.rotation.y (+ mesh.current.rotation.y 0.007))))
-    (r/as-element
-     [:mesh
-      {:ref mesh
-       :scale [1 1 1]
-       :position (.-position props)}
-      [:boxBufferGeometry {:attach "geometry" :args [1 1 1]}]
-      [:meshStandardMaterial {:attach "material" :color "#4a5568" :opacity 0
-                              :transparent true}]])))
+    (when @donut
+      (r/as-element
+       [:primitive
+        {:ref mesh
+         :object (.clone (.-scene @donut) true)
+         :scale [20 20 20]
+         :position (.-position props)}]))))
 
 (defn boxes []
   (r/as-element
-   (for [x (range (- 30) 33 2.5)
-         y (range 13.5 -18 -2.5)]
+   (for [x (range (- 30) 33 5)
+         y (range 13.5 -18 -4)]
      [:<> {:key (str x y)}
       [:> box {:position #js [x y 0]}]])))
 
