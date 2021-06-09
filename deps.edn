@@ -1,4 +1,4 @@
-{:deps {rollacaster/org-parser-tree {:git/url "https://github.com/rollacaster/org-parser-tree" :sha "18a1f999a6c98f39d4650f90e1dc81e47faac186"}
+{:deps {rollacaster/org-parser-tree {:git/url "https://github.com/rollacaster/org-parser-tree" :sha "03d2f40b8e79f90661a700d53eb5920eed85d7e4"}
         cheshire {:mvn/version "5.10.0"}
         org.clojure/clojure {:mvn/version "1.10.1"}
         org.clojure/clojurescript {:mvn/version "1.10.773"}

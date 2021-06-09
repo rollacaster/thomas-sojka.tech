@@ -1,0 +1,12 @@
+#+TITLE: Now
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+#+OPTIONS: title:nil
+
+* Charging Station DataViz
+I'm building a live 3D data visualization of charging stations in Norway. Every morning I wait for a Norwegian to plug in his electric car so that a little lightning appears on my screen.
+* 3D Programming/Modeling
+After 2 failed attempts I managed to get into Blender I followed some long tutorials and finally feel productive with it. Besides I'm doing some work with Three.js and currently I'm trying to create a 3D scrollytelling data viz using my models.
+* Generative art
+For my 30th birthday, I got an Axidraw, which I am using to stick little pieces of art all over my office. I have completed 5 so far and hope to fill the entire wall.
+* Reading!
+At the end of last year I started to read Structure and interpretation of computer programs and try to solve each exercise for 30 minutes, I make slow progress, but progress.

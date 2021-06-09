@@ -90,7 +90,9 @@
      [:li {:class (when (= active "Home") "bg-gray-700")}
       [:a {:href "/"} "Home"]]
      [:li {:class (when (= active "About") "bg-gray-700")}
-      [:a.text-white.border-0 {:href "/about.html"} "About"]]]]])
+      [:a.text-white.border-0 {:href "/about.html"} "About"]]
+     [:li {:class (when (= active "Now") "bg-gray-700")}
+      [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]])
 
 (defn hiccup-content [loc]
   (-> loc
@@ -134,3 +136,4 @@
 (overwrite-html "public/index.html" hiccup-content)
 (overwrite-html "public/index.html" (partial hiccup-header "Home"))
 (overwrite-html "public/about.html" (partial hiccup-header "About"))
+(overwrite-html "public/now.html" (partial hiccup-header "Now"))
