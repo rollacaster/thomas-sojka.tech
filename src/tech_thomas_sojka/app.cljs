@@ -8,14 +8,13 @@
 (defonce donut (r/atom nil))
 (.load (new (.-GLTFLoader gltf-loader))
        "/models/donut.glb"
-       (fn [donut-gltf] (reset! donut donut-gltf))
-       nil
-       prn)
+       (fn [donut-gltf] (reset! donut donut-gltf)))
 (defn box [props]
   (let [mesh (react/useRef)]
     (raf/useFrame (fn []
-                    (set! mesh.current.rotation.x (+ mesh.current.rotation.x 0.007))
-                    (set! mesh.current.rotation.y (+ mesh.current.rotation.y 0.007))))
+                    (when (.-current mesh)
+                      (set! ^js mesh.current.rotation.x (+ ^js mesh.current.rotation.x 0.007))
+                      (set! ^js mesh.current.rotation.y (+ ^js mesh.current.rotation.y 0.007)))))
     (when @donut
       (r/as-element
        [:primitive
