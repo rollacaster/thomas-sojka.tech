@@ -5,6 +5,15 @@
 
 #+HTML_HEAD: <link rel='stylesheet' href='css/styles.css' type='text/css'/>
 
+* Electried North                                                  :noexport:
+:PROPERTIES:
+:TYPE: Blog
+:RSS_PERMALINK: https://medium.com/@vizards.comsysto/853b2c2ffdb7?source=friends_link&sk=d1b946af1b14d8c98f549bbb1a97dd59
+:language: en
+:source:   medium
+:PUBDATE: [2021-07-13]
+:END:
+Visualizing Norwegian Charging Stations, Live in 3D. Currently, there are 19438 Charging Stations in Norway and 2568 of them provide Live Data about their current status. These figures make it one of the best charging networks in the world
 * 100 Days of Spaced Repetition
 :PROPERTIES:
 :TYPE: Blog
