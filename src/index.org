@@ -5,6 +5,15 @@
 
 #+HTML_HEAD: <link rel='stylesheet' href='css/styles.css' type='text/css'/>
 
+* Real-life use cases for CLJS macros                               :CLOJURE:
+:PROPERTIES:
+:TYPE: Blog
+:RSS_PERMALINK: real-life-use-cases-for-cljs-macros.html
+:language: en
+:PUBDATE: [2021-10-07]
+:ID:       35D459F5-D3A0-462A-B725-8F5F1D7376C7
+:END:
+When I first learned about macros, I immediately recognized how powerful they are. This realization was quickly followed by not having any idea what to build with them. But now, I start to understand when to reach for this tool.
 * Electried North                                                  :noexport:
 :PROPERTIES:
 :TYPE: Blog
@@ -12,6 +21,7 @@
 :language: en
 :source:   medium
 :PUBDATE: [2021-07-13]
+:ID:       D969A724-E2ED-4D9A-9751-B31C7B3F89AF
 :END:
 Visualizing Norwegian Charging Stations, Live in 3D. Currently, there are 19438 Charging Stations in Norway and 2568 of them provide Live Data about their current status. These figures make it one of the best charging networks in the world
 * 100 Days of Spaced Repetition
