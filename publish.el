@@ -20,6 +20,9 @@
                <li>
                   <a class=\"text-white border-0\" href=\"/about.html\">About</a>
                </li>
+               <li>
+                  <a class=\"text-white border-0\" href=\"/now.html\">Now</a>
+               </li>
               </ul>
             </nav>
           </header>")))
