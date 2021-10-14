@@ -1,5 +1,5 @@
 #+TITLE: Real-life use cases for CLJS macros
-#+DATE: <2021-10-07>
+#+DATE: <2021-10-14>
 
 #+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
 

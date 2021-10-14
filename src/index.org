@@ -10,7 +10,7 @@
 :TYPE: Blog
 :RSS_PERMALINK: real-life-use-cases-for-cljs-macros.html
 :language: en
-:PUBDATE: [2021-10-07]
+:PUBDATE: [2021-10-14]
 :ID:       35D459F5-D3A0-462A-B725-8F5F1D7376C7
 :END:
 When I first learned about macros, I immediately recognized how powerful they are. This realization was quickly followed by not having any idea what to build with them. But now, I start to understand when to reach for this tool.
