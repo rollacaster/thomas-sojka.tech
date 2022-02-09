@@ -3,7 +3,7 @@
  ["src"]
 
  :dependencies
- [[reagent "0.10.0"]]
+ [[reagent "1.1.0"]]
 
  :dev-http {8080 "public/"}
 
