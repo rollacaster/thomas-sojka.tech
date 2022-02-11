@@ -8,3 +8,5 @@
 /.dir-locals.el
 /node_modules/
 /src/css/tailwind.css
+/.clj-kondo/
+/.lsp/
