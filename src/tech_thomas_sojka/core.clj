@@ -54,10 +54,11 @@
 
 (defn content-item [{:keys [title]
                      {:keys [PUBDATE TYPE RSS_PERMALINK]}:properties}]
-  [:li.mx-4.mb-6.w-full.shadow-lg.rounded-lg.h-full {:class "md:w-1/2 lg:w-2/5 lg:px-0"}
-   [:a.text-white.cursor-pointer {:href RSS_PERMALINK}
-    [:div.shadow-2xl.rounded-lg
-     [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none
+  [:li {:class "w-72"}
+   [:a.text-white.cursor-pointer.block.h-full.border-0
+    {:href RSS_PERMALINK}
+    [:div.h-full.flex.flex-col.rounded-lg.border.border-black
+     [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none.flex-1
       [:h2.text-xl.text-gray-100 title]]
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
       [:span.text-gray-700 (format-date PUBDATE)]
@@ -65,8 +66,8 @@
 
 (def new-content
   [:div#content
-   [:section.max-w-4xl
-    [:ul.flex.flex-wrap.justify-between
+   [:section.max-w-5xl
+    [:ul.flex.flex-wrap.justify-center.md:justify-between.gap-8.items-stretch.w-full
      (map content-item content)]]])
 
 (defn replace-content [loc]

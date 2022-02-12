@@ -39,9 +39,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
     'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial,
     sans-serif;
-  max-width: 42rem;
+  max-width: 64rem;
   margin: auto;
-  padding: 3rem 2rem;
+  padding: 5.5rem 2rem;
   flex: 1;
 }
 
@@ -58,9 +58,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 42rem;
+  max-width: 64rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+#preamble header {
+  padding: 0 2rem;
 }
 
 nav > ul {
@@ -174,10 +178,9 @@ pre {
 }
 
 #preamble {
+  width: 100%;
   background-color: #4a5568;
   text-align: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 blockquote {
