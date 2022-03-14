@@ -18,11 +18,12 @@
         link-parts]
     (if (str/includes? (first link-ext) "png")
       [:img {:src (first link-ext) :alt description}]
-      [:a {:href (case link-ext-type
+      (let [link (case link-ext-type
                    :link-ext-file
                    (link-ext-file link-ext)
-                   :link-ext-other (link-ext-others link-ext))}
-       description])))
+                   :link-ext-other (link-ext-others link-ext))]
+        [:a {:href link}
+         (or description link)]))))
 
 (defn text [text-parts]
   (mapv
@@ -97,18 +98,6 @@
                              (if (every? string? (text text-parts))
                                (code (str/join (text text-parts)))
                                (text text-parts))))))
-
-(headline
-[] 
- [[:stars "*"]
-  [:text
-   [:link-format
-    [:link
-     [:link-ext
-      [:link-ext-other
-       [:link-url-scheme "https"]
-       [:link-url-rest "//github.com/rollacaster/setup-tests-with-cider"]]]]
-    [:link-description "The Gist"]]]])
 
 (defn drawer-end-line [hiccup]
   (let [[_ c] (last hiccup)]
