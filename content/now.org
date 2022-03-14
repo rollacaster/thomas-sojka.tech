@@ -1,0 +1,12 @@
+#+TITLE: Now
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+#+OPTIONS: title:nil
+
+* Contributing to Open Source in Clojure
+I started to contribute to [[https://cljdoc.org/][cljdoc]]. I am leveling my Clojure skills by doing so. I am proud of some minor additions I finished and excited for my future contributions.
+* Learning Datomic
+My grocery application [[https://github.com/rollacaster/shopping-cards][shopping-cards]] is turning into a playground to explore new technologies for me. After adding re-frame to the Frontend, I am migrating the data from files to [[https://docs.datomic.com/cloud/dev-local.html][Datomic Local Dev]].
+* Generative art
+For my 30th birthday, I got an Axidraw. I am using it to stick little pieces of art all over my office. I have completed five so far and hope to fill the entire wall.
+* Reading!
+At the end of last year, I started to read Structure and interpretation of computer programs. I try to solve each exercise for 30 minutes. I make slow progress, but progress.

@@ -1,0 +1,182 @@
+#+title: How to grow a tree with clojure.zip
+#+DATE: <2021-01-28 Thu>
+#+bind: org-html-htmlize-output-type css
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+
+This is a post about my journey to build [[https://github.com/rollacaster/org-parser-tree][org-parser-tree]]. As the name suggests, it is a parser that builds a Clojure tree structure from an org file. I would like to share some techniques that helped me creating this parser.
+* The Challenge
+I had two projects which needed a parser for org files.
+
+The first one is my journal, a giant org file where I jot down what I read, who I meet, what I watch and anything else that comes to my mind. Each year I calculate annual statistics, such as how many blogs I read, how many people I met and how often I met them, etc.
+
+The second project is my personal website whose contents are defined in an org file. Each entry in this tree is a category e.g. a blog post, a talk or a course and these entries must be transformed to HTML.
+
+In order to automate the creation of these two projects I needed the parser.
+** Org files
+If you have never seen an org file, here is an example:
+
+#+BEGIN_SRC text
+ * Headline
+ ** Sub Headline
+ *** Sub Sub Headline
+ *** Sub Sub Headline 2
+#+END_SRC
+
+It is very similar to a Markdown file but instead of using =#= to create headers you use =*= and there are a [[https://orgmode.org/][variety of additional features]] for org files.
+* Growing trees without clojure.zip
+I stumbled across the [[https://github.com/200ok-ch/org-parser][org-parser]] project. Currently it converts each line of an org file and returns a flat sequence of Clojure data structure. In the future [[https://github.com/200ok-ch/org-parser][org-parser]] will allow to output a format with structure information of the org file, but this feature is not implemented yet. So I decided to create a quick and dirty version for myself.
+
+My first attempt was to create a recursive function to build up the tree. Although I was already aware about the [[https://clojure.github.io/clojure/clojure.zip-api.html][clojure.zip]] API from this really great talk: [[https://lambdaisland.com/blog/2018-11-26-art-tree-shaping-clojure-zip][The Art of Tree Shaping]], I decided to try it first without zippers because I had never used them before and I wanted to do a quick and dirty version.
+
+#+BEGIN_QUOTE
+*Hint:* Later in this post we'll be using zippers and I am not going to explain that in detail because [[https://lambdaisland.com/blog/2018-11-26-art-tree-shaping-clojure-zip][The Art of Tree Shaping]] is already a great explanation, so I really recommend you watch that talk.
+#+END_QUOTE
+
+I built a working recursive version, but I wasn't really happy with the code. I did some research and found the blog post [[https://vincent.404.taipei/clojure/building-trees-with-and-without-zippers/][Building trees with and without zippers]]. The author of that post had the exact same journey as me and shared his solution, building a tree with recursion and building a tree with zippers. The zipper version looked much nicer, so I decided to follow his advice and I started to use zippers as well. Here is my approach that allowed me to finish this task.
+* How to grow a tree
+** Define minimal source & target data structure
+Defining clear goals for your data transformation tasks helps a lot. For me it looked like this:
+*** Source
+#+BEGIN_SRC clojure
+  (def source "* Headline
+  ,** Sub Headline
+  ,*** Sub Sub Headline
+  ,*** Sub Sub Headline 2")
+#+END_SRC
+*** Target
+#+BEGIN_SRC clojure
+  (def target
+    {:title "Headline"
+     :children [{:title "Sub Headline"
+                 :children [{:title "Sub Sub Headline"}
+                            {:title "Sub Sub Headline2"}]}]})
+#+END_SRC
+During development, my source and target data structure are always visible to help me stay on track.
+** Create a fast feedback loop
+After the plan is set, it helps to know the current progress as well. A fast feedback loop can be achieved easily in Clojure, you can send your current code to your [[https://clojure.org/guides/repl/introduction][REPL]] and inspect the results to get immediate feedback. 
+
+If your results are a big nested data structure, it is difficult to inspect the a textual representation. There are visual tools like [[https://github.com/cognitect-labs/REBL-distro][REBL]] or [[https://github.com/vlaaad/reveal][Reveal]] that can help to visualize any Clojure data structure from your [[https://clojure.org/guides/repl/introduction][REPL]] in various representations. However, instead of using a general purpose tool to visualize my tree, I decided to use [[https://github.com/ztellman/rhizome][Rhizome]] because it fits my use case better. It is a tree visualization library that I set up with my target data structure as following:
+
+#+BEGIN_SRC clojurescript
+  (rhizome/view-tree (comp sequential? :children) :children
+                     target
+                     :node->descriptor (fn [n] {:label (:title n)}))
+#+END_SRC
+
+=view-tree= expects a function that checks if a node has a branch, an accessor for the branch and the actual data structure to be visualized. Additionally, I provided a function for =node->descriptor= so that each node  in my tree has a label. When I send my target data structure to the [[https://clojure.org/guides/repl/introduction][REPL]], a new window opens:
+
+#+ATTR_HTML: :alt A tree with four nodes and three branches
+[[file:images/tree.png][file:~/projects/thomas-sojka-tech/src/images/tree.png]]
+
+Now the feedback loop is ready, whenever I change something in the source data structure I can inspect as text or with [[https://github.com/ztellman/rhizome][Rhizome]].
+
+Setting up a proper feedback loop is a lot of additional work which you don't spend working on your actual problem (in this case, parsing a tree). But I think that this time is really well spent. Using fast feedback loops is my secret ingredient to stay focused, motivated and allows discovering edge cases quickly. I can't prove it, but to me it feels like after half an hour of coding on a problem, a proper feedback loop speeds up the development significantly compared to working on the problem without fast feedback.
+** Create the zipper
+It's time to start with the actual problem: creating a zipper for the tree data structure. The [[https://clojure.github.io/clojure/clojure.zip-api.html][clojure.zip]] API is very similar to [[https://github.com/ztellman/rhizome][Rhizome]], the code to create a zipper looks like this:
+
+#+BEGIN_SRC clojure
+  (zip/zipper (comp sequential? :children)
+              :children
+              (fn [node children] (assoc node :children children))
+              {:title "root" :stars "" :children []})
+#+END_SRC
+
+Again, you need to provide a function to check for a branch and to access the branch. The next parameter is new, it provides a function to create a new node with children. The last parameter is the root node.  
+
+Now I can set up a loop using =reduce= to process the flat sequence of lines from [[https://github.com/200ok-ch/org-parser][org-parser]] of my source data structure:
+#+BEGIN_SRC clojure
+  (reduce
+     process-line
+     (z/zipper (comp sequential? :children)
+               :children
+               (fn [node children] (assoc node :children children))
+               {:title "root" :level 0 :children []})
+     (org-parser/org source))
+#+END_SRC
+
+=process-line= is called for each parsed line of the source data structure with the zipper and the actual line.
+** Iterate & enjoy
+The only thing left is the implementation of =process-line=. This involves three steps:
+*** Transform an [[https://github.com/200ok-ch/org-parser][org-parser]] line to match the target structure
+This is a great opportunity to reuse everything we have learned so far, the source data structure from [[https://github.com/200ok-ch/org-parser][org-parser]] is:
+#+BEGIN_SRC clojure
+[:head-line [:stars "*"] [:title "Headline"]]
+#+END_SRC
+
+and the target:
+
+#+BEGIN_SRC clojure
+{:title "Headline", :level 1}
+#+END_SRC
+
+So setup a feedback loop and iterate, eventually you will come up with something similar to this:
+
+#+BEGIN_SRC clojure
+  (defn transform-line [[_ & [[_ stars] [_ & title] _]]]
+    {:title (str/join " " title)
+     :level (count stars)})
+#+END_SRC
+*** Place the parsed line in the tree
+As already mentioned, I won't explain the [[https://clojure.github.io/clojure/clojure.zip-api.html][clojure.zip]] API in detail, since [[https://lambdaisland.com/blog/2018-11-26-art-tree-shaping-clojure-zip][The Art of Tree Shaping]] is already a really great introduction.
+
+So let's place one parsed line in the zipper. I bet you know what's happening next... source data structures:
+
+#+BEGIN_SRC clojure
+  ;; zipper
+  (z/zipper (comp sequential? :children)
+            :children
+            (fn [node children] (assoc node :children children))
+            {:title "root" :level 0 :children []})
+  ;; one parsed line
+  {:title "Headline", :level 1}
+#+END_SRC
+
+target data structure:
+#+BEGIN_SRC clojure
+  {:title "root",
+   :level 0,
+   :children [{:title "Headline", :level 1, :children []}]}
+#+END_SRC
+
+
+After a few iterations you should get something similar to:
+
+#+BEGIN_SRC clojure
+  (defn place-in-tree [org-tree {:keys [level] :as headline}]
+    (let [previous-level (:level (z/node org-tree))
+          current-level level
+          new-node (merge headline {:children []})]
+      (cond
+        (= previous-level current-level) ;; no new level found
+        (-> org-tree
+            (z/insert-right new-node) ;; we add a sibling
+            z/rightmost) ;; Move location to the right of the new node
+        :else ;; new level found
+        (-> org-tree
+            (z/append-child new-node) ;; we add a child
+            z/down ;; Move location down since it's a new level
+            z/rightmost)))) ;; Move location to the right of the new node
+#+END_SRC
+*** Putting it all together in =process-line=
+Now we've build all parts for the parser, next we need to combine everything. The first step is to transform each line from [[https://github.com/200ok-ch/org-parser][org-parser]] and then place it in the tree so =process-tree= looks like this:
+#+BEGIN_SRC clojure
+  (defn process-line [tree org-parser-line]
+    (->> org-parser-line
+         transform-line
+         (place-in-tree tree)))
+#+END_SRC
+
+and putting it together we get
+#+BEGIN_SRC clojure
+  (->> (org-parser/org source)
+       (drop 1) ;; org-parser outputs one item we don't need
+       (reduce
+        process-line
+        (z/zipper (comp sequential? :children)
+                  :children
+                  (fn [node children] (assoc node :children children))
+                  {:title "root" :level 0 :children []}))
+       z/root) ;; builds the tree data structure
+#+END_SRC
+* Conclusion
+And that's how to grow a tree in Clojure. There are still some bugs and missing features in this minimal implementation (e.g. what happens if your org-file reduces its level), but if your feedback loops are in place you can fix this. If you don't want to grow a tree by yourself, you can use [[https://github.com/rollacaster/org-parser-tree][org-parser-tree]]. Checkout the source code to learn how to extend the tree creation with [[https://clojure.org/reference/multimethods][Multimethods]].

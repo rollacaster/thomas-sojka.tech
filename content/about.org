@@ -1,0 +1,25 @@
+#+TITLE: Thomas Sojka
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+#+OPTIONS: title:nil
+
+#+BEGIN_EXPORT html
+<figure id="org32f227f" style="margin-top:1em;margin-bottom:0;">
+  <a href="images/me.png" class="hidden md:block"><img src="images/me.png" alt="Picture of Thomas Sojka" style="float: left;margin-right: 3rem;border-radius: 0.25rem;" ></a>
+</figure>
+#+END_EXPORT
+
+Hi 👋
+
+My name is Thomas, I am a programmer living in Munich.
+
+I am working at [[https://comsystoreply.de/][comSysto]] where I write business applications for [[https://comsystoreply.de/referenzen][various projects]]. Before that I studied Information Systems at [[https://www.tum.de/en/][TUM]].
+
+I am interested in [[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa][Data]] [[https://medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0][Viz]], [[https://www.youtube.com/watch?v=juMLwOTxnvw][Functional]] [[https://www.youtube.com/watch?v=juMLwOTxnvw][Programming]] and [[https://rollacaster.github.io/sketches/][art]] [[https://twitter.com/rollacaster/status/1351486650992439296][with]] [[https://fire-hands.now.sh/][code]].
+
+You can find me on [[https://twitter.com/rollacaster][Twitter]], [[https://github.com/rollacaster][GitHub]], [[https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g][YouTube]] or contact me via [[mailto:contact@thomas-sojka.tech][mail]].
+
+#+BEGIN_EXPORT html
+<figure id="org32f227f">
+  <a href="images/me.png" class="md:hidden" alt="Picture of Thomas Sojka"><img src="images/me.png" alt="Picture of Thomas Sojka" style="margin-top:3rem;border-radius: 0.25rem;"></a>
+</figure>
+#+END_EXPORT

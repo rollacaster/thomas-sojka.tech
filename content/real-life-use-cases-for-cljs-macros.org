@@ -1,0 +1,63 @@
+#+TITLE: Real-life use cases for CLJS macros
+#+DATE: <2021-10-14>
+
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+
+When I first learned about macros, I immediately recognized how powerful they are. This realization was quickly followed by not having any idea what to build with them. Of course, [[https://clojure.github.io/clojure/clojure.core-api.html][clojure.core]] uses macros, so you can learn how threading or conditionals work. Plus, most articles about macros include some common examples. But without any use case for any of my projects, I quickly forgot macros. While writing [[https://clojure.org/][Clojure]] in the last two years, I never used them. Recently this changed while building [[https://rollacaster.github.io/hiccup-d3/][hiccup-d3]]. I finally found three use cases in which macros are incredibly helpful, so I want to share them.
+
+* What is hiccup-d3
+The data viz library [[https://d3js.org/][D3]] is incredibly versatile, but for me, its API is hard to remember. Usually, I start a new data viz by copying an example from [[https://observablehq.com/][Observable]]. Afterward, I translate it to [[https://clojurescript.org/][CLJS]], then dig into the docs to learn (or relearn) the API. This process takes time, so I decided to speed it up.
+
+That's how the idea for [[https://rollacaster.github.io/hiccup-d3/][hiccup-d3]] came into my mind. I wanted to provide a snippets gallery of visualizations coded with CLJS. To start a new data viz, you copy a snippet. In addition, I wanted to ensure that API docs are easily accessed.
+
+* Use case 1: code deduplication
+My friend Ricco looked at the first version of the code and noticed an opportunity to write his first macro. Each data viz duplicates the code to run the data viz and to display the code as a snippet. He opened a PR which allowed him to write this code only once. It worked great and saved a lot of code which motivated me to learn more about macros.
+
+#+BEGIN_SRC clojure
+  (defmacro build-chart [{:keys [title data code]}]
+    `{:title ~title
+      :data  ~data
+      :chart ~code ;; <- executed code
+      :code  '~(last code)}) ;; <- code used for display
+#+END_SRC
+
+I reread everything I once learned about macros. Among others, the macros tutorials from three great books. I can recommend each one: [[https://www.braveclojure.com/][Clojure for the Brave and True]], [[https://pragprog.com/titles/shcloj3/programming-clojure-third-edition/][Programming Clojure]], [[https://pragprog.com/titles/roclojure/getting-clojure/][Getting Clojure]].
+* Use case 2: doc links
+After this refresher of my macro knowledge, new use cases started to pop up. As already mentioned, I have a hard time remembering the [[https://d3js.org/][D3]] syntax. I wanted to include a link to the docs for each D3 API I called in my snippets.
+
+The easy but cumbersome approach would have been to copy/paste the links into my snippets. A lot of manual work for each snippet. Instead, I wanted to analyze the code and generate a link for each used API. Once more, macros did the job. The macro searches each API call that accesses the =d3= alias in the snippet. Then, the macro reads the current [[https://github.com/d3/d3/blob/main/API.md][D3 API doc]] from GitHub. For each API call, I extract the link from the [[https://github.com/d3/d3/blob/main/API.md][D3 API doc]]. That is possible because the macro allows me to walk through the code of my snippet. Plus, macro expansion happens at the build time. That means there is no performance penalty for dynamically searching for the links when opening the page.
+
+#+BEGIN_SRC clojure
+  (defmacro build-chart [title code]
+    `{:title ~title
+      :d3-apis ~(mapv
+                 (fn [fn] {:doc-link (d3-doc-link fn) ;; <- create links from gh-docs
+                         :fn fn})
+                 (d3-fns code)) ;; <- walks through code to find d3 calls
+      :chart (fn [data#] (~code data#))})
+#+END_SRC
+
+Without macros, I probably would have never implemented this feature. Maintaining all API links would be too much work.
+
+[[images/hiccup-d3-d3-apis.png][A snippet from hiccup-d3 with links to the used D3 APIs.]]
+
+* Use case 3: syntax highlighting
+The last feature I wanted to implement was syntax highlighting. Another use case involving code analysis. Thus I needed to access my code and needed a macro. The goal is to specify the type of each expression (for example string, variable, symbol) and apply the styling information. I found the library [[https://github.com/venantius/glow][glow]] that does the work for me. Although [[https://github.com/venantius/glow][glow]] itself is not using any macros, I wrote a macro that wraps all the glow calls and provides my code to glow. Once more macro expansion happens at build time when you open hiccup-d3, all styling information is already in place.
+
+#+BEGIN_SRC clojure
+  (defmacro build-chart [title code]
+    `{:title ~title
+      :code-formatted ~(glow/highlight-html ;; <- glow is called in macro
+                        (with-out-str (pprint (last code))))
+      :chart (fn [data#] (~code data#))})
+#+END_SRC
+
+The result is a well-formatted code snippet with color highlighting, which makes reading and understanding easier. Again, macros improve the performance without much effort at build time.
+
+[[images/hiccup-d3-formatted-code.png][A snippet from hiccup-d3 with syntax highlighting applied.]]
+
+
+* Conclusion
+This post is full of praise for the power of macros. But the rule of macros is still: don't use macros. If you can build something using functions, prefer this approach. I spent two years writing Clojure and never needed a macro. That was good. Learning macros is hard. It's easy to make mistakes. The article [[https://www.braveclojure.com/writing-macros/][Writing Macros]] contains examples of typical fallacies when writing macros. I stumbled upon all of them while writing my first macro.
+
+Don't feel bad if you learn about macros and have no clue when to use them. I guess it's natural that it takes some time until you can spot the right use cases for macros. I hope my examples could reduce this time for you. So you'll be proficient with macros in less than two years.

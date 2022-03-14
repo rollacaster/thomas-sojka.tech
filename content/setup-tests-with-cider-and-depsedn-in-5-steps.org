@@ -1,0 +1,144 @@
+#+TITLE: Setup tests with Cider & deps.edn in 5 steps
+#+DATE: <2021-01-06>
+#+bind: org-html-htmlize-output-type css
+#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+* [[https://github.com/rollacaster/setup-tests-with-cider][The Gist]]
+** 1. Setup  project structure
+*** File structure
+ #+BEGIN_SRC sh
+   .
+   ├── deps.edn
+   └── src
+       └── your_group
+           └── your_project
+               └── core.clj
+ #+END_SRC
+*** deps.edn file
+#+BEGIN_SRC clojurescript
+ {:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+  :paths ["src" "resources"]}
+ #+END_SRC
+** 2. Write test
+*** File structure
+#+BEGIN_SRC sh
+  .
+  ├── deps.edn
+  ├── src
+  │   └── your_group
+  │       └── your_project
+  │           └── core.clj
+  └── test
+      └── your_group
+          └── your_project
+              └── core_test.clj
+#+END_SRC
+*** Test file
+#+BEGIN_SRC clojure
+  (ns your-group.your-project.core-test
+    (:require [clojure.test :refer [deftest is]]))
+
+  (deftest core-test
+    (is (= 2 (+ 1 1))))
+#+END_SRC
+** 3. Add =:test= alias to =deps.edn= 
+*** deps.end file
+#+BEGIN_SRC clojurescript
+  {:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+   :paths ["src" "resources"]
+   :aliases {:test {:extra-paths ["test"]}}} ;; <- test alias
+#+END_SRC
+** 4. Add dir local variable for jack-in
+*** File structure
+#+BEGIN_SRC sh
+.
+├── deps.edn
+├── .dir-locals.el <-- added
+└── src/..
+#+END_SRC
+
+*** .dir-locals.el file
+#+BEGIN_SRC clojurescript
+((clojure-mode . ((cider-clojure-cli-global-options . "-M:test"))))
+#+END_SRC
+** 5. Run tests
+=C-c C-t l= or =M-x cider-test-run-loaded-tests=
+
+* Setup tests with Cider & deps.edn in 5 steps
+Based on [[https://practicalli.github.io/spacemacs/testing/unit-testing/cider-test-deps-edn-projects.html][Clojure development with Spacemacs & Cider]], [[https://clojureverse.org/t/how-to-setup-deps-edn-project-with-cider/6375][How to setup deps.edn project with cider]] and some further resources, this is my summary to setup your tests.
+** 1. Setup  project structure
+One thing I like about [[https://clojure.org/guides/deps_and_cli][deps.edn]] is that creating a new project does not need a bootstrapping command, you just create a [[https://clojure.org/guides/deps_and_cli][deps.edn]] file and your source files.
+
+#+BEGIN_QUOTE
+*Hint:* To avoid learning the [[https://clojure.org/guides/deps_and_cli][deps.edn]] file structure by heart, you can use [[https://github.com/rollacaster/.emacs.d/blob/master/snippets/clojure-mode/depsedn][a snippet]]. After the creation of the [[https://clojure.org/guides/deps_and_cli][deps.edn]] file run =M-x cider-jack-in-clj= and then =M-x cljr-add-project-dependency= to add any dependencies.
+#+END_QUOTE
+*** File structure
+#+BEGIN_SRC sh
+  .
+  ├── deps.edn
+  └── src
+      └── your_group
+          └── your_project
+              └── core.clj
+#+END_SRC
+*** deps.edn file
+#+BEGIN_SRC clojurescript
+{:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+ :paths ["src" "resources"]}
+#+END_SRC
+** 2. Write tests
+To add a new test, create your test folders and test file according to this structure:
+*** File structure
+#+BEGIN_SRC sh
+  .
+  ├── deps.edn
+  ├── src
+  │   └── your_group
+  │       └── your_project
+  │           └── core.clj
+  └── test
+      └── your_group
+          └── your_project
+              └── core_test.clj
+#+END_SRC
+This follows the advice from [[https://guide.clojure.style/#testing][The Clojure Style Guide - Testing]] to have a separate =test= directory.
+*** Test file
+#+BEGIN_SRC clojurescript
+  (ns your-group.your-project.core-test
+    (:require [clojure.test :refer [deftest is]]))
+
+  (deftest core-test
+    (is (= 2 (+ 1 1))))
+#+END_SRC
+[[https://clojure.github.io/clojure/clojure.test-api.html][clojure.test]] is part of Clojure, you do not need any additional dependency.
+** 3. Add =:test= alias to =deps.edn= 
+*** deps.edn file
+#+BEGIN_SRC clojurescript
+    {:deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+     :paths ["src" "resources"]
+     :aliases {:test {:extra-paths ["test"]}}} ;; <- test alias
+#+END_SRC
+This adds an alias to your project. An alias is a shortcut to adjust your [[https://clojure.org/guides/deps_and_cli][deps.edn]] file. In this example we add =extra-paths= to our =classpath=. Since we add =extra-paths= for our tests we can exclude them from deployments. There is nothing special about the added path =test=, it is just a folder we want to be able to condtionally add or remove from our =classpath=.
+** 4. Add dir local variable for jack-in
+During development we want to make sure that our tests are available so we want to use our alias to include the =test= directory. When using [[https://cider.mx][Cider]] you typically run a project with =cider-jack-in=. It is possible to add a default alias for all calls to =cider-jack-in= by setting =cider-clojure-cli-global-options=. You probably want to have different settings per project and you can use [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html][Directory Local Variables]] to achieve that. You create a [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html][Directory Local Variable]] by creating a =.dir-locals.el= file in your project root.
+*** File structure
+#+BEGIN_SRC sh
+.
+├── deps.edn
+├── .dir-locals.el <-- added
+└── src/..
+#+END_SRC
+
+This file will set the =cider-clojure-cli-global-options= variable whenever =clojure-mode= is active:
+*** .dir-locals.el file
+#+BEGIN_SRC emacs-lisp
+((clojure-mode . ((cider-clojure-cli-global-options . "-M:test"))))
+#+END_SRC
+
+#+BEGIN_QUOTE
+*Hint*: A [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html][Directory Local Variable]] is only read when you revoke your buffer, so make sure to revoke your buffer manually with =M-x revert-buffer= if it was already open when you created =.dir-locals.el=. Otherwise the variable will not be read.
+#+END_QUOTE
+** 5. Run tests
+In the documententation of [[https://cider.mx][Cider]] you can find [[https://docs.cider.mx/cider/1.0/testing/running_tests.html][several fine-grained commands]] to control which test case should run. To run all loaded tests in your project you can run =M-x cider-test-run-loaded-tests= or use the shortcut =C-c C-t l=.
+
+** Conclusion
+Setting up tests with [[https://cider.mx][Cider]] & [[https://clojure.org/guides/deps_and_cli][deps.edn]] involves quite many steps due to the flexibility this setup offers. I hope with this blog post, you can configure your first tests faster than I did. You can find [[https://github.com/rollacaster/setup-tests-with-cider][the source of this minimal example on github]].
