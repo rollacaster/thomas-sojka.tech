@@ -7,28 +7,27 @@
 (defn header
   ([] (header nil))
   ([{:keys [active]}]
-   [:header
-    [:h1 [:a {:href "/"} "Thomas Sojka"]]
-    [:nav
-     [:ul
-      [:li {:class (when (= active "Home") "bg-gray-700")}
-       [:a {:href "/"} "Home"]]
-      [:li {:class (when (= active "About") "bg-gray-700")}
-       [:a {:href "/about.html"} "About"]]
-      [:li {:class (when (= active "Now") "bg-gray-700")}
-       [:a {:href "/now.html"} "Now"]]]]]))
+   [:header.w-full.bg-gray-500.py-3
+    [:div.max-w-5xl.flex.justify-between.mx-auto
+     [:h1 [:a.text-white.uppercase.tracking-widest.text-lg {:href "/"} "Thomas Sojka"]]
+     [:nav
+      [:ul.flex.gap-x-6
+       [:li {:class (when (= active "Home") "bg-gray-700")}
+        [:a.text-white {:href "/"} "Home"]]
+       [:li {:class (when (= active "About") "bg-gray-700")}
+        [:a.text-white {:href "/about.html"} "About"]]
+       [:li {:class (when (= active "Now") "bg-gray-700")}
+        [:a.text-white {:href "/now.html"} "Now"]]]]]]))
 
 (defn content [children]
-  [:div#content
-   [:section.max-w-5xl
-    children]])
+  [:section.max-w-5xl.mx-auto.py-8
+   children])
 
 (defn footer []
-  [:footer
-   [:div
-    [:a {:href "https://mobile.twitter.com/rollacaster"} "Twitter"]
-    [:a {:href "https://github.com/rollacaster"} "GitHub"]
-    [:a {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]]])
+  [:footer.bg-gray-500.flex.justify-center.gap-x-6.py-3
+   [:a.text-white {:href "https://mobile.twitter.com/rollacaster"} "Twitter"]
+   [:a.text-white {:href "https://github.com/rollacaster"} "GitHub"]
+   [:a.text-white {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
 
 (defn page [children]
   [:html {:lang "en"}
