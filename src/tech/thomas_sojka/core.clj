@@ -20,7 +20,7 @@
         [:a.text-white {:href "/now.html"} "Now"]]]]]]))
 
 (defn content [children]
-  [:section.max-w-5xl.mx-auto.py-8
+  [:section.max-w-5xl.mx-auto.py-8.flex-1
    children])
 
 (defn footer []
@@ -40,7 +40,7 @@
     [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
-   [:body
+   [:body.flex.flex-col.h-screen
     (header)
     (-> children content vec)
     (footer) ]])
