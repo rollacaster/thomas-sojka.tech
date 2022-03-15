@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./src/tech_thomas_sojka/**/*'],
+  content: ['./src/tech/**/*'],
   theme: {
     extend: {},
   },
