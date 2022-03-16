@@ -45,10 +45,30 @@
     (-> children content vec)
     (footer) ]])
 
-(doseq [file (->> (file-seq (io/file "content"))
-                  (remove #(.isDirectory %)) )
-        :let [html-str (hiccup/html (page (org-parser-hiccup/parse file)))
-              path (str "public/" (str/replace (.getName file) #".org$" ".html"))]]
-  (spit path html-str))
+(defn public-path [file]
+  (str "public"
+       (when (.getParent file) (str/replace (.getParent file) "content" "")) "/"))
+
+(defn spit-parents [path f]
+  (io/make-parents path)
+  (spit path f))
+
+(defn org-file? [file]
+  (re-find #".org$" (.getName file)))
+
+(doseq [file (->> (tree-seq (fn [f] (.isDirectory f))
+                            (fn [f] (->> (file-seq f)
+                                        (remove #(= % f))))
+                            (io/file "content"))
+                  (remove #(.isDirectory %)))]
+  (cond
+    (org-file? file)
+    (let [html-str (hiccup/html (page (org-parser-hiccup/parse file)))
+          path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))]
+      (spit-parents path html-str))
+    :else
+    (let [path (str (public-path file) (.getName file))]
+      (io/make-parents path)
+      (io/copy file (io/file path)))))
 
 
