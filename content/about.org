@@ -1,7 +1,3 @@
-#+TITLE: Thomas Sojka
-#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
-#+OPTIONS: title:nil
-
 #+BEGIN_EXPORT html
 <figure id="org32f227f" style="margin-top:1em;margin-bottom:0;">
   <a href="images/me.png" class="hidden md:block"><img src="images/me.png" alt="Picture of Thomas Sojka" style="float: left;margin-right: 3rem;border-radius: 0.25rem;" ></a>
