@@ -1,3 +1,66 @@
 h1 {
   font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  line-height: 1.625;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+pre {
+  background-color: #edf2f7;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+}
+
+a {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  line-height: 1.5;
+  border-bottom-color: rgb(17, 17, 17);
+}
+
+blockquote {
+  background-color: #edf2f7;
+  border-left-width: 3px;
+  border-left-style: solid;
+  border-left-color: #4a5568;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  max-width: 100%;
+  padding: 0 12rem;
+  margin: auto;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1rem;
+}
+
+li {
+  margin-bottom: 1rem;
 }

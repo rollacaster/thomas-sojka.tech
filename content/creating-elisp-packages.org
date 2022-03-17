@@ -5,9 +5,11 @@
 #+OPTIONS: html-style:t html-scripts:t
 
 #+ATTR_HTML: :alt An addition of the Emacs Logo and the Melpa Logo results in a package
-[[file:intro.png]]
 
 Last week my first =elisp= package [[file:elcontext.org][elcontext]] was published on [[https://melpa.org/#/elcontext][melpa]]. It was the first time I have published a non-=JavaScript= package. Now I would like to share the differences between the =elisp= and the =JavaScript= ecosystem I experienced.
+
+[[file:intro.png]]
+
 
 ** Learning elisp
 :PROPERTIES:
