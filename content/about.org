@@ -1,6 +1,6 @@
 #+BEGIN_EXPORT html
-<figure id="org32f227f" style="margin-top:1em;margin-bottom:0;">
-  <a href="images/me.png" class="hidden md:block"><img src="images/me.png" alt="Picture of Thomas Sojka" style="float: left;margin-right: 3rem;border-radius: 0.25rem;" ></a>
+<figure >
+  <a href="images/me.png" class="hidden md:block border-0 mt-4"><img src="images/me.png" alt="Picture of Thomas Sojka" class="m-0 p-0 float-left rounded mr-16"></a>
 </figure>
 #+END_EXPORT
 
@@ -15,7 +15,7 @@ I am interested in [[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_
 You can find me on [[https://twitter.com/rollacaster][Twitter]], [[https://github.com/rollacaster][GitHub]], [[https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g][YouTube]] or contact me via [[mailto:contact@thomas-sojka.tech][mail]].
 
 #+BEGIN_EXPORT html
-<figure id="org32f227f">
-  <a href="images/me.png" class="md:hidden" alt="Picture of Thomas Sojka"><img src="images/me.png" alt="Picture of Thomas Sojka" style="margin-top:3rem;border-radius: 0.25rem;"></a>
+<figure>
+  <a href="images/me.png" class="md:hidden" alt="Picture of Thomas Sojka"><img src="images/me.png" alt="Picture of Thomas Sojka" class="p-0 float-left rounded"></a>
 </figure>
 #+END_EXPORT

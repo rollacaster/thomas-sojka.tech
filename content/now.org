@@ -1,7 +1,3 @@
-#+TITLE: Now
-#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
-#+OPTIONS: title:nil
-
 * Contributing to Open Source in Clojure
 I started to contribute to [[https://cljdoc.org/][cljdoc]]. I am leveling my Clojure skills by doing so. I am proud of some minor additions I finished and excited for my future contributions.
 * Learning Datomic
