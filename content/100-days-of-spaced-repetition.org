@@ -1,7 +1,6 @@
-#+title: 100 Days of Spaced Repetition
+#+TITLE: 100 Days of Spaced Repetition
 #+DATE: <2021-02-22>
-
-#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+#+CONTENT-TYPE: blog
 
 100 days ago I was introduced to Spaced Repetition, a learning method scientifically proven to work. The basic idea is to learn facts and repeat them at increasing intervals. After several iterations, you remember the fact forever.
 

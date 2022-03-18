@@ -1,7 +1,6 @@
 #+TITLE: Setup tests with Cider & deps.edn in 5 steps
 #+DATE: <2021-01-06>
-#+bind: org-html-htmlize-output-type css
-#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+#+CONTENT-TYPE: blog
 * [[https://github.com/rollacaster/setup-tests-with-cider][The Gist]]
 ** 1. Setup  project structure
 *** File structure

@@ -1,7 +1,6 @@
 #+title: How to grow a tree with clojure.zip
-#+DATE: <2021-01-28 Thu>
-#+bind: org-html-htmlize-output-type css
-#+SETUPFILE: ~/.emacs.d/org-templates/publish-defaults.org
+#+DATE: <2021-01-28>
+#+CONTENT-TYPE: blog
 
 This is a post about my journey to build [[https://github.com/rollacaster/org-parser-tree][org-parser-tree]]. As the name suggests, it is a parser that builds a Clojure tree structure from an org file. I would like to share some techniques that helped me creating this parser.
 * The Challenge
@@ -65,8 +64,7 @@ If your results are a big nested data structure, it is difficult to inspect the 
 
 =view-tree= expects a function that checks if a node has a branch, an accessor for the branch and the actual data structure to be visualized. Additionally, I provided a function for =node->descriptor= so that each node  in my tree has a label. When I send my target data structure to the [[https://clojure.org/guides/repl/introduction][REPL]], a new window opens:
 
-#+ATTR_HTML: :alt A tree with four nodes and three branches
-[[file:images/tree.png][file:~/projects/thomas-sojka-tech/src/images/tree.png]]
+[[file:images/tree.png][A tree with four nodes and three branches]]
 
 Now the feedback loop is ready, whenever I change something in the source data structure I can inspect as text or with [[https://github.com/ztellman/rhizome][Rhizome]].
 
