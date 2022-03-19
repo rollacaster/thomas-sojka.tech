@@ -1,0 +1,43 @@
+#+TITLE: Bullet journaling my 2019
+#+DATE: <2020-01-24>
+#+CONTENT-TYPE: blog
+#+description: In 2019 I took notes of everything I did and analyzed my complete year. In retrospect 2019 was a great year and I know exactly how to make 2020 even better.
+
+* Bullet journaling my 2019
+This chart represents my 2019 sorted by categories. Each datapoint is one memory which I thought was worth noting down, some memories have a sub-category which is described by the color within a bar. These memories allowed me to rewind 2019 in a couple of minutes. This post explains how I did that, what I learned in retrospective and what I plan to change in the future.
+
+[[file:images/memories-2019.png][A bar chart of my memories in 2019 by category]]
+** How
+
+In the beginning of 2018 I started to take notes on sundays summarizing my week. After one year it was great to review everything and I decided to continue taking notes. In August 2019 I decided to switch to daily instead of weekly notes and about a month ago I learned that this is actually a thing people do and they call it bullet journaling. Simultaneously I decided that my future work should focus on data visualization, it seemed obvious to combine those two things and create my first data viz project with this very personal data set.
+
+I collected all my notes usings Emacs’ org-mode. Emacs is a text editor and org-mode is a document editing, formatting, and organizing mode, designed for notes, planning, and authoring. Org-mode has a capture feature which allows to quickly take notes without leaving the current context of your work, it works on desktop or mobile. It is possible to define capture templates which add meta data to every note entry. I added the current date and at least one category for each entry. The categories help to structure my notes and to create visualizations based on my journal.
+
+Here are some example entries of my journal:
+
+#+BEGIN_QUOTE
+    Read datasketches :LEARN:BLOG:
+    Cooked something new :LEARN:
+    Christmas Market :SOCIAL:
+#+END_QUOTE
+
+I parsed the notes and converted them into a large JSON data structure. The data is processed with the programming language Clojure which was really straightforward using the library clojure.walk. Based on these data I used Oz to specify visualizations. Oz uses Vega and Vega Lite to create visualization with Clojure.
+
+Within my data I could find five major categories: Social, Learn, Health, Work and Grownup. I will take a deeper look into each of this categories.
+** Social
+I was very happy to see that most of my notes were about social activities. I have to admit that the data are a bit skewed because when I started bullet journaling social entries were the only things I noted. The large amount of social data was the main reason I finished my 2019 review later than expected. I decided to start a side project using my social data. I wanted to create christmas cards for my friends & familiy by creating a custom data vizualization presenting the data I collected. I did not want to “quantitize” my friendships based on the number of notes instead everyone should get a personal review about our shared memories throughout the year. I created two charts using the d3 library, one containing all events which mentioned the person and the other one accumluating all other persons which joined those events. Here’s an example card:
+
+[[file:images/christmas-card-2019.png][A christmas card show how often a friend was met in 2019]]
+
+The christmas cards were a huge success and I could make my closest friends happy and appriciate our friendships.
+** Learning
+The learning category had a lot of sub-categories so I created another visualization. As you can notice I was really into watching and presenting talks this year with a total of 94 entries but I will try to balance that this year and do more things instead of just watching them. I was very proud about reading 13 books fulfilling my goal of reading one book per month.
+[[file:images/learning-2019.png][A bar chart showing everying I learned in 2019 by cateogory]]
+** Health
+I tried to work out this year and I succeeded to do something almost everyday even if it was just a 5 minute workout. That was great because I finally managed to form a habbit of doing workouts My bullet journal did contain only 63 Health entries but I started writing them down quite late. I plan to have better data next year. Besides my 5 minutes workout I was running quite regularly and went climbing from time to time.
+** Work
+The results of my work entries were the ones which suprised me the most I was expecting to have much more valuable moments during work but lately I was doing a lot of routine work. This is the aspect I want focus to improve next year and I already started by trying to switch my main work focus to data visualisation. I hope to find many exciting project in a more specialized niche.
+** Grownup
+The Grownup category contains all the things I have to do but I do not really like. Some examples are taxes or cleaning. My goal for 2019 was to get an overview about my personal finances, I wanted to know my expenses and how much I can save and invest for the future. Although this is not a topic I am execessily excited about I managed to fulfil this goal and automated it for the future.
+** Conclusion
+I never planned to analyze my journal data when I started writing it down but I am very happy I did it. I learned a lot about myself reading through my notes and could really appreciate all great moments of 2019. I will definitley continue to create my bullets and I will try to gather even more detailed in 2020. In addition there are a lot of things I want to improve in 2020 and my analysis showed me where I have to focus. Hopefully my data vizualization skills will also improve so that I will learn even more in my future 2020 review.
