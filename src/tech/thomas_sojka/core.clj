@@ -95,27 +95,6 @@
 (defn html-path [file]
   (str/replace (.getName file) #".org$" ".html"))
 
-(doseq [file (->> (tree-seq (fn [f] (.isDirectory f))
-                            (fn [f] (->> (file-seq f)
-                                        (remove #(= % f))))
-                            (io/file "content"))
-                  (remove #(.isDirectory %)))]
-  (cond
-    (org-file? file)
-    (let [{:keys [content-type title] :as meta} (org-parser-meta/parse file)
-          path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))]
-      (case content-type
-        "blog" (let [html-str (hiccup/html (page {:main (org-parser-hiccup/parse file)})) ]
-                 (spit-parents path html-str))
-        "page" (let [html-str (hiccup/html (page {:active title
-                                                  :main (org-parser-hiccup/parse file)}))]
-                 (prn meta)
-                 (spit-parents path html-str))))
-    :else
-    (let [path (str (public-path file) (.getName file))]
-      (io/make-parents path)
-      (io/copy file (io/file path)))))
-
 (defn icon [name]
   [:svg {:width "20" :height "20" :viewbox "0 0 24 24" :fill "dark-gray"}
    [:path {:d (case name
@@ -142,12 +121,34 @@
   [:li.mb-0
    [:a.text-white.cursor-pointer.block.border-0
     {:href link}
-    [:div.flex.flex-col.rounded-lg.border.border-black.h-full
+    [:div.flex.flex-col.rounded-lg.h-full.shadow-inner
      [:div.py-6.px-6.bg-gray-600.rounded-lg.rounded-b-none.flex-1
-      [:h2.text-xl.text-gray-100 title]]
+      [:h2.text-xl.text-gray-100.font-normal.mb-0 title]]
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
       [:span.text-gray-700 (format-date date)]
       (icon content-type)]]]])
+
+(doseq [file (->> (tree-seq (fn [f] (.isDirectory f))
+                            (fn [f] (->> (file-seq f)
+                                        (remove #(= % f))))
+                            (io/file "content"))
+                  (remove #(.isDirectory %)))]
+  (cond
+    (org-file? file)
+    (let [{:keys [content-type title] :as meta} (org-parser-meta/parse file)
+          path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))]
+      (case content-type
+        "blog" (let [html-str (hiccup/html (page {:main (org-parser-hiccup/parse file)})) ]
+                 (spit-parents path html-str))
+        "page" (let [html-str (hiccup/html (page {:active title
+                                                  :main (org-parser-hiccup/parse file)}))]
+                 (prn meta)
+                 (spit-parents path html-str))))
+    :else
+    (let [path (str (public-path file) (.getName file))]
+      (io/make-parents path)
+      (io/copy file (io/file path)))))
+
 (spit
  "public/index.html"
  (hiccup/html (page
