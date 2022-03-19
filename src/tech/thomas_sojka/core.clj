@@ -8,10 +8,11 @@
 (defn header
   ([] (header nil))
   ([{:keys [active]}]
-   [:header.w-full.bg-gray-700.py-3
+   [:header.w-full.bg-gray-700.py-3.px-6.lg:px-0
     [:div.max-w-5xl.flex.justify-between.mx-auto
      [:h1.mb-0
-      [:a.text-white.uppercase.tracking-widest.text-lg.border-0 {:href "/"}
+      [:a.text-white.uppercase.tracking-widest.text-lg.border-0.font-normal
+       {:href "/"}
        "Thomas Sojka"]]
      [:nav.hidden.md:block
       [:ul.flex.gap-x-6.list-none
@@ -35,7 +36,7 @@
       [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]))
 
 (defn content [children]
-  [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.md:px-0
+  [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
    children])
 
 (defn footer []
@@ -113,8 +114,8 @@
    date))
 
 (defn content-item [{:keys [title link date content-type]}]
-  [:li.mb-0.w-full.h-full {:class "md:w-80"}
-   [:a.text-white.cursor-pointer.block.border-0.h-full
+  [:li.mb-0.w-full
+   [:a.text-white.cursor-pointer.block.border-0
     {:href link}
     [:div.flex.flex-col.rounded-lg.border.border-black.h-full
      [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none.flex-1
@@ -125,7 +126,7 @@
 (spit
  "public/index.html"
  (hiccup/html (page
-               [:ul.list-none.pl-0.flex.flex-wrap.md:grid.grid-cols-3.grid-rows-3.gap-4
+               [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
                 (for [file (->> (tree-seq (fn [f] (.isDirectory f))
                                           (fn [f] (->> (file-seq f)
                                                       (remove #(= % f))))
