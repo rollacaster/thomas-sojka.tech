@@ -13,7 +13,7 @@
      [:h1.mb-0
       [:a.text-white.uppercase.tracking-widest.text-lg.border-0 {:href "/"}
        "Thomas Sojka"]]
-     [:nav
+     [:nav.hidden.md:block
       [:ul.flex.gap-x-6.list-none
        [:li.mb-0 {:class (when (= active "Home") "bg-gray-700")}
         [:a.text-white.border-0 {:href "/"} "Home"]]
@@ -22,12 +22,24 @@
        [:li.mb-0 {:class (when (= active "Now") "bg-gray-700")}
         [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]]]))
 
+(defn mobile-nav
+  ([] (mobile-nav nil))
+  ([{:keys [active]}]
+   [:nav.md:hidden.fixed.bottom-0.bg-gray-700.w-full.py-4.border-t
+    [:ul.flex.gap-x-6.list-none.justify-center
+     [:li.mb-0 {:class (when (= active "Home") "bg-gray-700")}
+      [:a.text-white.border-0 {:href "/"} "Home"]]
+     [:li.mb-0 {:class (when (= active "About") "bg-gray-700")}
+      [:a.text-white.border-0 {:href "/about.html"} "About"]]
+     [:li.mb-0 {:class (when (= active "Now") "bg-gray-700")}
+      [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]))
+
 (defn content [children]
   [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.md:px-0
    children])
 
 (defn footer []
-  [:footer.bg-gray-700.flex.justify-center.gap-x-6.py-3
+  [:footer.bg-gray-700.flex.justify-center.gap-x-6.pt-3.pb-16.md:pb-3
    [:a.text-white.border-0 {:href "https://mobile.twitter.com/rollacaster"} "Twitter"]
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
@@ -46,6 +58,7 @@
    [:body.flex.flex-col.h-screen
     (header)
     (-> children content vec)
+    (mobile-nav)
     (footer) ]])
 
 (defn public-path [file]
