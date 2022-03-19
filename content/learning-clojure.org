@@ -1,6 +1,9 @@
 #+TITLE: Learning Clojure
 #+DATE: <2018-08-13>
+#+CONTENT-TYPE: blog#+DATE: <2018-08-13>
+#+description: I decided to learn Clojure this year. This is my journey so far.
 #+CONTENT-TYPE: blog
+#+filetags: CLOJURE
 * Learning Clojure
 One of my good intentions this year is to learn a new programming language. Choosing between the various options proved to be a difficult task. I tried to choose between PureScript, Clojure and Reason ML. In the end the article about the [[http://blog.cognitect.com/blog/2017/1/31/clojure-2018-results][State of Clojure in 2018]] was the decisive factor. 50% of all respondents were Emacs users and since my latest [[https://github.com/rollacaster/elcontext][shenanigans with Emacs Lisp]] I was sold with lisp anyway.
 

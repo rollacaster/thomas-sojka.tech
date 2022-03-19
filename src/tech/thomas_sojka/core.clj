@@ -1,10 +1,14 @@
 (ns tech.thomas-sojka.core
-  (:require [clojure.java.io :as io]
-            [clojure.string :as str]
-            [hiccup.core :as hiccup]
-            [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
-            [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
-            [glow.core :as glow]))
+  (:require
+   [clj-rss.core :as rss]
+   [clojure.java.io :as io]
+   [clojure.string :as str]
+   [glow.core :as glow]
+   [hiccup.core :as hiccup]
+   [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
+   [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
+   [clojure.set :as set])
+  (:import (java.time Instant)))
 
 (defn- nav-link
   [{:keys [title link active]}]
@@ -68,6 +72,8 @@
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
 
+(def description "data visualizations | frontend development | functional programming")
+
 (defn page [{:keys [main active]}]
   [:html {:lang "en"}
    [:head
@@ -75,7 +81,7 @@
     [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
     [:title "Thomas Sojka"]
     [:meta {:content "Thomas Sojka" :name "author"}]
-    [:meta {:content "data visualizations | frontend development | functional programming" :name "description"}]
+    [:meta {:content description :name "description"}]
     [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
@@ -144,12 +150,41 @@
                  (spit-parents path html-str))
         "page" (let [html-str (hiccup/html (page {:active title
                                                   :main (org-parser-hiccup/parse file)}))]
-                 (prn meta)
                  (spit-parents path html-str))))
     :else
     (let [path (str (public-path file) (.getName file))]
       (io/make-parents path)
       (io/copy file (io/file path)))))
+
+(def contents (->> (tree-seq (fn [f] (.isDirectory f))
+                             (fn [f] (->> (file-seq f)
+                                         (remove #(= % f))))
+                             (io/file "content"))
+                   (remove #(.isDirectory %))
+                   (filter org-file?)
+                   (map #(-> %
+                             org-parser-meta/parse
+                             (assoc :link (html-path %))))
+                   (filter #(= (:content-type %) "blog"))
+                   (map #(update % :date date))
+                   (sort-by :date)
+                   reverse))
+
+(def author "contact@thomas-sojka.tech (Thomas Sojka)")
+(def url "https://thomas-sojka.tech/")
+
+(spit
+ "public/index.xml"
+ (apply rss/channel-xml
+        {:title "Thomas Sojka" :link url :description description
+         :language "en" :webMaster author :lastBuildDate (Instant/now)}
+        (map (fn [c] (-> c
+                        (update :date (fn [d] (.toInstant d)))
+                        (set/rename-keys {:date :pubDate :filetags :category})
+                        (dissoc :content-type)
+                        (assoc :author author)
+                        (update :link #(str url %))))
+             contents)))
 
 (spit
  "public/index.html"
@@ -157,23 +192,9 @@
                {:active "Home"
                 :main
                 [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-                 (for [file (->> (tree-seq (fn [f] (.isDirectory f))
-                                           (fn [f] (->> (file-seq f)
-                                                       (remove #(= % f))))
-                                           (io/file "content"))
-                                 (remove #(.isDirectory %))
-                                 (filter org-file?)
-                                 (map #(-> %
-                                           org-parser-meta/parse
-                                           (assoc :link (html-path %))))
-                                 (filter #(= (:content-type %) "blog"))
-                                 (map #(update % :date date))
-                                 (sort-by :date)
-                                 reverse
-                                 (map content-item))]
-                   file)]})))
+                 (map content-item contents)]})))
 
-(spit "public/css/glow.css" (glow/generate-css
+(spit "resources/glow.css" (glow/generate-css
                              {:background "#edf2f7"
                               :exception "#859900"
                               :repeat "#859900"
@@ -194,5 +215,3 @@
                               :character "#2aa198"
                               :regex "#dc322f"
                               :symbol "#586e75"}))
-
-

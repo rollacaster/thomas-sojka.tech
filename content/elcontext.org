@@ -1,6 +1,8 @@
 #+TITLE: Introducing elcontext
 #+DATE: <2018-02-04>
 #+CONTENT-TYPE: blog
+#+description: Bring your editing experience to the next level with context-based actions for emacs
+#+filetags: EMACS
 * Introducing elcontext
 I have just finished my first elisp package [[https://github.com/rollacaster/elcontext][elcontext]]. It introduces context based actions for Emacs.
 

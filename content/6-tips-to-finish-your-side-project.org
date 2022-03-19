@@ -1,6 +1,8 @@
 #+TITLE: 6 Tips to finish your Side Project
 #+DATE: <2020-07-20>
 #+CONTENT-TYPE: blog
+#+description: After analyzing all my failed and successful side projects, I found 6 key aspects that all my successful side projects have in common.
+
 * 6 Tips to finish your Side Project
 I fail to finish about 60% of my side projects but recently I finished six projects in a row. This article explains how I did this.
 

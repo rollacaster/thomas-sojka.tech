@@ -1,6 +1,9 @@
 #+title: How to grow a tree with clojure.zip
 #+DATE: <2021-01-28>
 #+CONTENT-TYPE: blog
+#+filetags: CLOJURE
+#+description: Need to build a Clojure tree data structure from an org file by using the clojure.zip API? This post explains how.
+
 * How to grow a tree with clojure.zip
 This is a post about my journey to build [[https://github.com/rollacaster/org-parser-tree][org-parser-tree]]. As the name suggests, it is a parser that builds a Clojure tree structure from an org file. I would like to share some techniques that helped me creating this parser.
 ** The Challenge
