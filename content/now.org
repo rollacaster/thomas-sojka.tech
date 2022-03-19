@@ -1,3 +1,6 @@
+#+TITLE: Now
+#+NAV: 2
+#+CONTENT-TYPE: page
 * Contributing to Open Source in Clojure
 I started to contribute to [[https://cljdoc.org/][cljdoc]]. I am leveling my Clojure skills by doing so. I am proud of some minor additions I finished and excited for my future contributions.
 * Learning Datomic

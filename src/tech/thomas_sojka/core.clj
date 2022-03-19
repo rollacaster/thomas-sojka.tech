@@ -5,35 +5,57 @@
             [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
             [tech.thomas-sojka.org-parser-meta :as org-parser-meta]))
 
+(defn- nav-link
+  [{:keys [title link active]}]
+  [:li.mb-0.px-4.py-2.rounded {:class (when (= active title) "bg-gray-700")}
+        [:a.text-white.border-0 {:href link} title]])
+
+(defn org-file? [file]
+  (re-find #".org$" (.getName file)))
+
+(defn link [file]
+  (str (when (.getParent file) (str/replace (.getParent file) "content" ""))
+       "/"
+       (str/replace (.getName file) #".org$" ".html")))
+
+(def nav-links (conj (->> (tree-seq (fn [f] (.isDirectory f))
+                                    (fn [f] (->> (file-seq f)
+                                                (remove #(= % f))))
+                                    (io/file "content"))
+                          (remove #(.isDirectory %))
+                          (filter org-file?)
+                          (map (fn [f] (assoc (org-parser-meta/parse f) :link (link f))))
+                          (filter (fn [{:keys [content-type]}] (= content-type "page")))
+                          (sort-by :nav))
+                     {:title "Home"
+                      :link "/"
+                      :nav 0}))
+
 (defn header
   ([] (header nil))
   ([{:keys [active]}]
    [:header.w-full.bg-gray-500.py-3.px-6.lg:px-0
-    [:div.max-w-5xl.flex.justify-between.mx-auto
+    [:div.max-w-5xl.flex.justify-between.mx-auto.items-center
      [:h1.mb-0
       [:a.text-white.uppercase.tracking-widest.text-lg.border-0.font-normal
        {:href "/"}
        "Thomas Sojka"]]
      [:nav.hidden.md:block
-      [:ul.flex.gap-x-6.list-none
-       [:li.mb-0 {:class (when (= active "Home") "bg-gray-500")}
-        [:a.text-white.border-0 {:href "/"} "Home"]]
-       [:li.mb-0 {:class (when (= active "About") "bg-gray-500")}
-        [:a.text-white.border-0 {:href "/about.html"} "About"]]
-       [:li.mb-0 {:class (when (= active "Now") "bg-gray-500")}
-        [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]]]))
+      [:ul.flex.list-none
+       (map
+        (fn [{:keys [title link]}]
+          (nav-link {:active active :title title :link link}))
+        nav-links)]]]]))
 
 (defn mobile-nav
   ([] (mobile-nav nil))
   ([{:keys [active]}]
    [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t
     [:ul.flex.gap-x-6.list-none.justify-center
-     [:li.mb-0 {:class (when (= active "Home") "bg-gray-500")}
-      [:a.text-white.border-0 {:href "/"} "Home"]]
-     [:li.mb-0 {:class (when (= active "About") "bg-gray-500")}
-      [:a.text-white.border-0 {:href "/about.html"} "About"]]
-     [:li.mb-0 {:class (when (= active "Now") "bg-gray-500")}
-      [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]))
+     (map
+        (fn [{:keys [title link]}]
+          (nav-link {:active active :title title :link link}))
+        nav-links)]]))
 
 (defn content [children]
   [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
@@ -45,7 +67,7 @@
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
 
-(defn page [children]
+(defn page [{:keys [main active]}]
   [:html {:lang "en"}
    [:head
     [:meta {:charset "utf-8"}]
@@ -57,9 +79,9 @@
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
    [:body.flex.flex-col.h-screen.bg-gray-100
-    (header)
-    (-> children content vec)
-    (mobile-nav)
+    (header {:active active})
+    (-> main content vec)
+    (mobile-nav {:active active})
     (footer) ]])
 
 (defn public-path [file]
@@ -69,9 +91,6 @@
 (defn spit-parents [path f]
   (io/make-parents path)
   (spit path f))
-
-(defn org-file? [file]
-  (re-find #".org$" (.getName file)))
 
 (defn html-path [file]
   (str/replace (.getName file) #".org$" ".html"))
@@ -83,9 +102,15 @@
                   (remove #(.isDirectory %)))]
   (cond
     (org-file? file)
-    (let [html-str (hiccup/html (page (org-parser-hiccup/parse file)))
+    (let [{:keys [content-type title] :as meta} (org-parser-meta/parse file)
           path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))]
-      (spit-parents path html-str))
+      (case content-type
+        "blog" (let [html-str (hiccup/html (page {:main (org-parser-hiccup/parse file)})) ]
+                 (spit-parents path html-str))
+        "page" (let [html-str (hiccup/html (page {:active title
+                                                  :main (org-parser-hiccup/parse file)}))]
+                 (prn meta)
+                 (spit-parents path html-str))))
     :else
     (let [path (str (public-path file) (.getName file))]
       (io/make-parents path)
@@ -126,21 +151,23 @@
 (spit
  "public/index.html"
  (hiccup/html (page
-               [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-                (for [file (->> (tree-seq (fn [f] (.isDirectory f))
-                                          (fn [f] (->> (file-seq f)
-                                                      (remove #(= % f))))
-                                          (io/file "content"))
-                                (remove #(.isDirectory %))
-                                (filter org-file?)
-                                (map #(-> %
-                                          org-parser-meta/parse
-                                          (assoc :link (html-path %))))
-                                (filter #(= (:content-type %) "blog"))
-                                (map #(update % :date date))
-                                (sort-by :date)
-                                reverse
-                                (map content-item))]
-                  file)])))
+               {:active "Home"
+                :main
+                [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+                 (for [file (->> (tree-seq (fn [f] (.isDirectory f))
+                                           (fn [f] (->> (file-seq f)
+                                                       (remove #(= % f))))
+                                           (io/file "content"))
+                                 (remove #(.isDirectory %))
+                                 (filter org-file?)
+                                 (map #(-> %
+                                           org-parser-meta/parse
+                                           (assoc :link (html-path %))))
+                                 (filter #(= (:content-type %) "blog"))
+                                 (map #(update % :date date))
+                                 (sort-by :date)
+                                 reverse
+                                 (map content-item))]
+                   file)]})))
 
 

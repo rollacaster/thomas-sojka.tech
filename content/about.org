@@ -1,3 +1,7 @@
+#+TITLE: About
+#+NAV: 1
+#+CONTENT-TYPE: page
+
 #+BEGIN_EXPORT html
 <figure >
   <a href="images/me.png" class="hidden md:block border-0 mt-4"><img src="images/me.png" alt="Picture of Thomas Sojka" class="m-0 p-0 float-left rounded mr-16"></a>

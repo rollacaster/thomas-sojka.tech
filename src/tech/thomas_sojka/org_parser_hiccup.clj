@@ -45,10 +45,6 @@
          :text (text contents)))))
    contents))
 
-(defn parse-keyword [[[_ key] [_ value]]]
-  (when (= (str/lower-case key) "title")
-    [:h1 value]))
-
 (defn list-item-line [list-item-line-parts]
   (->> list-item-line-parts
        (map
@@ -94,7 +90,7 @@
 
 (defn headline [hiccup headline-parts]
   (let [[[_ stars] [_ & text-parts]] headline-parts]
-    (conj (vec hiccup) (into [(keyword (str "h" (inc (count stars))))]
+    (conj (vec hiccup) (into [(keyword (str "h" (count stars)))]
                              (if (every? string? (text text-parts))
                                (code (str/join (text text-parts)))
                                (text text-parts))))))
@@ -122,8 +118,8 @@
          (reduce
           (fn [hiccup [type & remaining]]
             (case type
-              :keyword-line (conj hiccup (parse-keyword remaining))
-              :affiliated-keyword-line (conj hiccup (parse-keyword remaining))
+              :keyword-line (conj hiccup nil)
+              :affiliated-keyword-line (conj hiccup nil)
               :drawer-begin-line (conj hiccup [:drawer-begin-line 2])
               :drawer-end-line (drawer-end-line hiccup)
               :empty-line (let [prev (last hiccup)

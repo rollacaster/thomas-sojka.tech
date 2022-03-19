@@ -1,7 +1,7 @@
 #+TITLE: 6 Tips to finish your Side Project
 #+DATE: <2020-07-20>
 #+CONTENT-TYPE: blog
-
+* 6 Tips to finish your Side Project
 I fail to finish about 60% of my side projects but recently I finished six projects in a row. This article explains how I did this.
 
 In the last five years I started 41 side projects and only finished 17. To me, finishing a side project means that I successfully executed my idea and after that I published it  by writing a blog about it or if I built something for another person and I send it to this person.

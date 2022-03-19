@@ -1,9 +1,11 @@
 (ns tech.thomas-sojka.org-parser-meta
-  (:require [clojure.string :as str]
-            [org-parser.parser :as parser]))
+  (:require [org-parser.parser :as parser]
+            [clojure.string :as str]))
 
 (defn parse-keyword [[[_ key] [_ value]]]
-  [(keyword (str/lower-case key)) value])
+  (case (keyword (str/lower-case key))
+    :nav [:nav (Integer/parseInt value)]
+    [(keyword (str/lower-case key)) value]))
 
 (defn parse [org-path]
   (->> (parser/parse (slurp org-path))
