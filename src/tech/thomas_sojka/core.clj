@@ -100,11 +100,11 @@
    date))
 
 (defn content-item [{:keys [title link date content-type]}]
-  [:li {:class "w-72"}
-   [:a.text-white.cursor-pointer.block.border-0
+  [:li.mb-0.w-full.h-full {:class "md:w-80"}
+   [:a.text-white.cursor-pointer.block.border-0.h-full
     {:href link}
-    [:div.flex.flex-col.rounded-lg.border.border-black
-     [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none
+    [:div.flex.flex-col.rounded-lg.border.border-black.h-full
+     [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none.flex-1
       [:h2.text-xl.text-gray-100 title]]
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
       [:span.text-gray-700 (format-date date)]
@@ -112,7 +112,7 @@
 (spit
  "public/index.html"
  (hiccup/html (page
-               [:ul.list-none.pl-0.flex.flex-wrap.gap-4.items-stretch
+               [:ul.list-none.pl-0.flex.flex-wrap.md:grid.grid-cols-3.grid-rows-3.gap-4
                 (for [file (->> (tree-seq (fn [f] (.isDirectory f))
                                           (fn [f] (->> (file-seq f)
                                                       (remove #(= % f))))
