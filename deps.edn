@@ -3,6 +3,7 @@
         org.clojure/clojurescript {:mvn/version "1.10.773"}
         hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
         hickory/hickory {:mvn/version "0.7.1"}
-        org-parser/org-parser {:mvn/version "0.1.27"}}
+        org-parser/org-parser {:mvn/version "0.1.27"}
+        venantius/glow {:mvn/version "0.1.6"}}
  :paths ["src" "resources"]
  :aliases {:test {:extra-paths ["test"]}}}

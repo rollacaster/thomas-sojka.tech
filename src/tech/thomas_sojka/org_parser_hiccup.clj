@@ -1,7 +1,8 @@
 (ns tech.thomas-sojka.org-parser-hiccup
   (:require [clojure.string :as str]
             [hiccup2.core :as hiccup]
-            [org-parser.parser :as parser]))
+            [org-parser.parser :as parser]
+            [glow.core :as glow]))
 
 (defn link-ext-file [[ext-file]]
   (-> ext-file
@@ -69,7 +70,7 @@
      (conj
       (repeat (inc (- to from)) nil)
       (case type
-        :src-block [:pre (str/join "\n" raw-block-lines)]
+        :src-block [:raw (glow/highlight-html (str/join "\n" raw-block-lines))]
         :quote-block (into [:blockquote] content)
         :export-block [:raw (str/join raw-block-lines)])))))
 

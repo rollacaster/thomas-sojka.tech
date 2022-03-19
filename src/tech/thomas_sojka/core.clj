@@ -3,7 +3,8 @@
             [clojure.string :as str]
             [hiccup.core :as hiccup]
             [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
-            [tech.thomas-sojka.org-parser-meta :as org-parser-meta]))
+            [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
+            [glow.core :as glow]))
 
 (defn- nav-link
   [{:keys [title link active]}]
@@ -77,6 +78,7 @@
     [:meta {:content "data visualizations | frontend development | functional programming" :name "description"}]
     [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
+    [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
    [:body.flex.flex-col.h-screen.bg-gray-100
     (header {:active active})
@@ -170,5 +172,27 @@
                                  reverse
                                  (map content-item))]
                    file)]})))
+
+(spit "public/css/glow.css" (glow/generate-css
+                             {:background "#edf2f7"
+                              :exception "#859900"
+                              :repeat "#859900"
+                              :conditional "#859900"
+                              :variable "#268bd2"
+                              :core-fn "#586e75"
+                              :definition "#cb4b16"
+                              :reader-char "#dc322f"
+                              :special-form "#859900"
+                              :macro "#859900"
+                              :number "#2aa198"
+                              :boolean "#2aa198"
+                              :nil "#2aa198"
+                              :s-exp "#586e75"
+                              :keyword "#268bd2"
+                              :comment "#586e75"
+                              :string "#2aa198"
+                              :character "#2aa198"
+                              :regex "#dc322f"
+                              :symbol "#586e75"}))
 
 
