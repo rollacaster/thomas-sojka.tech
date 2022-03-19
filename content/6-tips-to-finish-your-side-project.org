@@ -12,7 +12,7 @@ As you can see in the chart below lately my success rate peaked, so I reflected 
 <picture>
   <source media="(max-width: 799px)" srcset="images/side-projects.svg">
   <source media="(min-width: 800px)" srcset="images/side-projects-lg.svg">
-  <img src="images/side-projects.png" alt="Chart displaying all my succeeded/failed side projects">
+  <img class="md:px-48" src="images/side-projects.png" alt="Chart displaying all my succeeded/failed side projects">
 </picture>
 #+END_EXPORT
 

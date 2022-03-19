@@ -30,6 +30,8 @@ pre {
   background-color: #edf2f7;
   margin-bottom: 2rem;
   padding: 0.5rem;
+  overflow-x: auto;
+  max-width: 87vw;
 }
 
 a {
@@ -52,7 +54,6 @@ blockquote {
 
 img {
   max-width: 100%;
-  padding: 0 12rem;
   margin: auto;
 }
 

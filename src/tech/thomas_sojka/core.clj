@@ -23,7 +23,7 @@
         [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]]]))
 
 (defn content [children]
-  [:section.max-w-5xl.mx-auto.py-8.flex-1
+  [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.md:px-0
    children])
 
 (defn footer []
