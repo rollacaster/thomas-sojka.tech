@@ -8,7 +8,7 @@
 (defn header
   ([] (header nil))
   ([{:keys [active]}]
-   [:header.w-full.bg-gray-700.py-3.px-6.lg:px-0
+   [:header.w-full.bg-gray-500.py-3.px-6.lg:px-0
     [:div.max-w-5xl.flex.justify-between.mx-auto
      [:h1.mb-0
       [:a.text-white.uppercase.tracking-widest.text-lg.border-0.font-normal
@@ -16,23 +16,23 @@
        "Thomas Sojka"]]
      [:nav.hidden.md:block
       [:ul.flex.gap-x-6.list-none
-       [:li.mb-0 {:class (when (= active "Home") "bg-gray-700")}
+       [:li.mb-0 {:class (when (= active "Home") "bg-gray-500")}
         [:a.text-white.border-0 {:href "/"} "Home"]]
-       [:li.mb-0 {:class (when (= active "About") "bg-gray-700")}
+       [:li.mb-0 {:class (when (= active "About") "bg-gray-500")}
         [:a.text-white.border-0 {:href "/about.html"} "About"]]
-       [:li.mb-0 {:class (when (= active "Now") "bg-gray-700")}
+       [:li.mb-0 {:class (when (= active "Now") "bg-gray-500")}
         [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]]]))
 
 (defn mobile-nav
   ([] (mobile-nav nil))
   ([{:keys [active]}]
-   [:nav.md:hidden.fixed.bottom-0.bg-gray-700.w-full.py-4.border-t
+   [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t
     [:ul.flex.gap-x-6.list-none.justify-center
-     [:li.mb-0 {:class (when (= active "Home") "bg-gray-700")}
+     [:li.mb-0 {:class (when (= active "Home") "bg-gray-500")}
       [:a.text-white.border-0 {:href "/"} "Home"]]
-     [:li.mb-0 {:class (when (= active "About") "bg-gray-700")}
+     [:li.mb-0 {:class (when (= active "About") "bg-gray-500")}
       [:a.text-white.border-0 {:href "/about.html"} "About"]]
-     [:li.mb-0 {:class (when (= active "Now") "bg-gray-700")}
+     [:li.mb-0 {:class (when (= active "Now") "bg-gray-500")}
       [:a.text-white.border-0 {:href "/now.html"} "Now"]]]]))
 
 (defn content [children]
@@ -40,7 +40,7 @@
    children])
 
 (defn footer []
-  [:footer.bg-gray-700.flex.justify-center.gap-x-6.pt-3.pb-16.md:pb-3
+  [:footer.bg-gray-500.flex.justify-center.gap-x-6.pt-3.pb-16.md:pb-3
    [:a.text-white.border-0 {:href "https://mobile.twitter.com/rollacaster"} "Twitter"]
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
@@ -56,7 +56,7 @@
     [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
-   [:body.flex.flex-col.h-screen
+   [:body.flex.flex-col.h-screen.bg-gray-100
     (header)
     (-> children content vec)
     (mobile-nav)
@@ -114,11 +114,11 @@
    date))
 
 (defn content-item [{:keys [title link date content-type]}]
-  [:li.mb-0.w-full
+  [:li.mb-0
    [:a.text-white.cursor-pointer.block.border-0
     {:href link}
     [:div.flex.flex-col.rounded-lg.border.border-black.h-full
-     [:div.py-6.px-6.bg-gray-700.rounded-lg.rounded-b-none.flex-1
+     [:div.py-6.px-6.bg-gray-600.rounded-lg.rounded-b-none.flex-1
       [:h2.text-xl.text-gray-100 title]]
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
       [:span.text-gray-700 (format-date date)]
