@@ -1,8 +1,5 @@
-{:deps {cheshire/cheshire {:mvn/version "5.10.0"}
-        org.clojure/clojure {:mvn/version "1.10.1"}
-        org.clojure/clojurescript {:mvn/version "1.10.773"}
+{:deps {org.clojure/clojure {:mvn/version "1.10.1"}
         hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
-        hickory/hickory {:mvn/version "0.7.1"}
         org-parser/org-parser {:mvn/version "0.1.27"}
         venantius/glow {:mvn/version "0.1.6"}
         clj-rss/clj-rss {:mvn/version "0.3.0"}}
