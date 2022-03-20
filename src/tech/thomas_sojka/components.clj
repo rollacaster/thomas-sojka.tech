@@ -96,7 +96,7 @@
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
-   [:body.flex.flex-col.h-screen.bg-gray-100
+   [:body.flex.flex-col.h-screen.bg-gray-100.overflow-y-scroll
     (header {:active active :nav-links nav-links})
     (-> main content vec)
     (mobile-nav {:active active :nav-links nav-links})

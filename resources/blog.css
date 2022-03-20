@@ -65,3 +65,19 @@ ul {
 li {
   margin-bottom: 1rem;
 }
+
+body {
+  --scrollbar-foreground: #6b7280;
+  --scrollbar-background: #f3f4f6;
+  scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+body::-webkit-scrollbar {
+  width: 10px; /* Mostly for vertical scrollbars */
+  height: 10px; /* Mostly for horizontal scrollbars */
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-foreground);
+}
+body::-webkit-scrollbar-track {
+  background: var(--scrollbar-background);
+}
