@@ -12,10 +12,10 @@
                           (io/file "content"))
                 (remove #(.isDirectory %))))
 
-
-(doseq [{:keys [path content]} (pages/generate {:last-build-date (Instant/now)
-                                                :files files})]
-  (io/make-parents path)
-  (if (string? content)
-    (spit path content)
-    (io/copy content (io/file path))))
+(defn build [opts]
+  (doseq [{:keys [path content]} (pages/generate {:last-build-date (Instant/now)
+                                                  :files files})]
+    (io/make-parents path)
+    (if (string? content)
+      (spit path content)
+      (io/copy content (io/file path)))))
