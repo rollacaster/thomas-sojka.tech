@@ -67,7 +67,7 @@
    children])
 
 (defn footer []
-  [:footer.bg-gray-500.flex.justify-center.gap-x-6.pt-3.pb-16.md:pb-3
+  [:footer.bg-gray-500.flex.justify-center.gap-x-6.pt-3.pb-20.md:pb-3
    [:a.text-white.border-0 {:href "https://mobile.twitter.com/rollacaster"} "Twitter"]
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
