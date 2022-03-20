@@ -1,5 +1,9 @@
-(ns tech.thomas-sojka.components
-  (:require [tech.thomas-sojka.utils :refer [format-date]]))
+(ns tech.thomas-sojka.components)
+
+(defn- format-date [date]
+  (.format
+   (java.text.SimpleDateFormat. "yyyy-MM-dd")
+   date))
 
 (defn- icon [name]
   [:svg {:width "20" :height "20" :viewbox "0 0 24 24" :fill "dark-gray"}
@@ -80,13 +84,13 @@
     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
      (map content-item external-blogs)]]])
 
-(defn page [{:keys [main active nav-links description]}]
-  [:html {:lang "en"}
+(defn page [{:keys [title language author main active nav-links description]}]
+  [:html {:lang language}
    [:head
     [:meta {:charset "utf-8"}]
     [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
-    [:title "Thomas Sojka"]
-    [:meta {:content "Thomas Sojka" :name "author"}]
+    [:title title]
+    [:meta {:content author :name "author"}]
     [:meta {:content description :name "description"}]
     [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
