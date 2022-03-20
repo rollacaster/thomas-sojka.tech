@@ -1,0 +1,7 @@
+#+ext-link: http://archive.comsystoreply.de/blog-post/putting-in-overtime-with-elm
+#+DATE: <2017-04-11>
+#+CONTENT-TYPE: external-blog
+#+title: Putting in overtime with Elm
+#+description: Exploring purely functional programming with Elm. We improved our time-tracking system with the functional programming language Elm by visualizing our current overtime.
+
+

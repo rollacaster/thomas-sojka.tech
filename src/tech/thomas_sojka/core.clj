@@ -150,7 +150,8 @@
                  (spit-parents path html-str))
         "page" (let [html-str (hiccup/html (page {:active title
                                                   :main (org-parser-hiccup/parse file)}))]
-                 (spit-parents path html-str))))
+                 (spit-parents path html-str))
+        nil))
     :else
     (let [path (str (public-path file) (.getName file))]
       (io/make-parents path)
@@ -158,17 +159,40 @@
 
 (def contents (->> (tree-seq (fn [f] (.isDirectory f))
                              (fn [f] (->> (file-seq f)
-                                         (remove #(= % f))))
+                                         (remove #(.isDirectory %))))
                              (io/file "content"))
                    (remove #(.isDirectory %))
-                   (filter org-file?)
-                   (map #(-> %
-                             org-parser-meta/parse
-                             (assoc :link (html-path %))))
-                   (filter #(= (:content-type %) "blog"))
-                   (map #(update % :date date))
-                   (sort-by :date)
-                   reverse))
+                   (filter org-file?)))
+
+(def content-projects
+  (->> contents
+       (map org-parser-meta/parse)
+       (filter #(= (:content-type %) "project"))
+       (map #(update % :date date))
+       (sort-by :date #(compare %2 %1))))
+
+(def content-external-blogs
+  (->> contents
+       (map org-parser-meta/parse)
+       (filter #(= (:content-type %) "external-blog"))
+       (map #(update % :date date))
+       (sort-by :date #(compare %2 %1))))
+
+(def content-blogs (->> contents
+                        (map #(-> %
+                                  org-parser-meta/parse
+                                  (assoc :link (html-path %))))
+                        (filter #(= (:content-type %) "blog"))
+                        (map #(update % :date date))
+                        (sort-by :date #(compare %2 %1))))
+
+(def content-talks (->> contents
+                        (map #(-> %
+                                  org-parser-meta/parse
+                                  (assoc :link (html-path %))))
+                        (filter #(= (:content-type %) "talk"))
+                        (map #(update % :date date))
+                        (sort-by :date #(compare %2 %1))))
 
 (def author "contact@thomas-sojka.tech (Thomas Sojka)")
 (def url "https://thomas-sojka.tech/")
@@ -184,15 +208,36 @@
                         (dissoc :content-type)
                         (assoc :author author)
                         (update :link #(str url %))))
-             contents)))
+             content-blogs)))
 
 (spit
  "public/index.html"
  (hiccup/html (page
                {:active "Home"
                 :main
-                [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-                 (map content-item contents)]})))
+                [:div
+                 [:div.mb-8
+                  [:h2.mb-2.font-normal "Blogs"]
+                  [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+                   (map content-item content-blogs)]]
+                 [:div.mb-8
+                  [:h2.mb-2.font-normal "Projects"]
+                  [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+                   (->> content-projects
+                        (map #(set/rename-keys % {:ext-link :link}))
+                        (map content-item))]]
+                 [:div.mb-8
+                  [:h2.mb-2.font-normal "Talks"]
+                  [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+                   (->> content-talks
+                        (map #(set/rename-keys % {:ext-link :link}))
+                        (map content-item))]]
+                 [:div.mb-8
+                  [:h2.mb-2.font-normal "External Blogs"]
+                  [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+                   (->> content-external-blogs
+                        (map #(set/rename-keys % {:ext-link :link}))
+                        (map content-item))]]]})))
 
 (spit "resources/glow.css" (glow/generate-css
                              {:background "#edf2f7"

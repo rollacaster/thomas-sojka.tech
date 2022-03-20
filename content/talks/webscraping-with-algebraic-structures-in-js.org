@@ -1,0 +1,7 @@
+#+ext-link: https://www.youtube.com/watch?v=ae_3svi5Eg0
+#+DATE: <2017-10-26>
+#+CONTENT-TYPE: talk
+#+title: Webscraping with algebraic structures in JS
+
+
+

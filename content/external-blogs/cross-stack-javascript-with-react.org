@@ -1,0 +1,7 @@
+#+ext-link: http://archive.comsystoreply.de/blog-post/cross-stack-javascript-with-react
+#+DATE: <2016-06-29>
+#+CONTENT-TYPE: external-blog
+#+title: Cross Stack JavaScript with React
+#+description: JavaScript crossed the border of the web browser and spread into other platforms. Along the way numerous libraries compete to form an ecosystem for targeting these platforms. This blog post guides through the steps to create a cross stack platform with React.js and further accompanying libraries.
+
+

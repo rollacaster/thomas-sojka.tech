@@ -1,0 +1,7 @@
+#+ext-link: https://medium.com/comsystoreply/visualizing-supply-chains-with-the-vizards-d46153e46613
+#+DATE: <2020-05-12>
+#+CONTENT-TYPE: external-blog
+#+title: Visualizing Supply Chains with the Vizards
+#+description: A hands-on approach on how to improve the quality of data visualizations step by step, even when you are not an expert in the field.
+
+

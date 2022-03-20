@@ -1,0 +1,7 @@
+#+ext-link: https://medium.com/comsystoreply/unsere-t%C3%BCren-sind-jetzt-dauerhaft-ge%C3%B6ffnet-b1a73ff0fa59
+#+DATE: <2019-01-14>
+#+CONTENT-TYPE: external-blog
+#+title: Unsere Türen sind jetzt dauerhaft geöffnet
+#+description: Wir sind stolz darauf unseren Virtual Reality Office Rundgang zu teilen, erstellt mit aframe und react. Besuch uns jederzeit, wirf einen Blick hinter die Kulissen und lerne wie du deine eigene virtuelle Tour erstellen kannst.
+
+

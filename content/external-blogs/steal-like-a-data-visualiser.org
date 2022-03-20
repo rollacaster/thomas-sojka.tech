@@ -1,0 +1,7 @@
+#+ext-link: https://medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896
+#+DATE: <2020-07-03>
+#+CONTENT-TYPE: external-blog
+#+title: Steal Like a Data Visualiser
+#+description: How I recreated a particle orbit in Clojure and improved my animation skills in the process
+
+

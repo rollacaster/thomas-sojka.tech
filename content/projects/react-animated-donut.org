@@ -1,0 +1,7 @@
+#+DATE: <2017-06-18>
+#+CONTENT-TYPE: project
+#+ext-link: https://www.npmjs.com/package/react-animated-donut
+#+title: react-animated-donut
+#+description: Animated Donut Chart using react & d3
+
+

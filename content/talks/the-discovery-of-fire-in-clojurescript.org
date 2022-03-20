@@ -1,0 +1,7 @@
+#+ext-link: https://www.youtube.com/watch?t=1256&v=Zj-L2bGAGS8&feature=youtu.be
+#+DATE: <2019-06-13>
+#+CONTENT-TYPE: talk
+#+title: The Discovery of Fire in ClojureScript
+
+
+

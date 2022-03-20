@@ -1,5 +1,5 @@
 #+TITLE: Setup tests with Cider & deps.edn in 5 steps
-#+DATE: <2021-01-06>
+#+DATE: <2021-01-10>
 #+CONTENT-TYPE: blog
 #+description: The configuration for tests with Cider & deps.edn is simple but not easy. This guides helps get it done quickly.
 #+filetags: CLOJURE

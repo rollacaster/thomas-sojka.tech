@@ -1,0 +1,7 @@
+#+ext-link: https://www.youtube.com/watch?v=juMLwOTxnvw
+#+DATE: <2018-10-29>
+#+CONTENT-TYPE: talk
+#+title: Compose All the Things
+#+description: Functional composition can help to build flexible and readable APIs. It is a concept that can be translated into a variety of programming languages and domains and is therefore not limited to JavaScript. This talk helps to understand the advantages of functional composition and to explain its underlying ideas. Furthermore, it bridges practical programming concepts such as testing or dependency injection with functional programming concepts such as pure functions or partial application.
+
+

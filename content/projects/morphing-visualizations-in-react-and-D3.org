@@ -1,0 +1,7 @@
+#+ext-link: https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa
+#+DATE: <2020-05-01>
+#+CONTENT-TYPE: project
+#+title: Morphing Visualizations in React & D3.js
+#+description: Learn how to create a visualization which is able to morph between a pack visualization and a tree using React and D3.js
+
+

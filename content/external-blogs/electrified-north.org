@@ -1,0 +1,7 @@
+#+ext-link: https://medium.com/comsystoreply/electrified-north-853b2c2ffdb7
+#+DATE: <2021-07-13>
+#+CONTENT-TYPE: external-blog
+#+title: Electrified North
+#+description: Visualizing the Norwegian charging network. The technical backstory of this Electrified North. I learned a lot, faced some deadends though I am happy with the final result.
+
+

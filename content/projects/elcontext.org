@@ -1,0 +1,6 @@
+#+title: elcontext
+#+ext-link: https://melpa.org/#/elcontext
+#+DATE: <2018-02-04>
+#+CONTENT-TYPE: project
+#+description: Context-based actions for Emacs
+

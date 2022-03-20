@@ -1,0 +1,6 @@
+#+ext-link: https://fire-hands.vercel.app/
+#+DATE: <2019-07-01>
+#+CONTENT-TYPE: project
+#+title: Fire Hands
+#+description: Create fire with your bare hands
+
