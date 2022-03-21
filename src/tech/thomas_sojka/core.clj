@@ -12,7 +12,7 @@
                           (io/file "content"))
                 (remove #(.isDirectory %))))
 
-(defn build [opts]
+(defn build [_]
   (doseq [{:keys [path content]} (pages/generate {:last-build-date (Instant/now)
                                                   :files files})]
     (io/make-parents path)
