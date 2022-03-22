@@ -24,6 +24,9 @@ jobs:
         node-version: 16
     - run: npm ci
     - run: npm run build
+    - name: Tests
+      run: clojure -Mtest-runner-cognitect
+      shell: bash
     - name: Build Pages
       run: clojure -Xbuild
       shell: bash

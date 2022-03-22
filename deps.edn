@@ -5,4 +5,10 @@
         clj-rss/clj-rss {:mvn/version "0.3.0"}}
  :paths ["src" "resources"]
  :aliases {:test {:extra-paths ["test"]}
-           :build {:exec-fn tech.thomas-sojka.core/build}}}
+           :build {:exec-fn tech.thomas-sojka.core/build}
+           :test-runner-cognitect
+           {:extra-paths ["test"]
+            :extra-deps  {com.cognitect/test-runner
+                          {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                           :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
+            :main-opts   ["-m" "cognitect.test-runner"]}}}
