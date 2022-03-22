@@ -1,6 +1,17 @@
 name: CI
 
-on: [push]
+on:
+  workflow_call:
+    inputs:
+      vercel-args:
+        type: string
+    secrets:
+      vercel-token:
+        required: true
+      vercel-org-id:
+        required: true
+      vercel-project-id:
+        required: true
 
 jobs:
   build:
@@ -32,8 +43,8 @@ jobs:
       shell: bash
     - uses: amondnet/vercel-action@v20
       with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.ORG_ID}}
-        vercel-project-id: ${{ secrets.PROJECT_ID}}
+        vercel-token: ${{ secrets.vercel-token }}
+        vercel-org-id: ${{ secrets.vercel-org-id}}
+        vercel-project-id: ${{ secrets.vercel-project-id}}
         working-directory: .
-
+        vercel-args: ${{ inputs.vercel-args }}
