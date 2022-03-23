@@ -1,11 +1,10 @@
 #+TITLE: Now
 #+NAV: 2
 #+CONTENT-TYPE: page
-** Contributing to Open Source in Clojure
-I started to contribute to [[https://cljdoc.org/][cljdoc]]. I am leveling my Clojure skills by doing so. I am proud of some minor additions I finished and excited for my future contributions.
-** Learning Datomic
-My grocery application [[https://github.com/rollacaster/shopping-cards][shopping-cards]] is turning into a playground to explore new technologies for me. After adding re-frame to the Frontend, I am migrating the data from files to [[https://docs.datomic.com/cloud/dev-local.html][Datomic Local Dev]].
-** Generative art
-For my 30th birthday, I got an Axidraw. I am using it to stick little pieces of art all over my office. I have completed five so far and hope to fill the entire wall.
-** Reading!
-At the end of last year, I started to read Structure and interpretation of computer programs. I try to solve each exercise for 30 minutes. I make slow progress, but progress.
+** Rewriting my website
+After adding a mobile menu was quite challenging in the old architecture, I overhauled my website. Instead of [[https://orgmode.org/manual/Publishing.html][org publish]] it's using a [[https://github.com/rollacaster/thomas-sojka.tech][custom solution]] now. It might still look the same but under the hood, everything changed. I have many more changes planned soon. Org-mode is still the basis for my blog.
+** Joined Pitch
+In December I switched jobs and now I work for [[https://pitch.com/][Pitch]]. I love it so far and  I can work full time with Clojure 🎉. It's also my first remote job, everything went smoother than expected.
+** Epic React Course
+I work through the [[https://epicreact.dev/][Epic React Course]]. I spend 30 mins on that every day, to finish it step by step at a sustainable pace.
+
