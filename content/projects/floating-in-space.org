@@ -1,0 +1,5 @@
+#+title: Floating in Space
+#+description: Explorations for floating 3D objects
+#+ext-link: https://github.com/rollacaster/floating-in-space
+#+DATE: <2021-05-04>
+#+CONTENT-TYPE: project

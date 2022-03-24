@@ -1,0 +1,5 @@
+#+title: Shopping Cards
+#+description: Automations for my food shopping
+#+ext-link: https://github.com/rollacaster/shopping-cards
+#+DATE: <2020-05-16>
+#+CONTENT-TYPE: project

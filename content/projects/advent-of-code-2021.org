@@ -1,0 +1,5 @@
+#+title: Advent of Code 2021
+#+description: Solution in Clojure
+#+ext-link: https://github.com/rollacaster/advent-2021
+#+DATE: <2021-12-01>
+#+CONTENT-TYPE: project

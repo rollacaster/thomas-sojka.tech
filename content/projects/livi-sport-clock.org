@@ -1,0 +1,5 @@
+#+title: Livi's Sport Clock
+#+description: Sports timer to track when to change your exercise
+#+ext-link: https://github.com/rollacaster/livis-sport-clock
+#+DATE: <2020-06-22>
+#+CONTENT-TYPE: project

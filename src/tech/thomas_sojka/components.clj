@@ -72,7 +72,7 @@
     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
      (map content-item blogs)]]
    [:div.mb-8
-    [:h2.mb-2.font-normal "Projects"]
+    [:h2.mb-2.font-normal "Side Projects"]
     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
      (map content-item projects)]]
    [:div.mb-8

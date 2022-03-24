@@ -1,0 +1,5 @@
+#+title: Grootlapse
+#+description: A timelapse camera for plant watching
+#+ext-link: https://github.com/rollacaster/GrootLapse
+#+DATE: <2021-03-08>
+#+CONTENT-TYPE: project
