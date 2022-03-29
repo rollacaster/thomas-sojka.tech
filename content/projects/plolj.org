@@ -1,0 +1,5 @@
+#+title: Plolj
+#+description: Sketches for my axidraw
+#+ext-link: https://github.com/rollacaster/plolj
+#+DATE: <2021-02-07>
+#+CONTENT-TYPE: project
