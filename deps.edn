@@ -4,7 +4,9 @@
         venantius/glow {:mvn/version "0.1.6"}
         clj-rss/clj-rss {:mvn/version "0.3.0"}}
  :paths ["src" "resources"]
- :aliases {:dev {:extra-paths ["dev"]}
+ :aliases {:dev {:extra-paths ["dev"]
+                 :extra-deps {ring-refresh/ring-refresh {:mvn/version "0.1.2"}
+                              ring/ring {:mvn/version "1.9.5"}}}
            :test {:extra-paths ["test"]}
            :build {:exec-fn tech.thomas-sojka.core/build}
            :test-runner-cognitect

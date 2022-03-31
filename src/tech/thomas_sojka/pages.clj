@@ -5,7 +5,6 @@
    [glow.core :as glow]
    [hiccup.core :as hiccup]
    [tech.thomas-sojka.components :as components]
-   [tech.thomas-sojka.data :as data]
    [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
    [tech.thomas-sojka.rss :as thomas-sojka.rss]))
@@ -40,53 +39,47 @@
   (str "public"
        (when (.getParent file) (str/replace (.getParent file) "content" "")) "/"))
 
-(defn- org-file? [file]
-  (re-find #".org$" (.getName file)))
-
-(defn generate [{:keys [last-build-date files]}]
-  (let [[content-files resource-files] ((juxt filter remove) org-file? files)
-        content (data/content content-files)
-        nav-links (data/nav-links content-files)]
-    (concat
-     [{:path "resources/glow.css"
-       :content (glow/generate-css syntax-coloring)}
-      {:path "public/index.xml"
-       :content
-       (apply rss/channel-xml
-              (thomas-sojka.rss/generate
-               {:title title
-                :language language
-                :url url
-                :author author
-                :description description
-                :lastBuildDate last-build-date
-                :items (:blogs content)}))}
-      {:path "public/index.html"
-       :content
-       (hiccup/html
-        (components/page
-         {:title title
-          :language language
-          :author author
-          :active "Home"
-          :description description
-          :nav-links nav-links
-          :main (components/home content)}))}]
-     (->> content-files
-          (filter #(#{"blog" "page"} (:content-type (org-parser-meta/parse %))))
-          (map
-           (fn [file]
-             (let [{:keys [content-type title]} (org-parser-meta/parse file)]
-               {:path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))
-                :content (hiccup/html (components/page {:title title
-                                                        :language language
-                                                        :author author
-                                                        :active (when (= content-type "page") title)
-                                                        :main (org-parser-hiccup/parse file)
-                                                        :description description
-                                                        :nav-links nav-links}))}))))
-     (map
-      (fn [file]
-        {:path (str (public-path file) (.getName file))
-         :content file})
-      resource-files))))
+(defn generate [{:keys [last-build-date content-files content nav-links resource-files]}]
+  (concat
+   [{:path "resources/glow.css"
+     :content (glow/generate-css syntax-coloring)}
+    {:path "public/index.xml"
+     :content
+     (apply rss/channel-xml
+            (thomas-sojka.rss/generate
+             {:title title
+              :language language
+              :url url
+              :author author
+              :description description
+              :lastBuildDate last-build-date
+              :items (:blogs content)}))}
+    {:path "public/index.html"
+     :content
+     (hiccup/html
+      (components/page
+       {:title title
+        :language language
+        :author author
+        :active "Home"
+        :description description
+        :nav-links nav-links
+        :main (components/home content)}))}]
+   (->> content-files
+        (filter #(#{"blog" "page"} (:content-type (org-parser-meta/parse %))))
+        (map
+         (fn [file]
+           (let [{:keys [content-type title]} (org-parser-meta/parse file)]
+             {:path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))
+              :content (hiccup/html (components/page {:title title
+                                                      :language language
+                                                      :author author
+                                                      :active (when (= content-type "page") title)
+                                                      :main (org-parser-hiccup/parse file)
+                                                      :description description
+                                                      :nav-links nav-links}))}))))
+   (map
+    (fn [file]
+      {:path (str (public-path file) (.getName file))
+       :content file})
+    resource-files)))
