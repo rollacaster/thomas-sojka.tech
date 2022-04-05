@@ -109,4 +109,5 @@
     (header {:active active :nav-links nav-links})
     main
     (mobile-nav {:active active :nav-links nav-links})
-    (footer) ]])
+    (footer)
+    [:script {:src "js/main.js"}]]])

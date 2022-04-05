@@ -41,6 +41,8 @@ jobs:
     - name: Build Pages
       run: clojure -Xbuild
       shell: bash
+    - name: Build JS
+      run: npx shadow-cljs compile app
     - uses: amondnet/vercel-action@v20
       with:
         vercel-token: ${{ secrets.vercel-token }}

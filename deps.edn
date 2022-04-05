@@ -2,8 +2,9 @@
         hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
         org-parser/org-parser {:mvn/version "0.1.27"}
         venantius/glow {:mvn/version "0.1.6"}
-        clj-rss/clj-rss {:mvn/version "0.3.0"}}
- :paths ["src" "resources"]
+        clj-rss/clj-rss {:mvn/version "0.3.0"}
+        thheller/shadow-cljs {:mvn/version "2.18.0"}}
+ :paths ["src/be" "src/fe" "resources"]
  :aliases {:dev {:extra-paths ["dev"]
                  :extra-deps {ring-refresh/ring-refresh {:mvn/version "0.1.2"}
                               ring/ring {:mvn/version "1.9.5"}}}
