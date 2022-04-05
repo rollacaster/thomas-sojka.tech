@@ -71,13 +71,14 @@
          (fn [file]
            (let [{:keys [content-type title]} (org-parser-meta/parse file)]
              {:path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))
-              :content (hiccup/html (components/page {:title title
-                                                      :language language
-                                                      :author author
-                                                      :active (when (= content-type "page") title)
-                                                      :main (org-parser-hiccup/parse file)
-                                                      :description description
-                                                      :nav-links nav-links}))}))))
+              :content (hiccup/html
+                        (components/page {:title title
+                                          :language language
+                                          :author author
+                                          :active (when (= content-type "page") title)
+                                          :main (components/content (org-parser-hiccup/parse file))
+                                          :description description
+                                          :nav-links nav-links}))}))))
    (map
     (fn [file]
       {:path (str (public-path file) (.getName file))

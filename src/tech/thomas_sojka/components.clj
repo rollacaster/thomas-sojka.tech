@@ -44,7 +44,7 @@
        (nav-link {:active active :title title :link link}))
      nav-links)]])
 
-(defn- content [children]
+(defn content [& children]
   [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
    children])
 
@@ -67,22 +67,31 @@
 
 (defn home [{:keys [blogs projects talks external-blogs]}]
   [:div
-   [:div.mb-8
-    [:h2.mb-2.font-normal "Blogs"]
-    [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-     (map content-item blogs)]]
-   [:div.mb-8
-    [:h2.mb-2.font-normal "Side Projects"]
-    [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-     (map content-item projects)]]
-   [:div.mb-8
-    [:h2.mb-2.font-normal "Talks"]
-    [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-     (map content-item talks)]]
-   [:div.mb-8
-    [:h2.mb-2.font-normal "External Blogs"]
-    [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-     (map content-item external-blogs)]]])
+   [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-36.lg:pb-12
+    [:div.border.border-8.border-white.absolute.top-0.right-0.mt-24.lg:mt-32.mr-10.lg:mr-16.w-24.lg:w-48.shadow-2xl.rotate-6
+     [:img.rounded
+      {:src "images/me.png"}]]
+    [:p.font-bold.text-3xl "Hi, there 👋"]
+    [:h1.text-center.text-4xl.lg:text-6xl.font-thin.px-3.lg:px-0
+     {:class "lg:w-2/3"}
+     "Welcome to my page where I share my thoughts by writing, talking and building."]]
+   (content
+    [:div.mb-8
+     [:h2.mb-2.font-normal "Blogs"]
+     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+      (map content-item blogs)]]
+    [:div.mb-8
+     [:h2.mb-2.font-normal "Side Projects"]
+     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+      (map content-item projects)]]
+    [:div.mb-8
+     [:h2.mb-2.font-normal "Talks"]
+     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+      (map content-item talks)]]
+    [:div.mb-8
+     [:h2.mb-2.font-normal "External Blogs"]
+     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
+      (map content-item external-blogs)]])])
 
 (defn page [{:keys [title language author main active nav-links description]}]
   [:html {:lang language}
@@ -98,6 +107,6 @@
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
    [:body.flex.flex-col.h-screen.bg-gray-100.overflow-y-scroll
     (header {:active active :nav-links nav-links})
-    (-> main content vec)
+    main
     (mobile-nav {:active active :nav-links nav-links})
     (footer) ]])

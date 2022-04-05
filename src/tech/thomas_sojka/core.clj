@@ -33,4 +33,4 @@
          (spit path content)
          (io/copy content (io/file path)))))))
 (comment
-  (time (tech.thomas-sojka.core/build {:files []})))
+  (time (tech.thomas-sojka.core/build)))
