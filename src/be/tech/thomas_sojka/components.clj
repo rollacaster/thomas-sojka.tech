@@ -67,6 +67,7 @@
 
 (defn home [{:keys [blogs projects talks external-blogs]}]
   [:div
+   [:div#main]
    [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-36.lg:pb-12
     [:p.font-bold.text-3xl "Hi, there 👋"]
     [:h1.text-center.text-4xl.lg:text-6xl.font-thin.px-3.lg:px-0
@@ -88,7 +89,8 @@
     [:div.mb-8
      [:h2.mb-2.font-normal "External Blogs"]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-      (map content-item external-blogs)]])])
+      (map content-item external-blogs)]])
+   [:script {:src "js/main.js"}]])
 
 (defn page [{:keys [title language author main active nav-links description]}]
   [:html {:lang language}
@@ -107,5 +109,4 @@
     [:div#main]
     main
     (mobile-nav {:active active :nav-links nav-links})
-    (footer)
-    [:script {:src "js/main.js"}]]])
+    (footer)]])
