@@ -3,4 +3,5 @@
  {:app {:target :browser
         :output-dir "public/js"
         :asset-path "/js"
-        :modules {:main {:entries [tech.thomas-sojka.app]}}}}}
+        :modules {:main {:entries [tech.thomas-sojka.app]}}
+        :js-options {:entry-keys ["module" "browser" "main"]}}}}

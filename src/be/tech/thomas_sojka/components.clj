@@ -68,9 +68,6 @@
 (defn home [{:keys [blogs projects talks external-blogs]}]
   [:div
    [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-36.lg:pb-12
-    [:div.border.border-8.border-white.absolute.top-0.right-0.mt-24.lg:mt-32.mr-10.lg:mr-16.w-24.lg:w-48.shadow-2xl.rotate-6
-     [:img.rounded
-      {:src "images/me.png"}]]
     [:p.font-bold.text-3xl "Hi, there 👋"]
     [:h1.text-center.text-4xl.lg:text-6xl.font-thin.px-3.lg:px-0
      {:class "lg:w-2/3"}
@@ -107,6 +104,7 @@
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
    [:body.flex.flex-col.h-screen.bg-gray-100.overflow-y-scroll
     (header {:active active :nav-links nav-links})
+    [:div#main]
     main
     (mobile-nav {:active active :nav-links nav-links})
     (footer)
