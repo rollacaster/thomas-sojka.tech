@@ -9,11 +9,18 @@
             [reagent.dom :as dom]))
 
 (def grays
-  (-> (resolveConfig)
-      (js->clj :keywordize-keys true)
-      :theme
-      :backgroundColor
-      :gray))
+  (->(resolveConfig)
+     (js->clj :keywordize-keys true)
+     :theme
+     :backgroundColor
+     :gray))
+
+(def screens
+  (->(resolveConfig)
+     (js->clj :keywordize-keys true)
+     :theme
+     :screens))
+
 
 (def line-curve
   (new three/CatmullRomCurve3
@@ -111,7 +118,7 @@
    [:meshStandardMaterial {:color color}]])
 
 (defn tree-chart []
-  [:group {:position [(w 0.7) (h 0.75) 0]}
+  [:group {:position [(w 0.7) (h 0.7) 0]}
    (map-indexed
     (fn [idx d]
       ^{:key idx}
@@ -139,21 +146,40 @@
     [:group {:ref ref}
      children]))
 
+(defn use-screen-width []
+  (let [[width set-width] (react/useState js/window.innerWidth)]
+    (react/useEffect
+     (fn []
+       (let [update-width (fn [] (set-width js/window.innerWidth))]
+         (js/window.addEventListener "resize"
+                 update-width #js {:passive true})
+         (fn []
+           (js/window.removeEventListener
+            "resize"
+            update-width
+            #js {:passive true})))))
+    width))
+
+(defn canvas []
+  (let [width (use-screen-width)]
+    [:> r3f/Canvas
+     (when (> width (js/parseInt (:md screens)))
+       [:<>
+        [:group {:scale 0.5}
+         [:f> floating
+          [:f> line-chart]]
+         [:f> floating
+          [:f> bar-chart]]
+         [:f> floating
+          [:f> pie-chart]]
+         [:f> floating
+          [:f> tree-chart]]]
+        [:ambientLight]
+        [:pointLight {:position [10 10 10]}]])]))
 
 (defn main []
   [:div.absolute.h-screen.w-full.z-10
-   [:> r3f/Canvas
-    [:group {:scale 0.5}
-     [:f> floating
-      [:f> line-chart]]
-     [:f> floating
-      [:f> bar-chart]]
-     [:f> floating
-      [:f> pie-chart]]
-     [:f> floating
-      [:f> tree-chart]]]
-    [:ambientLight]
-    [:pointLight {:position [10 10 10]}]]])
+   [:f> canvas]])
 
 (dom/render
  [main]
