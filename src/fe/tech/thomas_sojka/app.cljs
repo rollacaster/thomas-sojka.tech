@@ -178,7 +178,7 @@
         [:pointLight {:position [10 10 10]}]])]))
 
 (defn main []
-  [:div.absolute.h-screen.w-full.z-10
+  [:div.absolute.h-screen.w-full.z-10.pointer-events-none
    [:f> canvas]])
 
 (dom/render

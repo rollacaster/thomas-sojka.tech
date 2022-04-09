@@ -72,18 +72,21 @@
     [:p.font-bold.text-3xl "Hi, there 👋"]
     [:h1.text-center.text-4xl.lg:text-6xl.font-thin.px-3.lg:px-0
      {:class "lg:w-2/3"}
-     "Welcome to my page where I share my thoughts by writing, talking and building."]]
+     "Welcome to my page where I share my thoughts by "
+     [:a.cursor-pointer {:href "#writing"} "writing"] ", "
+     [:a.cursor-pointer {:href "#talking"} "talking"] " and "
+     [:a.cursor-pointer {:href "#building"} "building"] "."]]
    (content
     [:div.mb-8
-     [:h2.mb-2.font-normal "Blogs"]
+     [:h2#writing.mb-2.font-normal "Blogs"]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (map content-item blogs)]]
     [:div.mb-8
-     [:h2.mb-2.font-normal "Side Projects"]
+     [:h2#building.mb-2.font-normal "Side Projects"]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (map content-item projects)]]
     [:div.mb-8
-     [:h2.mb-2.font-normal "Talks"]
+     [:h2#talking.mb-2.font-normal "Talks"]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (map content-item talks)]]
     [:div.mb-8
