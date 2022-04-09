@@ -35,15 +35,15 @@
                       :regex "#dc322f"
                       :symbol "#586e75"})
 
-(defn- public-path [file]
-  (str "public"
+(defn- public-path [target-folder file]
+  (str target-folder
        (when (.getParent file) (str/replace (.getParent file) "content" "")) "/"))
 
-(defn generate [{:keys [last-build-date content-files content nav-links resource-files]}]
+(defn generate [{:keys [last-build-date content-files content nav-links resource-files target-folder]}]
   (concat
    [{:path "resources/glow.css"
      :content (glow/generate-css syntax-coloring)}
-    {:path "public/index.xml"
+    {:path (str target-folder "/index.xml")
      :content
      (apply rss/channel-xml
             (thomas-sojka.rss/generate
@@ -54,7 +54,7 @@
               :description description
               :lastBuildDate last-build-date
               :items (:blogs content)}))}
-    {:path "public/index.html"
+    {:path (str target-folder "/index.html")
      :content
      (hiccup/html
       (components/page
@@ -70,7 +70,7 @@
         (map
          (fn [file]
            (let [{:keys [content-type title]} (org-parser-meta/parse file)]
-             {:path (str (public-path file) "/" (str/replace (.getName file) #".org$" ".html"))
+             {:path (str (public-path target-folder file) "/" (str/replace (.getName file) #".org$" ".html"))
               :content (hiccup/html
                         (components/page {:title title
                                           :language language
@@ -81,6 +81,6 @@
                                           :nav-links nav-links}))}))))
    (map
     (fn [file]
-      {:path (str (public-path file) (.getName file))
+      {:path (str (public-path target-folder file) (.getName file))
        :content file})
     resource-files)))

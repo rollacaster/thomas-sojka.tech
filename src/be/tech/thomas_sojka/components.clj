@@ -106,7 +106,6 @@
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
    [:body.flex.flex-col.h-screen.bg-gray-100.overflow-y-scroll
     (header {:active active :nav-links nav-links})
-    [:div#main]
     main
     (mobile-nav {:active active :nav-links nav-links})
     (footer)]])

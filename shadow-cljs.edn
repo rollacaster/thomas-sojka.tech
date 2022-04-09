@@ -4,4 +4,9 @@
         :output-dir "public/js"
         :asset-path "/js"
         :modules {:main {:entries [tech.thomas-sojka.app]}}
+        :js-options {:entry-keys ["module" "browser" "main"]}}
+  :dev {:target :browser
+        :output-dir "public-dev/js"
+        :asset-path "/js"
+        :modules {:main {:entries [tech.thomas-sojka.app]}}
         :js-options {:entry-keys ["module" "browser" "main"]}}}}

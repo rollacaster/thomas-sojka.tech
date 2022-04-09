@@ -6,9 +6,7 @@
   "scripts": {
     "build": "postcss resources/*.css --dir public/css",
     "dev": "npm-run-all --parallel dev:*",
-    "dev:tailwind": "postcss resources/styles.css -o public/css/styles.css -w",
-    "dev:blog": "postcss resources/blog.css -o public/css/blog.css -w",
-    "dev:code": "postcss resources/glow.css -o public/css/glow.css -w"
+    "dev:css": "postcss resources/*.css --dir public-dev/static/css -w"
   },
   "repository": {
     "type": "git",
