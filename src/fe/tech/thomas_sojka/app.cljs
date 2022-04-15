@@ -6,7 +6,9 @@
             ["react" :as react]
             ["tailwindcss/resolveConfig" :as resolveConfig]
             ["three" :as three]
-            [reagent.dom :as dom]))
+            [reagent.dom :as dom]
+            ["mobile-detect" :as md]))
+
 
 (def grays
   (->(resolveConfig)
@@ -21,6 +23,25 @@
      :theme
      :screens))
 
+(defn v [v & {:keys [] :as breakpoints}]
+  (let [three (r3f/useThree)
+        screen-width (.-size.width three)
+        screens-ordered (->> screens
+                             (map (fn [[breakpoint breakpoint-width]]
+                                    [breakpoint (js/parseFloat breakpoint-width)]))
+                             (sort-by second >))
+        screens-order (mapv first screens-ordered)
+        screen-size (or (some (fn [[breakpoint breakpoint-width]]
+                                (when (> screen-width (js/parseFloat breakpoint-width))
+                                  breakpoint))
+                              screens-ordered)
+                        :sm)]
+    (or (some
+         (fn [breakpoint] (get breakpoints breakpoint))
+         (subvec
+          screens-order
+          (.indexOf screens-order screen-size)))
+        v)))
 
 (def line-curve
   (new three/CatmullRomCurve3
@@ -35,24 +56,68 @@
 (defn w [x]
   (let [three (r3f/useThree)
         width (.-viewport.width three)
+        mobile? (.mobile (new md js/window.navigator.userAgent))
         s (-> (scale/scaleLinear)
               (.domain #js [0 1])
-              (.range #js [(- width) width]))]
+              (.range #js [(* (if mobile? (.-viewport.dpr three) 1) (- width))
+                           (*  (if mobile? (.-viewport.dpr three) 1) 1 width)]))]
     (s x)))
 
+(defn r [v]
+  (* (* 2 js/Math.PI) v))
 
 (defn h [x]
   (let [three (r3f/useThree)
         height (.-viewport.height three)
+        mobile? (.mobile (new md js/window.navigator.userAgent))
         s (-> (scale/scaleLinear)
               (.domain #js [0 1])
-              (.range #js [height (- height)]))]
+              (.range #js [(* (if mobile? (.-viewport.dpr three) 1) height)
+                           (* (if mobile? (.-viewport.dpr three) 1) (- height))]))]
     (s x)))
 
+(defn use-center-pos []
+  (let [ref (react/useRef)
+        three (r3f/useThree)
+        screen-width (.-size.width three)
+        [[x y] set-pos] (react/useState [0 0])]
+    (react/useEffect
+     (fn []
+      (let [bbox (.setFromObject (new three/Box3) (.-current ref))
+             width (- (.-max.x bbox) (.-min.x bbox))
+             height (- (.-max.y bbox) (.-min.y bbox))]
+         (set-pos  [(- (/ width 2))
+                    (- (/ height 2))]))
+       identity)
+     #js [screen-width set-pos])
+    {:ref ref :dx x :dy y}))
+
+(defn box* [{[x y] :position
+             :keys [center scale rotation]
+             :or {scale 1 rotation [0 0 0]}}
+            children]
+  (let [{:keys [ref dx dy]} (use-center-pos)]
+    [:group {:position [(+ x (if center dx 0))
+                        (+ y (if center dy 0))
+                        0]
+             :rotation rotation
+             :scale scale
+             :ref ref}
+     children]))
+
+(defn box [props & children]
+  [:f> box* props children])
+
 (defn line-chart []
-  [:mesh {:position [(w 0.1) (h 0.3) 0]}
-   [:tubeGeometry {:args [line-curve 30 0.2 20]}]
-   [:meshStandardMaterial {:color (:800 grays)}]])
+  [box {:center true
+        :position [(w (v 0.44 :md 0.35))
+                   (h (v 0.42 :md 0.44 :lg 0.4))
+                   0]
+        :rotation [(r 0.1) (r 0.05) (r 0)]
+        :scale (v 0.38 :md 0.5)}
+   [:mesh
+    [:tubeGeometry {:args [line-curve 30 0.2 20]}]
+    [:meshStandardMaterial {:color (:800 grays)}]]])
 
 (defn bar [{:keys [x y height color]}]
   [:mesh {:position [x y 0]}
@@ -60,7 +125,14 @@
    [:meshStandardMaterial {:color color}]])
 
 (defn bar-chart []
-  [:group {:position [(w 0.6) (h 0.35) 0]}
+  [box {:center true
+        :position [(w (v 0.56 :md 0.61))
+                   (h (v 0.412 :md 0.42 :lg 0.35))
+                   0]
+        :rotation [(v (r 0.11) :md (r 0.1))
+                   (v (r -0.1) :md (r -0.1))
+                   (v (r 0.05) :md (r 0))]
+        :scale (v 0.25 :md 0.4)}
    (map-indexed
     (fn [idx d]
       ^{:key idx}
@@ -73,12 +145,18 @@
                    :keywordize-keys true))
 
 (defn arc [{:keys [start-angle end-angle color]}]
-  [:mesh {:position [-3 -2 0] :rotation [(/ js/Math.PI 2) 0 0]}
+  [:mesh {:rotation [(/ js/Math.PI 2) 0 0]}
    [:cylinderGeometry {:args [1.5 1.5 1 8 1 false start-angle (- end-angle start-angle)]}]
    [:meshStandardMaterial {:color color}]])
 
 (defn pie-chart []
-  [:group {:position [(w 0.35) (h 0.6) 0]}
+  [box {:position [(w (v 0.43 :md 0.36))
+                   (h (v 0.55 :md 0.55 :lg 0.62))
+                   0]
+        :scale (v 0.4 :md 0.5)
+        :rotation [(r (v -0.1 :md -0.1 :lg -0.2))
+                   (r (v 0.1 :md 0.1 :lg 0.2))
+                   0]}
    (map-indexed
     (fn [idx {:keys [startAngle endAngle]}]
       ^{:key idx}
@@ -118,7 +196,14 @@
    [:meshStandardMaterial {:color color}]])
 
 (defn tree-chart []
-  [:group {:position [(w 0.7) (h 0.7) 0]}
+  [box {:position [(w (v 0.55 :md 0.6))
+                   (h (v 0.52 :md 0.515 :lg 0.55))
+                   0]
+        :center true
+        :scale (v 0.38 :md 0.45)
+        :rotation [(r (v -0.1 :md -0.1 :lg -0.1))
+                   (r (v -0.1 :md -0.1 :lg -0.2))
+                   0]}
    (map-indexed
     (fn [idx d]
       ^{:key idx}
@@ -139,43 +224,27 @@
      (fn [prop]
        (let [et (+ ^js (.getElapsedTime (.-clock prop)) offset)]
          (when (.-current ref)
-           (set! (.-current.position.y ref) (Math/sin (/ et 2)))
+           (set! (.-current.position.y ref) (/ (Math/sin et) 4))
            (set! (.-current.rotation.x ref) (/ (Math/sin (/ et 3)) 10))
            (set! (.-current.rotation.y ref) (/ (Math/cos (/ et 2)) 10))
-           (set! (.-current.rotation.z ref) (/ (Math/sin (/ et 3)) 10))))))
+           (set! (.-current.rotation.z ref) (/ (Math/sin (/ et 3)) 20))))))
     [:group {:ref ref}
      children]))
 
-(defn use-screen-width []
-  (let [[width set-width] (react/useState js/window.innerWidth)]
-    (react/useEffect
-     (fn []
-       (let [update-width (fn [] (set-width js/window.innerWidth))]
-         (js/window.addEventListener "resize"
-                 update-width #js {:passive true})
-         (fn []
-           (js/window.removeEventListener
-            "resize"
-            update-width
-            #js {:passive true})))))
-    width))
-
 (defn canvas []
-  (let [width (use-screen-width)]
-    [:> r3f/Canvas
-     (when (> width (js/parseInt (:md screens)))
-       [:<>
-        [:group {:scale 0.5}
-         [:f> floating
-          [:f> line-chart]]
-         [:f> floating
-          [:f> bar-chart]]
-         [:f> floating
-          [:f> pie-chart]]
-         [:f> floating
-          [:f> tree-chart]]]
-        [:ambientLight]
-        [:pointLight {:position [10 10 10]}]])]))
+  [:> r3f/Canvas
+   [:<>
+    [:group
+     [:f> floating
+      [:f> line-chart]]
+     [:f> floating
+      [:f> bar-chart]]
+     [:f> floating
+      [:f> pie-chart]]
+     [:f> floating
+      [:f> tree-chart]]]
+    [:ambientLight]
+    [:pointLight {:position [10 10 10]}]]])
 
 (defn main []
   [:div.absolute.h-screen.w-full.z-10.pointer-events-none
@@ -184,4 +253,3 @@
 (dom/render
  [main]
  (js/document.getElementById "main"))
-
