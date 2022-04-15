@@ -151,7 +151,7 @@
 
 (defn pie-chart []
   [box {:position [(w (v 0.43 :md 0.36))
-                   (h (v 0.55 :md 0.55 :lg 0.62))
+                   (h (v 0.54 :md 0.55 :lg 0.62))
                    0]
         :scale (v 0.4 :md 0.5)
         :rotation [(r (v -0.1 :md -0.1 :lg -0.2))
@@ -197,7 +197,7 @@
 
 (defn tree-chart []
   [box {:position [(w (v 0.55 :md 0.6))
-                   (h (v 0.52 :md 0.515 :lg 0.55))
+                   (h (v 0.512 :md 0.515 :lg 0.55))
                    0]
         :center true
         :scale (v 0.38 :md 0.45)
