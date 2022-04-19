@@ -111,7 +111,7 @@
 (defn line-chart []
   [box {:center true
         :position [(w (v 0.44 :md 0.35))
-                   (h (v 0.41 :md 0.44 :lg 0.4))
+                   (h (v 0.415 :md 0.44 :lg 0.4))
                    0]
         :rotation [(r 0.1) (r 0.05) (r 0)]
         :scale (v 0.38 :md 0.5)}
@@ -127,7 +127,7 @@
 (defn bar-chart []
   [box {:center true
         :position [(w (v 0.56 :md 0.61))
-                   (h (v 0.405 :md 0.42 :lg 0.35))
+                   (h (v 0.408 :md 0.42 :lg 0.35))
                    0]
         :rotation [(v (r 0.11) :md (r 0.1))
                    (v (r -0.1) :md (r -0.1))
@@ -153,7 +153,7 @@
   [box {:position [(w (v 0.43 :md 0.36))
                    (h (v 0.54 :md 0.55 :lg 0.62))
                    0]
-        :scale (v 0.38 :md 0.5)
+        :scale (v 0.33 :md 0.5)
         :rotation [(r (v -0.1 :md -0.1 :lg -0.2))
                    (r (v 0.1 :md 0.1 :lg 0.2))
                    0]}
@@ -200,7 +200,7 @@
                    (h (v 0.512 :md 0.515 :lg 0.55))
                    0]
         :center true
-        :scale (v 0.36 :md 0.45)
+        :scale (v 0.325 :md 0.45)
         :rotation [(r (v -0.1 :md -0.1 :lg -0.1))
                    (r (v -0.1 :md -0.1 :lg -0.2))
                    0]}
