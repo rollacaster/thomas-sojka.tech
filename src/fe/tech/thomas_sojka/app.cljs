@@ -43,6 +43,20 @@
           (.indexOf screens-order screen-size)))
         v)))
 
+(defn use-fade-in-material []
+  (let [ref (react/useRef)]
+    (r3f/useFrame
+     (fn [prop]
+       (let [duration 2
+             et ^js (.getElapsedTime (.-clock prop))
+             opacity (-> (scale/scaleLinear)
+                         (.domain #js [0 duration])
+                         (.range #js [0 1]))]
+         (when (and (.-current ref) (<= et duration))
+           (set! (.-current.transparent ref) true)
+           (set! (.-current.opacity ref) (opacity et))))))
+    ref))
+
 (def line-curve
   (new three/CatmullRomCurve3
        #js[(new three/Vector3 0.5 0.5 0)
@@ -109,20 +123,22 @@
   [:f> box* props children])
 
 (defn line-chart []
-  [box {:center true
-        :position [(w (v 0.44 :md 0.35))
-                   (h (v 0.415 :md 0.44 :lg 0.4))
-                   0]
-        :rotation [(r 0.1) (r 0.05) (r 0)]
-        :scale (v 0.38 :md 0.5)}
-   [:mesh
-    [:tubeGeometry {:args [line-curve 30 0.2 20]}]
-    [:meshStandardMaterial {:color (:800 grays)}]]])
+  (let [ref (use-fade-in-material)]
+    [box {:center true
+          :position [(w (v 0.44 :md 0.35))
+                     (h (v 0.415 :md 0.44 :lg 0.4))
+                     0]
+          :rotation [(r 0.1) (r 0.05) (r 0)]
+          :scale (v 0.38 :md 0.5)}
+     [:mesh
+      [:tubeGeometry {:args [line-curve 30 0.2 20]}]
+      [:meshStandardMaterial {:color (:800 grays) :ref ref}]]]))
 
 (defn bar [{:keys [x y height color]}]
-  [:mesh {:position [x y 0]}
-   [:boxGeometry {:args [0.5 height 1]}]
-   [:meshStandardMaterial {:color color}]])
+  (let [ref (use-fade-in-material)]
+    [:mesh {:position [x y 0]}
+     [:boxGeometry {:args [0.5 height 1]}]
+     [:meshStandardMaterial {:color color :ref ref}]]))
 
 (defn bar-chart []
   [box {:center true
@@ -136,8 +152,8 @@
    (map-indexed
     (fn [idx d]
       ^{:key idx}
-      [bar {:x idx :y (/ idx 4) :height d
-            :color (nth (vals grays) idx)}])
+      [:f> bar {:x idx :y (/ idx 4) :height d
+                :color (nth (vals grays) idx)}])
     [0.5 1 1.5 2 2.5])])
 
 (def pie-data [1 1 2 3 6])
@@ -145,9 +161,10 @@
                    :keywordize-keys true))
 
 (defn arc [{:keys [start-angle end-angle color]}]
-  [:mesh {:rotation [(/ js/Math.PI 2) 0 0]}
-   [:cylinderGeometry {:args [1.5 1.5 1 8 1 false start-angle (- end-angle start-angle)]}]
-   [:meshStandardMaterial {:color color}]])
+  (let [ref (use-fade-in-material)]
+    [:mesh {:rotation [(/ js/Math.PI 2) 0 0]}
+     [:cylinderGeometry {:args [1.5 1.5 1 8 1 false start-angle (- end-angle start-angle)]}]
+     [:meshStandardMaterial {:color color :ref ref}]]))
 
 (defn pie-chart []
   [box {:position [(w (v 0.43 :md 0.36))
@@ -160,9 +177,9 @@
    (map-indexed
     (fn [idx {:keys [startAngle endAngle]}]
       ^{:key idx}
-      [arc {:start-angle startAngle
-            :end-angle endAngle
-            :color (nth (vals grays) idx)}])
+      [:f> arc {:start-angle startAngle
+                :end-angle endAngle
+                :color (nth (vals grays) idx)}])
     arcs)])
 
 (def tree-data
@@ -185,15 +202,17 @@
 (defn link [{:keys [source target color]}]
   (let [curve (new three/LineCurve3
                    (new three/Vector3 (.-x source) (- (.-y source)) 0)
-                   (new three/Vector3 (.-x target) (- (.-y target)) 0))]
+                   (new three/Vector3 (.-x target) (- (.-y target)) 0))
+        ref (use-fade-in-material)]
     [:mesh
      [:tubeGeometry {:args [curve 30 0.1 20]}]
-     [:meshStandardMaterial {:color color}]]))
+     [:meshStandardMaterial {:color color :ref ref}]]))
 
 (defn node [{:keys [x y color]}]
-  [:mesh {:position [x y 0]}
-   [:sphereGeometry {:args [0.2]}]
-   [:meshStandardMaterial {:color color}]])
+  (let [ref (use-fade-in-material)]
+    [:mesh {:position [x y 0]}
+     [:sphereGeometry {:args [0.2]}]
+     [:meshStandardMaterial {:color color :ref ref}]]))
 
 (defn tree-chart []
   [box {:position [(w (v 0.55 :md 0.6))
@@ -207,14 +226,14 @@
    (map-indexed
     (fn [idx d]
       ^{:key idx}
-      [node {:x (.-x d) :y (- (.-y d))
-             :color (nth (vals grays) idx)}])
+      [:f> node {:x (.-x d) :y (- (.-y d))
+                 :color (nth (vals grays) idx)}])
     ^js (.descendants tree-data))
    (map-indexed
     (fn [idx d]
       ^{:key idx}
-      [link {:source (.-source d) :target (.-target d)
-             :color (nth (vals grays) idx)}])
+      [:f> link {:source (.-source d) :target (.-target d)
+                 :color (nth (vals grays) idx)}])
     ^js (.links tree-data))])
 
 (defn floating [children]
