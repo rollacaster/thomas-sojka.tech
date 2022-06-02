@@ -1,10 +1,9 @@
 #+TITLE: Now
 #+NAV: 2
 #+CONTENT-TYPE: page
-** Rewriting my website
-After adding a mobile menu was quite challenging in the old architecture, I overhauled my website. Instead of [[https://orgmode.org/manual/Publishing.html][org publish]] it's using a [[https://github.com/rollacaster/thomas-sojka.tech][custom solution]] now. It might still look the same but under the hood, everything changed. I have many more changes planned soon. Org-mode is still the basis for my blog.
-** Joined Pitch
-In December I switched jobs and now I work for [[https://pitch.com/][Pitch]]. I love it so far and  I can work full time with Clojure 🎉. It's also my first remote job, everything went smoother than expected.
-** Epic React Course
-I work through the [[https://epicreact.dev/][Epic React Course]]. I spend 30 mins on that every day, to finish it step by step at a sustainable pace.
-
+** Leveling up shopping cards
+There's a new type of web apps on the rise. All updates happen optimistically, collaboration is possible and works offline. I want to dig into this trend. I'll try to level up my side project [[https://github.com/rollacaster/shopping-cards][shopping-cards]]. I plan to add a [[https://github.com/tonsky/datascript][DataScript]]/[[https://www.datomic.com/][Datomic]] sync mechanism and offline support to explore this space.
+** Math & algorithms
+It always felt like an area of programming I neglected a little bit. So I bought the [[https://pimbook.org/][pimbook]] to start with some math and hope to brush up my skills.
+** Learn in public
+I did not add any content to this website in the last couple of months plan to change that. I never did a write-up of my [[https://github.com/rollacaster/GrootLapse][Grootlapse]] project. It's in heavy use right now time to catch up on that.

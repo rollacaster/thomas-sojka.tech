@@ -42,7 +42,7 @@ jobs:
       run: clojure -Xbuild
       shell: bash
     - name: Build JS
-      run: npx shadow-cljs compile app
+      run: npx shadow-cljs release app
     - uses: amondnet/vercel-action@v20
       with:
         vercel-token: ${{ secrets.vercel-token }}

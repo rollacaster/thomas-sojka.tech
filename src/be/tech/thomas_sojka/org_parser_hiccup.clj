@@ -33,6 +33,7 @@
        :text-normal (first text-contents)
        :text-sty-verbatim [:code (first text-contents)]
        :text-sty-bold [:b (first text-contents)]
+       :text-sty-italic [:b (first text-contents)]
        :link-format (link text-contents)))
    text-parts))
 
@@ -167,7 +168,4 @@
          (map (fn [[type :as element]]
                 (case type
                   :raw (hiccup/raw (second element))
-                  (vec element))))))) 
-
-
-
+                  (vec element)))))))
