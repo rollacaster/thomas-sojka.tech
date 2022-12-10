@@ -16,7 +16,7 @@
 (defn- org-file? [file]
   (re-find #".org$" (.getName file)))
 (def content-files (filter org-file? files))
-(def nav-links (data/nav-links files))
+(def nav-links (data/nav-links content-files))
 (def content (data/content content-files))
 
 (defn build  [{:keys [files target-folder] :or {target-folder "public"}}]
