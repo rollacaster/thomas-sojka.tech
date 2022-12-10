@@ -2,7 +2,7 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 ** Adevent of Code
-It's December so it's [[https://github.com/rollacaster/advent-of-code][Advent of Code]] time. Here's my repo with all Solutions in Clojure. This year I am trying out [[https://github.com/nextjournal/clerk][Clerk]], trying to make use of ad hoc visualizations for my code.
+It's December so it's [[https://adventofcode.com/][Advent of Code]] time. Here's [[https://github.com/rollacaster/advent-of-code][my repo]] with all Solutions in Clojure. This year I am trying out [[https://github.com/nextjournal/clerk][Clerk]], trying to make use of ad hoc visualizations for my code.
 ** Dev Widgets
 As any other UI developer at some point in life I dream of creating a [[http://worrydream.com/][Bret Victor]] Style development environment for myself. [[https://github.com/rollacaster/dev-widgets][Dev Widgets]] is my attempt in doing that. (Not sure about the name yet)
 ** Learn in public
