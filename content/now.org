@@ -1,9 +1,9 @@
 #+TITLE: Now
 #+NAV: 2
 #+CONTENT-TYPE: page
-** Adevent of Code
-It's December so it's [[https://adventofcode.com/][Advent of Code]] time. Here's [[https://github.com/rollacaster/advent-of-code][my repo]] with all Solutions in Clojure. This year I am trying out [[https://github.com/nextjournal/clerk][Clerk]], trying to make use of ad hoc visualizations for my code.
-** Dev Widgets
-As any other UI developer at some point in life I dream of creating a [[http://worrydream.com/][Bret Victor]] Style development environment for myself. [[https://github.com/rollacaster/dev-widgets][Dev Widgets]] is my attempt in doing that. (Not sure about the name yet)
-** Learn in public
-I did not add any content to this website in the last couple of months plan to change that. I never did a write-up of my [[https://github.com/rollacaster/GrootLapse][Grootlapse]] project. It's in heavy use right now time to catch up on that.
+** Climate Change Data Viz
+I picked up work on my climate change data viz. I had some troubles in the past to properly read =*.nc= files and spend some time on a [[https://viz-sigma.vercel.app/contour-by-example][d3-contour explainer]] I never finished. But right now I am making [[https://viz-sigma.vercel.app/climate-change][good progress]] and continue building and summarizing what I learn.
+** Finance tracking
+As usual in January I spent some time working my personal finance tracking tool when doing personal my end of year accounting. I keep categorized track of all my finances and so far I collected them for the last six years. This year I added a feature to compare costs per category across multiple years and to calculate optimal saving plans. The code is not open source maybe next January is a good time to prepare the code for that.
+** Reading
+I just finished [[https://www.howtoinventeverything.com/][How to invent everything by Ryan North]] and can recommend it. I learned so many cool things humanity invented and have a much better understanding when we invented what and how crazy fast the world is changing the last few decades.
