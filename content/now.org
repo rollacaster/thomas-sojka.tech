@@ -2,7 +2,7 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 ** Climate Change Data Viz
-I picked up work on my climate change data viz. I had some troubles in the past to properly read =*.nc= files and spend some time on a [[https://viz-sigma.vercel.app/contour-by-example][d3-contour explainer]] I never finished. But right now I am making [[https://viz-sigma.vercel.app/climate-change][good progress]] and continue building and summarizing what I learn.
+I picked up work on my climate change data viz. I had some troubles in the past to properly read =*.nc= files and spend some time on a [[https://viz-sigma.vercel.app/contour-by-example/][d3-contour explainer]] I never finished. But right now I am making [[https://viz-sigma.vercel.app/climate-change/][good progress]] and continue building and summarizing what I learn.
 ** Finance tracking
 As usual in January I spent some time working my personal finance tracking tool when doing personal my end of year accounting. I keep categorized track of all my finances and so far I collected them for the last six years. This year I added a feature to compare costs per category across multiple years and to calculate optimal saving plans. The code is not open source maybe next January is a good time to prepare the code for that.
 ** Reading
