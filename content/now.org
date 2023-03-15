@@ -2,7 +2,7 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 ** Shopping Cards
-I decided to spend some more time on my only side project so far that gave me more time back than it cost. I'll plan to move it to the Cloud using [[id:67804EE5-1AF0-40E7-8206-C468F0A5C98D][Firestore]] so I can access it easily from everywhere. Maybe I'll open it up some friends so that more people can use it.
+I decided to spend some more time on my only side project so far that gave me more time back than it cost. I'll plan to move it to the Cloud using Firestore so I can access it easily from everywhere. Maybe I'll open it up some friends so that more people can use it.
 ** org-roam-utils
 I am a heavy [[https://www.orgroam.com/][org-roam]] user but never really did a lot of customization so far. The biggest reason being enjoying to write Clojure much more than elisp. So I decided to write some helpers with Clojure that access the org-roam db directly. I plan to create some auto-generated publishable content about the things I am currently working on to create some stats based on my daily logs.
 ** Math
