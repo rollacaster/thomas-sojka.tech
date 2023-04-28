@@ -1,9 +1,11 @@
 #+TITLE: Now
 #+NAV: 2
 #+CONTENT-TYPE: page
-** Shopping Cards
-I decided to spend some more time on my only side project so far that gave me more time back than it cost. I'll plan to move it to the Cloud using Firestore so I can access it easily from everywhere. Maybe I'll open it up some friends so that more people can use it.
-** org-roam-utils
-I am a heavy [[https://www.orgroam.com/][org-roam]] user but never really did a lot of customization so far. The biggest reason being enjoying to write Clojure much more than elisp. So I decided to write some helpers with Clojure that access the org-roam db directly. I plan to create some auto-generated publishable content about the things I am currently working on to create some stats based on my daily logs.
-** Math
-There's always that time of the year when I try to brush up my math skills. I am currently trying to give the [[https://pimbook.org/][pim book]] another time. I hope this time I am able to grok it better by [[https://rollacaster.github.io/pim-book/][creating some visualizations]] while I read it.
+** The Journey
+My wife and I are going on a 6-month journey to explore North and South America. I quit my job, and it's the first time in my life that I am taking a break from "normal" life after going straight to university, then starting to work as a Software Engineer. I haven't fully processed what I am doing here, but I am already very excited about it.
+
+** The Sync
+As part of my preparation for our journey, I built myself a little system to quickly set up a new computer with all the applications, configurations, and data that are important to me. The process of defining what is important to me when it comes to my data and the applications I use was a great experience on its own. I plan to write more about that soon.
+
+** Reading
+We haven't started our journey yet, so there are a lot of farewells right now, and I am thinking about how I want to spend my time. There's the obvious exploration part, but I also want to spend much more time reading and plan to build up a reading list for my journey. I plan to share that soon.
