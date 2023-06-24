@@ -2,10 +2,8 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 ** The Journey
-My wife and I are going on a 6-month journey to explore North and South America. I quit my job, and it's the first time in my life that I am taking a break from "normal" life after going straight to university, then starting to work as a Software Engineer. I haven't fully processed what I am doing here, but I am already very excited about it.
-
-** The Sync
-As part of my preparation for our journey, I built myself a little system to quickly set up a new computer with all the applications, configurations, and data that are important to me. The process of defining what is important to me when it comes to my data and the applications I use was a great experience on its own. I plan to write more about that soon.
-
-** Reading
-We haven't started our journey yet, so there are a lot of farewells right now, and I am thinking about how I want to spend my time. There's the obvious exploration part, but I also want to spend much more time reading and plan to build up a reading list for my journey. I plan to share that soon.
+My wife and I embarked on a 6-month journey. We spent 6 weeks in the US and are currently in Ecuador. It's our first time engaging in long-term travel, and it has been overwhelming thus far. I had hoped to dedicate more time to reading and writing, but most of my time has been devoted to improving our travel skills. Efficiently living out of a backpack, navigating from one place to another, and ensuring our safety in a country far more dangerous than our home country have proven to be time-consuming and stressful. However, I feel like we have overcome the most challenging part of adaptation and are starting to enjoy the trip much more.
+** CSS Grids
+I have largely overlooked CSS Grids as a layout technology, but I have always wanted to add it to my repertoire. I am starting to grasp its principles and gaining a better understanding of when to utilize it. Currently, I am summarizing everything I have learned about it.
+** 3D Landing Page
+I am currently working on a whimsical landing page featuring a timer that counts down to the days until my niece is born. It bears resemblance to the homepage of this site, so I believe it's time to create an abstraction for it, which I hope to share soon.
