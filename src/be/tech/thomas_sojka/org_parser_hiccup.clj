@@ -34,7 +34,10 @@
        :text-sty-verbatim [:code (first text-contents)]
        :text-sty-bold [:b (first text-contents)]
        :text-sty-italic [:b (first text-contents)]
-       :link-format (link text-contents)))
+       :link-format (link text-contents)
+       (do
+         (prn "NOT PARSED:" text-contents)
+         "")))
    text-parts))
 
 (defn content [contents]
