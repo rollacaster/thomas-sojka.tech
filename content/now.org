@@ -3,7 +3,6 @@
 #+CONTENT-TYPE: page
 ** The Journey
 My wife and I embarked on a 6-month journey. We spent 6 weeks in the US and are currently in Ecuador. It's our first time engaging in long-term travel, and it has been overwhelming thus far. I had hoped to dedicate more time to reading and writing, but most of my time has been devoted to improving our travel skills. Efficiently living out of a backpack, navigating from one place to another, and ensuring our safety in a country far more dangerous than our home country have proven to be time-consuming and stressful. However, I feel like we have overcome the most challenging part of adaptation and are starting to enjoy the trip much more.
-
 ** CSS Grids
 I have largely overlooked CSS Grids as a layout technology, but I have always wanted to add it to my repertoire. I am starting to grasp its principles and gaining a better understanding of when to utilize it. Currently, I am summarizing everything I have learned about it.
 ** 3D Landing Page
