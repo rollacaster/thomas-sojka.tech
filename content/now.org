@@ -2,8 +2,12 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 ** The Journey
-My wife and I embarked on a 6-month journey. We spent 6 weeks in the US and are currently in Ecuador. It's our first time engaging in long-term travel, and it has been overwhelming thus far. I had hoped to dedicate more time to reading and writing, but most of my time has been devoted to improving our travel skills. Efficiently living out of a backpack, navigating from one place to another, and ensuring our safety in a country far more dangerous than our home country have proven to be time-consuming and stressful. However, I feel like we have overcome the most challenging part of adaptation and are starting to enjoy the trip much more.
-** Grids
-I have largely overlooked CSS Grids as a layout technology, but I have always wanted to add it to my repertoire. I am starting to grasp its principles and gaining a better understanding of when to utilize it. Currently, I am summarizing everything I have learned about it.
-** 3D Landing Page
-I am currently working on a whimsical landing page featuring a timer that counts down to the days until my niece is born. It bears resemblance to the homepage of this site, so I believe it's time to create an abstraction for it, which I hope to share soon.
+My wife and I continue our 6-month journey through the Americas and currently, we are in Peru. Slowly but steadily we're becoming decent travelers. Our Spanish is improving rapidly and constantly moving places and planning our days is much less of a hassle.
+** clerk & org-mode
+I am a huge fan of [[https://www.orgroam.com/][org-roam]] and after I recently wrote my first blog post by using [[https://github.com/nextjournal/clerk][clerk]] and watching [[https://youtu.be/VJbLxRVOxuQ][this talk]] from Teodor Heggelund I'd really like to publish my notes with clerk.
+
+There's currently no [[https://orgmode.org/][org-mode]] support for [[https://github.com/nextjournal/clerk][clerk]] and I spent some time assessing how hard it would be to add this. This leads me down a rabbit hole and currently, I am trying to understand [[https://github.com/Engelberg/instaparse][instaparse]] to fix some edge cases I found in [[https://github.com/200ok-ch/org-parser][org-parser]].
+
+I hope at the end of this rabbit hole I can add org-mode support to clerk.
+** Reading
+Thanks to my 6-month trip I spent a lot of time in buses and got more time for reading, I always read one fiction and one no-fiction book. Currently I am almost finished [[https://www.amazon.com/Before-Coffee-Gets-Cold-Novel/dp/1335430997][Before the Coffee Gets Cold]] which was a nice read so far. My current non-fiction book is the [[https://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231/ref=sr_1_1?crid=1HZXILCQTF7DJ&keywords=3d+math+primer&qid=1690286942&s=books&sprefix=3d+math+pr%2Cstripbooks%2C386&sr=1-1&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc][3D Math Primer]] to brush up my math basics but I have to admit that solving math exercises during a bumpy bus trip is hard.
