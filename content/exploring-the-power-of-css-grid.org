@@ -1,0 +1,5 @@
+#+ext-link: https://github.clerk.garden/rollacaster/css-grids/commit/012973b92a2f22751608ceaa29bdc9856a447ae4/
+#+DATE: <2023-07-26>
+#+CONTENT-TYPE: external-blog
+#+title: Exploring the Power of CSS Grid
+#+description: In the past, I mainly used Normal Flow and Flexbox for CSS layouts. I hoped that CSS Grid would revolutionize layout design and make my existing knowledge obsolete. While Grid didn't fulfill all my expectations, it remains a valuable addition to the CSS Toolbox. Let me share where I think it fits in.

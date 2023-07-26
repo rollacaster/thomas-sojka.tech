@@ -53,7 +53,10 @@
               :author author
               :description description
               :lastBuildDate last-build-date
-              :items (:blogs content)}))}
+              :items (->> (concat (:blogs content)
+                                  (:external-blogs content))
+                          (sort-by :date)
+                          reverse)}))}
     {:path (str target-folder "/index.html")
      :content
      (hiccup/html
