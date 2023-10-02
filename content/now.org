@@ -2,12 +2,10 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 ** The Journey
-We are in Bolivia right now and two thirds of our six month trip are already over. It's really strange how fast time flies on the one hand, but on the other hand, when we look back at all the experiences we've had so far, time almost stands still.
-** Unterstanding instaparse
-After going down a rabbit hole to add [[https://www.orgroam.com/][org-roam]] support for [[https://github.com/nextjournal/clerk][clerk]], I'm currently trying to better understand [[https://github.com/Engelberg/instaparse][instaparse]] to fix some edge cases I found in [[https://github.com/200ok-ch/org-parser][org-parser]].
+The last month of our six-month journey has just begun. I think it will be very strange to get back to a normal life, but I'm also looking forward to getting back into having more of a routine. In the last month, we are slowing down our travel and will spend most of our time just in Buenos Aires.
+** Visualizing with instaparse electric
+The last month has been very busy and I've also spent a lot of time being sick, so my plans to work on a visualization to better understand [[https://github.com/Engelberg/instaparse][instaparse]] have largely stalled.
 
-I've been reading a lot about different types of parsers over the past few weeks and now plan to visualize the inner workings of instaparse using [[https://github.com/hyperfiddle/electric][Electric Clojure]].
+I'm trying to use [[https://github.com/hyperfiddle/electric][Electric Clojure]] to create the visualization, and I'm currently working on understanding how [[https://github.com/hyperfiddle/electric][Electric Clojure]] works.
 ** Reading
-I'm currently reading [[https://www.goodreads.com/book/show/10644930-11-22-63][11/22/63]] by Stephen King. I read every book of his as a kid, and it's nice to get back into it. The book is another time travel book, but with an interesting twist.
-
-I'm a little behind on reading the [[https://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231/ref=sr_1_1?crid=1HZXILCQTF7DJ&keywords=3d+math+primer&qid=1690286942&s=books&sprefix=3d+math+pr%2Cstripbooks%2C386&sr=1-1&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc][3D Math Primer]], but I hope to get back to it soon.
+For the past five months, I've been trying to get back into reading some fiction books instead of just non-fiction. That was quite entertaining, but I could never really get used to it the way I did as a kid. So I'll probably go back to non-fiction and continue with [[https://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231/ref=sr_1_1?crid=1HZXILCQTF7DJ&keywords=3d+math+primer&qid=1690286942&s=books&sprefix=3d+math+pr%2Cstripbooks%2C386&sr=1-1&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc][3D Math Primer]].
