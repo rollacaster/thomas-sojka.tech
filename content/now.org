@@ -2,10 +2,8 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 ** The Journey
-The last month of our six-month journey has just begun. I think it will be very strange to get back to a normal life, but I'm also looking forward to getting back into having more of a routine. In the last month, we are slowing down our travel and will spend most of our time just in Buenos Aires.
-** Visualizing with instaparse electric
-The last month has been very busy and I've also spent a lot of time being sick, so my plans to work on a visualization to better understand [[https://github.com/Engelberg/instaparse][instaparse]] have largely stalled.
-
-I'm trying to use [[https://github.com/hyperfiddle/electric][Electric Clojure]] to create the visualization, and I'm currently working on understanding how [[https://github.com/hyperfiddle/electric][Electric Clojure]] works.
-** Reading
-For the past five months, I've been trying to get back into reading some fiction books instead of just non-fiction. That was quite entertaining, but I could never really get used to it the way I did as a kid. So I'll probably go back to non-fiction and continue with [[https://www.amazon.com/Math-Primer-Graphics-Game-Development/dp/1568817231/ref=sr_1_1?crid=1HZXILCQTF7DJ&keywords=3d+math+primer&qid=1690286942&s=books&sprefix=3d+math+pr%2Cstripbooks%2C386&sr=1-1&ufe=app_do%3Aamzn1.fos.006c50ae-5d4c-4777-9bc0-4513d670b6bc][3D Math Primer]].
+The journey is over, and after six months of traveling, I am back in Munich, returning to a normal life, which still feels quite strange. Nevertheless, it's great to meet up with all the people I haven't seen in the last six months.
+** Balanced learning
+Lately, I've been making a conscious effort to be more intentional about how I spend my learning time. I aim to strike a balance between working on a side project (porting [[https://github.com/rollacaster/shopping-cards][shopping-cards]] from a local Datomic to Firebase), reviewing code written by others (currently [[https://github.com/logseq/logseq][logseq]]), and revisiting some foundational concepts (currently calculus).
+** Job Hunting
+As I transition back to a normal routine, a crucial aspect involves searching for a job. If you're interested in collaborating with me, feel free to reach out at contact (at) thomas-sojka.tech.
