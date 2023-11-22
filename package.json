@@ -4,7 +4,7 @@
   "description": "* thomas-sojka.tech Source code of my personal website.",
   "main": "index.js",
   "scripts": {
-    "build": "postcss resources/*.css --dir public/css",
+    "build": "postcss resources/*.css --dir public/css; rsync -av --exclude='CSS/' resources/* public",
     "dev": "npm-run-all --parallel dev:*",
     "dev:css": "postcss resources/*.css --dir public-dev/static/css -w"
   },
