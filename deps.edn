@@ -2,18 +2,21 @@
         hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
         org-parser/org-parser {:mvn/version "0.1.27"}
         venantius/glow {:mvn/version "0.1.6"}
-        clj-rss/clj-rss {:mvn/version "0.3.0"}
-        thheller/shadow-cljs {:mvn/version "2.22.0"}
-        reagent/reagent {:mvn/version "1.1.1"}}
- :paths ["src/be" "src/fe" "resources"]
- :aliases {:dev {:extra-paths ["dev"]
-                 :extra-deps {ring-refresh/ring-refresh {:mvn/version "0.1.2"}
-                              ring/ring {:mvn/version "1.9.5"}}}
-           :test {:extra-paths ["test"]}
-           :build {:exec-fn tech.thomas-sojka.core/main}
-           :test-runner-cognitect
-           {:extra-paths ["test"]
-            :extra-deps  {com.cognitect/test-runner
-                          {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                           :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
-            :main-opts   ["-m" "cognitect.test-runner"]}}}
+        clj-rss/clj-rss {:mvn/version "0.3.0"} }
+ :paths ["src/base" "resources"]
+ :aliases {:cider {:extra-deps {nrepl/nrepl {:mvn/version "1.1.0"}
+                                cider/cider-nrepl {:mvn/version "0.44.0"}
+                                refactor-nrepl/refactor-nrepl {:mvn/version "3.9.0"}}}
+           :base/dev {:extra-paths ["dev/base" "test/base"]
+                      :extra-deps {ring/ring-jetty-adapter {:mvn/version "1.10.0"}}
+                      :main-opts ["-m" "server"]}
+           :base/build {:exec-fn tech.thomas-sojka.core/main}
+           :base/test {:extra-paths ["test/base"]
+                       :extra-deps  {com.cognitect/test-runner
+                                     {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                                      :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
+                       :main-opts   ["-m" "cognitect.test-runner"]}
+           :enhancement/dev {:extra-deps {thheller/shadow-cljs {:mvn/version "2.26.2"}
+                                          reagent/reagent {:mvn/version "1.2.0"}}
+                             :extra-paths ["dev/enhancement" "src/enhancement"]
+                             :main-opts ["-m" "shadow"]}}}

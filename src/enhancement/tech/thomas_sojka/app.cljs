@@ -7,9 +7,13 @@
             ["tailwindcss/resolveConfig" :as resolveConfig]
             ["three" :as three]
             [reagent.dom :as dom]
-            ["mobile-detect" :as md]))
+            ["mobile-detect" :as md]
+            ["@react-three/drei" :as drei]
+            ["three-stdlib" :as three-stdlib]))
 
-
+(r3f/extend #js {"UnrealBloomPass" three-stdlib/UnrealBloomPass
+                 "FilmPass" three-stdlib/FilmPass
+                 "LUTPass" three-stdlib/LUTPass})
 (def grays
   (->(resolveConfig)
      (js->clj :keywordize-keys true)
@@ -48,7 +52,7 @@
     (r3f/useFrame
      (fn [prop]
        (let [duration 2
-             et ^js (.getElapsedTime (.-clock prop))
+             et ^js (.getElapsedTime ^js (.-clock prop))
              opacity (-> (scale/scaleLinear)
                          (.domain #js [0 duration])
                          (.range #js [0 1]))]
@@ -241,7 +245,7 @@
         [offset] (react/useState (* (js/Math.random) 2))]
     (r3f/useFrame
      (fn [prop]
-       (let [et (+ ^js (.getElapsedTime (.-clock prop)) offset)]
+       (let [et (+ ^js (.getElapsedTime ^js (.-clock prop)) offset)]
          (when (.-current ref)
            (set! (.-current.position.y ref) (/ (Math/sin et) 4))
            (set! (.-current.rotation.x ref) (/ (Math/sin (/ et 3)) 10))
@@ -262,11 +266,17 @@
       [:f> pie-chart]]
      [:f> floating
       [:f> tree-chart]]]
-    [:ambientLight]
-    [:pointLight {:position [10 10 10]}]]])
+    [:ambientLight {:intensity 4}]
+    [:pointLight {:position [10 10 10]}]
+    #_[:> drei/Effects #_{:disableGamma true}
+     [:unrealBloomPass {:strength 0.2
+                        :kernelSize 25
+                        :sigma 1500}]
+     #_[:filmPass]
+     #_[:lUTPass]]]])
 
 (defn main []
-  [:div.absolute.h-screen.w-full.z-10.pointer-events-none
+  [:div.absolute.h-screen.w-full.z-10.pointer-events-none.bg-gray-100
    [:f> canvas]])
 
 (dom/render

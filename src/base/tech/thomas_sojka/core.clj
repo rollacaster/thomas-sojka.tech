@@ -10,7 +10,7 @@
 (def files (->> (tree-seq (fn [f] (.isDirectory f))
                           (fn [f] (->> (file-seq f)
                                       (remove #(.isDirectory %))))
-                          (io/file "content"))
+                          (io/file "resources/content"))
                 (remove #(.isDirectory %))))
 
 (defn- org-file? [file]
@@ -37,4 +37,4 @@
   (build {:files files}))
 
 (comment
-  (build {:files files :target-folder "public-dev/static"}))
+  (build {:files files :target-folder "public/static"}))

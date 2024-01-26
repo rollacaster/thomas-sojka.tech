@@ -1,0 +1,14 @@
+{:paths ["scripts"]
+ :tasks
+ {dev (run '-dev {:parallel true})
+  -dev {:depends [dev:base dev:base:css dev:enhancement]}
+  dev:base (clojure "-Mcider:base/dev" "-J-XX:-OmitStackTraceInFastThrow")
+  dev:base:css (shell "npm run dev")
+  dev:enhancement (clojure "-Menhancement/dev" "-J-XX:-OmitStackTraceInFastThrow")
+  test (run '-test {:parallel true})
+  -test {:depends [test:be]}
+  test:be (clojure "-Mbase/test")
+  release {:depends [release:fe release:be]}
+  release:base (clojure "-Xbase/build")
+  release:base:css (shell "npm run build")
+  release:enhancement (shell "npx shadow-cljs -Aenhancement/dev release app")}}

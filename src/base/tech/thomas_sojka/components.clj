@@ -93,6 +93,7 @@
      [:h2#talking.mb-2.font-normal "Talks"]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (map content-item talks)]])
+   [:script {:src "js/libs.js"}]
    [:script {:src "js/main.js"}]])
 
 (defn page [{:keys [title language author main active nav-links description]}]

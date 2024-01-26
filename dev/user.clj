@@ -4,6 +4,7 @@
    [ring.adapter.jetty :as jetty]
    [ring.middleware.content-type :as content-type]
    [ring.middleware.file :as file]
+   [ring.middleware.resource :as resource]
    [ring.middleware.refresh :as refresh]
    [shadow.cljs.devtools.api :as shadow]
    [shadow.cljs.devtools.server :as server]))
@@ -13,17 +14,15 @@
 
 (defn wrap-js [handler]
   (fn [req]
-    (if (str/starts-with? (:uri req) "/js")
-      ((file/wrap-file handler "public-dev") req)
-      (handler req))))
+    (file/wrap-file handler "public") req
+    (handler req)))
 
 (def handler
-  (-> identity
-      (file/wrap-file "public-dev/static")
-      content-type/wrap-content-type
-      (refresh/wrap-refresh ["public-dev/static"])
-      wrap-js
-      wrap-dir-index))
+  (-> (fn [req] (prn "HI" req)
+        (when (not= (:uri req) "/favicon.ico")
+          (def req req))
+        req)
+      (file/wrap-file "public")))
 
 (defn cljs-repl
   "Connects to a given build-id. Defaults to `:app`."

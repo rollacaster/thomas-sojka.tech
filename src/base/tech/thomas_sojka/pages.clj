@@ -37,11 +37,11 @@
 
 (defn- public-path [target-folder file]
   (str target-folder
-       (when (.getParent file) (str/replace (.getParent file) "content" "")) "/"))
+       (when (.getParent file) (str/replace (.getParent file) "resources/content" "")) "/"))
 
 (defn generate [{:keys [last-build-date content-files content nav-links resource-files target-folder]}]
   (concat
-   [{:path "resources/glow.css"
+   [{:path "resources/styles/glow.css"
      :content (glow/generate-css syntax-coloring)}
     {:path (str target-folder "/index.xml")
      :content
