@@ -1,5 +1,6 @@
 (ns tech.thomas-sojka.app
-  (:require ["@react-three/fiber" :as r3f]
+  (:require ["@react-three/drei" :as drei]
+            ["@react-three/fiber" :as r3f]
             ["d3-hierarchy" :as hierarchy]
             ["d3-scale" :as scale]
             ["d3-shape" :as shape]
@@ -16,16 +17,16 @@
 (let [config (resolveConfig #js{})]
   (def grays
     (-> config
-       (js->clj :keywordize-keys true)
-       :theme
-       :backgroundColor
-       :gray))
+        (js->clj :keywordize-keys true)
+        :theme
+        :backgroundColor
+        :gray))
 
   (def screens
     (-> config
-       (js->clj :keywordize-keys true)
-       :theme
-       :screens)))
+        (js->clj :keywordize-keys true)
+        :theme
+        :screens)))
 
 (defn v [v & {:keys [] :as breakpoints}]
   (let [three (r3f/useThree)
@@ -101,7 +102,7 @@
         [[x y] set-pos] (react/useState [0 0])]
     (react/useEffect
      (fn []
-      (let [bbox (.setFromObject (new three/Box3) (.-current ref))
+       (let [bbox (.setFromObject (new three/Box3) (.-current ref))
              width (- (.-max.x bbox) (.-min.x bbox))
              height (- (.-max.y bbox) (.-min.y bbox))]
          (set-pos  [(- (/ width 2))
@@ -255,31 +256,41 @@
     [:group {:ref ref}
      children]))
 
-(defn canvas []
-  [:> r3f/Canvas
-   [:<>
-    [:group
-     [:f> floating
-      [:f> line-chart]]
-     [:f> floating
-      [:f> bar-chart]]
-     [:f> floating
-      [:f> pie-chart]]
-     [:f> floating
-      [:f> tree-chart]]]
-    [:ambientLight {:intensity 4}]
-    [:pointLight {:position [10 10 10]}]
-    #_[:> drei/Effects #_{:disableGamma true}
-     [:unrealBloomPass {:strength 0.2
-                        :kernelSize 25
-                        :sigma 1500}]
-     #_[:filmPass]
-     #_[:lUTPass]]]])
+(defn lights []
+  (let [pointlight-ref (react/useRef)
+        spotlight-ref (react/useRef)]
+    (when false
+      (drei/useHelper pointlight-ref three/PointLightHelper 1 "red")
+      (drei/useHelper spotlight-ref three/SpotLightHelper "red"))
+    [:<>
+     [:ambientLight {:intensity 1}]
+     [:pointLight {:ref pointlight-ref :intensity 30 :distance 60}]]))
 
-(defn main []
-  [:div.absolute.h-screen.w-full.z-10.pointer-events-none
-   [:f> canvas]])
+  (defn canvas []
+    [:> r3f/Canvas
+     [:<>
+      [:group
+       [:f> floating
+        [:f> line-chart]]
+       [:f> floating
+        [:f> bar-chart]]
+       [:f> floating
+        [:f> pie-chart]]
+       [:f> floating
+        [:f> tree-chart]]]
+      [:f> lights]
+      [:> drei/OrbitControls]
+      [:> drei/Effects #_{:disableGamma true}
+       #_[:unrealBloomPass {:strength 0.2
+                            :kernelSize 25
+                            :sigma 1500}]
+         #_[:filmPass]
+         #_[:lUTPass]]]])
 
-(dom/render
- [main]
- (js/document.getElementById "main"))
+  (defn main []
+    [:div.absolute.h-screen.w-full.z-10.pointer-events-none
+     [:f> canvas]])
+
+  (dom/render
+   [main]
+   (js/document.getElementById "main"))
