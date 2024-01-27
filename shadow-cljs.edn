@@ -1,4 +1,5 @@
 {:deps true
+ :nrepl {:port 9005}
  :builds
  {:app {:target :browser
         :output-dir "public/js"
