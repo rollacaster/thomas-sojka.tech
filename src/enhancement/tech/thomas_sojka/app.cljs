@@ -123,7 +123,7 @@
              :ref ref}
      children]))
 
-(defn box [props & children]
+(defn box [props children]
   [:f> box* props children])
 
 (defn line-chart []
@@ -227,18 +227,19 @@
         :rotation [(r (v -0.1 :md -0.1 :lg -0.1))
                    (r (v -0.1 :md -0.1 :lg -0.2))
                    0]}
-   (map-indexed
-    (fn [idx d]
-      ^{:key idx}
-      [:f> node {:x (.-x d) :y (- (.-y d))
-                 :color (nth (vals grays) idx)}])
-    ^js (.descendants tree-data))
-   (map-indexed
-    (fn [idx d]
-      ^{:key idx}
-      [:f> link {:source (.-source d) :target (.-target d)
-                 :color (nth (vals grays) idx)}])
-    ^js (.links tree-data))])
+   [:<>
+    (map-indexed
+     (fn [idx d]
+       ^{:key idx}
+       [:f> node {:x (.-x d) :y (- (.-y d))
+                  :color (nth (vals grays) idx)}])
+     ^js (.descendants tree-data))
+    (map-indexed
+     (fn [idx d]
+       ^{:key idx}
+       [:f> link {:source (.-source d) :target (.-target d)
+                  :color (nth (vals grays) idx)}])
+     ^js (.links tree-data))]])
 
 (defn floating [children]
   (let [ref (react/useRef)
@@ -276,7 +277,7 @@
      #_[:lUTPass]]]])
 
 (defn main []
-  [:div.absolute.h-screen.w-full.z-10.pointer-events-none.bg-gray-100
+  [:div.absolute.h-screen.w-full.z-10.pointer-events-none
    [:f> canvas]])
 
 (dom/render
