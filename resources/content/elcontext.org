@@ -6,7 +6,7 @@
 * Introducing elcontext
 I have just finished my first elisp package [[https://github.com/rollacaster/elcontext][elcontext]]. It introduces context based actions for Emacs.
 
-[[file:title.png][The elcontext logo]]
+[[file:images/title.png][The elcontext logo]]
 
 ** Context based actions
 A context-based action is an Emacs command called under certain conditions. These conditions can include the current time (similar to a [[https://de.wikipedia.org/wiki/Cron][cron job]]), the current folder and the current GPS location (available only for macOS).
@@ -17,13 +17,13 @@ The original reason to create elcontext was to setup my development environment 
 ** Technical details
 A new context is created interactively by using abo-abo’s fantastic [[https://github.com/abo-abo/hydra][hydra]] package:
 
-[[file:hydra.png][The configuration hydra of elcontext]]
+[[file:images/hydra.png][The configuration hydra of elcontext]]
 
 If a part of a context is omitted this part is always valid e.g. no location means anywhere, no time means anytime. Each command is triggered once a day.
 
 I used Emacs’ [[https://www.gnu.org/software/emacs/manual/html_node/elisp/Tabulated-List-Mode.html][Tabulated List mode]] to get an overview of all created contexts. Triggered contexts are highlighted in green:
 
-[[file:list.png][A list of contexts]]
+[[file:images/list.png][A list of contexts]]
 
 All context data is stored in hash tables which can be created or accessed conveniently with [[https://github.com/Wilfred/ht.el][ht]] and the GPS coordinates are retrieved via [[https://github.com/purcell/osx-location][osx-location]].
 
