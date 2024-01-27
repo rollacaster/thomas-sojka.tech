@@ -279,7 +279,8 @@
        [:f> floating
         [:f> tree-chart]]]
       [:f> lights]
-      [:> drei/OrbitControls]
+      (when false
+        [:> drei/OrbitControls])
       [:> drei/Effects #_{:disableGamma true}
        #_[:unrealBloomPass {:strength 0.2
                             :kernelSize 25

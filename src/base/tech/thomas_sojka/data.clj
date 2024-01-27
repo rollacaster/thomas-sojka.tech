@@ -1,12 +1,15 @@
 (ns tech.thomas-sojka.data
   (:require [clojure.set :as set]
             [clojure.string :as str]
-            [tech.thomas-sojka.org-parser-meta :as org-parser-meta]))
+            [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
+            [babashka.fs :as fs]))
 
 (defn- link [file]
-  (str (when (.getParent file) (str/replace (.getParent file) "content" ""))
-       "/"
-       (str/replace (.getName file) #".org$" ".html")))
+  (-> file
+      fs/path
+      (str/replace "resources/content" "")
+      fs/strip-ext
+      (str ".html")))
 
 (defn- date [date-str]
   (.parse

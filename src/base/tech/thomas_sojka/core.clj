@@ -1,5 +1,6 @@
 (ns tech.thomas-sojka.core
   (:require
+   [babashka.fs :as fs]
    [clojure.java.io :as io]
    [tech.thomas-sojka.data :as data]
    [tech.thomas-sojka.pages :as pages])
@@ -21,6 +22,7 @@
 
 (defn build  [{:keys [files target-folder] :or {target-folder "public"}}]
   (prn "Build:" (count files))
+  (fs/copy-tree "resources/images" "public/images" {:replace-existing true})
   (let [[content-files resource-files] ((juxt filter remove) org-file? files)]
     (doseq [{:keys [path content]} (pages/generate {:last-build-date (Instant/now)
                                                     :content-files content-files
@@ -37,4 +39,4 @@
   (build {:files files}))
 
 (comment
-  (build {:files files :target-folder "public/static"}))
+  (build {:files files :target-folder "public"}))
