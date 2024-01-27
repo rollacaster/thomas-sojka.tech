@@ -3,29 +3,29 @@
             ["d3-hierarchy" :as hierarchy]
             ["d3-scale" :as scale]
             ["d3-shape" :as shape]
+            ["mobile-detect" :as md]
             ["react" :as react]
             ["tailwindcss/resolveConfig" :as resolveConfig]
             ["three" :as three]
-            [reagent.dom :as dom]
-            ["mobile-detect" :as md]
-            ["@react-three/drei" :as drei]
-            ["three-stdlib" :as three-stdlib]))
+            ["three-stdlib" :as three-stdlib]
+            [reagent.dom :as dom]))
 
 (r3f/extend #js {"UnrealBloomPass" three-stdlib/UnrealBloomPass
                  "FilmPass" three-stdlib/FilmPass
                  "LUTPass" three-stdlib/LUTPass})
-(def grays
-  (->(resolveConfig)
-     (js->clj :keywordize-keys true)
-     :theme
-     :backgroundColor
-     :gray))
+(let [config (resolveConfig #js{})]
+  (def grays
+    (-> config
+       (js->clj :keywordize-keys true)
+       :theme
+       :backgroundColor
+       :gray))
 
-(def screens
-  (->(resolveConfig)
-     (js->clj :keywordize-keys true)
-     :theme
-     :screens))
+  (def screens
+    (-> config
+       (js->clj :keywordize-keys true)
+       :theme
+       :screens)))
 
 (defn v [v & {:keys [] :as breakpoints}]
   (let [three (r3f/useThree)
