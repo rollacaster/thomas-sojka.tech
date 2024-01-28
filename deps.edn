@@ -3,7 +3,8 @@
         org-parser/org-parser {:mvn/version "0.1.27"}
         venantius/glow {:mvn/version "0.1.6"}
         clj-rss/clj-rss {:mvn/version "0.3.0"}
-        babashka/fs {:mvn/version "0.5.20"}}
+        babashka/fs {:mvn/version "0.5.20"}
+        ring/ring-defaults {:mvn/version "0.4.0"}}
  :paths ["src/base" "resources"]
  :aliases {:base/dev {:extra-paths ["dev/base" "test/base"]
                       :extra-deps {ring/ring-jetty-adapter {:mvn/version "1.10.0"}

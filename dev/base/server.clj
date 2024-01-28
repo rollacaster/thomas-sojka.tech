@@ -1,13 +1,13 @@
 (ns server
   (:require [nrepl.cmdline :as nrepl]
             [ring.adapter.jetty :as jetty]
-            [ring.middleware.file :as file]))
+            [ring.middleware.file :as file]
+            [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 (def server (atom nil))
 
 (def handler
-  (-> identity
-      (file/wrap-file "public")))
+  (wrap-defaults identity (assoc-in site-defaults [:static :files] "public")))
 
 (defn -main [& args]
   (reset! server

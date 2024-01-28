@@ -14,7 +14,7 @@ As you can see in the chart below lately my success rate peaked, so I reflected 
 <picture>
   <source media="(max-width: 799px)" srcset="images/side-projects.svg">
   <source media="(min-width: 800px)" srcset="images/side-projects-lg.svg">
-  <img class="md:px-48" src="images/side-projects.png" alt="Chart displaying all my succeeded/failed side projects">
+  <img class="md:px-48" src="images/side-projects.svg" alt="Chart displaying all my succeeded/failed side projects">
 </picture>
 #+END_EXPORT
 
@@ -42,6 +42,3 @@ I am sure this tip does not work for everyone but it helped me a lot. I usually 
 Even if you follow all of the tips and read through many other great resources about this topic there is nothing more valuable than gathering your own experiences. It took me five years and 41 projects until I found a workflow which seems to work for me. Hopefully my tips can help you reach this goal quicker than I did.
 
 If you have any other tips which help to finish a side project please reach out: [[https://mobile.twitter.com/rollacaster]]
-
-
-
