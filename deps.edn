@@ -5,12 +5,12 @@
         clj-rss/clj-rss {:mvn/version "0.3.0"}
         babashka/fs {:mvn/version "0.5.20"}}
  :paths ["src/base" "resources"]
- :aliases {:cider {:extra-deps {nrepl/nrepl {:mvn/version "1.1.0"}
-                                cider/cider-nrepl {:mvn/version "0.44.0"}
-                                refactor-nrepl/refactor-nrepl {:mvn/version "3.9.0"}}}
-           :base/dev {:extra-paths ["dev/base" "test/base"]
-                      :extra-deps {ring/ring-jetty-adapter {:mvn/version "1.10.0"}}
-                      :main-opts ["-m" "server"]}
+ :aliases {:base/dev {:extra-paths ["dev/base" "test/base"]
+                      :extra-deps {ring/ring-jetty-adapter {:mvn/version "1.10.0"}
+                                   nrepl/nrepl {:mvn/version "1.0.0"}
+                                   cider/cider-nrepl {:mvn/version "0.42.1"}
+                                   refactor-nrepl/refactor-nrepl {:mvn/version "3.9.0"}}
+                      :main-opts ["-m" "server" "--middleware" "[refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
            :base/build {:exec-fn tech.thomas-sojka.core/main}
            :base/test {:extra-paths ["test/base"]
                        :extra-deps  {com.cognitect/test-runner

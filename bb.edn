@@ -1,9 +1,8 @@
 {:paths ["scripts"]
  :tasks
  {dev (run '-dev {:parallel true})
-  -dev {:depends [dev:base dev:base:server dev:base:css dev:enhancement dev:enhancement:js]}
-  dev:base (clojure "-Mcider:base/dev" "-J-XX:-OmitStackTraceInFastThrow")
-  dev:base:server (shell "npx live-server public")
+  -dev {:depends [dev:base dev:base:css dev:enhancement dev:enhancement:js]}
+  dev:base (clojure "-Mbase/dev" "-J-XX:-OmitStackTraceInFastThrow")
   dev:base:css (shell "npm run dev")
   dev:enhancement (clojure "-Menhancement/dev" "-J-XX:-OmitStackTraceInFastThrow")
   dev:enhancement:js (shell "npx webpack -w --mode development")
