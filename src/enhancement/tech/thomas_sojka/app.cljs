@@ -1,5 +1,5 @@
 (ns tech.thomas-sojka.app
-  (:require ["@react-three/drei" :as drei]
+  (:require #_["@react-three/drei" :as drei]
             ["@react-three/fiber" :as r3f]
             ["d3-hierarchy" :as hierarchy]
             ["d3-scale" :as scale]
@@ -8,10 +8,10 @@
             ["react" :as react]
             ["tailwindcss/resolveConfig" :as resolveConfig]
             ["three" :as three]
-            ["three-stdlib" :as three-stdlib]
+            #_["three-stdlib" :as three-stdlib]
             [reagent.dom :as dom]))
 
-(r3f/extend #js {"UnrealBloomPass" three-stdlib/UnrealBloomPass
+#_(r3f/extend #js {"UnrealBloomPass" three-stdlib/UnrealBloomPass
                  "FilmPass" three-stdlib/FilmPass
                  "LUTPass" three-stdlib/LUTPass})
 (let [config (resolveConfig #js{})]
@@ -259,7 +259,7 @@
 (defn lights []
   (let [pointlight-ref (react/useRef)
         spotlight-ref (react/useRef)]
-    (when false
+    #_(when false
       (drei/useHelper pointlight-ref three/PointLightHelper 1 "red")
       (drei/useHelper spotlight-ref three/SpotLightHelper "red"))
     [:<>
@@ -279,9 +279,9 @@
        [:f> floating
         [:f> tree-chart]]]
       [:f> lights]
-      (when false
+      #_(when false
         [:> drei/OrbitControls])
-      [:> drei/Effects #_{:disableGamma true}
+      #_[:> drei/Effects #_{:disableGamma true}
        #_[:unrealBloomPass {:strength 0.2
                             :kernelSize 25
                             :sigma 1500}]

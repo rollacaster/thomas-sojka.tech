@@ -14,7 +14,7 @@ The first step for creating a package is obviously to learn =elisp=. Resources w
 
 Writing lisp was intimidating at first but [[https://melpa.org/#/paredit][paredit]] was a great help to stay sane with hordes of parentheses. The [[http://danmidwood.com/content/2014/11/21/animated-paredit.html][Animated Guide to Paredit]] and [[http://emacsrocks.com/e14.html][Emacs Rocks!]] are great introductions for paredit. Today I cannot imagine writing any code (including =JavaScript=) without slurping & barfing.
 
-[[file:melpa.png][The MELPA Logo]]
+[[file:images/melpa.png][The MELPA Logo]]
 
 After writing [[file:elcontext.org][elcontext]] I published it on [[https://melpa.org/#/][melpa]] which is elisp’s equivalent to [[https://www.npmjs.com/][npm]]. Instead of a one simple =npm publish= you have to perform several steps for melpa. First, you need to use [[https://github.com/purcell/package-lint][package-lint]] which informs you about common issues of your package. Then, you must run =M x checkdoc= which verifies a consistent usage of documentation strings. The steps before opening a PR to melpa are to ensure your code byte-compiles cleanly and to test whether you are able to install your package by using melpa locally. Now you can create a recipe that looks similar to this one:
 

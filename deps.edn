@@ -18,7 +18,7 @@
                                      {:git/url "https://github.com/cognitect-labs/test-runner.git"
                                       :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
                        :main-opts   ["-m" "cognitect.test-runner"]}
-           :enhancement/dev {:extra-deps {thheller/shadow-cljs {:mvn/version "2.26.2"}
-                                          reagent/reagent {:mvn/version "1.2.0"}}
-                             :extra-paths ["dev/enhancement" "src/enhancement"]
-                             :main-opts ["-m" "shadow"]}}}
+           :enhancement {:extra-deps {thheller/shadow-cljs {:mvn/version "2.26.2"}
+                                      reagent/reagent {:mvn/version "1.2.0"}}
+                         :extra-paths ["dev/enhancement" "src/enhancement"]}
+           :enhancement/dev {:main-opts ["-m" "shadow"]}}}

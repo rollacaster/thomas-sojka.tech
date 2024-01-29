@@ -8,4 +8,12 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "public/js"),
   },
+  resolve: {
+    alias: {
+      three: path.resolve(
+        __dirname,
+        "node_modules/three/build/three.module.js",
+      ),
+    },
+  },
 };
