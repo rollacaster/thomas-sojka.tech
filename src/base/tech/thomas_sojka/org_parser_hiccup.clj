@@ -45,7 +45,7 @@
    (fn [[content-type & contents]]
      (vec
       (cons
-       :p
+       :p.max-w-xl.w-full
        (case content-type
          :text (text contents)))))
    contents))
@@ -95,7 +95,7 @@
 
 (defn headline [hiccup headline-parts]
   (let [[[_ stars] [_ & text-parts]] headline-parts]
-    (conj (vec hiccup) (into [(keyword (str "h" (count stars)))]
+    (conj (vec hiccup) (into [(keyword (str "h" (count stars) ".w-full.max-w-xl.mb-1.mt-2"))]
                              (if (every? string? (text text-parts))
                                (code (str/join (text text-parts)))
                                (text text-parts))))))
@@ -159,12 +159,12 @@
                   (= prev-type :quote-block) (conj (vec (drop-last hiccup)) [:quote-block prev-from (inc prev-to)
                                                                              (vec (conj prev-content (content remaining)))])
                   (= prev-type :export-block) (conj (vec (drop-last hiccup)) [:export-block prev-from (inc prev-to)])
-                  (= prev-type :ul)
+                  (= prev-type :ul.w-full.max-w-xl)
                   (conj
                    (vec (drop-last hiccup))
                    (conj prev (list-item-line remaining)))
                   (not= prev-type :li)
-                  (conj hiccup [:ul (list-item-line remaining)])))
+                  (conj hiccup [:ul.w-full.max-w-xl (list-item-line remaining)])))
               (vec (conj hiccup nil))))
           [])
          (remove nil?)

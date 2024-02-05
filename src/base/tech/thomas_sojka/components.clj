@@ -46,7 +46,7 @@
      nav-links)]])
 
 (defn content [& children]
-  [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
+  [:section.flex.flex-col.items-center.py-8.flex-1.px-6.lg:px-0
    children])
 
 (defn- footer []
@@ -77,7 +77,7 @@
      [:a.cursor-pointer {:href "#writing"} "writing"] ", "
      [:a.cursor-pointer {:href "#talking"} "talking"] " and "
      [:a.cursor-pointer {:href "#building"} "building"] "."]]
-   (content
+   [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
     [:div.mb-8
      [:h2#writing.mb-2.font-normal "Blogs"]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
@@ -92,7 +92,7 @@
     [:div.mb-8
      [:h2#talking.mb-2.font-normal "Talks"]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-      (map content-item talks)]])
+      (map content-item talks)]]]
    [:script {:src "js/libs.js"}]
    [:script {:src "js/main.js"}]])
 
