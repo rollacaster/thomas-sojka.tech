@@ -9,9 +9,10 @@
   test (run '-test {:parallel true})
   -test {:depends [test:be]}
   test:be (clojure "-Mbase/test")
-  release {:depends [release:clean release:base release:base:css release:enhancement release:enhancement:js]}
+  release {:depends [release:clean release:base release:base:css release:enhancement release:enhancement:js release:deploy]}
   release:clean (shell "rm -rf public")
   release:base (clojure "-Xbase/build")
   release:base:css (shell "npm run build")
   release:enhancement:js (shell "npx webpack --mode production")
-  release:enhancement (shell "npx shadow-cljs -Aenhancement release app")}}
+  release:enhancement (shell "npx shadow-cljs -Aenhancement release app")
+  release:deploy (shell "npx vercel")}}

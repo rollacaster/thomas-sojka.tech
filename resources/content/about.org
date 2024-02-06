@@ -12,12 +12,11 @@ Hi 👋
 
 My name is Thomas. I am a programmer living in Munich.
 
-I am currently traveling with my wife for six months through North and South America.
+I am currently preparing to become a freelancer which is exciting but also paperwork intensive
 
-Before that, I worked at [[https://pitch.com/][Pitch]] and helped to build a world-class editor for presentations.
-And before that, I worked at [[https://comsystoreply.de/][comSysto]] and wrote business applications for [[https://comsystoreply.de/referenzen][various projects]]. I studied Information Systems at [[https://www.tum.de/en/][TUM]].
+Before that traveled with my wife for six months through North and South America. I worked at [[https://pitch.com/][Pitch]] and helped to build a world-class editor for presentations and worked at [[https://comsystoreply.de/][comSysto]] and wrote business applications for [[https://comsystoreply.de/referenzen][various projects]]. I studied Information Systems at [[https://www.tum.de/en/][TUM]].
 
-I am interested in [[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa][Data]] [[https://medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0][Viz]], [[https://www.youtube.com/watch?v=juMLwOTxnvw][Functional]] [[https://www.youtube.com/watch?v=juMLwOTxnvw][Programming]], and [[https://rollacaster.github.io/sketches/][art]] [[https://twitter.com/rollacaster/status/1351486650992439296][with]] [[https://fire-hands.now.sh/][code]].
+I am interested in [[https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa][Data]] [[https://medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0][Viz]], [[https://www.youtube.com/watch?v=juMLwOTxnvw][Functional]] [[https://www.youtube.com/watch?v=juMLwOTxnvw][Programming]], Cloud computing and [[https://rollacaster.github.io/sketches/][art]] [[https://twitter.com/rollacaster/status/1351486650992439296][with]] [[https://fire-hands.now.sh/][code]].
 
 You can find me on [[https://twitter.com/rollacaster][Twitter]], [[https://github.com/rollacaster][GitHub]], [[https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g][YouTube]], or contact me via [[mailto:contact@thomas-sojka.tech][mail]].
 

@@ -1,9 +1,9 @@
 #+TITLE: Now
 #+NAV: 2
 #+CONTENT-TYPE: page
-** The Journey
-The journey is over, and after six months of traveling, I am back in Munich, returning to a normal life, which still feels quite strange. Nevertheless, it's great to meet up with all the people I haven't seen in the last six months.
-** Balanced learning
-Lately, I've been making a conscious effort to be more intentional about how I spend my learning time. I aim to strike a balance between working on a side project (porting [[https://github.com/rollacaster/shopping-cards][shopping-cards]] from a local Datomic to Firebase), reviewing code written by others (currently [[https://github.com/logseq/logseq][logseq]]), and revisiting some foundational concepts (currently calculus).
-** Job Hunting
-As I transition back to a normal routine, a crucial aspect involves searching for a job. If you're interested in collaborating with me, feel free to reach out at contact (at) thomas-sojka.tech.
+** Going freelance
+Once, freelancing was a distant dream, twinkling on the horizon. Now it's a bold reality beyond the mountain of paperwork that's currently my Everest. I'm almost there, ready to plant my flag and embark on my next adventure!
+** Cloud computing
+Getting proficient at cloud computing is my missing piece of expertise across the entire application development spectrum. I am currently focusing on improving my skills in technologies such as AWS, Terraform, and Ansible, not just as individual tools, but as integral pieces of a larger puzzle. This knowledge is crucial for me to provide a comprehensive service – from building robust, cloud-based backends to meticulously designing engaging frontends.
+** Books
+I believe that my journey towards improving my skills is not something I should do alone, but rather, it should be an adventure shared with others. That's why I join book clubs with my friends, where we read and discuss books. Right now it's 'Modern Software Engineering', 'Terraform Up & Running', and 'SICP'. These sessions make reading an interactive and exciting experience, as we collectively learn from each other and from the books we read.
