@@ -2,12 +2,16 @@
   (:require [nrepl.cmdline :as nrepl]
             [ring.adapter.jetty :as jetty]
             [ring.middleware.file :as file]
+            [ring.util.response :as response]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
 (def server (atom nil))
 
-(def handler
-  (wrap-defaults identity (assoc-in site-defaults [:static :files] "public")))
+(defn handler [req]
+  (if (= (:uri req) "/")
+    (response/file-response "index.html" {:root "public"})
+    ((wrap-defaults identity (assoc-in site-defaults [:static :files] "public"))
+     req)))
 
 (defn -main [& args]
   (reset! server
