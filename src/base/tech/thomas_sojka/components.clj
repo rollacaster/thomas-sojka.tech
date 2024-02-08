@@ -108,7 +108,7 @@
     [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
     [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
-   [:body.flex.flex-col.h-screen.bg-gray-100.overflow-y-scroll
+   [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
     (header {:active active :nav-links nav-links})
     main
     (mobile-nav {:active active :nav-links nav-links})

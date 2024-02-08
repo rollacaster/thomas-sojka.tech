@@ -6,4 +6,5 @@
         :asset-path "/js"
         :modules {:main {:entries [tech.thomas-sojka.app]}}
         :js-options {:js-provider :external
-                     :external-index "target/index.js"}}}}
+                     :external-index "target/index.js"}
+        :devtools {:watch-dir "public"}}}}
