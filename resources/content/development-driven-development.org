@@ -1,0 +1,42 @@
+#+TITLE: Development-driven development
+#+DATE: <2024-02-09>
+#+CONTENT-TYPE: blog
+* Development-driven development
+Software developers constantly build things with tools they can create by themself. What does that mean? We use software to build software. Our text editors are software, our frameworks are software, and git is software. I haven't verified how many other jobs exist with a similar setting, but I am sure it's rare to be in this position.
+
+It should be our default to take advantage of that. This should not end at configuration. Instead, we should constantly write and extend our software. It would be great if every developer had a set of scripts, plugins, and tools that address their challenges just because we can.
+
+This idea is not limited to the programs we use. It also applies to the programs we build. We should create programs that help us build applications faster. Here's an example of this idea.
+** Example
+I created a little application for myself where I plan my meals for the week. Then, it combines all the necessary ingredients I need to shop for. In addition, I sort the ingredient categories according to the layout of my local supermarket(for example, first Fruits and vegetables, then frozen ingredients, etc.).
+
+That's already great, but in my quest to become the most efficient grocery shopper, not enough yet. Especially in the cheese section, a precise order is crucial. Going back and forth for the Feta was not acceptable.
+
+But how to get there? As of today, that's more than 100 ingredients. And one ingredient looks like this:
+
+#+BEGIN_SRC clojure
+{:ingredient/name "Pasta",
+:ingredient/id "14a0c9c7-3630-4ea3-957f-3807cd624636",
+:ingredient/category :ingredient-category/side}
+#+END_SRC
+
+I could export and extract a long list of ingredients from my database. Then, spend a lot of time copying & pasting ingredients, but thankfully I am a programmer, so I can build tools to do my job.
+
+As a Frontend Developer, the quickest way to sort a big chunk of things that came to my mind was drag and drop. As an initial order, I applied my category sorting, so there was less manual sorting work for me.
+
+Additionally, during sorting, I noticed that I often don't care about one ingredient because it does not exist in the shop where I am creating the sorting order. For those cases, I added a shortkey to move it to the bottom of the list.
+
+After sorting, I extract a list of IDs and use them as input into my sorting function.
+
+The functionality is also reusable because different shops have different layouts, and I also need another order that reflects how I store things in my kitchen.
+
+** Conclusion
+The idea I wanted to share is not to create a sophisticated process around your grocery shopping & cooking setup (although it's a lot of fun, I can recommend it a lot). Instead, use the skills you have not only to build production-ready applications.
+
+Use your skills in your everyday life while you design a feature, for brainstorming, and for any other thing you're doing regularly. Your skills will flourish when you apply them in different scenarios. In the best case, your life may become more comfortable.
+
+Here's my little sorter in action. It's not beautiful but gets the job done:
+
+#+BEGIN_EXPORT html
+<video controls src="videos/development-driven-development/sorting-example.mp4" class="mx-auto">
+#+END_EXPORT
