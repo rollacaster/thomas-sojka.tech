@@ -3,6 +3,7 @@
    [babashka.fs :as fs]
    [clojure.java.io :as io]
    [tech.thomas-sojka.data :as data]
+   [tech.thomas-sojka.i18n :as i18n]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
    [tech.thomas-sojka.pages :as pages])
   (:import
@@ -26,18 +27,21 @@
   (prn "Build:" (count files))
   (fs/copy-tree "resources/images" "public/images" {:replace-existing true})
   (fs/copy-tree "resources/videos" "public/videos" {:replace-existing true})
-  (let [[content-files resource-files] ((juxt filter remove) content-file? files)]
-    (doseq [{:keys [path content]}
-            (pages/generate {:last-build-date (Instant/now)
-                             :content-files content-files
-                             :content content
-                             :nav-links nav-links
-                             :resource-files resource-files
-                             :target-folder target-folder})]
-      (io/make-parents path)
-      (if (string? content)
-        (spit path content)
-        (io/copy content (io/file path))))))
+  (doseq [locale i18n/locales]
+    (reset! i18n/locale locale)
+    (let [[content-files resource-files] ((juxt filter remove) content-file? files)]
+      (doseq [{:keys [path content]}
+              (pages/generate {:last-build-date (Instant/now)
+                               :content-files content-files
+                               :content content
+                               :nav-links nav-links
+                               :resource-files resource-files
+                               :target-folder (cond-> target-folder
+                                                (not= locale :en) (str "/" (name locale) "/"))})]
+        (io/make-parents path)
+        (if (string? content)
+          (spit path content)
+          (io/copy content (io/file path)))))))
 
 (defn main [_]
   (build {:files files}))

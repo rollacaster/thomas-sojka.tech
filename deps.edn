@@ -1,10 +1,11 @@
-{:deps {org.clojure/clojure {:mvn/version "1.10.3"}
+{:deps {org.clojure/clojure {:mvn/version "1.12.0-alpha5"}
         hiccup/hiccup {:mvn/version "2.0.0-alpha2"}
         org-parser/org-parser {:mvn/version "0.1.27"}
         venantius/glow {:mvn/version "0.1.6"}
         clj-rss/clj-rss {:mvn/version "0.3.0"}
         babashka/fs {:mvn/version "0.5.20"}
-        ring/ring-defaults {:mvn/version "0.4.0"}}
+        ring/ring-defaults {:mvn/version "0.4.0"}
+        tongue/tongue {:mvn/version "0.4.4"}}
  :paths ["src/base" "resources"]
  :aliases {:base/dev {:extra-paths ["dev/base" "test/base"]
                       :extra-deps {ring/ring-jetty-adapter {:mvn/version "1.10.0"}

@@ -1,4 +1,6 @@
-(ns tech.thomas-sojka.components)
+(ns tech.thomas-sojka.components
+  (:require [hiccup.core :as hiccup]
+            [tech.thomas-sojka.i18n :as i18n]))
 
 (defn- format-date [date]
   (.format
@@ -70,27 +72,29 @@
   [:div
    [:div#main]
    [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-44.lg:pb-12
-    [:p.font-bold.text-3xl "Hi there 👋"]
+    [:p.font-bold.text-3xl (i18n/translate :hero/sub-title)]
     [:h1.text-center.text-4xl.lg:text-6xl.font-thin.px-3.lg:px-0
      {:class "lg:w-2/3"}
-     "Welcome to my page where I share my thoughts by "
-     [:a.cursor-pointer {:href "#writing"} "writing"] ", "
-     [:a.cursor-pointer {:href "#talking"} "talking"] " and "
-     [:a.cursor-pointer {:href "#building"} "building"] "."]]
+     (i18n/translate :hero/title
+                     (update-vals
+                      {:link1 [:a.cursor-pointer {:href "#writing"} (i18n/translate :hero/link-1)]
+                       :link2 [:a.cursor-pointer {:href "#talking"} (i18n/translate :hero/link-2)]
+                       :link3 [:a.cursor-pointer {:href "#building"} (i18n/translate :hero/link-3)]}
+                      (fn [a] (hiccup/html a))))]]
    [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
     [:div.mb-8
-     [:h2#writing.mb-2.font-normal "Blogs"]
+     [:h2#writing.mb-2.font-normal (i18n/translate :main/blogs)]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (->> (concat blogs external-blogs)
            (sort-by :date)
            reverse
            (map content-item))]]
     [:div.mb-8
-     [:h2#building.mb-2.font-normal "Side Projects"]
+     [:h2#building.mb-2.font-normal (i18n/translate :main/side-projects)]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (map content-item projects)]]
     [:div.mb-8
-     [:h2#talking.mb-2.font-normal "Talks"]
+     [:h2#talking.mb-2.font-normal (i18n/translate :main/talks)]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (map content-item talks)]]]
    [:script {:src "js/libs.js"}]
