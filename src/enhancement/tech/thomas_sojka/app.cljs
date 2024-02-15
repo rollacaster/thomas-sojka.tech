@@ -258,7 +258,7 @@
 
 (defn lights []
   (let [pointlight-ref (react/useRef)
-        spotlight-ref (react/useRef)]
+        #_#_spotlight-ref (react/useRef)]
     #_(when false
       (drei/useHelper pointlight-ref three/PointLightHelper 1 "red")
       (drei/useHelper spotlight-ref three/SpotLightHelper "red"))

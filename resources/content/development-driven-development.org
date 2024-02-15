@@ -8,7 +8,7 @@ It should be our default to take advantage of that. This should not end at confi
 
 This idea is not limited to the programs we use. It also applies to the programs we build. We should create programs that help us build applications faster. Here's an example of this idea.
 ** Example
-I created a little application for myself where I plan my meals for the week. Then, it combines all the necessary ingredients I need to shop for. In addition, I sort the ingredient categories according to the layout of my local supermarket(for example, first Fruits and vegetables, then frozen ingredients, etc.).
+I created a little application for myself where I plan my meals for the week. Then, it combines all the necessary ingredients I need to shop for. In addition, I sort the ingredient categories according to the layout of my local supermarket (for example, first Fruits and vegetables, then frozen ingredients, etc.).
 
 That's already great, but in my quest to become the most efficient grocery shopper, not enough yet. Especially in the cheese section, a precise order is crucial. Going back and forth for the Feta was not acceptable.
 
