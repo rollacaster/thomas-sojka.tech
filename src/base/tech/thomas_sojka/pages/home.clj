@@ -17,7 +17,7 @@
 (defn main [{:keys [blogs projects talks external-blogs]}]
   [:div
    [:div#main]
-   [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-44.lg:pb-12
+   [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-44.lg:pb-12.z-20.relative
     [:p.font-bold.text-3xl (i18n/translate :hero/sub-title)]
     [:h1.text-center.text-4xl.lg:text-6xl.font-thin.px-3.lg:px-0
      {:class "lg:w-2/3"}
