@@ -1,7 +1,6 @@
 (ns server
   (:require [nrepl.cmdline :as nrepl]
             [ring.adapter.jetty :as jetty]
-            [ring.middleware.file :as file]
             [ring.util.response :as response]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 
@@ -18,7 +17,7 @@
           (try
             (jetty/run-jetty
              #'handler
-             {:port 8080 :join? false})
+             {:port 18080 :join? false})
             (catch Exception e
               (prn "8080 server already running"
                    e))))
