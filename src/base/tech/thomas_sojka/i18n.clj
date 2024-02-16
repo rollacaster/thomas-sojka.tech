@@ -27,5 +27,10 @@
                  :main/side-projects "Projekte"
                  :main/talks "Vorträge"}})
 
+(defn format-date [date]
+  (.format
+   (java.text.SimpleDateFormat. "yyyy-MM-dd")
+   date))
+
 (defn translate [key & args] ;; [locale key & args] => string
   (apply (tongue/build-translate dicts) @locale key args))

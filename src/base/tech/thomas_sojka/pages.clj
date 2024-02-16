@@ -7,7 +7,8 @@
    [tech.thomas-sojka.components :as components]
    [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
-   [tech.thomas-sojka.rss :as thomas-sojka.rss]))
+   [tech.thomas-sojka.rss :as thomas-sojka.rss]
+   [tech.thomas-sojka.pages.home :as home]))
 
 (def title "Thomas Sojka")
 (def url "https://thomas-sojka.tech/")
@@ -67,7 +68,7 @@
         :active "Home"
         :description description
         :nav-links nav-links
-        :main (components/home content)}))}]
+        :main (home/main content)}))}]
    (->> content-files
         (filter #(#{"blog" "page"} (:content-type (org-parser-meta/parse %))))
         (map
