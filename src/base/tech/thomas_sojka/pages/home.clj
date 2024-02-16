@@ -43,5 +43,5 @@
      [:h2#talking.mb-2.font-normal (i18n/translate :main/talks)]
      [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
       (map content-item talks)]]]
-   [:script {:src "js/libs.js"}]
-   [:script {:src "js/main.js"}]])
+   [:script {:async true :src "js/libs.js"}]
+   [:script {:async true :src "js/main.js"}]])
