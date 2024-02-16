@@ -57,7 +57,7 @@
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
 
-(defn page [{:keys [title language author main active nav-links description]}]
+(defn page [{:keys [title language author main active nav-links description scripts]}]
   [:html {:lang language}
    [:head
     [:meta {:charset "utf-8"}]
@@ -73,4 +73,5 @@
     (header {:active active :nav-links nav-links})
     main
     (mobile-nav {:active active :nav-links nav-links})
-    (footer)]])
+    (footer)
+    scripts]])

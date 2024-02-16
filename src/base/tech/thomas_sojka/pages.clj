@@ -68,7 +68,10 @@
         :active "Home"
         :description description
         :nav-links nav-links
-        :main (home/main content)}))}]
+        :main (home/main content)
+        :scripts [:<>
+                  [:script {:src "js/libs.js"}]
+                  [:script {:src "js/main.js"}]]}))}]
    (->> content-files
         (filter #(#{"blog" "page"} (:content-type (org-parser-meta/parse %))))
         (map
