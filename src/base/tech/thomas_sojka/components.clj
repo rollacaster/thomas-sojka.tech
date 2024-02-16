@@ -40,7 +40,7 @@
        nav-links)]]]])
 
 (defn- mobile-nav [{:keys [nav-links active]}]
-  [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t
+  [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t.z-20
    [:ul.flex.gap-x-6.list-none.justify-center
     (map
      (fn [{:keys [title link]}]
