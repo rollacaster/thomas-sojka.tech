@@ -43,8 +43,11 @@
           (spit path content)
           (io/copy content (io/file path)))))))
 
+(defonce new-build (atom false))
+
 (defn main [_]
-  (build {:files files}))
+  (build {:files files})
+  (reset! new-build true))
 
 (comment
   (build {:files files :target-folder "public"}))
