@@ -40,11 +40,28 @@
   (str target-folder
        (when (.getParent file) (str/replace (.getParent file) "resources/content" "")) "/"))
 
-(defn generate [{:keys [last-build-date content-files content nav-links resource-files target-folder]}]
-  (concat
-   [{:path "resources/styles/glow.css"
-     :content (glow/generate-css syntax-coloring)}
-    {:path (str target-folder "/index.xml")
+(defn content-file->html [file target-folder nav-links]
+  (let [{:keys [content-type title]} (org-parser-meta/parse file)]
+    {:path (str (public-path target-folder file) "/" (str/replace (.getName file) #".org$" ".html"))
+     :content (hiccup/html
+                  (components/page {:title title
+                                    :language language
+                                    :author author
+                                    :active (when (= content-type "page") title)
+                                    :main (components/content (org-parser-hiccup/parse file))
+                                    :description description
+                                    :nav-links nav-links}))}))
+
+(defn copy-resource-file [target-folder file]
+  {:path (str (public-path target-folder file) (.getName file))
+   :content file})
+
+(defn syntax-colouring-css [file]
+  {:path file
+   :content (glow/generate-css syntax-coloring)})
+
+(defn rss-xml [target-folder last-build-date content]
+  {:path (str target-folder "/index.xml")
      :content
      (apply rss/channel-xml
             (thomas-sojka.rss/generate
@@ -57,37 +74,20 @@
               :items (->> (concat (:blogs content)
                                   (:external-blogs content))
                           (sort-by :date)
-                          reverse)}))}
-    {:path (str target-folder "/index.html")
-     :content
-     (hiccup/html
-      (components/page
-       {:title title
-        :language language
-        :author author
-        :active "Home"
-        :description description
-        :nav-links nav-links
-        :main (home/main content)
-        :scripts [:<>
-                  [:script {:src "js/libs.js"}]
-                  [:script {:src "js/main.js"}]]}))}]
-   (->> content-files
-        (filter #(#{"blog" "page"} (:content-type (org-parser-meta/parse %))))
-        (map
-         (fn [file]
-           (let [{:keys [content-type title]} (org-parser-meta/parse file)]
-             {:path (str (public-path target-folder file) "/" (str/replace (.getName file) #".org$" ".html"))
-              :content (hiccup/html
-                        (components/page {:title title
-                                          :language language
-                                          :author author
-                                          :active (when (= content-type "page") title)
-                                          :main (components/content (org-parser-hiccup/parse file))
-                                          :description description
-                                          :nav-links nav-links}))}))))
-   (map
-    (fn [file]
-      {:path (str (public-path target-folder file) (.getName file))
-       :content file})
-    resource-files)))
+                          reverse)}))})
+
+(defn home-page [target-folder nav-links content]
+  {:path (str target-folder "/index.html")
+   :content
+   (hiccup/html
+       (components/page
+        {:title title
+         :language language
+         :author author
+         :active "Home"
+         :description description
+         :nav-links nav-links
+         :main (home/main content)
+         :scripts [:<>
+                   [:script {:src "js/libs.js"}]
+                   [:script {:src "js/main.js"}]]}))})
