@@ -38,7 +38,11 @@
 
 (defn- public-path [target-folder file]
   (str target-folder
-       (when (.getParent file) (str/replace (.getParent file) "resources/content" "")) "/"))
+       (when (.getParent file)
+         (-> (.getParent file)
+             (str/replace "resources" "")
+             (str/replace "content" "")))
+       "/"))
 
 (defn content-file->html [file target-folder nav-links]
   (let [{:keys [content-type title]} (org-parser-meta/parse file)]
@@ -52,7 +56,7 @@
                                     :description description
                                     :nav-links nav-links}))}))
 
-(defn copy-resource-file [target-folder file]
+(defn copy-resource-file [file target-folder]
   {:path (str (public-path target-folder file) (.getName file))
    :content file})
 
