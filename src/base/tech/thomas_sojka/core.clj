@@ -5,7 +5,8 @@
    [tech.thomas-sojka.data :as data]
    [tech.thomas-sojka.i18n :as i18n]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
-   [tech.thomas-sojka.pages :as pages])
+   [tech.thomas-sojka.pages :as pages]
+   [tech.thomas-sojka.cache :as cache])
   (:import
    (java.time Instant)))
 
@@ -50,17 +51,17 @@
     :else
     (pages/copy-resource-file file target-folder)))
 
-
 (defn build  [{:keys [files]}]
   (prn "Build:" (count files))
   (doseq [locale i18n/locales]
     (reset! i18n/locale locale)
     (let [last-build-date (Instant/now)
           content (data/content content-files)]
-      (doseq [content (conj (map build-page files)
-                            (pages/home-page target-folder nav-links content)
-                            (pages/rss-xml target-folder last-build-date content))]
-        (copy-to-target content)))))
+      (doseq [res (conj (keep (fn [file] (cache/cached-process-file :build build-page file)) files)
+                        (pages/home-page target-folder nav-links content)
+                        (pages/rss-xml target-folder last-build-date content))]
+        (copy-to-target res)))))
+
 
 (defonce new-build (atom false))
 

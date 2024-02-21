@@ -1,6 +1,5 @@
 (ns server
   (:require [clojure.java.io :as io]
-            [clojure.tools.namespace.repl]
             [compojure.core :refer [defroutes GET]]
             [nrepl.cmdline :as nrepl]
             [ring.adapter.jetty :as jetty]
