@@ -3,14 +3,12 @@
             [clojure.test :refer [deftest is]]
             [tech.thomas-sojka.cache :as sut]))
 
-(deftest caching-build
+(deftest cached-process-file
   (let [expensive-fn-call-count (atom 0)
-        expensive-fn #(swap! expensive-fn-call-count inc)
+        expensive-fn (fn [_] (swap! expensive-fn-call-count inc))
         file (str (fs/path (System/getProperty "user.dir") "test/base/tech/thomas_sojka"))]
     (sut/clear-cache)
 
-    (sut/cached-process-file expensive-fn file)
-    (is (= @expensive-fn-call-count 1))
+    (is (= (sut/cached-process-file :test expensive-fn file) 1))
 
-    (sut/cached-process-file expensive-fn file)
-    (is (= @expensive-fn-call-count 1))))
+    (is (= (sut/cached-process-file :test expensive-fn file) 1))))

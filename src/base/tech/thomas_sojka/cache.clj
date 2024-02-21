@@ -8,9 +8,11 @@
 (defn cached-process-file
   "Makes that a function which processes a file is only called if it hasn't
   already processed the same file in the past."
-  [process-file file-name]
-  (when (not
-         (and (get @cache-table file-name)
-              (zero? (.compareTo (fs/last-modified-time file-name) (get @cache-table file-name)))))
-    (process-file)
-    (swap! cache-table assoc (str file-name) (fs/last-modified-time file-name))))
+  [cache-key process-file file-name]
+  (if (not (and (get-in @cache-table [cache-key file-name])
+                (zero? (.compareTo (fs/last-modified-time file-name) (get-in @cache-table [cache-key file-name :last-modified])))))
+    (let [result (process-file file-name)]
+      (swap! cache-table assoc-in [cache-key file-name] {:result result
+                                                         :last-modified (fs/last-modified-time file-name)})
+      result)
+    (get-in @cache-table [cache-key file-name :result])))
