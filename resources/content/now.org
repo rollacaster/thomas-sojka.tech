@@ -1,6 +1,7 @@
 #+TITLE: Now
 #+NAV: 2
 #+CONTENT-TYPE: page
+#+I18N-KEY: nav/now
 ** Going freelance
 Once, freelancing was a distant dream, twinkling on the horizon. Now it's a bold reality beyond the mountain of paperwork that's currently my Everest. I'm almost there, ready to plant my flag and embark on my next adventure!
 ** Cloud computing

@@ -1,8 +1,9 @@
 (ns tech.thomas-sojka.data
-  (:require [clojure.set :as set]
+  (:require [babashka.fs :as fs]
+            [clojure.set :as set]
             [clojure.string :as str]
-            [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
-            [babashka.fs :as fs]))
+            [tech.thomas-sojka.i18n :as i18n]
+            [tech.thomas-sojka.org-parser-meta :as org-parser-meta]))
 
 (defn- link [file]
   (-> file
@@ -19,9 +20,15 @@
 (defn- html-path [file]
   (str/replace (.getName file) #".org$" ".html"))
 
+(defn- translate-title [{:keys [i18n-key] :as nav-link}]
+  (update nav-link :title (fn [title] (i18n/translate i18n-key title))))
+
 (defn nav-links [content-files]
   (conj (->> content-files
-             (map (fn [f] (assoc (org-parser-meta/parse f) :link (link f))))
+             (map (fn [f] (-> (org-parser-meta/parse f)
+                             (assoc :link (link f))
+                             (update :i18n-key keyword)
+                             (translate-title))))
              (filter (fn [{:keys [content-type]}] (= content-type "page")))
              (sort-by :nav))
         {:title "Home"
