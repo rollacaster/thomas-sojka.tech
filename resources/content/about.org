@@ -1,6 +1,7 @@
 #+TITLE: About
 #+NAV: 1
 #+CONTENT-TYPE: page
+#+I18N-KEY: nav/about
 
 #+BEGIN_EXPORT html
 <figure >

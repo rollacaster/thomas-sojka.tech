@@ -41,6 +41,7 @@
        (when (.getParent file)
          (-> (.getParent file)
              (str/replace "resources" "")
+             (str/replace "public" "")
              (str/replace "content" "")))
        "/"))
 

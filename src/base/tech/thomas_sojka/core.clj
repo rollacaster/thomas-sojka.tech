@@ -29,7 +29,7 @@
 (defn- content-file? [file] (re-find #".org$" (.getName file)))
 
 (def content-files (filter content-file? content-file-paths))
-(def nav-links (data/nav-links content-files))
+
 
 
 (defn- copy-to-target [{:keys [path content]}]
@@ -38,9 +38,7 @@
     (spit path content)
     (io/copy content (io/file path))))
 
-(def target-folder "public")
-
-(defn build-page [file]
+(defn build-page [target-folder nav-links file]
   (cond
     (and (content-file? file) (:content-type (org-parser-meta/parse file)))
     (pages/content-file->html file target-folder nav-links)
@@ -55,9 +53,16 @@
   (prn "Build:" (count files))
   (doseq [locale i18n/locales]
     (reset! i18n/locale locale)
-    (let [last-build-date (Instant/now)
-          content (data/content content-files)]
-      (doseq [res (conj (keep (fn [file] (cache/cached-process-file :build build-page file)) files)
+    (let [nav-links (data/nav-links content-files)
+          last-build-date (Instant/now)
+          content (data/content content-files)
+          target-folder (cond-> "public"
+                          (not= locale :en) (str "/" (name locale) "/"))
+          all-files (cond->> files
+                      (not= locale :en)
+                      (concat (read-all-file-paths "public/css")
+                              (read-all-file-paths "public/js")))]
+      (doseq [res (conj (keep (fn [file] (cache/cached-process-file locale (partial build-page target-folder nav-links) file)) all-files)
                         (pages/home-page target-folder nav-links content)
                         (pages/rss-xml target-folder last-build-date content))]
         (copy-to-target res)))))

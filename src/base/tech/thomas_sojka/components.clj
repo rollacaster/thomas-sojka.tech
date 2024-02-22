@@ -23,7 +23,7 @@
 (defn- nav-link
   [{:keys [title link active]}]
   [:li.mb-0.px-4.py-2.rounded {:class (when (= active title) "bg-gray-700")}
-        [:a.text-white.border-0 {:href link} title]])
+   [:a.text-white.border-0 {:href link} title]])
 
 (defn- header [{:keys [active nav-links]}]
   [:header.w-full.bg-gray-500.py-3.px-6.lg:px-0
@@ -33,11 +33,21 @@
       {:href "/"}
       "Thomas Sojka"]]
     [:nav.hidden.md:block
-     [:ul.flex.list-none
+     [:ul.flex.list-none.items-center
       (map
        (fn [{:keys [title link]}]
          (nav-link {:active active :title title :link link}))
-       nav-links)]]]])
+       nav-links)
+
+      [:li.px-4.my-2.border-l-2.border-gray-300
+       [:a {:href
+            (if (= @i18n/locale :en)
+              "/de/index.html"
+              "/index.html")}
+        [:img.w-7.rounded-full.h-7.object-cover.contrast-50.object-left
+         {:src (if (= @i18n/locale :en)
+                 "/images/ui/flag_de.svg"
+                 "/images/ui/flag_us.svg") }]]]]]]])
 
 (defn- mobile-nav [{:keys [nav-links active]}]
   [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t.z-20

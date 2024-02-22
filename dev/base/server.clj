@@ -5,6 +5,7 @@
             [ring.adapter.jetty :as jetty]
             [ring.middleware.file :refer [wrap-file]]
             [ring.middleware.refresh :as refresh]
+            [ring.middleware.content-type :refer [wrap-content-type]]
             [ring.util.response :as response]
             [tech.thomas-sojka.core :as core]))
 
@@ -25,6 +26,7 @@
 (def handler
   (-> app
       (wrap-file "public" {:index-files? false})
+      (wrap-content-type)
       (wrap-with-script refresh-script)))
 
 (defn -main [& args]
