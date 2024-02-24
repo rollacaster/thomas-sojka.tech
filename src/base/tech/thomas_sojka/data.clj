@@ -6,11 +6,12 @@
             [tech.thomas-sojka.org-parser-meta :as org-parser-meta]))
 
 (defn- link [file]
-  (-> file
-      fs/path
-      (str/replace "resources/content" "")
-      fs/strip-ext
-      (str ".html")))
+  (str (when (not= @i18n/locale :en) (str "/" (name @i18n/locale)))
+       (-> file
+           fs/path
+           (str/replace "resources/content" "")
+           fs/strip-ext
+           (str ".html"))))
 
 (defn- date [date-str]
   (.parse
@@ -32,7 +33,7 @@
              (filter (fn [{:keys [content-type]}] (= content-type "page")))
              (sort-by :nav))
         {:title "Home"
-         :link "/"
+         :link (if (= @i18n/locale :en) "/" "/de/index.html")
          :nav 0}))
 
 (defn- sort-content [content]

@@ -1,11 +1,5 @@
 (ns tech.thomas-sojka.components
-  (:require [hiccup.core :as hiccup]
-            [tech.thomas-sojka.i18n :as i18n]))
-
-(defn- format-date [date]
-  (.format
-   (java.text.SimpleDateFormat. "yyyy-MM-dd")
-   date))
+  (:require [tech.thomas-sojka.i18n :as i18n]))
 
 (defn icon [name]
   [:svg {:width "20" :height "20" :viewbox "0 0 24 24" :fill "dark-gray"}

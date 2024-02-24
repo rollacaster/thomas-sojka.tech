@@ -8,7 +8,8 @@
    [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
    [tech.thomas-sojka.rss :as thomas-sojka.rss]
-   [tech.thomas-sojka.pages.home :as home]))
+   [tech.thomas-sojka.pages.home :as home]
+   [tech.thomas-sojka.i18n :as i18n]))
 
 (def title "Thomas Sojka")
 (def url "https://thomas-sojka.tech/")
@@ -46,13 +47,13 @@
        "/"))
 
 (defn content-file->html [file target-folder nav-links]
-  (let [{:keys [content-type title]} (org-parser-meta/parse file)]
+  (let [{:keys [content-type title i18n-key]} (org-parser-meta/parse file)]
     {:path (str (public-path target-folder file) "/" (str/replace (.getName file) #".org$" ".html"))
      :content (hiccup/html
                   (components/page {:title title
                                     :language language
                                     :author author
-                                    :active (when (= content-type "page") title)
+                                    :active (when (= content-type "page") (i18n/translate (keyword i18n-key)))
                                     :main (components/content (org-parser-hiccup/parse file))
                                     :description description
                                     :nav-links nav-links}))}))
