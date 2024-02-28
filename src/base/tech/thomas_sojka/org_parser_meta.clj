@@ -20,7 +20,7 @@
         [])
        (apply hash-map)))
 
-(defn parse [org-path] (cache/cached-process-file :parse parse-it org-path))
+(defn parse [org-path] (parse-it org-path))
 
 (comment
   (def org-path "content/100-days-of-spaced-repetition.org")
