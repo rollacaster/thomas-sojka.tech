@@ -3,12 +3,6 @@
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/about
 
-#+BEGIN_EXPORT html
-<figure >
-  <a href="images/me.png" class="hidden md:block border-0 mt-4"><img src="images/me.png" alt="Picture of Thomas Sojka" class="m-0 p-0 float-left rounded mr-16"></a>
-</figure>
-#+END_EXPORT
-
 Hi 👋
 
 My name is Thomas. I am a programmer living in Munich.
@@ -23,6 +17,6 @@ You can find me on [[https://twitter.com/rollacaster][Twitter]], [[https://githu
 
 #+BEGIN_EXPORT html
 <figure>
-  <a href="images/me.png" class="md:hidden" alt="Picture of Thomas Sojka"><img src="images/me.png" alt="Picture of Thomas Sojka" class="p-0 float-left rounded"></a>
+  <a href="images/me.png" alt="Picture of Thomas Sojka"><img src="images/me.png" alt="Picture of Thomas Sojka" class="p-0 float-left rounded"></a>
 </figure>
 #+END_EXPORT
