@@ -1,0 +1,10 @@
+#+TITLE: Now
+#+NAV: 2
+#+CONTENT-TYPE: page
+#+I18N-KEY: nav/now
+** Freelancing
+Früher war die Freiberuflichkeit ein ferner Traum, und nach meiner Reise habe ich beschlossen, diesen wahr werden zu lassen. Das bedeutet aktuell viel Papierkram. Aber ich freue mich schon bald darauf, meine ersten Projekte anzugehen.
+** Cloud-Computing
+Professionelle Kenntnisse im Cloud-Computing sind das fehlende Stück Expertise für mich. Derzeit konzentriere ich mich darauf, meine Fähigkeiten in Technologien wie AWS, Terraform und CDK zu verbessern. Dieses Wissen ist entscheidend für mich, um einen umfassenden Service anzubieten – vom Aufbau robuster, cloud-basierter Backends bis hin zur sorgfältigen Gestaltung ansprechender Frontends.
+** Bücher
+Ich habe eine kleine Buchclub-Sucht entwickelt und lese im Moment 'Modern Software Engineering', 'Terraform Up & Running' und 'SICP'. Zusammen mit einer Gruppe zu lesen hilft enorm, ein Buch ganz durchzuarbeiten, auch wenn es mal schwierig wird.

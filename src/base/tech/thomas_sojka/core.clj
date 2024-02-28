@@ -27,9 +27,15 @@
                    image-file-paths
                    [(io/file "resources/styles/glow.css")
                     (io/file "resources/favicon.ico")]))
-(defn- content-file? [file] (re-find #".org$" (.getName file)))
+(defn- content-file? [file]
+  (re-find #".org$" (.getName file)))
 
-(def content-files (filter content-file? content-file-paths))
+(defn translated-file? [file]
+  (str/includes? (str file) "/de/"))
+
+(def content-files (filter (fn [file]
+                             (and (content-file? file) (not (translated-file? file))))
+                           content-file-paths))
 
 
 
@@ -60,7 +66,7 @@
                   fs/components
                   (remove
                    (fn [file]
-                     (some #(= (str file) %) ["resources" "public" "content"])))
+                     (some #(= (str file) %) ["resources" "public" "content" "de"])))
                   (map (fn [file] (str/replace file #".org$" ".html")))
                   (cons (when (= locale :de) "/de" ))
                   (str/join "/")))))
@@ -74,9 +80,12 @@
           content (data/content content-files)
           target-folder "public"
           all-files (cond->> files
-                      (not= locale :en)
-                      (concat (read-all-file-paths "public/css")
-                              (read-all-file-paths "public/js")))]
+                      (not= locale :en) (remove
+                                         (fn [file]
+                                           (some #(= (.getName file) (.getName %)) (read-all-file-paths "resources/content/de"))))
+                      (not= locale :en) (concat (read-all-file-paths "public/css")
+                                                (read-all-file-paths "public/js")
+                                                (read-all-file-paths "resources/content/de")))]
       (doseq [[content path] (keep (fn [file]
                                      ((juxt (partial build-page nav-links)
                                             (partial dest-path target-folder locale))

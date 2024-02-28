@@ -2,9 +2,9 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/now
-** Going freelance
-Once, freelancing was a distant dream, twinkling on the horizon. Now it's a bold reality beyond the mountain of paperwork that's currently my Everest. I'm almost there, ready to plant my flag and embark on my next adventure!
-** Cloud computing
-Getting proficient at cloud computing is my missing piece of expertise across the entire application development spectrum. I am currently focusing on improving my skills in technologies such as AWS, Terraform, and Ansible, not just as individual tools, but as integral pieces of a larger puzzle. This knowledge is crucial for me to provide a comprehensive service – from building robust, cloud-based backends to meticulously designing engaging frontends.
+** Freelancing
+Previously, freelancing was a distant dream, but after my journey, I have decided to make it a reality. It currently involves a lot of paperwork. But I am looking forward to tackling my first projects soon.
+** Cloud Computing
+Professional cloud computing skills are the missing piece of expertise for me. Currently, I am focused on improving my skills in technologies such as AWS, Terraform, and CDK. This knowledge is crucial for me to offer comprehensive services— from building robust, cloud-based backends to carefully designing appealing frontends.
 ** Books
-I believe that my journey towards improving my skills is not something I should do alone, but rather, it should be an adventure shared with others. That's why I join book clubs with my friends, where we read and discuss books. Right now it's 'Modern Software Engineering', 'Terraform Up & Running', and 'SICP'. These sessions make reading an interactive and exciting experience, as we collectively learn from each other and from the books we read.
+I have developed a slight addiction to book clubs and am currently reading 'Modern Software Engineering,' 'Terraform Up & Running,' and 'SICP.' Reading together as a group immensely helps in getting through a book, even when it gets challenging.
