@@ -1,19 +1,18 @@
 (ns tech.thomas-sojka.pages
   (:require
    [clj-rss.core :as rss]
-   [clojure.string :as str]
    [glow.core :as glow]
    [hiccup.core :as hiccup]
    [tech.thomas-sojka.components :as components]
+   [tech.thomas-sojka.constants :as constants]
+   [tech.thomas-sojka.i18n :as i18n]
    [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
-   [tech.thomas-sojka.rss :as thomas-sojka.rss]
    [tech.thomas-sojka.pages.home :as home]
-   [tech.thomas-sojka.i18n :as i18n]))
+   [tech.thomas-sojka.rss :as thomas-sojka.rss]))
 
-(def title "Thomas Sojka")
+
 (def url "https://thomas-sojka.tech/")
-(def language "en")
 (def author "contact@thomas-sojka.tech (Thomas Sojka)")
 (def description "data visualizations | frontend development | functional programming")
 (def syntax-coloring {:background "#edf2f7"
@@ -37,63 +36,46 @@
                       :regex "#dc322f"
                       :symbol "#586e75"})
 
-(defn- public-path [target-folder file]
-  (str target-folder
-       (when (.getParent file)
-         (-> (.getParent file)
-             (str/replace "resources" "")
-             (str/replace "public" "")
-             (str/replace "content" "")))
-       "/"))
+(defn content-file->html [file nav-links]
+  (let [{:keys [title i18n-key]} (org-parser-meta/parse file)
+        title-translated (if i18n-key (i18n/translate (keyword i18n-key)) title)]
+    (hiccup/html
+        (components/page {:title title-translated
+                          :language (name @i18n/locale)
+                          :author author
+                          :main (components/content (org-parser-hiccup/parse file))
+                          :description description
+                          :nav-links nav-links}))))
 
-(defn content-file->html [file target-folder nav-links]
-  (let [{:keys [content-type title i18n-key]} (org-parser-meta/parse file)]
-    {:path (str (public-path target-folder file) "/" (str/replace (.getName file) #".org$" ".html"))
-     :content (hiccup/html
-                  (components/page {:title title
-                                    :language language
-                                    :author author
-                                    :active (when (= content-type "page") (i18n/translate (keyword i18n-key)))
-                                    :main (components/content (org-parser-hiccup/parse file))
-                                    :description description
-                                    :nav-links nav-links}))}))
+(defn copy-resource-file [file]
+  file)
 
-(defn copy-resource-file [file target-folder]
-  {:path (str (public-path target-folder file) (.getName file))
-   :content file})
+(defn syntax-colouring-css [_]
+  (glow/generate-css syntax-coloring))
 
-(defn syntax-colouring-css [file]
-  {:path file
-   :content (glow/generate-css syntax-coloring)})
+(defn rss-xml [last-build-date content]
+  (apply rss/channel-xml
+         (thomas-sojka.rss/generate
+          {:title constants/title
+           :language (name @i18n/locale)
+           :url url
+           :author author
+           :description description
+           :lastBuildDate last-build-date
+           :items (->> (concat (:blogs content)
+                               (:external-blogs content))
+                       (sort-by :date)
+                       reverse)})))
 
-(defn rss-xml [target-folder last-build-date content]
-  {:path (str target-folder "/index.xml")
-     :content
-     (apply rss/channel-xml
-            (thomas-sojka.rss/generate
-             {:title title
-              :language language
-              :url url
-              :author author
-              :description description
-              :lastBuildDate last-build-date
-              :items (->> (concat (:blogs content)
-                                  (:external-blogs content))
-                          (sort-by :date)
-                          reverse)}))})
-
-(defn home-page [target-folder nav-links content]
-  {:path (str target-folder "/index.html")
-   :content
-   (hiccup/html
-       (components/page
-        {:title title
-         :language language
-         :author author
-         :active "Home"
-         :description description
-         :nav-links nav-links
-         :main (home/main content)
-         :scripts [:<>
-                   [:script {:src "js/libs.js"}]
-                   [:script {:src "js/main.js"}]]}))})
+(defn home-page [nav-links content]
+  (hiccup/html
+      (components/page
+       {:title "Home"
+        :language (name @i18n/locale)
+        :author author
+        :description description
+        :nav-links nav-links
+        :main (home/main content)
+        :scripts [:<>
+                  [:script {:src "js/libs.js"}]
+                  [:script {:src "js/main.js"}]]})))

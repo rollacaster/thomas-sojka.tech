@@ -2,11 +2,11 @@
   (:require
    [babashka.fs :as fs]
    [clojure.java.io :as io]
+   [clojure.string :as str]
    [tech.thomas-sojka.data :as data]
    [tech.thomas-sojka.i18n :as i18n]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
-   [tech.thomas-sojka.pages :as pages]
-   [tech.thomas-sojka.cache :as cache])
+   [tech.thomas-sojka.pages :as pages])
   (:import
    (java.time Instant)))
 
@@ -25,29 +25,45 @@
 (def files (concat content-file-paths
                    video-file-paths
                    image-file-paths
-                   [(fs/file "resources/styles/glow.css")]))
+                   [(io/file "resources/styles/glow.css")
+                    (io/file "resources/favicon.ico")]))
 (defn- content-file? [file] (re-find #".org$" (.getName file)))
 
 (def content-files (filter content-file? content-file-paths))
 
 
 
-(defn- copy-to-target [{:keys [path content]}]
-  (io/make-parents path)
-  (if (string? content)
-    (spit path content)
-    (io/copy content (io/file path))))
+(defn- copy-to-target [path content]
+  (when path
+    (io/make-parents path)
+    (cond (string? content) (spit path content)
+          (not (fs/exists? content)) (prn content "not found")
+          :else (io/copy content (io/file path)))))
 
-(defn build-page [target-folder nav-links file]
+(defn build-page [nav-links file]
   (cond
     (and (content-file? file) (:content-type (org-parser-meta/parse file)))
-    (pages/content-file->html file target-folder nav-links)
+    (pages/content-file->html file nav-links)
 
     (= file "resources/styles/glow.css")
     (pages/syntax-colouring-css file)
 
     :else
-    (pages/copy-resource-file file target-folder)))
+    (pages/copy-resource-file file)))
+
+(defn dest-path [target-folder locale file]
+  (cond (some #(str/includes? file %) ["external-blogs" "projects" "talks"]) nil
+
+        :else
+        (str target-folder
+             (->> (io/file file)
+                  fs/components
+                  (remove
+                   (fn [file]
+                     (some #(= (str file) %) ["resources" "public" "content"])))
+                  (map (fn [file] (str/replace file #".org$" ".html")))
+                  (cons (when (= locale :de) "/de" ))
+                  (str/join "/")))))
 
 (defn build  [{:keys [files]}]
   (prn "Build:" (count files))
@@ -56,16 +72,25 @@
     (let [nav-links (data/nav-links content-files)
           last-build-date (Instant/now)
           content (data/content content-files)
-          target-folder (cond-> "public"
-                          (not= locale :en) (str "/" (name locale) "/"))
+          target-folder "public"
           all-files (cond->> files
                       (not= locale :en)
                       (concat (read-all-file-paths "public/css")
                               (read-all-file-paths "public/js")))]
-      (doseq [res (conj (keep (fn [file] (cache/cached-process-file locale (partial build-page target-folder nav-links) file)) all-files)
-                        (pages/home-page target-folder nav-links content)
-                        (pages/rss-xml target-folder last-build-date content))]
-        (copy-to-target res)))))
+      (doseq [[content path] (keep (fn [file]
+                                     ((juxt (partial build-page nav-links)
+                                            (partial dest-path target-folder locale))
+                                      file))
+                                   all-files)]
+        (copy-to-target path content))
+
+      (copy-to-target
+       (dest-path target-folder locale "index.html")
+       (pages/home-page nav-links content))
+
+      (copy-to-target
+       (dest-path target-folder locale "/index.xml")
+       (pages/rss-xml last-build-date content)))))
 
 
 (defonce new-build (atom false))
