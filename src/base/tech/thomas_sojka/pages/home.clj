@@ -27,8 +27,11 @@
                        :link3 [:a.cursor-pointer {:href "#building"} (i18n/translate :hero/link-3)]}
                       (fn [a] (hiccup/html a))))]
     [:p.mt-0.mb-10.font-thin.text-3xl.text-center.max-w-4xl (i18n/translate :hero/sub-title)]
-    [:button.font-bold.text-2xl
-     {:class "bg-gray-800 text-white p-4 shadow-xl rounded-lg"}
+    [:a.font-bold.text-2xl
+     {:class "bg-gray-800 text-white p-4 shadow-xl rounded-lg"
+      :href (str "mailto:contact@thomas-sojka.tech?subject="
+                 (i18n/translate :hero/mail-subject) "&body="
+                 (i18n/translate :hero/mail-body))}
      (i18n/translate :hero/cta)]]
    [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
     [:div.mb-8
