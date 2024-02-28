@@ -1,5 +1,7 @@
 (ns tech.thomas-sojka.components
-  (:require [tech.thomas-sojka.i18n :as i18n]))
+  (:require
+   [tech.thomas-sojka.constants :as constants]
+   [tech.thomas-sojka.i18n :as i18n]))
 
 (defn icon [name]
   [:svg {:width "20" :height "20" :viewbox "0 0 24 24" :fill "dark-gray"}
@@ -19,37 +21,26 @@
   [:li.mb-0.px-4.py-2.rounded {:class (when (= active title) "bg-gray-700")}
    [:a.text-white.border-0 {:href link} title]])
 
-(defn- header [{:keys [active nav-links]}]
+(defn- header [{:keys [nav-links translation-link locale-icon]}]
   [:header.w-full.bg-gray-500.py-3.px-6.lg:px-0
    [:div.max-w-5xl.flex.justify-between.mx-auto.items-center
     [:h1.mb-0
      [:a.text-white.uppercase.tracking-widest.text-lg.border-0.font-normal
       {:href "/"}
       "Thomas Sojka"]]
-    [:nav.hidden.md:block
-     [:ul.flex.list-none.items-center
-      (map
-       (fn [{:keys [title link]}]
-         (nav-link {:active active :title title :link link}))
-       nav-links)
+    [:nav.flex
+     [:ul.list-none.items-center.hidden.md:flex
+      nav-links]
 
-      [:li.px-4.my-2.border-l-2.border-gray-300
-       [:a {:href
-            (if (= @i18n/locale :en)
-              "/de/index.html"
-              "/index.html")}
-        [:img.w-7.rounded-full.h-7.object-cover.contrast-50.object-left
-         {:src (if (= @i18n/locale :en)
-                 "/images/ui/flag_de.svg"
-                 "/images/ui/flag_us.svg") }]]]]]]])
+     [:div.px-4.my-2.md:border-l-2.md:border-gray-300
+      [:a {:href translation-link}
+       [:img.w-7.rounded-full.h-7.object-cover.contrast-50.object-left
+        {:src locale-icon }]]]]]])
 
-(defn- mobile-nav [{:keys [nav-links active]}]
+(defn- mobile-nav [{:keys [nav-links]}]
   [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t.z-20
    [:ul.flex.gap-x-6.list-none.justify-center
-    (map
-     (fn [{:keys [title link]}]
-       (nav-link {:active active :title title :link link}))
-     nav-links)]])
+    nav-links]])
 
 (defn content [& children]
   [:section.flex.flex-col.items-center.py-8.flex-1.px-6.lg:px-0
@@ -61,21 +52,25 @@
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
 
-(defn page [{:keys [title language author main active nav-links description scripts]}]
-  [:html {:lang language}
-   [:head
-    [:meta {:charset "utf-8"}]
-    [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
-    [:title title]
-    [:meta {:content author :name "author"}]
-    [:meta {:content description :name "description"}]
-    [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
-    [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
-    [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
-    [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
-   [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
-    (header {:active active :nav-links nav-links})
-    main
-    (mobile-nav {:active active :nav-links nav-links})
-    (footer)
-    scripts]])
+(defn page [{:keys [title language author main nav-links description scripts]}]
+  (let [nav-link-lis (map (fn [nav] (nav-link {:active title :title (:title nav) :link (:link nav)})) nav-links)]
+    [:html {:lang language}
+     [:head
+      [:meta {:charset "utf-8"}]
+      [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
+      [:title constants/title]
+      [:meta {:content author :name "author"}]
+      [:meta {:content description :name "description"}]
+      [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
+      [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
+      [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
+      [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
+     [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
+      (header {:active title
+               :nav-links nav-link-lis
+               :translation-link (if (= @i18n/locale :en) "/de/index.html" "/index.html")
+               :locale-icon (if (= @i18n/locale :en) "/images/ui/flag_de.svg" "/images/ui/flag_us.svg")})
+      main
+      (mobile-nav {:active title :nav-links nav-link-lis})
+      (footer)
+      scripts]]))
