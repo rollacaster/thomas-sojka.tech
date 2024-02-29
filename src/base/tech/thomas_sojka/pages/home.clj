@@ -18,7 +18,7 @@
   [:div
    [:div#main]
    [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-44.lg:pb-12.z-20.relative
-    [:h1.font-bold.text-center.text-4xl.lg:text-5xl.px-3.lg:px-0.mb-8
+    [:h1.font-bold.text-center.text-2xl.lg:text-5xl.px-3.lg:px-0.mb-2.lg:mb-8
      {:class "lg:w-2/3"}
      (i18n/translate :hero/title
                      (update-vals
@@ -26,9 +26,9 @@
                        :link2 [:a.cursor-pointer {:href "#talking"} (i18n/translate :hero/link-2)]
                        :link3 [:a.cursor-pointer {:href "#building"} (i18n/translate :hero/link-3)]}
                       (fn [a] (hiccup/html a))))]
-    [:p.mt-0.mb-10.font-thin.text-3xl.text-center.max-w-4xl (i18n/translate :hero/sub-title)]
-    [:a.font-bold.text-2xl
-     {:class "bg-gray-800 text-white p-4 shadow-xl rounded-lg"
+    [:p.mt-0.mb-4.lg:mb-10.font-thin.lg:text-3xl.text-center.max-w-4xl.px-3 (i18n/translate :hero/sub-title)]
+    [:a.font-bold.lg:text-2xl
+     {:class "bg-gray-800 text-white p-3 lg:p-4 shadow-xl rounded-lg"
       :href (str "mailto:contact@thomas-sojka.tech?subject="
                  (i18n/translate :hero/mail-subject) "&body="
                  (i18n/translate :hero/mail-body))}
