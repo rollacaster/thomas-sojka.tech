@@ -9,7 +9,7 @@
     {:href link}
     [:div.flex.flex-col.rounded-lg.h-full.shadow-inner
      [:div.py-6.px-6.bg-gray-600.rounded-lg.rounded-b-none.flex-1
-      [:h2.text-xl.text-gray-100.font-normal.mb-0 title]]
+      [:h3.text-xl.text-gray-100.font-normal.mb-0 title]]
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
       [:span.text-gray-700 (i18n/format-date date)]
       (c/icon content-type)]]]])
@@ -18,7 +18,7 @@
   [:div
    [:div#main]
    [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-44.lg:pb-12.z-20.relative
-    [:h1.font-bold.text-center.text-2xl.lg:text-5xl.px-3.lg:px-0.mb-2.lg:mb-8
+    [:h2.font-bold.text-center.text-2xl.lg:text-5xl.px-3.lg:px-0.mb-2.lg:mb-8
      {:class "lg:w-2/3"}
      (i18n/translate :hero/title
                      (update-vals
@@ -33,6 +33,20 @@
                  (i18n/translate :hero/mail-subject) "&body="
                  (i18n/translate :hero/mail-body))}
      (i18n/translate :hero/cta)]]
+
+   [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
+    [:div.flex.pl-10
+     [:div {:class "w-1/2"}
+      [:h2.text-2xl "Individuelle Lösungen für einzigartige Herausforderungen"]
+      [:p "In einer Welt, in der der erste Eindruck zählt, ist eine intuitive und
+     ansprechende Benutzeroberfläche der Schlüssel zum Erfolg. Mit einem tiefen
+     Verständnis für Design und Technologie biete ich Ihnen nicht nur eine
+     Dienstleistung, sondern eine Partnerschaft, um Ihre digitalen Produkte zum
+     Leben zu erwecken. Von der Konzeption bis zur finalen Umsetzung –
+     profitieren Sie von einer Detailarbeit, die Ihre Nutzer begeistert und
+     bindet."]]]]
+
+
    [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
     [:div.mb-8
      [:h2#writing.mb-2.font-normal (i18n/translate :main/blogs)]
