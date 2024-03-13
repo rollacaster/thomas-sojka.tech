@@ -35,7 +35,7 @@
      [:div.px-4.my-2.md:border-l-2.md:border-gray-300
       [:a {:href translation-link}
        [:img.w-7.rounded-full.h-7.object-cover.contrast-50.object-left
-        {:src locale-icon }]]]]]])
+        {:src locale-icon :alt "Country Flag" }]]]]]])
 
 (defn- mobile-nav [{:keys [nav-links]}]
   [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t.z-20
