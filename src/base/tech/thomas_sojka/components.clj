@@ -56,18 +56,19 @@
                     canonical-url alternate-url]}]
   (let [nav-link-lis (map (fn [nav] (nav-link {:active title :title (:title nav) :link (:link nav)})) nav-links)]
     [:html {:lang language}
-     [:head
-      [:meta {:charset "utf-8"}]
-      [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
-      [:title constants/title]
-      [:meta {:content author :name "author"}]
-      [:meta {:content description :name "description"}]
-      [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
-      [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
-      [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
-      [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]
-      canonical-url
-      alternate-url]
+     (into
+      [:head
+       [:meta {:charset "utf-8"}]
+       [:meta {:content "width=device-width, initial-scale=1" :name "viewport"}]
+       [:title constants/title]
+       [:meta {:content author :name "author"}]
+       [:meta {:content description :name "description"}]
+       [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
+       [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
+       [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
+       [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]
+       canonical-url]
+      alternate-url)
      [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
       (header {:active title
                :nav-links nav-link-lis

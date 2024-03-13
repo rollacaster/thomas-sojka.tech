@@ -49,9 +49,8 @@
                   :nav-links nav-links}
            i18n-key
            (assoc :alternate-url
-                  (case @i18n/locale
-                    :en [:link {:rel "alternate" :hreflang "de" :href (str "https://thomas-sojka.tech/de/" (name i18n-key) ".html")}]
-                    :de [:link {:rel "alternate" :hreflang "en" :href (str "https://thomas-sojka.tech/" (name i18n-key) ".html")}])))))))
+                  [[:link {:rel "alternate" :hreflang "de" :href (str "https://thomas-sojka.tech/de/" (name i18n-key) ".html")}]
+                   [:link {:rel "alternate" :hreflang "en" :href (str "https://thomas-sojka.tech/" (name i18n-key) ".html")}]]))))))
 
 (defn copy-resource-file [file]
   file)
@@ -83,9 +82,8 @@
         :nav-links nav-links
         :main (home/main content)
         :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech/"}]
-        :alternate-url (case @i18n/locale
-                         :en [:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
-                         :de [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}])
+        :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
+                        [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]]
         :scripts [:<>
                   [:script {:src "js/libs.js"}]
                   [:script {:src "js/main.js"}]]})))
