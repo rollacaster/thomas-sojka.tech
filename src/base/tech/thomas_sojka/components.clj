@@ -52,7 +52,8 @@
    [:a.text-white.border-0 {:href "https://github.com/rollacaster"} "GitHub"]
    [:a.text-white.border-0 {:href "https://www.youtube.com/channel/UCBSMA2iotgxbWPSLTFeUt9g?view_as=subscriber"} "YouTube"]])
 
-(defn page [{:keys [title language author main nav-links description scripts]}]
+(defn page [{:keys [title language author main nav-links description scripts
+                    canonical-url alternate-url]}]
   (let [nav-link-lis (map (fn [nav] (nav-link {:active title :title (:title nav) :link (:link nav)})) nav-links)]
     [:html {:lang language}
      [:head
@@ -64,7 +65,9 @@
       [:meta {:content "programming emacs clojure javascript blog tech" :name "keywords"}]
       [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
       [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
-      [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]]
+      [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]
+      canonical-url
+      alternate-url]
      [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
       (header {:active title
                :nav-links nav-link-lis

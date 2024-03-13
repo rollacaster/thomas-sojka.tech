@@ -40,12 +40,18 @@
   (let [{:keys [title i18n-key]} (org-parser-meta/parse file)
         title-translated (if i18n-key (i18n/translate (keyword i18n-key)) title)]
     (hiccup/html
-        (components/page {:title title-translated
-                          :language (name @i18n/locale)
-                          :author author
-                          :main (components/content (org-parser-hiccup/parse file))
-                          :description description
-                          :nav-links nav-links}))))
+        (components/page
+         (cond-> {:title title-translated
+                  :language (name @i18n/locale)
+                  :author author
+                  :main (components/content (org-parser-hiccup/parse file))
+                  :description description
+                  :nav-links nav-links}
+           i18n-key
+           (assoc :alternate-url
+                  (case @i18n/locale
+                    :en [:link {:rel "alternate" :hreflang "de" :href (str "https://thomas-sojka.tech/de/" (name i18n-key) ".html")}]
+                    :de [:link {:rel "alternate" :hreflang "en" :href (str "https://thomas-sojka.tech/" (name i18n-key) ".html")}])))))))
 
 (defn copy-resource-file [file]
   file)
@@ -76,6 +82,10 @@
         :description description
         :nav-links nav-links
         :main (home/main content)
+        :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech/"}]
+        :alternate-url (case @i18n/locale
+                         :en [:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
+                         :de [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}])
         :scripts [:<>
                   [:script {:src "js/libs.js"}]
                   [:script {:src "js/main.js"}]]})))
