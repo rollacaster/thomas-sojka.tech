@@ -78,9 +78,10 @@
     :description description
     :nav-links nav-links
     :main (home/main content)
-    :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech/"}]
+    :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech"}]
     :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
-                    [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]]
+                    [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]
+                    [:link {:rel "alternate" :hreflang (name @i18n/locale) :href "https://thomas-sojka.tech"}]]
     :scripts [:<>
               [:script {:src "js/libs.js"}]
               [:script {:src "js/main.js"}]]}))
