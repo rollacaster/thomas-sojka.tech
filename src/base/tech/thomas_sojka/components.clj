@@ -1,7 +1,8 @@
 (ns tech.thomas-sojka.components
   (:require
    [tech.thomas-sojka.constants :as constants]
-   [tech.thomas-sojka.i18n :as i18n]))
+   [tech.thomas-sojka.i18n :as i18n]
+   [hiccup.page]))
 
 (defn icon [name]
   [:svg {:width "20" :height "20" :viewbox "0 0 24 24" :fill "dark-gray"}
@@ -55,7 +56,8 @@
 (defn page [{:keys [title language author main nav-links description scripts
                     canonical-url alternate-url]}]
   (let [nav-link-lis (map (fn [nav] (nav-link {:active title :title (:title nav) :link (:link nav)})) nav-links)]
-    [:html {:lang language}
+    (hiccup.page/html5
+     {:lang language}
      (into
       [:head
        [:meta {:charset "utf-8"}]
@@ -77,4 +79,4 @@
       main
       (mobile-nav {:active title :nav-links nav-link-lis})
       (footer)
-      scripts]]))
+      scripts])))

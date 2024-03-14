@@ -2,7 +2,6 @@
   (:require
    [clj-rss.core :as rss]
    [glow.core :as glow]
-   [hiccup.page ]
    [tech.thomas-sojka.components :as components]
    [tech.thomas-sojka.constants :as constants]
    [tech.thomas-sojka.i18n :as i18n]
@@ -39,18 +38,17 @@
 (defn content-file->html [file nav-links]
   (let [{:keys [title i18n-key]} (org-parser-meta/parse file)
         title-translated (if i18n-key (i18n/translate (keyword i18n-key)) title)]
-    (hiccup.page/html5
-        (components/page
-         (cond-> {:title title-translated
-                  :language (name @i18n/locale)
-                  :author author
-                  :main (components/content (org-parser-hiccup/parse file))
-                  :description description
-                  :nav-links nav-links}
-           i18n-key
-           (assoc :alternate-url
-                  [[:link {:rel "alternate" :hreflang "de" :href (str "https://thomas-sojka.tech/de/" (name i18n-key) ".html")}]
-                   [:link {:rel "alternate" :hreflang "en" :href (str "https://thomas-sojka.tech/" (name i18n-key) ".html")}]]))))))
+    (components/page
+     (cond-> {:title title-translated
+              :language (name @i18n/locale)
+              :author author
+              :main (components/content (org-parser-hiccup/parse file))
+              :description description
+              :nav-links nav-links}
+       i18n-key
+       (assoc :alternate-url
+              [[:link {:rel "alternate" :hreflang "de" :href (str "https://thomas-sojka.tech/de/" (name i18n-key) ".html")}]
+               [:link {:rel "alternate" :hreflang "en" :href (str "https://thomas-sojka.tech/" (name i18n-key) ".html")}]])))))
 
 (defn copy-resource-file [file]
   file)
@@ -73,17 +71,16 @@
                        reverse)})))
 
 (defn home-page [nav-links content]
-  (hiccup.page/html5
-   (components/page
-    {:title "Home"
-     :language (name @i18n/locale)
-     :author author
-     :description description
-     :nav-links nav-links
-     :main (home/main content)
-     :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech/"}]
-     :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
-                     [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]]
-     :scripts [:<>
-               [:script {:src "js/libs.js"}]
-               [:script {:src "js/main.js"}]]})))
+  (components/page
+   {:title "Home"
+    :language (name @i18n/locale)
+    :author author
+    :description description
+    :nav-links nav-links
+    :main (home/main content)
+    :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech/"}]
+    :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
+                    [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]]
+    :scripts [:<>
+              [:script {:src "js/libs.js"}]
+              [:script {:src "js/main.js"}]]}))
