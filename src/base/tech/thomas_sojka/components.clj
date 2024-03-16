@@ -69,6 +69,7 @@
        [:link {:href "css/styles.css" :rel "stylesheet" :type "text/css"}]
        [:link {:href "css/glow.css" :rel "stylesheet" :type "text/css"}]
        [:link {:href "css/blog.css" :rel "stylesheet" :type "text/css"}]
+       [:link {:href "favicon.ico" :rel "icon" :type "image/x-icon"}]
        canonical-url]
       alternate-url)
      [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
