@@ -26,6 +26,9 @@
         [:a {:href link}
          (or description link)]))))
 
+(defn timestamp [timestamp-parts]
+  [:span (second (second (second (second (first timestamp-parts)))))])
+
 (defn text [text-parts]
   (mapv
    (fn [[text-type & text-contents]]
@@ -33,10 +36,11 @@
        :text-normal (first text-contents)
        :text-sty-verbatim [:code (first text-contents)]
        :text-sty-bold [:b (first text-contents)]
-       :text-sty-italic [:b (first text-contents)]
+       :text-sty-italic [:i (first text-contents)]
        :link-format (link text-contents)
+       :timestamp (timestamp text-contents)
        (do
-         (prn "NOT PARSED:" text-contents)
+         (prn "NOT PARSED:" text-type text-contents)
          "")))
    text-parts))
 

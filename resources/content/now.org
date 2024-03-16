@@ -8,3 +8,5 @@ Previously, freelancing was a distant dream, but after my journey, I have decide
 Professional cloud computing skills are the missing piece of expertise for me. Currently, I am focused on improving my skills in technologies such as AWS, Terraform, and CDK. This knowledge is crucial for me to offer comprehensive services— from building robust, cloud-based backends to carefully designing appealing frontends.
 ** Books
 I have developed a slight addiction to book clubs and am currently reading 'Modern Software Engineering,' 'Terraform Up & Running,' and 'SICP.' Reading together as a group immensely helps in getting through a book, even when it gets challenging.
+
+updated on <2024-02-06 Tue>
