@@ -1,5 +1,6 @@
 (ns tech.thomas-sojka.i18n
-  (:require [tongue.core :as tongue]))
+  (:require [tongue.core :as tongue]
+            [hiccup.core :as hiccup]))
 
 (defonce locale (atom :en))
 (def locales [:en :de])
@@ -17,7 +18,25 @@
                  :hero/link-3 "building"
                  :main/blogs "Blogs"
                  :main/side-projects "Side Projects"
-                 :main/talks "Talks"}
+                 :main/talks "Talks"
+                 :about/title "Hi 👋"
+                 :about/paragraph-1 "My name is Thomas. I am a programmer living in Munich and I am a freelance software engineer."
+                 :about/paragraph-2 (fn []
+                                      (str "Before that, I traveled with my wife for six months through North and South America. I worked at "
+                                           (hiccup/html [:a {:href "https://pitch.com/"} "Pitch"]) " and helped to build a world-class editor for presentations and worked at "
+                                           (hiccup/html [:a {:href "https://comsystoreply.de/"} "comSysto"]) " and wrote business applications for "
+                                           (hiccup/html [:a {:href "https://comsystoreply.de/referenzen"} "various projects"]) ". I studied Information Systems at "
+                                           (hiccup/html [:a {:href "https://www.tum.de/en/"} "TUM"]) "."))
+                 :about/paragraph-3 (fn []
+                                      (str "I am interested in "
+                                           (hiccup/html [:a {:href "https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa"} "Data"]) " "
+                                           (hiccup/html [:a {:href "https://medium.com/nightingale/steal-like-a-data-visualiser-2ec7fb470896?source=friends_link&sk=8ab6fa936d6e61dbdec2c2a7f607d1a0"} "Viz"]) ", "
+                                           (hiccup/html [:a {:href "https://www.youtube.com/watch?v=juMLwOTxnvw"} "Functional"]) " "
+                                           (hiccup/html [:a {:href "https://www.youtube.com/watch?v=juMLwOTxnvw"} "Programming"]) ", Cloud computing, and "
+                                           (hiccup/html [:a {:href "https://rollacaster.github.io/sketches/"} "art"]) " "
+                                           (hiccup/html [:a {:href "https://twitter.com/rollacaster/status/1351486650992439296"} "with"]) " "
+                                           (hiccup/html [:a {:href "https://fire-hands.now.sh/"} "code"]) "."))
+                 :about/image-alt "Picture of Thomas Sojka"}
             :de {:nav/home "Home"
                  :nav/about "Über"
                  :nav/now "Now"
@@ -31,7 +50,24 @@
                  :hero/link-3 "bauen"
                  :main/blogs "Blogs"
                  :main/side-projects "Projekte"
-                 :main/talks "Vorträge"}})
+                 :main/talks "Vorträge"
+                 :about/title "Hallo 👋"
+                 :about/paragraph-1 "Mein Name ist Thomas. Ich bin ein freiberuflicher Programmierer aus München."
+                 :about/paragraph-2 (fn []
+                                      (str "Zuvor reiste ich mit meiner Frau sechs Monate lang durch Nord- und Südamerika. Ich habe bei "
+                                           (hiccup/html [:a {:href "https://pitch.com/"} "Pitch"]) " gearbeitet und dort geholfen, einen erstklassigen Editor für Präsentationen zu entwickeln. Außerdem war ich bei "
+                                           (hiccup/html [:a {:href "https://comsystoreply.de/"} "comSysto"]) " tätig und habe Geschäftsanwendungen für "
+                                           (hiccup/html [:a {:href "https://comsystoreply.de/referenzen"} "verschiedene Projekte"]) " geschrieben. Ich habe Informationswirtschaft an der "
+                                           (hiccup/html [:a {:href "https://www.tum.de/en/"} "TUM"]) " studiert."))
+                 :about/paragraph-3 (fn []
+                                      (str "Ich interessiere mich für "
+                                           (hiccup/html [:a {:href "https://www.youtube.com/playlist?list=PLB3sLatZtqYms9T85gf_PTyneg1SLvsEa"} "Datenvisualisierung"]) ", "
+                                           (hiccup/html [:a {:href "https://www.youtube.com/watch?v=juMLwOTxnvw"} "Funktionale"]) " "
+                                           (hiccup/html [:a {:href "https://www.youtube.com/watch?v=juMLwOTxnvw"} "Programmierung"]) ", Cloud computing, und "
+                                           (hiccup/html [:a {:href "https://rollacaster.github.io/sketches/"} "Kunst"]) " "
+                                           (hiccup/html [:a {:href "https://twitter.com/rollacaster/status/1351486650992439296"} "mit"]) " "
+                                           (hiccup/html [:a {:href "https://fire-hands.now.sh/"} "Code"]) "."))
+                 :about/image-alt "Picture of Thomas Sojka" }})
 
 (defn format-date [date]
   (.format
