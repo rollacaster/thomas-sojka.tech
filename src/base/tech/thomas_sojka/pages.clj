@@ -8,6 +8,7 @@
    [tech.thomas-sojka.org-parser-hiccup :as org-parser-hiccup]
    [tech.thomas-sojka.org-parser-meta :as org-parser-meta]
    [tech.thomas-sojka.pages.home :as home]
+   [tech.thomas-sojka.pages.publications :as publications]
    [tech.thomas-sojka.rss :as thomas-sojka.rss]))
 
 
@@ -78,6 +79,22 @@
     :description description
     :nav-links nav-links
     :main (home/main content)
+    :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech"}]
+    :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
+                    [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]
+                    [:link {:rel "alternate" :hreflang (name @i18n/locale) :href "https://thomas-sojka.tech"}]]
+    :scripts [:<>
+              [:script {:src "js/libs.js"}]
+              [:script {:src "js/main.js"}]]}))
+
+(defn publications [nav-links content]
+  (components/page
+   {:title (i18n/translate :nav/publications)
+    :language (name @i18n/locale)
+    :author author
+    :description description
+    :nav-links nav-links
+    :main (publications/main content)
     :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech"}]
     :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
                     [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]

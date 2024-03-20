@@ -98,6 +98,10 @@
        (pages/home-page nav-links content))
 
       (copy-to-target
+       (dest-path target-folder locale "publications.html")
+       (pages/publications nav-links content))
+
+      (copy-to-target
        (dest-path target-folder locale "/index.xml")
        (pages/rss-xml last-build-date content)))))
 

@@ -32,6 +32,9 @@
                              (translate-title))))
              (filter (fn [{:keys [content-type]}] (= content-type "page")))
              (sort-by :nav))
+        {:title (i18n/translate :nav/publications)
+         :link (if (= @i18n/locale :en) "/publications.html" "/de/publications.html")
+         :nav 1}
         {:title "Home"
          :link (if (= @i18n/locale :en) "/" "/de/index.html")
          :nav 0}))

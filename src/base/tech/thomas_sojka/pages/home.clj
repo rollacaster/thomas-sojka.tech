@@ -75,22 +75,6 @@
               (blog post2)]
              [:div.col-start-7.col-end-9.row-start-4.row-end-8
               (blog post3)]
-             [:button.bg-gray-600.text-white.p-3.lg:p-4.shadow-xl.rounded-lg.col-start-4.col-end-5.row-start-6.row-end-7
-              "Show all publications"]]))]
-
-   [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
-    [:div.mb-8
-     [:h2#writing.mb-2.font-normal (i18n/translate :main/blogs)]
-     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-      (->> (concat blogs external-blogs)
-           (sort-by :date)
-           reverse
-           (map content-item))]]
-    [:div.mb-8
-     [:h2#building.mb-2.font-normal (i18n/translate :main/side-projects)]
-     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-      (map content-item projects)]]
-    [:div.mb-8
-     [:h2#talking.mb-2.font-normal (i18n/translate :main/talks)]
-     [:ul.list-none.pl-0.grid.md:grid-cols-2.lg:grid-cols-3.gap-4
-      (map content-item talks)]]]])
+             [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg.col-start-4.col-end-5.row-start-6.row-end-7
+              {:href (if (= @i18n/locale :en) "/publications.html" "/de/publications.html")}
+              "Show all publications"]]))]])

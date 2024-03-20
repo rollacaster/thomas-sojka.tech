@@ -6,7 +6,7 @@
 (def locales [:en :de])
 
 (def dicts {:en {:nav/home "Home"
-                 :nav/about "About"
+                 :nav/publications "Publications"
                  :nav/now "Now"
                  :hero/sub-title "With individually custom frontend solutions. Modern, fast, user-oriented."
                  :hero/title "From Idea to Innovation: Tailored-made UI Solutions"
@@ -38,7 +38,7 @@
                                            (hiccup/html [:a {:href "https://fire-hands.now.sh/"} "code"]) "."))
                  :about/image-alt "Picture of Thomas Sojka"}
             :de {:nav/home "Home"
-                 :nav/about "Über"
+                 :nav/publications "Publikationen"
                  :nav/now "Now"
                  :hero/sub-title "Mit individuell zugeschnittenen Frontends. Modern, schnell, benutzerorientiert."
                  :hero/title "Von Idee zur Innovation: Maßgeschneiderte UI-Lösungen"
