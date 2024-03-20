@@ -1,6 +1,7 @@
 #+TITLE: Development-driven development
 #+DATE: <2024-02-09>
 #+CONTENT-TYPE: blog
+#+description: You can use your development skills to improve the things you develop. Let's explore this productivity cycle.
 * Development-driven development
 Software developers constantly build things with tools they can create by themself. What does that mean? We use software to build software. Our text editors are software, our frameworks are software, and git is software. I haven't verified how many other jobs exist with a similar setting, but I am sure it's rare to be in this position.
 

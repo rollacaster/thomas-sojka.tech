@@ -2,7 +2,7 @@
 #+DATE: <2021-10-14>
 #+CONTENT-TYPE: blog
 #+filetags: CLOJURE
-#+description: When I first learned about macros, I immediately recognized how powerful they are. This realization was quickly followed by not having any idea what to build with them. But now, I start to understand when to reach for this tool.
+#+description: When I first learned about macros, I recognized how powerful they are but had no idea what to build with them. Thankfully this changed.
 * Real-life use cases for CLJS macros
 When I first learned about macros, I immediately recognized how powerful they are. This realization was quickly followed by not having any idea what to build with them. Of course, [[https://clojure.github.io/clojure/clojure.core-api.html][clojure.core]] uses macros, so you can learn how threading or conditionals work. Plus, most articles about macros include some common examples. But without any use case for any of my projects, I quickly forgot macros. While writing [[https://clojure.org/][Clojure]] in the last two years, I never used them. Recently this changed while building [[https://rollacaster.github.io/hiccup-d3/][hiccup-d3]]. I finally found three use cases in which macros are incredibly helpful, so I want to share them.
 
