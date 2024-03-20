@@ -1,18 +1,6 @@
 (ns tech.thomas-sojka.pages.home
   (:require [hiccup.core :as hiccup]
-            [tech.thomas-sojka.i18n :as i18n]
-            [tech.thomas-sojka.components :as c]))
-
-(defn- content-item [{:keys [title link date content-type]}]
-  [:li.mb-0
-   [:a.text-white.cursor-pointer.block.border-0
-    {:href link}
-    [:div.flex.flex-col.rounded-lg.h-full.shadow-inner
-     [:div.py-6.px-6.bg-gray-600.rounded-lg.rounded-b-none.flex-1
-      [:h3.text-xl.text-gray-100.font-normal.mb-0 title]]
-     [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
-      [:span.text-gray-700 (i18n/format-date date)]
-      (c/icon content-type)]]]])
+            [tech.thomas-sojka.i18n :as i18n]))
 
 (defn- blog [{:keys [title link date description]}]
   [:a.text-white.cursor-pointer.block.border-0
@@ -24,7 +12,7 @@
     [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
      [:span.text-gray-700 (i18n/format-date date)]]]])
 
-(defn main [{:keys [blogs projects talks external-blogs]}]
+(defn main [{:keys [blogs]}]
   [:div
    [:div#main]
    [:div.w-full.h-screen.flex.flex-col.justify-center.items-center.pb-44.lg:pb-12.z-20.relative
@@ -47,7 +35,7 @@
 
 
    [:section.max-w-5xl.mx-auto.pb-16.flex-1.px-6.lg:px-0
-    [:div.flex.md:gap-16.items-center
+    [:div.flex.md:gap-16.justify-center.items-center.flex-wrap.md:flex-nowrap
      [:div
       [:p.text-4xl (i18n/translate :about/title)]
       [:p (i18n/translate :about/paragraph-1)]
@@ -59,10 +47,10 @@
         [:img.p-0.float-left.rounded {:src "images/me.png" :alt (i18n/translate :about/image-alt)}]]]]]]
 
    [:section.max-w-5xl.mx-auto.py-16.flex-1.px-6.lg:px-0
-    (into [:div.grid
+    (into [:div.flex.flex-col.gap-8.md:grid.md.md:gap-0
            {:class "grid-cols-[1fr_0.2fr_1fr_3fr_1fr_0.5fr_1fr_4fr_0.5fr_1fr]
- grid-rows-[1fr_3fr_1fr_0.5fr_2fr_1fr_1fr]"
-            :style {:height "530px"}}]
+ grid-rows-[1fr_3fr_1fr_0.5fr_2fr_1fr_1fr]
+md:height-[520px]"}]
           (let [[post1 post2 post3] (->> blogs
                                          (sort-by :date)
                                          reverse

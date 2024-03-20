@@ -1,6 +1,5 @@
 (ns tech.thomas-sojka.pages.publications
-  (:require [hiccup.core :as hiccup]
-            [tech.thomas-sojka.i18n :as i18n]
+  (:require [tech.thomas-sojka.i18n :as i18n]
             [tech.thomas-sojka.components :as c]))
 
 (defn- content-item [{:keys [title link date content-type]}]
@@ -13,16 +12,6 @@
      [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
       [:span.text-gray-700 (i18n/format-date date)]
       (c/icon content-type)]]]])
-
-(defn- blog [{:keys [title link date description]}]
-  [:a.text-white.cursor-pointer.block.border-0
-   {:href link}
-   [:div.flex.flex-col.rounded-lg.h-full.shadow-inner.shadow-xl
-    [:div.py-6.px-6.bg-gray-600.rounded-lg.rounded-b-none.flex-1
-     [:div.text-xl.text-gray-100.font-normal.mb-0 title]
-     [:p description]]
-    [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
-     [:span.text-gray-700 (i18n/format-date date)]]]])
 
 (defn main [{:keys [blogs projects talks external-blogs]}]
   [:div
