@@ -72,12 +72,12 @@
        [:link {:href "favicon.ico" :rel "icon" :type "image/x-icon"}]
        canonical-url]
       alternate-url)
-     [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
-      (header {:active title
-               :nav-links nav-link-lis
-               :translation-link (if (= @i18n/locale :en) "/de/index.html" "/index.html")
-               :locale-icon (if (= @i18n/locale :en) "/images/ui/flag_de.svg" "/images/ui/flag_us.svg")})
-      main
-      (mobile-nav {:active title :nav-links nav-link-lis})
-      (footer)
-      scripts])))
+     (into [:body.flex.flex-col.h-screen.overflow-y-scroll.bg-gradient-to-r.from-gray-100.to-gray-300
+            (header {:active title
+                     :nav-links nav-link-lis
+                     :translation-link (if (= @i18n/locale :en) "/de/index.html" "/index.html")
+                     :locale-icon (if (= @i18n/locale :en) "/images/ui/flag_de.svg" "/images/ui/flag_us.svg")})
+            main
+            (mobile-nav {:active title :nav-links nav-link-lis})
+            (footer)]
+           scripts))))

@@ -83,8 +83,7 @@
     :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
                     [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]
                     [:link {:rel "alternate" :hreflang (name @i18n/locale) :href "https://thomas-sojka.tech"}]]
-    :scripts [:<>
-              [:script {:src "js/libs.js"}]
+    :scripts [[:script {:src "js/libs.js"}]
               [:script {:src "js/main.js"}]]}))
 
 (defn publications [nav-links content]
@@ -99,6 +98,5 @@
     :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
                     [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]
                     [:link {:rel "alternate" :hreflang (name @i18n/locale) :href "https://thomas-sojka.tech"}]]
-    :scripts [:<>
-              [:script {:src "js/libs.js"}]
+    :scripts [[:script {:src "js/libs.js"}]
               [:script {:src "js/main.js"}]]}))
