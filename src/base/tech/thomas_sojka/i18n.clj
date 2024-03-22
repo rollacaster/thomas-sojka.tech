@@ -9,7 +9,7 @@
                  :nav/publications "Publications"
                  :nav/now "Now"
                  :hero/sub-title "With individually custom frontend solutions. Modern, fast, user-oriented."
-                 :hero/title "From Idea to Innovation: Tailored-made UI Solutions"
+                 :hero/title "From Idea to Innovation: Tailor-made UI Solutions"
                  :hero/cta "Bring your Vision to Life"
                  :hero/mail-subject "Project Inquiry"
                  :hero/mail-body "Hello Thomas! Can you support me? This is my idea:"
