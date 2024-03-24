@@ -289,7 +289,7 @@
          #_[:lUTPass]]]])
 
   (defn main []
-    [:div.absolute.h-screen.w-full.z-10.pointer-events-none
+    [:div.w-full.h-screen.z-10.pointer-events-none
      [:f> canvas]])
 
   (dom/render

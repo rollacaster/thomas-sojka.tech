@@ -23,7 +23,7 @@
    [:a.text-white.border-0 {:href link} title]])
 
 (defn- header [{:keys [nav-links translation-link locale-icon]}]
-  [:header.w-full.bg-gray-500.py-3.px-6.lg:px-0
+  [:header.w-full.bg-gray-500.py-3.px-6.lg:px-0.absolute.z-30
    [:div.max-w-5xl.flex.justify-between.mx-auto.items-center
     [:h1.mb-0
      [:a.text-white.uppercase.tracking-widest.text-lg.border-0.font-normal

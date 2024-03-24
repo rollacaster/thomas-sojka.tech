@@ -14,9 +14,9 @@
 
 (defn main [{:keys [blogs]}]
   [:div
-   [:div#main]
-   [:div.w-full.flex.flex-col.justify-center.items-center.pb-44.lg:pb-0.z-20.relative
-    {:style {:height "calc(100vh - 68px)"}}
+   [:div#main.absolute.w-full.h-screen {:class "mt-[68px]"}]
+   [:div.w-full.flex.flex-col.justify-center.items-center.pb-44.lg:pb-0.z-20.relative.h-screen
+    {:class "pt-[68px]"}
     [:h2.font-bold.text-center.text-2xl.lg:text-5xl.px-3.lg:px-0.mb-2.lg:mb-8
      {:class "lg:w-2/3"}
      (i18n/translate :hero/title
@@ -31,17 +31,18 @@
       :href (str "mailto:contact@thomas-sojka.tech?subject="
                  (i18n/translate :hero/mail-subject) "&body="
                  (i18n/translate :hero/mail-body))}
-     (i18n/translate :hero/cta)]]
-
-   [:div.absolute.bottom-0.w-screen.max-w-full
-    [:svg.fill-gray-200
-     {:viewbox "0 0 1440 64" :xmlns "http://www.w3.org/2000/svg"}
-     [:path
-      {:d "m 0.88987591,22.913181
+     (i18n/translate :hero/cta)]
+    [:div.absolute.bottom-0.w-screen.max-w-full
+     [:svg.fill-gray-200
+      {:viewbox "0 0 1440 64" :xmlns "http://www.w3.org/2000/svg"}
+      [:path
+       {:d "m 0.88987591,22.913181
 c 0,0 89.73411409,17.861168 156.60917409,20.269747 39.71097,1.430235 147.67411,-28.420126 204.52513,-28.386591 46.45288,0.0274 222.10347,26.038055 268.81529,26.364725 48.05738,0.33608 283.76326,-23.270731 336.12069,-24.153131 37.55854,-0.632988 215.98834,19.136613 274.72684,21.222866 31.2225,1.108947 201.8725,-20.180313 201.8725,-20.180313
 L 1440,64
 H 0
-Z"}]]]
+Z"}]]]]
+
+
 
    [:section.flex-1.relative.mb-32
     [:div.bg-gray-200.py-16.md:py-32
@@ -57,9 +58,9 @@ Z"}]]]
          [:img.p-0.float-left.rounded {:src "images/me.png" :alt (i18n/translate :about/image-alt)}]]]]]]
     [:div.absolute.w-screen.max-w-full.rotate-180
      [:svg.fill-gray-200
-     {:viewbox "0 0 1440 64" :xmlns "http://www.w3.org/2000/svg"}
-     [:path
-      {:d "m 0.88987591,22.913181
+      {:viewbox "0 0 1440 64" :xmlns "http://www.w3.org/2000/svg"}
+      [:path
+       {:d "m 0.88987591,22.913181
 c 0,0 89.73411409,17.861168 156.60917409,20.269747 39.71097,1.430235 147.67411,-28.420126 204.52513,-28.386591 46.45288,0.0274 222.10347,26.038055 268.81529,26.364725 48.05738,0.33608 283.76326,-23.270731 336.12069,-24.153131 37.55854,-0.632988 215.98834,19.136613 274.72684,21.222866 31.2225,1.108947 201.8725,-20.180313 201.8725,-20.180313
 L 1440,64
 H 0
