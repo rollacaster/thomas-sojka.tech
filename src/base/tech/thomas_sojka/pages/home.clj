@@ -84,4 +84,4 @@ md:height-[520px]"}]
               (blog post3)]
              [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg.col-start-4.col-end-5.row-start-6.row-end-7
               {:href (if (= @i18n/locale :en) "/publications.html" "/de/publications.html")}
-              "Show all publications"]]))]])
+              (i18n/translate :main/show-publications)]]))]])
