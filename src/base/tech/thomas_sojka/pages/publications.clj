@@ -14,7 +14,7 @@
       (c/icon content-type)]]]])
 
 (defn main [{:keys [blogs projects talks external-blogs]}]
-  [:div
+  [:div {:class "mt-[68px]"}
    [:section.max-w-5xl.mx-auto.py-8.flex-1.px-6.lg:px-0
     [:div.mb-8
      [:h2#writing.mb-2.font-normal (i18n/translate :main/blogs)]

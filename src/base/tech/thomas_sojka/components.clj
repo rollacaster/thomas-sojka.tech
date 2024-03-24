@@ -45,6 +45,7 @@
 
 (defn content [& children]
   [:section.flex.flex-col.items-center.py-8.flex-1.px-6.lg:px-0
+   {:class "mt-[68px]"}
    children])
 
 (defn- footer []
