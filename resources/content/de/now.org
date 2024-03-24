@@ -3,10 +3,12 @@
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/now
 ** Freelancing
-Früher war die Freiberuflichkeit ein ferner Traum, und nach meiner Reise habe ich beschlossen, diesen wahr werden zu lassen. Das bedeutet aktuell viel Papierkram. Aber ich freue mich schon bald darauf, meine ersten Projekte anzugehen.
-** Cloud-Computing
-Professionelle Kenntnisse im Cloud-Computing sind das fehlende Stück Expertise für mich. Derzeit konzentriere ich mich darauf, meine Fähigkeiten in Technologien wie AWS, Terraform und CDK zu verbessern. Dieses Wissen ist entscheidend für mich, um einen umfassenden Service anzubieten – vom Aufbau robuster, cloud-basierter Backends bis hin zur sorgfältigen Gestaltung ansprechender Frontends.
+Ich habe mein erstes freiberufliches Projekt gestartet. Es liegt außerhalb meiner Komfortzone, da meine Hauptaufgabe darin besteht, eine Cloud-Bereitstellung zu automatisieren. Obwohl es ein wenig beängstigend ist, außerhalb der Komfortzone zu arbeiten, ist es auch der beste Weg, schnell neue Dinge zu lernen. Meine AWS-Fähigkeiten und mein Wissen über verschiedene Tools für die Bereitstellungsautomatisierung wie CDK und Terraform haben sich in den letzten Wochen stark weiterentwickelt.
+** thomas-sojka.tech
+Wie ihr vielleicht bemerkt haben, ändert sich vieles auf der Website. Ich überarbeite meine Website und möchte mich auf verbessertes Design fokusieren und mehr über SEO nachdenken. Etwas Design-intensives neben meinem freiberuflichen Projekt zu tun, ist großartig, um etwas Ausgleich zu haben.
 ** Bücher
-Ich habe eine kleine Buchclub-Sucht entwickelt und lese im Moment 'Modern Software Engineering', 'Terraform Up & Running' und 'SICP'. Zusammen mit einer Gruppe zu lesen hilft enorm, ein Buch ganz durchzuarbeiten, auch wenn es mal schwierig wird.
+Ich habe das Buch "Modern Software Engineering" und "Terraform Up & Running" fertig gelesen und arbeite daran, einige Notizen daraus zu extrahieren.
 
-aktualisiert am <2024-02-06 Tue>
+Ich lese immer noch ziemlich viel parallel, wahrscheinlich zu viel, bin mir aber noch nicht sicher, wo ich mich am besten fokussieren sollte. Aktuell lese ich "SICP", "Storytelling with Data" und "R for Data Science".
+
+aktualisiert am <2024-03-24 Sun>

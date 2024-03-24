@@ -3,10 +3,13 @@
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/now
 ** Freelancing
-Previously, freelancing was a distant dream, but after my journey, I have decided to make it a reality. It currently involves a lot of paperwork. But I am looking forward to tackling my first projects soon.
-** Cloud Computing
-Professional cloud computing skills are the missing piece of expertise for me. Currently, I am focused on improving my skills in technologies such as AWS, Terraform, and CDK. This knowledge is crucial for me to offer comprehensive services— from building robust, cloud-based backends to carefully designing appealing frontends.
+I started my first freelancing project. It's outside of my comfort zone because my main task is to automate a cloud deployment. While it's a bit scary to work outside of the comfort zone, it's also the best way to learn new things quickly. My AWS skills and knowledge about various tools for deployment automation such as CDK and Terraform grew a lot in the past couple of weeks.
+** thomas-sojka.tech
+As you have noticed, things on the website are changing. I am doing a redesign of my website and want to focus on improved visuals and put some more thought into SEO. Doing something design-heavy on the side next to my freelance project is great to have some balance.
 ** Books
-I have developed a slight addiction to book clubs and am currently reading 'Modern Software Engineering,' 'Terraform Up & Running,' and 'SICP.' Reading together as a group immensely helps in getting through a book, even when it gets challenging.
+I finished reading 'Modern Software Engineering' and 'Terraform Up & Running' and I am working to extract some notes from them.
 
-updated on <2024-02-06 Tue>
+I am still reading quite a lot in parallel, probably too much, but I am not sure yet where to focus. Currently, I am reading 'SICP', 'Storytelling with Data' & 'R for Data Science'.
+
+
+updated on <2024-03-24 Sun>
