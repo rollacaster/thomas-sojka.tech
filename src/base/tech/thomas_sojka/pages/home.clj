@@ -16,8 +16,8 @@
 (defn- side-project [{:keys [title description images flipped
                              github-link blog-link]}]
   (let [text-content [:div.px-6.lg:px-0 {:class "lg:w-1/2"}
-                      [:div.text-2xl.mb-8 title]
-                      [:p.mb-4 description]
+                      [:div.text-2xl title]
+                      [:p.mb-8 description]
                       [:div.flex.lg:justify-between.lg:px-16.gap-4
                        [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg
                         {:href github-link}
@@ -37,7 +37,7 @@
   [:section.relative
     [:div.pt-16.pb-24.bg-gray-500.text-white
      [:div.max-w-5xl.mx-auto.px-6.lg:px-0
-      [:h2.mb-2.font-normal.text-4xl title]
+      [:h2.font-normal.text-4xl title]
       [:p.max-w-xl description]]]
     [:div.absolute.bottom-0.overflow-hidden.max-w-full.translate-y-px
      (c/wave)]])
