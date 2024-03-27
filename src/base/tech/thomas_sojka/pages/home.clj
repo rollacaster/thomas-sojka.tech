@@ -93,26 +93,28 @@
 
    [:section
     [:div.bg-gray-200.py-8.md:py-16
-     (into [:div.flex.flex-col.gap-8.md:grid.md.md:gap-0.max-w-5xl.mx-auto
-            {:class "grid-cols-[1fr_0.2fr_1fr_3fr_1fr_0.5fr_1fr_4fr_0.5fr_1fr]
+     [:div.flex.flex-col.gap-8.md:grid.md.md:gap-0.max-w-5xl.mx-auto
+      {:class "grid-cols-[1fr_0.2fr_1fr_3fr_1fr_0.5fr_1fr_4fr_0.5fr_1fr]
  grid-rows-[1fr_3fr_1fr_0.5fr_2fr_1fr_1fr]
-md:height-[520px]"}]
-           (let [[post1 post2 post3] (->> blogs
-                                          (sort-by :date)
-                                          reverse
-                                          (take 3))]
-             [[:div.col-start-2.col-end-6.row-start-2.row-end-5
-               (blog (merge post1
-                            {:description (i18n/translate :main/posts-1-description)}))]
-              [:div.col-start-8.col-end-11.row-start-1.row-end-3
-               (blog (merge post2
-                            {:description (i18n/translate :main/posts-2-description)}))]
-              [:div.col-start-7.col-end-9.row-start-4.row-end-8
-               (blog (merge post3
-                            {:description (i18n/translate :main/posts-3-description)}))]
-              [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg.col-start-4.col-end-5.row-start-6.row-end-7
-               {:href (if (= @i18n/locale :en) "/publications.html" "/de/publications.html")}
-               (i18n/translate :main/show-publications)]]))]]
+md:height-[520px]"}
+      [:div.col-start-2.col-end-6.row-start-2.row-end-5
+       (blog {:description (i18n/translate :main/posts-1-description),
+              :date #inst "2024-02-08T23:00:00.000-00:00",
+              :title "Development-driven development",
+              :link "development-driven-development.html",})]
+      [:div.col-start-8.col-end-11.row-start-1.row-end-3
+       (blog {:description (i18n/translate :main/posts-2-description),
+              :date #inst "2021-02-21T23:00:00.000-00:00",
+              :title "100 Days of Spaced Repetition",
+              :link "100-days-of-spaced-repetition.html",})]
+      [:div.col-start-7.col-end-9.row-start-4.row-end-8
+       (blog {:description (i18n/translate :main/posts-3-description),
+              :date #inst "2021-10-13T22:00:00.000-00:00",
+              :title "Real-life use cases for CLJS macros",
+              :link "real-life-use-cases-for-cljs-macros.html",})]
+      [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg.col-start-4.col-end-5.row-start-6.row-end-7
+       {:href (if (= @i18n/locale :en) "/publications.html" "/de/publications.html")}
+       (i18n/translate :main/show-publications)]]]]
 
    (section-title
     {:title (i18n/translate :main/side-projects)

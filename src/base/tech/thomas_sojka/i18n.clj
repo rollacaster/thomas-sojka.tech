@@ -21,7 +21,7 @@
 about something is the best way to truly learn something. It helps to
 structure thoughts and uncover areas that are worth exploring deeper."
                  :main/posts-1-description "You can use your development skills to improve the things you develop. Let's explore this productivity cycle."
-                 :main/posts-2-description "Telling the story of GrootLapse timelapse camera for plant watching in built."
+                 :main/posts-2-description "I used the Spaced Repetition, a learning method scientifically proven to work for 100 days. Here's what I learned about learning."
                  :main/posts-3-description "When I first learned about macros, I recognized how powerful they are but had no idea what to build with them. Thankfully this changed."
                  :main/show-publications "Show all publications"
                  :main/side-projects "Side Projects"
@@ -85,7 +85,7 @@ built for others or myself."
                  zu strukturieren und Bereiche aufzudecken, die es wert sind,
                  näher erkundet zu werden."
                  :main/posts-1-description "Du kannst deine Entwicklerfähigkeiten nutzen, um die von dir erstellten Dinge zu verbessern. Lass uns diesen Produktivitätszyklus erkunden."
-                 :main/posts-2-description "Erzählt die Geschicht der GrootLapse-Zeitrafferkamera, diese beobachtet Pflanzen während sie wachsen."
+                 :main/posts-2-description "Ich habe die Methode spaced repetition, eine wissenschaftlich nachgewiesene Lernmethode, für 100 Tage verwendet. Hier ist, was ich über das Lernen gelernt habe."
                  :main/posts-3-description "Als ich zum ersten Mal von Makros gehört habe, erkannte ich, wie mächtig sie sind, wusste aber nicht, was ich damit bauen sollte. Zum Glück hat sich das geändert."
                  :main/show-publications "Alle Publikationen"
                  :main/side-projects "Projekte"
