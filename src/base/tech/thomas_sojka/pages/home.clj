@@ -22,14 +22,17 @@
     [:path
      {:d "M0 0.000244141C0 0.000244141 133 15.5005 178.5 15.5002C224 15.5 315 0.000244141 360 0.000244141C405 0.000244141 496 15.5002 543 15.5002C590 15.5002 669.5 0.000244141 720 0.000244141C770.5 0.000244141 848 15.5002 904 15.5002C960 15.5002 1031.5 0.000244141 1080 0.000244141C1128.5 0.000244141 1196.5 15.5002 1254.5 15.5002C1312.5 15.5002 1440 0.000244141 1440 0.000244141V32.0002H0V0.000244141Z"}]]))
 
-(defn- side-project [{:keys [title description images flipped]}]
+(defn- side-project [{:keys [title description images flipped
+                             github-link blog-link]}]
   (let [text-content [:div.px-6.lg:px-0 {:class "lg:w-1/2"}
                       [:div.text-2xl.mb-8 title]
-                      [:p.mb-12 description]
-                      #_[:div.flex.justify-between.px-16
+                      [:p.mb-4 description]
+                      [:div.flex.lg:justify-between.lg:px-16.gap-4
                        [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg
+                        {:href github-link}
                         "Show code"]
                        [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg
+                        {:href blog-link}
                         "Learn more"]]]]
     (into [:div.max-w-5xl.mx-auto.flex.gap-8.flex-wrap.lg:flex-nowrap
            {:class (if flipped "py-32" "py-16")}]
@@ -119,6 +122,8 @@ md:height-[520px]"}]
     (side-project
      {:title"Shopping Cards"
       :description (i18n/translate :main/side-projects-1-description)
+      :github-link "https://github.com/rollacaster/shopping-cards"
+      :blog-link "/shopping-cards.html"
       :images
       [:div.flex.gap-4.px-6.lg:px-0 {:class "lg:w-1/2"}
        [:img.min-w-0
@@ -133,6 +138,8 @@ md:height-[520px]"}]
      {:flipped true
       :title "Grootlapse"
       :description (i18n/translate :main/side-projects-2-description)
+      :github-link "https://github.com/rollacaster/GrootLapse"
+      :blog-link "/grootlapse-building-a-timelapse-camera.html"
       :images
       [:div.flex.gap-4.px-6.lg:px-0
        {:class "lg:w-1/2"}
@@ -147,6 +154,8 @@ md:height-[520px]"}]
     (side-project
      {:title "hiccup-d3"
       :description (i18n/translate :main/side-projects-3-description)
+      :github-link "https://github.com/rollacaster/hiccup-d3"
+      :blog-link "/real-life-use-cases-for-cljs-macros.html"
       :images
       [:div.px-6.lg:px-0 {:class "lg:w-1/2"}
        [:img.min-w-0
