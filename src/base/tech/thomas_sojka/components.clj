@@ -1,8 +1,9 @@
 (ns tech.thomas-sojka.components
   (:require
+   [clojure.string :as str]
+   [hiccup.page]
    [tech.thomas-sojka.constants :as constants]
-   [tech.thomas-sojka.i18n :as i18n]
-   [hiccup.page]))
+   [tech.thomas-sojka.i18n :as i18n]))
 
 (defn icon [name]
   [:svg {:width "20" :height "20" :viewbox "0 0 24 24" :fill "dark-gray"}
@@ -22,21 +23,35 @@
   [:li.mb-0.px-4.py-2.rounded {:class (when (= active title) "bg-gray-700")}
    [:a.text-white.border-0 {:href link} title]])
 
-(defn- header [{:keys [nav-links translation-link locale-icon]}]
-  [:header.w-full.bg-gray-500.py-3.px-6.lg:px-0.absolute.z-30
-   [:div.max-w-5xl.flex.justify-between.mx-auto.items-center
-    [:h1.mb-0
-     [:a.text-white.uppercase.tracking-widest.text-lg.border-0.font-normal
-      {:href "/"}
-      "Thomas Sojka"]]
-    [:nav.flex
-     [:ul.list-none.items-center.hidden.md:flex
-      nav-links]
+(defn wave
+  ([]
+   (wave {}))
+  ([{:keys [class fill]}]
+   [:svg.w-screen
+    {:preserveAspectRatio "none" :width "1440" :height "32" :viewbox "0 0 1440 32" :xmlns "http://www.w3.org/2000/svg"
+     :class (str/join " " (if fill [class fill] [class "fill-gray-200"]))}
+    [:path
+     {:d "M0 0.000244141C0 0.000244141 133 15.5005 178.5 15.5002C224 15.5 315 0.000244141 360 0.000244141C405 0.000244141 496 15.5002 543 15.5002C590 15.5002 669.5 0.000244141 720 0.000244141C770.5 0.000244141 848 15.5002 904 15.5002C960 15.5002 1031.5 0.000244141 1080 0.000244141C1128.5 0.000244141 1196.5 15.5002 1254.5 15.5002C1312.5 15.5002 1440 0.000244141 1440 0.000244141V32.0002H0V0.000244141Z"}]]))
 
-     [:div.px-4.my-2.md:border-l-2.md:border-gray-300
-      [:a {:href translation-link}
-       [:img.w-7.rounded-full.h-7.object-cover.contrast-50.object-left
-        {:src locale-icon :alt "Country Flag" }]]]]]])
+(defn- header [{:keys [nav-links translation-link locale-icon]}]
+  [:header.w-full.lg:px-0.absolute.z-30
+   [:div.bg-gray-500.pt-3.px-6.w-full
+    [:div.max-w-5xl.flex.justify-between.mx-auto.items-center.
+     [:h1.mb-0
+      [:a.text-white.uppercase.tracking-widest.text-lg.border-0.font-normal
+       {:href "/"}
+       "Thomas Sojka"]]
+     [:nav.flex
+      [:ul.list-none.items-center.hidden.md:flex
+       nav-links]
+
+      [:div.px-4.my-2.md:border-l-2.md:border-gray-300
+       [:a {:href translation-link}
+        [:img.w-7.rounded-full.h-7.object-cover.contrast-50.object-left
+         {:src locale-icon :alt "Country Flag" }]]]]]]
+   [:div.overflow-hidden.max-w-full.-translate-y-px
+    (wave {:fill "fill-gray-500"
+           :class "rotate-180"})]])
 
 (defn- mobile-nav [{:keys [nav-links]}]
   [:nav.md:hidden.fixed.bottom-0.bg-gray-500.w-full.py-4.border-t.z-20

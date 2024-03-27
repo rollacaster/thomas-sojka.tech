@@ -1,9 +1,10 @@
 (ns tech.thomas-sojka.pages.home
   (:require [hiccup.core :as hiccup]
-            [tech.thomas-sojka.i18n :as i18n]))
+            [tech.thomas-sojka.i18n :as i18n]
+            [tech.thomas-sojka.components :as c]))
 
 (defn- blog [{:keys [title link date description]}]
-  [:a.text-white.cursor-pointer.block.border-0
+  [:a.text-white.cursor-pointer.block.border-0.mx-6.md:mx-0
    {:href link}
    [:div.flex.flex-col.rounded-lg.h-full.shadow-inner.shadow-xl
     [:div.py-6.px-6.bg-gray-600.rounded-lg.rounded-b-none.flex-1
@@ -11,16 +12,6 @@
      [:p description]]
     [:div.flex.justify-between.py-2.px-6.bg-gray-200.rounded-lg.rounded-t-none
      [:span.text-gray-700 (i18n/format-date date)]]]])
-
-(defn- wave
-  ([]
-   (wave {}))
-  ([{:keys [class]}]
-   [:svg.fill-gray-200.w-screen
-    {:preserveAspectRatio "none" :width "1440" :height "32" :viewbox "0 0 1440 32" :xmlns "http://www.w3.org/2000/svg"
-     :class class}
-    [:path
-     {:d "M0 0.000244141C0 0.000244141 133 15.5005 178.5 15.5002C224 15.5 315 0.000244141 360 0.000244141C405 0.000244141 496 15.5002 543 15.5002C590 15.5002 669.5 0.000244141 720 0.000244141C770.5 0.000244141 848 15.5002 904 15.5002C960 15.5002 1031.5 0.000244141 1080 0.000244141C1128.5 0.000244141 1196.5 15.5002 1254.5 15.5002C1312.5 15.5002 1440 0.000244141 1440 0.000244141V32.0002H0V0.000244141Z"}]]))
 
 (defn- side-project [{:keys [title description images flipped
                              github-link blog-link]}]
@@ -49,9 +40,9 @@
       [:h2.mb-2.font-normal.text-4xl title]
       [:p.max-w-xl description]]]
     [:div.absolute.bottom-0.overflow-hidden.max-w-full.translate-y-px
-     (wave)]])
+     (c/wave)]])
 
-(defn main [{:keys [blogs]}]
+(defn main []
   [:div
    [:div#main.absolute.w-full.h-screen {:class "mt-[68px]"}]
    [:div.w-full.flex.flex-col.justify-center.items-center.pb-44.lg:pb-0.z-20.relative.h-screen
@@ -72,7 +63,7 @@
                  (i18n/translate :hero/mail-body))}
      (i18n/translate :hero/cta)]
     [:div.absolute.bottom-0.overflow-hidden.max-w-full
-     (wave)]]
+     (c/wave)]]
 
    [:section.flex-1.relative
     [:div.bg-gray-200.py-16
@@ -112,7 +103,7 @@ md:height-[520px]"}
               :date #inst "2021-10-13T22:00:00.000-00:00",
               :title "Real-life use cases for CLJS macros",
               :link "real-life-use-cases-for-cljs-macros.html",})]
-      [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg.col-start-4.col-end-5.row-start-6.row-end-7
+      [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg.col-start-4.col-end-5.row-start-6.row-end-7.mx-6.md:mx-0
        {:href (if (= @i18n/locale :en) "/publications.html" "/de/publications.html")}
        (i18n/translate :main/show-publications)]]]]
 
@@ -135,7 +126,7 @@ md:height-[520px]"}
 
    [:section.relative
     [:div.absolute.top-0.rotate-180.overflow-hidden.max-w-full
-     (wave)]
+     (c/wave)]
     (side-project
      {:flipped true
       :title "Grootlapse"
@@ -150,7 +141,7 @@ md:height-[520px]"}
        [:img.hidden.md:block.min-w-0
         {:src "images/home/grootlapse-2.png" :alt "Screenshot of the main menu"}]]})
     [:div.absolute.bottom-0.overflow-hidden.max-w-full
-     (wave)]]
+     (c/wave)]]
 
    [:section.bg-gray-200.relative
     (side-project

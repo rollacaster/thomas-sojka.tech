@@ -95,7 +95,7 @@
 
       (copy-to-target
        (dest-path target-folder locale "index.html")
-       (pages/home-page nav-links content))
+       (pages/home-page nav-links))
 
       (copy-to-target
        (dest-path target-folder locale "publications.html")

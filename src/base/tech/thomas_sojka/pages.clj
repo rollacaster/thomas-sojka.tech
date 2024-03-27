@@ -71,14 +71,14 @@
                        (sort-by :date)
                        reverse)})))
 
-(defn home-page [nav-links content]
+(defn home-page [nav-links]
   (components/page
    {:title "Home"
     :language (name @i18n/locale)
     :author author
     :description description
     :nav-links nav-links
-    :main (home/main content)
+    :main (home/main)
     :canonical-url [:link {:rel "canonical" :href "https://thomas-sojka.tech"}]
     :alternate-url [[:link {:rel "alternate" :hreflang "de" :href "https://thomas-sojka.tech/de/index.html"}]
                     [:link {:rel "alternate" :hreflang "en" :href "https://thomas-sojka.tech/index.html"}]
