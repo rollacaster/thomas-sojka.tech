@@ -107,7 +107,7 @@ built for others or myself."
                  "Ich habe eine Zeitraffer-Kamera gebaut, um Paprikas in einem
 Hypdroponischen System beim wachsen zu zusehen. Das war eines meiner ersten
 physischen Projekte und hat mir auch einiges über Videobearbeitung
-beigebracht. Obwohl die endgültigen Paprikas nicht sehr gut geschmeckt haben, hat
+beigebracht. Obwohl die Paprikas letztendlich nicht sehr gut geschmeckt haben, hat
 es Spaß gemacht sie wachsen zu sehen."
                  :main/side-projects-3-description
                  "Mein erster ernsthafter Versuch, etwas zu bauen, das nicht nur
