@@ -25,6 +25,8 @@ structure thoughts and uncover areas that are worth exploring deeper."
                  :main/posts-3-description "When I first learned about macros, I recognized how powerful they are but had no idea what to build with them. Thankfully this changed."
                  :main/show-publications "Show all publications"
                  :main/side-projects "Side Projects"
+                 :main/side-projects-code "Show Code"
+                 :main/side-projects-learn "Learn more"
                  :main/side-projects-description "I am really grateful that I could make my hobby my
 profession. But it's still a hobby for me as well and here are projects that I
 built for others or myself."
@@ -89,6 +91,8 @@ built for others or myself."
                  :main/posts-3-description "Als ich zum ersten Mal von Makros gehört habe, erkannte ich, wie mächtig sie sind, wusste aber nicht, was ich damit bauen sollte. Zum Glück hat sich das geändert."
                  :main/show-publications "Alle Publikationen"
                  :main/side-projects "Projekte"
+                 :main/side-projects-code "Code anzeigen"
+                 :main/side-projects-learn "Mehr erfahren"
                  :main/side-projects-description "Ich bin wirklich dankbar, dass
                  ich mein Hobby zu meinem Beruf machen konnte. Aber es ist für
                  mich immer noch auch ein Hobby, und hier sind Projekte, die ich
