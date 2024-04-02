@@ -21,10 +21,10 @@
                       [:div.flex.lg:justify-between.lg:px-16.gap-4
                        [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg
                         {:href github-link}
-                        (i18n/translate :main/show-code)]
+                        (i18n/translate :main/side-projects-code)]
                        [:a.bg-gray-600.text-center.text-white.p-3.lg:p-4.shadow-xl.rounded-lg
                         {:href blog-link}
-                        (i18n/translate :main/learn-more)]]]]
+                        (i18n/translate :main/side-projects-learn)]]]]
     (into [:div.max-w-5xl.mx-auto.flex.gap-8.flex-wrap.lg:flex-nowrap
            {:class (if flipped "py-32" "py-16")}]
           (if flipped
