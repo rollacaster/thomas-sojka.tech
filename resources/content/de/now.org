@@ -3,12 +3,10 @@
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/now
 ** Freelancing
-Ich habe mein erstes freiberufliches Projekt gestartet. Es liegt außerhalb meiner Komfortzone, da meine Hauptaufgabe darin besteht, eine Cloud-Bereitstellung zu automatisieren. Obwohl es ein wenig beängstigend ist, außerhalb der Komfortzone zu arbeiten, ist es auch der beste Weg, schnell neue Dinge zu lernen. Meine AWS-Fähigkeiten und mein Wissen über verschiedene Tools für die Bereitstellungsautomatisierung wie CDK und Terraform haben sich in den letzten Wochen stark weiterentwickelt.
-** thomas-sojka.tech
-Wie ihr vielleicht bemerkt haben, ändert sich vieles auf der Website. Ich überarbeite meine Website und möchte mich auf verbessertes Design fokusieren und mehr über SEO nachdenken. Etwas Design-intensives neben meinem freiberuflichen Projekt zu tun, ist großartig, um etwas Ausgleich zu haben.
+Mein erstes freiberufliches Projekt schreitet voran, und meine AWS-Kenntnisse haben sich in den letzten Wochen deutlich verbessert. Aber wenn ich zurückblicke, macht mir die Arbeit am Frontend definitiv mehr Spaß. Schnelle Feedback-Zyklen sind dass, was ich an meiner Arbeit schätze. Das Feedback ist im Frontend deutlich schneller als bei der Infrastruktur.
+** Remarkble template
+Ich benutze das Remarkable-Tablet schon seit langem, habe aber nie wirklich versucht, das Beste daraus zu machen. Vor kurzem habe ich entdeckt, dass es eine sehr aktive Community gibt, die Planungstemplates für Remarkable bereitstellt. Ich mag die Kombination aus Handschrift und digitaler Organisation sehr, also erstelle ich gerade mein eigenes Template.
 ** Bücher
-Ich habe das Buch "Modern Software Engineering" und "Terraform Up & Running" fertig gelesen und arbeite daran, einige Notizen daraus zu extrahieren.
+Nach einer Pause lese ich nun endlich wieder regelmäßig 'SICP'. Ich habe auch beschlossen, dass ich etwas mehr über Marketing und Business lernen möchte. Ich habe 'The Millionaire Fastlane' gelesen und trotz des betrügerischen Titels konnte ich viel daraus lernen. Jetzt lese ich den 1-Seiten-Marketingplan, um tiefer in dieses Thema einzutauchen.
 
-Ich lese immer noch ziemlich viel parallel, wahrscheinlich zu viel, bin mir aber noch nicht sicher, wo ich mich am besten fokussieren sollte. Aktuell lese ich "SICP", "Storytelling with Data" und "R for Data Science".
-
-aktualisiert am <2024-03-24 Sun>
+aktualisiert am <2024-04-24 Wed>

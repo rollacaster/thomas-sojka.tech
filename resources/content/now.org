@@ -3,13 +3,11 @@
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/now
 ** Freelancing
-I started my first freelancing project. It's outside of my comfort zone because my main task is to automate a cloud deployment. While it's a bit scary to work outside of the comfort zone, it's also the best way to learn new things quickly. My AWS skills and knowledge about various tools for deployment automation such as CDK and Terraform grew a lot in the past couple of weeks.
-** thomas-sojka.tech
-As you have noticed, things on the website are changing. I am doing a redesign of my website and want to focus on improved visuals and put some more thought into SEO. Doing something design-heavy on the side next to my freelance project is great to have some balance.
+My first freelance project is progressing and my AWS skills have grown significantly in recent weeks. But looking back, I definitely enjoy working on the frontend more. Fast feedback cycles are the most important thing I enjoy about my work. Feedback is much faster in frontend compared to the infrastructure work.
+** Remarkable template
+I've been using the Remarkable tablet for a long time, but never really tried to make the most of it. Recently I discovered that there is a very active scene that provides planning templates for Remarkable. I really like the combination of handwriting and digital organisation, so I'm currently creating my own template.
 ** Books
-I finished reading 'Modern Software Engineering' and 'Terraform Up & Running' and I am working to extract some notes from them.
-
-I am still reading quite a lot in parallel, probably too much, but I am not sure yet where to focus. Currently, I am reading 'SICP', 'Storytelling with Data' & 'R for Data Science'.
+After a break, I'm finally reading 'SICP' regularly again. I've also decided that I want to learn a bit more about marketing and business. I read 'The Millionaire Fastlane' and despite the deceptive title, I learnt a lot from it. Now I'm reading the 1-page marketing plan to dive deeper into this topic.
 
 
-updated on <2024-03-24 Sun>
+updated on <2024-04-24 Wed>
