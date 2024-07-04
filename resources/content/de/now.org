@@ -2,11 +2,11 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/now
-** Freelancing
-Mein erstes freiberufliches Projekt schreitet voran, und meine AWS-Kenntnisse haben sich in den letzten Wochen deutlich verbessert. Aber wenn ich zurückblicke, macht mir die Arbeit am Frontend definitiv mehr Spaß. Schnelle Feedback-Zyklen sind dass, was ich an meiner Arbeit schätze. Das Feedback ist im Frontend deutlich schneller als bei der Infrastruktur.
-** Remarkable template
-Ich benutze das Remarkable-Tablet schon seit langem, habe aber nie wirklich versucht, das Beste daraus zu machen. Vor kurzem habe ich entdeckt, dass es eine sehr aktive Community gibt, die Planungstemplates für Remarkable bereitstellt. Ich mag die Kombination aus Handschrift und digitaler Organisation sehr, also erstelle ich gerade mein eigenes Template.
+** Neuer Job
+Letzte Woche habe ich meinen neuen Job bei Griffin, einer Bank in London, begonnen. Neue Anfänge sind immer aufregend, und ich habe eine lange Liste an Dingen zu lernen, um mehr über Banking und die Technologien, mit denen ich jetzt arbeite, zu verstehen. Es ist auch eine Rückkehr zu der Progammiersprach, die ich am meisten genieße, und ich bin wirklich glücklich, wieder Vollzeit mit Clojure zu arbeiten.
+** Balance finden
+Nach einem Monat Reisen durch Spanien und dem Besuch meines ersten Musikfestivals arbeite ich daran, wieder zu meinen Lern- und Sport-Routinen zurückzukehren.
 ** Bücher
-Nach einer Pause lese ich nun endlich wieder regelmäßig 'SICP'. Ich habe auch beschlossen, dass ich etwas mehr über Marketing und Business lernen möchte. Ich habe 'The Millionaire Fastlane' gelesen und trotz des seltsamen Titels konnte ich viel daraus lernen. Jetzt lese ich den 1-Page-Marketing Plan, um tiefer in dieses Thema einzutauchen.
+Ich habe „The 1-Page Marketing Plan“ fertig gelesen und habe jetzt ein besseres Verständnis davon, was Marketing auf einer hohen Ebene tatsächlich bedeutet. Das nächste Buch, das ich auch schon fast fertig habe, ist „Million Dollar Weekend“, das erklärt, wie man ein neues Geschäft startet. Ich lese weiterhin „SICP“.
 
-aktualisiert am <2024-04-24 Wed>
+aktualisiert am <2024-07-04 Thu>

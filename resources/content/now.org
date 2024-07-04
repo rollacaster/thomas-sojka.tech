@@ -2,12 +2,11 @@
 #+NAV: 2
 #+CONTENT-TYPE: page
 #+I18N-KEY: nav/now
-** Freelancing
-My first freelance project is progressing and my AWS skills have grown significantly in recent weeks. But looking back, I definitely enjoy working on the frontend more. Fast feedback cycles are the most important thing I enjoy about my work. Feedback is much faster in frontend compared to the infrastructure work.
-** Remarkable template
-I've been using the Remarkable tablet for a long time, but never really tried to make the most of it. Recently I discovered that there is a very active scene that provides planning templates for Remarkable. I really like the combination of handwriting and digital organisation, so I'm currently creating my own template.
+** New Job
+Last week, I started my new job at Griffin, a bank in London. New beginnings are always exciting, and I have a long learning list to understand the new domain and technologies I am working with now. It's also a return to the technology I enjoy the most, and I am really happy to work with Clojure full-time again.
+** Finding Balance
+After a month of traveling through Spain and visiting my first music festival, I am working on getting back to my learning and sports routines.
 ** Books
-After a break, I'm finally reading 'SICP' regularly again. I've also decided that I want to learn a bit more about marketing and business. I read 'The Millionaire Fastlane' and despite the deceptive title, I learnt a lot from it. Now I'm reading the 1-page marketing plan to dive deeper into this topic.
+I finished reading "The 1-Page Marketing Plan" and now have a better understanding of what marketing actually means on a high level. The next book, which I am close to finishing, is "Million Dollar Weekend," which explains how to start a new business. I am still continuing to read "SICP."
 
-
-updated on <2024-04-24 Wed>
+updated on <2024-07-04 Thu>
